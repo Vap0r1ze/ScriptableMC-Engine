@@ -105,15 +105,15 @@ export default interface PreparedStatement extends Statement {
 	setMaxRows(arg0: number): void;
 	setNCharacterStream(arg0: number, arg1: Reader): void;
 	setNCharacterStream(arg0: number, arg1: Reader, arg2: number): void;
-	setNClob(arg0: number, arg1: NClob): void;
 	setNClob(arg0: number, arg1: Reader): void;
+	setNClob(arg0: number, arg1: NClob): void;
 	setNClob(arg0: number, arg1: Reader, arg2: number): void;
 	setNString(arg0: number, arg1: string): void;
 	setNull(arg0: number, arg1: number): void;
 	setNull(arg0: number, arg1: number, arg2: string): void;
 	setObject(arg0: number, arg1: any): void;
-	setObject(arg0: number, arg1: any, arg2: SQLType): void;
 	setObject(arg0: number, arg1: any, arg2: number): void;
+	setObject(arg0: number, arg1: any, arg2: SQLType): void;
 	setObject(arg0: number, arg1: any, arg2: number, arg3: number): void;
 	setObject(arg0: number, arg1: any, arg2: SQLType, arg3: number): void;
 	setPoolable(arg0: boolean): void;

@@ -7,6 +7,7 @@ import Entity$Spigot from './Entity$Spigot.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityType from './EntityType.js'
+import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Location from '../../../org/bukkit/Location.js'
 import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
 import Permission from '../../../org/bukkit/permissions/Permission.js'
@@ -38,6 +39,7 @@ export default interface EnderSignal extends Entity {
 	getFallDistance(): number;
 	getFireTicks(): number;
 	getHeight(): number;
+	getItem(): ItemStack;
 	getLastDamageCause(): EntityDamageEvent;
 	getLocation(): Location;
 	getLocation(arg0: Location): Location;
@@ -63,12 +65,13 @@ export default interface EnderSignal extends Entity {
 	getWorld(): World;
 	hasGravity(): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	isCustomNameVisible(): boolean;
 	isDead(): boolean;
 	isEmpty(): boolean;
 	isGlowing(): boolean;
+	isInWater(): boolean;
 	isInsideVehicle(): boolean;
 	isInvulnerable(): boolean;
 	isOnGround(): boolean;
@@ -88,6 +91,8 @@ export default interface EnderSignal extends Entity {
 	removeScoreboardTag(arg0: string): boolean;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	setCustomName(arg0: string): void;
 	setCustomNameVisible(arg0: boolean): void;
 	setDespawnTimer(arg0: number): void;
@@ -97,6 +102,7 @@ export default interface EnderSignal extends Entity {
 	setGlowing(arg0: boolean): void;
 	setGravity(arg0: boolean): void;
 	setInvulnerable(arg0: boolean): void;
+	setItem(arg0: ItemStack): void;
 	setLastDamageCause(arg0: EntityDamageEvent): void;
 	setMetadata(arg0: string, arg1: MetadataValue): void;
 	setOp(arg0: boolean): void;
@@ -108,10 +114,10 @@ export default interface EnderSignal extends Entity {
 	setTargetLocation(arg0: Location): void;
 	setTicksLived(arg0: number): void;
 	setVelocity(arg0: Vector): void;
-	spigot(): Entity$Spigot;
 	spigot(): CommandSender$Spigot;
-	teleport(arg0: Entity): boolean;
+	spigot(): Entity$Spigot;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }

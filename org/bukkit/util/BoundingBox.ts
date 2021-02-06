@@ -48,9 +48,9 @@ export default interface BoundingBox extends ConfigurationSerializable {
 	shift(shift: Vector): BoundingBox;
 	shift(shift: Location): BoundingBox;
 	shift(shiftX: number, shiftY: number, shiftZ: number): BoundingBox;
+	union(position: Vector): BoundingBox;
 	union(position: Location): BoundingBox;
 	union(other: BoundingBox): BoundingBox;
-	union(position: Vector): BoundingBox;
 	union(posX: number, posY: number, posZ: number): BoundingBox;
 }
 

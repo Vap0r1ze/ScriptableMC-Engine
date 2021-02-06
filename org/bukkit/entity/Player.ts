@@ -15,6 +15,7 @@ import DyeColor from '../../../org/bukkit/DyeColor.js'
 import Effect from '../../../org/bukkit/Effect.js'
 import Entity from './Entity.js'
 import Entity$Spigot from './Entity$Spigot.js'
+import EntityCategory from './EntityCategory.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityEquipment from '../../../org/bukkit/inventory/EntityEquipment.js'
@@ -90,18 +91,22 @@ export default interface Player extends HumanEntity, Conversable, OfflinePlayer,
 	decrementStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
 	discoverRecipe(arg0: NamespacedKey): boolean;
 	discoverRecipes(arg0: Array<any>): number;
+	dropItem(arg0: boolean): boolean;
 	eject(): boolean;
 	getAbsorptionAmount(): number;
 	getActivePotionEffects(): Array<PotionEffect>;
 	getAddress(): any;
 	getAdvancementProgress(arg0: Advancement): AdvancementProgress;
 	getAllowFlight(): boolean;
+	getArrowCooldown(): number;
+	getArrowsInBody(): number;
 	getAttackCooldown(): number;
 	getAttribute(arg0: Attribute): AttributeInstance;
 	getBedLocation(): Location;
 	getBedSpawnLocation(): Location;
 	getBoundingBox(): BoundingBox;
 	getCanPickupItems(): boolean;
+	getCategory(): EntityCategory;
 	getClientViewDistance(): number;
 	getCollidableExemptions(): any;
 	getCompassTarget(): Location;
@@ -206,8 +211,8 @@ export default interface Player extends HumanEntity, Conversable, OfflinePlayer,
 	hasGravity(): boolean;
 	hasLineOfSight(arg0: Entity): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	hasPlayedBefore(): boolean;
 	hasPotionEffect(arg0: PotionEffectType): boolean;
 	hidePlayer(arg0: Player): void;
@@ -230,7 +235,9 @@ export default interface Player extends HumanEntity, Conversable, OfflinePlayer,
 	isGlowing(): boolean;
 	isHandRaised(): boolean;
 	isHealthScaled(): boolean;
+	isInWater(): boolean;
 	isInsideVehicle(): boolean;
+	isInvisible(): boolean;
 	isInvulnerable(): boolean;
 	isLeashed(): boolean;
 	isOnGround(): boolean;
@@ -293,8 +300,11 @@ export default interface Player extends HumanEntity, Conversable, OfflinePlayer,
 	sendMap(arg0: MapView): void;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	sendPluginMessage(arg0: Plugin, arg1: string, arg2: Array<number>): void;
 	sendRawMessage(arg0: string): void;
+	sendRawMessage(arg0: string, arg1: string): void;
 	sendSignChange(arg0: Location, arg1: Array<string>): void;
 	sendSignChange(arg0: Location, arg1: Array<string>, arg2: DyeColor): void;
 	sendTitle(arg0: string, arg1: string): void;
@@ -303,6 +313,8 @@ export default interface Player extends HumanEntity, Conversable, OfflinePlayer,
 	setAI(arg0: boolean): void;
 	setAbsorptionAmount(arg0: number): void;
 	setAllowFlight(arg0: boolean): void;
+	setArrowCooldown(arg0: number): void;
+	setArrowsInBody(arg0: number): void;
 	setBedSpawnLocation(arg0: Location): void;
 	setBedSpawnLocation(arg0: Location, arg1: boolean): void;
 	setCanPickupItems(arg0: boolean): void;
@@ -326,6 +338,7 @@ export default interface Player extends HumanEntity, Conversable, OfflinePlayer,
 	setHealth(arg0: number): void;
 	setHealthScale(arg0: number): void;
 	setHealthScaled(arg0: boolean): void;
+	setInvisible(arg0: boolean): void;
 	setInvulnerable(arg0: boolean): void;
 	setItemInHand(arg0: ItemStack): void;
 	setItemOnCursor(arg0: ItemStack): void;
@@ -384,22 +397,22 @@ export default interface Player extends HumanEntity, Conversable, OfflinePlayer,
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number): void;
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: any): void;
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number): void;
-	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: any): void;
-	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: any): void;
+	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number): void;
+	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: any): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: any): void;
-	spigot(): Player$Spigot;
 	spigot(): CommandSender$Spigot;
+	spigot(): Player$Spigot;
 	spigot(): Entity$Spigot;
-	stopSound(arg0: Sound): void;
 	stopSound(arg0: string): void;
-	stopSound(arg0: Sound, arg1: SoundCategory): void;
+	stopSound(arg0: Sound): void;
 	stopSound(arg0: string, arg1: SoundCategory): void;
+	stopSound(arg0: Sound, arg1: SoundCategory): void;
 	swingMainHand(): void;
 	swingOffHand(): void;
-	teleport(arg0: Entity): boolean;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	undiscoverRecipe(arg0: NamespacedKey): boolean;

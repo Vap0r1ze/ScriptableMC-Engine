@@ -213,6 +213,9 @@ export default class EntityType {
 	public static get PIGLIN(): EntityType {
 		return this.$javaClass.PIGLIN;
 	}
+	public static get PIGLIN_BRUTE(): EntityType {
+		return this.$javaClass.PIGLIN_BRUTE;
+	}
 	public static get PILLAGER(): EntityType {
 		return this.$javaClass.PILLAGER;
 	}

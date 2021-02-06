@@ -19,6 +19,7 @@ import Vector from '../../../org/bukkit/util/Vector.js'
 import World from '../../../org/bukkit/World.js'
 
 export default interface Block extends Metadatable {
+	applyBoneMeal(arg0: BlockFace): boolean;
 	breakNaturally(): boolean;
 	breakNaturally(arg0: ItemStack): boolean;
 	getBiome(): Biome;

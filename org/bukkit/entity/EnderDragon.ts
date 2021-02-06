@@ -12,6 +12,7 @@ import DragonBattle from '../../../org/bukkit/boss/DragonBattle.js'
 import EnderDragon$Phase from './EnderDragon$Phase.js'
 import Entity from './Entity.js'
 import Entity$Spigot from './Entity$Spigot.js'
+import EntityCategory from './EntityCategory.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityEquipment from '../../../org/bukkit/inventory/EntityEquipment.js'
@@ -52,10 +53,13 @@ export default interface EnderDragon extends ComplexLivingEntity, Boss {
 	eject(): boolean;
 	getAbsorptionAmount(): number;
 	getActivePotionEffects(): Array<PotionEffect>;
+	getArrowCooldown(): number;
+	getArrowsInBody(): number;
 	getAttribute(arg0: Attribute): AttributeInstance;
 	getBossBar(): BossBar;
 	getBoundingBox(): BoundingBox;
 	getCanPickupItems(): boolean;
+	getCategory(): EntityCategory;
 	getCollidableExemptions(): any;
 	getCustomName(): string;
 	getDeathAnimationTicks(): number;
@@ -115,8 +119,8 @@ export default interface EnderDragon extends ComplexLivingEntity, Boss {
 	hasGravity(): boolean;
 	hasLineOfSight(arg0: Entity): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	hasPotionEffect(arg0: PotionEffectType): boolean;
 	isCollidable(): boolean;
 	isCustomNameVisible(): boolean;
@@ -124,7 +128,9 @@ export default interface EnderDragon extends ComplexLivingEntity, Boss {
 	isEmpty(): boolean;
 	isGliding(): boolean;
 	isGlowing(): boolean;
+	isInWater(): boolean;
 	isInsideVehicle(): boolean;
+	isInvisible(): boolean;
 	isInvulnerable(): boolean;
 	isLeashed(): boolean;
 	isOnGround(): boolean;
@@ -153,8 +159,12 @@ export default interface EnderDragon extends ComplexLivingEntity, Boss {
 	resetMaxHealth(): void;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	setAI(arg0: boolean): void;
 	setAbsorptionAmount(arg0: number): void;
+	setArrowCooldown(arg0: number): void;
+	setArrowsInBody(arg0: number): void;
 	setCanPickupItems(arg0: boolean): void;
 	setCollidable(arg0: boolean): void;
 	setCustomName(arg0: string): void;
@@ -165,6 +175,7 @@ export default interface EnderDragon extends ComplexLivingEntity, Boss {
 	setGlowing(arg0: boolean): void;
 	setGravity(arg0: boolean): void;
 	setHealth(arg0: number): void;
+	setInvisible(arg0: boolean): void;
 	setInvulnerable(arg0: boolean): void;
 	setLastDamage(arg0: number): void;
 	setLastDamageCause(arg0: EntityDamageEvent): void;
@@ -187,12 +198,12 @@ export default interface EnderDragon extends ComplexLivingEntity, Boss {
 	setSwimming(arg0: boolean): void;
 	setTicksLived(arg0: number): void;
 	setVelocity(arg0: Vector): void;
-	spigot(): Entity$Spigot;
 	spigot(): CommandSender$Spigot;
+	spigot(): Entity$Spigot;
 	swingMainHand(): void;
 	swingOffHand(): void;
-	teleport(arg0: Entity): boolean;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }

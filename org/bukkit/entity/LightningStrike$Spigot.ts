@@ -6,6 +6,8 @@ export default interface LightningStrike$Spigot extends Entity$Spigot {
 	isSilent(): boolean;
 	sendMessage(component: BaseComponent): void;
 	sendMessage(components: Array<BaseComponent>): void;
+	sendMessage(sender: string, component: BaseComponent): void;
+	sendMessage(sender: string, components: Array<BaseComponent>): void;
 }
 
 export default class LightningStrike$Spigot {

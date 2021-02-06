@@ -12,6 +12,10 @@ export default interface Player$Spigot extends Entity$Spigot {
 	sendMessage(component: BaseComponent): void;
 	sendMessage(position: ChatMessageType, component: BaseComponent): void;
 	sendMessage(position: ChatMessageType, components: Array<BaseComponent>): void;
+	sendMessage(sender: string, component: BaseComponent): void;
+	sendMessage(sender: string, components: Array<BaseComponent>): void;
+	sendMessage(position: ChatMessageType, sender: string, components: Array<BaseComponent>): void;
+	sendMessage(position: ChatMessageType, sender: string, component: BaseComponent): void;
 	setCollidesWithEntities(collides: boolean): void;
 }
 

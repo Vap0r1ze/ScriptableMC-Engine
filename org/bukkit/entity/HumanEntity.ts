@@ -8,6 +8,7 @@ import BoundingBox from '../../../org/bukkit/util/BoundingBox.js'
 import CommandSender$Spigot from '../../../org/bukkit/command/CommandSender$Spigot.js'
 import Entity from './Entity.js'
 import Entity$Spigot from './Entity$Spigot.js'
+import EntityCategory from './EntityCategory.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityEquipment from '../../../org/bukkit/inventory/EntityEquipment.js'
@@ -61,14 +62,18 @@ export default interface HumanEntity extends LivingEntity, AnimalTamer, Inventor
 	damage(arg0: number, arg1: Entity): void;
 	discoverRecipe(arg0: NamespacedKey): boolean;
 	discoverRecipes(arg0: Array<any>): number;
+	dropItem(arg0: boolean): boolean;
 	eject(): boolean;
 	getAbsorptionAmount(): number;
 	getActivePotionEffects(): Array<PotionEffect>;
+	getArrowCooldown(): number;
+	getArrowsInBody(): number;
 	getAttackCooldown(): number;
 	getAttribute(arg0: Attribute): AttributeInstance;
 	getBedLocation(): Location;
 	getBoundingBox(): BoundingBox;
 	getCanPickupItems(): boolean;
+	getCategory(): EntityCategory;
 	getCollidableExemptions(): any;
 	getCooldown(arg0: Material): number;
 	getCustomName(): string;
@@ -141,8 +146,8 @@ export default interface HumanEntity extends LivingEntity, AnimalTamer, Inventor
 	hasGravity(): boolean;
 	hasLineOfSight(arg0: Entity): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	hasPotionEffect(arg0: PotionEffectType): boolean;
 	isBlocking(): boolean;
 	isCollidable(): boolean;
@@ -152,7 +157,9 @@ export default interface HumanEntity extends LivingEntity, AnimalTamer, Inventor
 	isGliding(): boolean;
 	isGlowing(): boolean;
 	isHandRaised(): boolean;
+	isInWater(): boolean;
 	isInsideVehicle(): boolean;
+	isInvisible(): boolean;
 	isInvulnerable(): boolean;
 	isLeashed(): boolean;
 	isOnGround(): boolean;
@@ -187,8 +194,12 @@ export default interface HumanEntity extends LivingEntity, AnimalTamer, Inventor
 	resetMaxHealth(): void;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	setAI(arg0: boolean): void;
 	setAbsorptionAmount(arg0: number): void;
+	setArrowCooldown(arg0: number): void;
+	setArrowsInBody(arg0: number): void;
 	setCanPickupItems(arg0: boolean): void;
 	setCollidable(arg0: boolean): void;
 	setCooldown(arg0: Material, arg1: number): void;
@@ -201,6 +212,7 @@ export default interface HumanEntity extends LivingEntity, AnimalTamer, Inventor
 	setGlowing(arg0: boolean): void;
 	setGravity(arg0: boolean): void;
 	setHealth(arg0: number): void;
+	setInvisible(arg0: boolean): void;
 	setInvulnerable(arg0: boolean): void;
 	setItemInHand(arg0: ItemStack): void;
 	setItemOnCursor(arg0: ItemStack): void;
@@ -228,12 +240,12 @@ export default interface HumanEntity extends LivingEntity, AnimalTamer, Inventor
 	setVelocity(arg0: Vector): void;
 	setWindowProperty(arg0: InventoryView$Property, arg1: number): boolean;
 	sleep(arg0: Location, arg1: boolean): boolean;
-	spigot(): Entity$Spigot;
 	spigot(): CommandSender$Spigot;
+	spigot(): Entity$Spigot;
 	swingMainHand(): void;
 	swingOffHand(): void;
-	teleport(arg0: Entity): boolean;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	undiscoverRecipe(arg0: NamespacedKey): boolean;

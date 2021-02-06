@@ -13,13 +13,13 @@ export default class DefaultPermissions {
 	}
 
 	public static registerPermission(perm: Permission): Permission;
+	public static registerPermission(perm: Permission, withLegacy: boolean): Permission;
 	public static registerPermission(perm: Permission, parent: Permission): Permission;
 	public static registerPermission(_name: string, desc: string): Permission;
-	public static registerPermission(perm: Permission, withLegacy: boolean): Permission;
 	public static registerPermission(_name: string, desc: string, def: PermissionDefault): Permission;
 	public static registerPermission(_name: string, desc: string, parent: Permission): Permission;
-	public static registerPermission(_name: string, desc: string, def: PermissionDefault, children: any): Permission;
 	public static registerPermission(_name: string, desc: string, def: PermissionDefault, parent: Permission): Permission;
+	public static registerPermission(_name: string, desc: string, def: PermissionDefault, children: any): Permission;
 	public static registerPermission(_name: string, desc: string, def: PermissionDefault, children: any, parent: Permission): Permission;
 	public static registerPermission(...args: any[]): any {
 		return DefaultPermissions.$javaClass.registerPermission(...args);

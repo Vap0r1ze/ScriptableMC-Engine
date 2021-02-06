@@ -42,6 +42,7 @@ export default interface ItemFrame extends Hanging {
 	getFireTicks(): number;
 	getHeight(): number;
 	getItem(): ItemStack;
+	getItemDropChance(): number;
 	getLastDamageCause(): EntityDamageEvent;
 	getLocation(): Location;
 	getLocation(arg0: Location): Location;
@@ -67,13 +68,14 @@ export default interface ItemFrame extends Hanging {
 	getWorld(): World;
 	hasGravity(): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	isCustomNameVisible(): boolean;
 	isDead(): boolean;
 	isEmpty(): boolean;
 	isFixed(): boolean;
 	isGlowing(): boolean;
+	isInWater(): boolean;
 	isInsideVehicle(): boolean;
 	isInvulnerable(): boolean;
 	isOnGround(): boolean;
@@ -94,6 +96,8 @@ export default interface ItemFrame extends Hanging {
 	removeScoreboardTag(arg0: string): boolean;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	setCustomName(arg0: string): void;
 	setCustomNameVisible(arg0: boolean): void;
 	setFacingDirection(arg0: BlockFace): void;
@@ -106,6 +110,7 @@ export default interface ItemFrame extends Hanging {
 	setInvulnerable(arg0: boolean): void;
 	setItem(arg0: ItemStack): void;
 	setItem(arg0: ItemStack, arg1: boolean): void;
+	setItemDropChance(arg0: number): void;
 	setLastDamageCause(arg0: EntityDamageEvent): void;
 	setMetadata(arg0: string, arg1: MetadataValue): void;
 	setOp(arg0: boolean): void;
@@ -118,10 +123,10 @@ export default interface ItemFrame extends Hanging {
 	setTicksLived(arg0: number): void;
 	setVelocity(arg0: Vector): void;
 	setVisible(arg0: boolean): void;
-	spigot(): Entity$Spigot;
 	spigot(): CommandSender$Spigot;
-	teleport(arg0: Entity): boolean;
+	spigot(): Entity$Spigot;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }

@@ -5,6 +5,8 @@ import CommandSender$Spigot from '../../../org/bukkit/command/CommandSender$Spig
 export default interface Entity$Spigot extends CommandSender$Spigot {
 	sendMessage(component: BaseComponent): void;
 	sendMessage(components: Array<BaseComponent>): void;
+	sendMessage(sender: string, component: BaseComponent): void;
+	sendMessage(sender: string, components: Array<BaseComponent>): void;
 }
 
 export default class Entity$Spigot {

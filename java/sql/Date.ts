@@ -54,8 +54,8 @@ export default class Date {
 		return Date.$javaClass.parse(...args);
 	}
 
-	public static valueOf(arg0: any): Date;
 	public static valueOf(arg0: string): Date;
+	public static valueOf(arg0: any): Date;
 	public static valueOf(...args: any[]): any {
 		return Date.$javaClass.valueOf(...args);
 	}

@@ -33,11 +33,12 @@ export default interface LlamaInventory extends AbstractHorseInventory {
 	getStorageContents(): Array<ItemStack>;
 	getType(): InventoryType;
 	getViewers(): Array<HumanEntity>;
+	isEmpty(): boolean;
 	iterator(): any;
 	iterator(): any;
 	iterator(arg0: number): any;
-	remove(arg0: ItemStack): void;
 	remove(arg0: Material): void;
+	remove(arg0: ItemStack): void;
 	removeItem(arg0: Array<ItemStack>): any;
 	setContents(arg0: Array<ItemStack>): void;
 	setDecor(arg0: ItemStack): void;

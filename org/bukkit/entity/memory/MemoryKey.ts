@@ -24,6 +24,10 @@ export default class MemoryKey {
 		return MemoryKey.$javaClass.ANGRY_AT;
 	}
 
+	public static get GOLEM_DETECTED_RECENTLY(): MemoryKey {
+		return MemoryKey.$javaClass.GOLEM_DETECTED_RECENTLY;
+	}
+
 	public static get HOME(): MemoryKey {
 		return MemoryKey.$javaClass.HOME;
 	}

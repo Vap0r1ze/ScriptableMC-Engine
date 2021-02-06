@@ -66,12 +66,13 @@ export default interface DragonFireball extends Fireball {
 	getYield(): number;
 	hasGravity(): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	isCustomNameVisible(): boolean;
 	isDead(): boolean;
 	isEmpty(): boolean;
 	isGlowing(): boolean;
+	isInWater(): boolean;
 	isIncendiary(): boolean;
 	isInsideVehicle(): boolean;
 	isInvulnerable(): boolean;
@@ -92,6 +93,8 @@ export default interface DragonFireball extends Fireball {
 	removeScoreboardTag(arg0: string): boolean;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	setBounce(arg0: boolean): void;
 	setCustomName(arg0: string): void;
 	setCustomNameVisible(arg0: boolean): void;
@@ -114,10 +117,10 @@ export default interface DragonFireball extends Fireball {
 	setTicksLived(arg0: number): void;
 	setVelocity(arg0: Vector): void;
 	setYield(arg0: number): void;
-	spigot(): Entity$Spigot;
 	spigot(): CommandSender$Spigot;
-	teleport(arg0: Entity): boolean;
+	spigot(): Entity$Spigot;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }

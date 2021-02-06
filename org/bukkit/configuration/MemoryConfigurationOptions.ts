@@ -4,11 +4,11 @@ import ConfigurationOptions from './ConfigurationOptions.js'
 import MemoryConfiguration from './MemoryConfiguration.js'
 
 export default interface MemoryConfigurationOptions extends ConfigurationOptions {
-	configuration(): Configuration;
 	configuration(): MemoryConfiguration;
+	configuration(): Configuration;
 	copyDefaults(): boolean;
-	copyDefaults(value: boolean): ConfigurationOptions;
 	copyDefaults(value: boolean): MemoryConfigurationOptions;
+	copyDefaults(value: boolean): ConfigurationOptions;
 	pathSeparator(): string;
 	pathSeparator(value: string): ConfigurationOptions;
 	pathSeparator(value: string): MemoryConfigurationOptions;

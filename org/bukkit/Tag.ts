@@ -121,6 +121,14 @@ export default class Tag {
 		return Tag.$javaClass.FLOWER_POTS;
 	}
 
+	public static get FLUIDS_LAVA(): Tag {
+		return Tag.$javaClass.FLUIDS_LAVA;
+	}
+
+	public static get FLUIDS_WATER(): Tag {
+		return Tag.$javaClass.FLUIDS_WATER;
+	}
+
 	public static get GOLD_ORES(): Tag {
 		return Tag.$javaClass.GOLD_ORES;
 	}
@@ -255,6 +263,10 @@ export default class Tag {
 
 	public static get REGISTRY_BLOCKS(): string {
 		return Tag.$javaClass.REGISTRY_BLOCKS;
+	}
+
+	public static get REGISTRY_FLUIDS(): string {
+		return Tag.$javaClass.REGISTRY_FLUIDS;
 	}
 
 	public static get REGISTRY_ITEMS(): string {

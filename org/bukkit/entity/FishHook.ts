@@ -7,6 +7,7 @@ import Entity$Spigot from './Entity$Spigot.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityType from './EntityType.js'
+import FishHook$HookState from './FishHook$HookState.js'
 import Location from '../../../org/bukkit/Location.js'
 import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
 import Permission from '../../../org/bukkit/permissions/Permission.js'
@@ -31,6 +32,7 @@ export default interface FishHook extends Projectile {
 	addScoreboardTag(arg0: string): boolean;
 	doesBounce(): boolean;
 	eject(): boolean;
+	getApplyLure(): boolean;
 	getBiteChance(): number;
 	getBoundingBox(): BoundingBox;
 	getCustomName(): string;
@@ -40,11 +42,14 @@ export default interface FishHook extends Projectile {
 	getFallDistance(): number;
 	getFireTicks(): number;
 	getHeight(): number;
+	getHookedEntity(): Entity;
 	getLastDamageCause(): EntityDamageEvent;
 	getLocation(): Location;
 	getLocation(arg0: Location): Location;
 	getMaxFireTicks(): number;
+	getMaxWaitTime(): number;
 	getMetadata(arg0: string): Array<MetadataValue>;
+	getMinWaitTime(): number;
 	getName(): string;
 	getNearbyEntities(arg0: number, arg1: number, arg2: number): Array<Entity>;
 	getPassenger(): Entity;
@@ -56,6 +61,7 @@ export default interface FishHook extends Projectile {
 	getScoreboardTags(): any;
 	getServer(): Server;
 	getShooter(): ProjectileSource;
+	getState(): FishHook$HookState;
 	getTicksLived(): number;
 	getType(): EntityType;
 	getUniqueId(): string;
@@ -65,12 +71,14 @@ export default interface FishHook extends Projectile {
 	getWorld(): World;
 	hasGravity(): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	isCustomNameVisible(): boolean;
 	isDead(): boolean;
 	isEmpty(): boolean;
 	isGlowing(): boolean;
+	isInOpenWater(): boolean;
+	isInWater(): boolean;
 	isInsideVehicle(): boolean;
 	isInvulnerable(): boolean;
 	isOnGround(): boolean;
@@ -82,6 +90,7 @@ export default interface FishHook extends Projectile {
 	isValid(): boolean;
 	leaveVehicle(): boolean;
 	playEffect(arg0: EntityEffect): void;
+	pullHookedEntity(): boolean;
 	recalculatePermissions(): void;
 	remove(): void;
 	removeAttachment(arg0: PermissionAttachment): void;
@@ -90,6 +99,9 @@ export default interface FishHook extends Projectile {
 	removeScoreboardTag(arg0: string): boolean;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
+	setApplyLure(arg0: boolean): void;
 	setBiteChance(arg0: number): void;
 	setBounce(arg0: boolean): void;
 	setCustomName(arg0: string): void;
@@ -98,9 +110,12 @@ export default interface FishHook extends Projectile {
 	setFireTicks(arg0: number): void;
 	setGlowing(arg0: boolean): void;
 	setGravity(arg0: boolean): void;
+	setHookedEntity(arg0: Entity): void;
 	setInvulnerable(arg0: boolean): void;
 	setLastDamageCause(arg0: EntityDamageEvent): void;
+	setMaxWaitTime(arg0: number): void;
 	setMetadata(arg0: string, arg1: MetadataValue): void;
+	setMinWaitTime(arg0: number): void;
 	setOp(arg0: boolean): void;
 	setPassenger(arg0: Entity): boolean;
 	setPersistent(arg0: boolean): void;
@@ -110,10 +125,10 @@ export default interface FishHook extends Projectile {
 	setSilent(arg0: boolean): void;
 	setTicksLived(arg0: number): void;
 	setVelocity(arg0: Vector): void;
-	spigot(): Entity$Spigot;
 	spigot(): CommandSender$Spigot;
-	teleport(arg0: Entity): boolean;
+	spigot(): Entity$Spigot;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }

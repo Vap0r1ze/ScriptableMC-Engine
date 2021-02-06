@@ -1,4 +1,5 @@
 declare var Java: any;
+import ArmorStand$LockType from './ArmorStand$LockType.js'
 import Attribute from '../../../org/bukkit/attribute/Attribute.js'
 import AttributeInstance from '../../../org/bukkit/attribute/AttributeInstance.js'
 import Block from '../../../org/bukkit/block/Block.js'
@@ -7,10 +8,12 @@ import BoundingBox from '../../../org/bukkit/util/BoundingBox.js'
 import CommandSender$Spigot from '../../../org/bukkit/command/CommandSender$Spigot.js'
 import Entity from './Entity.js'
 import Entity$Spigot from './Entity$Spigot.js'
+import EntityCategory from './EntityCategory.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityEquipment from '../../../org/bukkit/inventory/EntityEquipment.js'
 import EntityType from './EntityType.js'
+import EquipmentSlot from '../../../org/bukkit/inventory/EquipmentSlot.js'
 import EulerAngle from '../../../org/bukkit/util/EulerAngle.js'
 import FluidCollisionMode from '../../../org/bukkit/FluidCollisionMode.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
@@ -39,6 +42,7 @@ export default interface ArmorStand extends LivingEntity {
 	addAttachment(arg0: Plugin, arg1: number): PermissionAttachment;
 	addAttachment(arg0: Plugin, arg1: string, arg2: boolean): PermissionAttachment;
 	addAttachment(arg0: Plugin, arg1: string, arg2: boolean, arg3: number): PermissionAttachment;
+	addEquipmentLock(arg0: EquipmentSlot, arg1: ArmorStand$LockType): void;
 	addPassenger(arg0: Entity): boolean;
 	addPotionEffect(arg0: PotionEffect): boolean;
 	addPotionEffect(arg0: PotionEffect, arg1: boolean): boolean;
@@ -50,11 +54,14 @@ export default interface ArmorStand extends LivingEntity {
 	eject(): boolean;
 	getAbsorptionAmount(): number;
 	getActivePotionEffects(): Array<PotionEffect>;
+	getArrowCooldown(): number;
+	getArrowsInBody(): number;
 	getAttribute(arg0: Attribute): AttributeInstance;
 	getBodyPose(): EulerAngle;
 	getBoots(): ItemStack;
 	getBoundingBox(): BoundingBox;
 	getCanPickupItems(): boolean;
+	getCategory(): EntityCategory;
 	getChestplate(): ItemStack;
 	getCollidableExemptions(): any;
 	getCustomName(): string;
@@ -118,11 +125,12 @@ export default interface ArmorStand extends LivingEntity {
 	hasAI(): boolean;
 	hasArms(): boolean;
 	hasBasePlate(): boolean;
+	hasEquipmentLock(arg0: EquipmentSlot, arg1: ArmorStand$LockType): boolean;
 	hasGravity(): boolean;
 	hasLineOfSight(arg0: Entity): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	hasPotionEffect(arg0: PotionEffectType): boolean;
 	isCollidable(): boolean;
 	isCustomNameVisible(): boolean;
@@ -130,7 +138,9 @@ export default interface ArmorStand extends LivingEntity {
 	isEmpty(): boolean;
 	isGliding(): boolean;
 	isGlowing(): boolean;
+	isInWater(): boolean;
 	isInsideVehicle(): boolean;
+	isInvisible(): boolean;
 	isInvulnerable(): boolean;
 	isLeashed(): boolean;
 	isMarker(): boolean;
@@ -155,6 +165,7 @@ export default interface ArmorStand extends LivingEntity {
 	recalculatePermissions(): void;
 	remove(): void;
 	removeAttachment(arg0: PermissionAttachment): void;
+	removeEquipmentLock(arg0: EquipmentSlot, arg1: ArmorStand$LockType): void;
 	removeMetadata(arg0: string, arg1: Plugin): void;
 	removePassenger(arg0: Entity): boolean;
 	removePotionEffect(arg0: PotionEffectType): void;
@@ -162,9 +173,13 @@ export default interface ArmorStand extends LivingEntity {
 	resetMaxHealth(): void;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	setAI(arg0: boolean): void;
 	setAbsorptionAmount(arg0: number): void;
 	setArms(arg0: boolean): void;
+	setArrowCooldown(arg0: number): void;
+	setArrowsInBody(arg0: number): void;
 	setBasePlate(arg0: boolean): void;
 	setBodyPose(arg0: EulerAngle): void;
 	setBoots(arg0: ItemStack): void;
@@ -181,6 +196,7 @@ export default interface ArmorStand extends LivingEntity {
 	setHeadPose(arg0: EulerAngle): void;
 	setHealth(arg0: number): void;
 	setHelmet(arg0: ItemStack): void;
+	setInvisible(arg0: boolean): void;
 	setInvulnerable(arg0: boolean): void;
 	setItemInHand(arg0: ItemStack): void;
 	setLastDamage(arg0: number): void;
@@ -211,12 +227,12 @@ export default interface ArmorStand extends LivingEntity {
 	setTicksLived(arg0: number): void;
 	setVelocity(arg0: Vector): void;
 	setVisible(arg0: boolean): void;
-	spigot(): Entity$Spigot;
 	spigot(): CommandSender$Spigot;
+	spigot(): Entity$Spigot;
 	swingMainHand(): void;
 	swingOffHand(): void;
-	teleport(arg0: Entity): boolean;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }

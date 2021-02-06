@@ -4,6 +4,7 @@ import Material from '../../../../../org/bukkit/Material.js'
 import Powerable from '../../../../../org/bukkit/block/data/Powerable.js'
 import Rail from '../../../../../org/bukkit/block/data/Rail.js'
 import Rail$Shape from '../../../../../org/bukkit/block/data/Rail$Shape.js'
+import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
 
 export default interface RedstoneRail extends Powerable, Rail {
 	clone(): BlockData;
@@ -13,6 +14,7 @@ export default interface RedstoneRail extends Powerable, Rail {
 	getMaterial(): Material;
 	getShape(): Rail$Shape;
 	getShapes(): any;
+	getSoundGroup(): SoundGroup;
 	isPowered(): boolean;
 	matches(arg0: BlockData): boolean;
 	merge(arg0: BlockData): BlockData;

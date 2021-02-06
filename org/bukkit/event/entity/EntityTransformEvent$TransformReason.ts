@@ -31,5 +31,8 @@ export default class EntityTransformEvent$TransformReason {
 	public static get SPLIT(): EntityTransformEvent$TransformReason {
 		return this.$javaClass.SPLIT;
 	}
+	public static get UNKNOWN(): EntityTransformEvent$TransformReason {
+		return this.$javaClass.UNKNOWN;
+	}
 }
 

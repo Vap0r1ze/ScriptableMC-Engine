@@ -23,8 +23,8 @@ export default interface PotionMeta extends ItemMeta {
 	clone(): ItemMeta;
 	clone(): PotionMeta;
 	getAttributeModifiers(): Multimap;
-	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
 	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
+	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
 	getBasePotionData(): PotionData;
 	getColor(): Color;
 	getCustomEffects(): Array<PotionEffect>;

@@ -10,8 +10,8 @@ import PortalType from '../../../../org/bukkit/PortalType.js'
 
 export default interface EntityCreatePortalEvent extends EntityEvent, Cancellable {
 	getBlocks(): Array<BlockState>;
-	getEntity(): LivingEntity;
 	getEntity(): Entity;
+	getEntity(): LivingEntity;
 	getEntityType(): EntityType;
 	getEventName(): string;
 	getHandlers(): HandlerList;

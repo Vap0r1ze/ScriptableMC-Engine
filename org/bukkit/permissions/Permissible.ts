@@ -10,8 +10,8 @@ export default interface Permissible extends ServerOperator {
 	addAttachment(arg0: Plugin, arg1: string, arg2: boolean): PermissionAttachment;
 	addAttachment(arg0: Plugin, arg1: string, arg2: boolean, arg3: number): PermissionAttachment;
 	getEffectivePermissions(): any;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	isOp(): boolean;
 	isPermissionSet(arg0: string): boolean;
 	isPermissionSet(arg0: Permission): boolean;

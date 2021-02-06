@@ -45,6 +45,7 @@ export default interface Item extends Entity {
 	getMetadata(arg0: string): Array<MetadataValue>;
 	getName(): string;
 	getNearbyEntities(arg0: number, arg1: number, arg2: number): Array<Entity>;
+	getOwner(): string;
 	getPassenger(): Entity;
 	getPassengers(): Array<Entity>;
 	getPersistentDataContainer(): PersistentDataContainer;
@@ -54,6 +55,7 @@ export default interface Item extends Entity {
 	getPose(): Pose;
 	getScoreboardTags(): any;
 	getServer(): Server;
+	getThrower(): string;
 	getTicksLived(): number;
 	getType(): EntityType;
 	getUniqueId(): string;
@@ -63,12 +65,13 @@ export default interface Item extends Entity {
 	getWorld(): World;
 	hasGravity(): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	isCustomNameVisible(): boolean;
 	isDead(): boolean;
 	isEmpty(): boolean;
 	isGlowing(): boolean;
+	isInWater(): boolean;
 	isInsideVehicle(): boolean;
 	isInvulnerable(): boolean;
 	isOnGround(): boolean;
@@ -88,6 +91,8 @@ export default interface Item extends Entity {
 	removeScoreboardTag(arg0: string): boolean;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	setCustomName(arg0: string): void;
 	setCustomNameVisible(arg0: boolean): void;
 	setFallDistance(arg0: number): void;
@@ -99,18 +104,20 @@ export default interface Item extends Entity {
 	setLastDamageCause(arg0: EntityDamageEvent): void;
 	setMetadata(arg0: string, arg1: MetadataValue): void;
 	setOp(arg0: boolean): void;
+	setOwner(arg0: string): void;
 	setPassenger(arg0: Entity): boolean;
 	setPersistent(arg0: boolean): void;
 	setPickupDelay(arg0: number): void;
 	setPortalCooldown(arg0: number): void;
 	setRotation(arg0: number, arg1: number): void;
 	setSilent(arg0: boolean): void;
+	setThrower(arg0: string): void;
 	setTicksLived(arg0: number): void;
 	setVelocity(arg0: Vector): void;
-	spigot(): Entity$Spigot;
 	spigot(): CommandSender$Spigot;
-	teleport(arg0: Entity): boolean;
+	spigot(): Entity$Spigot;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }

@@ -36,8 +36,8 @@ export default interface ScriptablePluginContext extends Listener {
 	registerEvent(eventClass: any, executor: EventExecutor): void;
 	registerIncomingPluginChannel(channelName: string, listener: PluginMessageListener): PluginMessageListenerRegistration;
 	registerOutgoingPluginChannel(channel: string): void;
-	setPlaceholders(player: OfflinePlayer, placeholderText: string): string;
 	setPlaceholders(player: Player, placeholderText: string): string;
+	setPlaceholders(player: OfflinePlayer, placeholderText: string): string;
 	unregisterCommand(command: PluginCommand): void;
 	unregisterIncomingPluginChannel(channel: string): void;
 	unregisterOutgoingPluginChannel(channel: string): void;

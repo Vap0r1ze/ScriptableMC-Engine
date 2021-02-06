@@ -19,6 +19,9 @@ export default class ItemFlag {
 	public static get HIDE_DESTROYS(): ItemFlag {
 		return this.$javaClass.HIDE_DESTROYS;
 	}
+	public static get HIDE_DYE(): ItemFlag {
+		return this.$javaClass.HIDE_DYE;
+	}
 	public static get HIDE_ENCHANTS(): ItemFlag {
 		return this.$javaClass.HIDE_ENCHANTS;
 	}

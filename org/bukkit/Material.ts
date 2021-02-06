@@ -3496,6 +3496,9 @@ export default class Material {
 	public static get PIGLIN_BANNER_PATTERN(): Material {
 		return this.$javaClass.PIGLIN_BANNER_PATTERN;
 	}
+	public static get PIGLIN_BRUTE_SPAWN_EGG(): Material {
+		return this.$javaClass.PIGLIN_BRUTE_SPAWN_EGG;
+	}
 	public static get PIGLIN_SPAWN_EGG(): Material {
 		return this.$javaClass.PIGLIN_SPAWN_EGG;
 	}

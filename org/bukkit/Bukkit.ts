@@ -80,8 +80,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.clearRecipes(...args);
 	}
 
-	public static createBlockData(data: string): BlockData;
 	public static createBlockData(material: Material): BlockData;
+	public static createBlockData(data: string): BlockData;
 	public static createBlockData(material: Material, consumer: any): BlockData;
 	public static createBlockData(material: Material, data: string): BlockData;
 	public static createBlockData(...args: any[]): any {
@@ -107,8 +107,8 @@ export default class Bukkit {
 
 	public static createInventory(owner: InventoryHolder, size: number): Inventory;
 	public static createInventory(owner: InventoryHolder, type: InventoryType): Inventory;
-	public static createInventory(owner: InventoryHolder, type: InventoryType, title: string): Inventory;
 	public static createInventory(owner: InventoryHolder, size: number, title: string): Inventory;
+	public static createInventory(owner: InventoryHolder, type: InventoryType, title: string): Inventory;
 	public static createInventory(...args: any[]): any {
 		return Bukkit.$javaClass.createInventory(...args);
 	}
@@ -263,6 +263,11 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getMaxPlayers(...args);
 	}
 
+	public static getMaxWorldSize(): number;
+	public static getMaxWorldSize(...args: any[]): any {
+		return Bukkit.$javaClass.getMaxWorldSize(...args);
+	}
+
 	public static getMessenger(): Messenger;
 	public static getMessenger(...args: any[]): any {
 		return Bukkit.$javaClass.getMessenger(...args);
@@ -283,8 +288,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getName(...args);
 	}
 
-	public static getOfflinePlayer(id: string): OfflinePlayer;
 	public static getOfflinePlayer(_name: string): OfflinePlayer;
+	public static getOfflinePlayer(id: string): OfflinePlayer;
 	public static getOfflinePlayer(...args: any[]): any {
 		return Bukkit.$javaClass.getOfflinePlayer(...args);
 	}
@@ -309,8 +314,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getOperators(...args);
 	}
 
-	public static getPlayer(_name: string): Player;
 	public static getPlayer(id: string): Player;
+	public static getPlayer(_name: string): Player;
 	public static getPlayer(...args: any[]): any {
 		return Bukkit.$javaClass.getPlayer(...args);
 	}
@@ -496,8 +501,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.isPrimaryThread(...args);
 	}
 
-	public static loadServerIcon(file: File): CachedServerIcon;
 	public static loadServerIcon(image: any): CachedServerIcon;
+	public static loadServerIcon(file: File): CachedServerIcon;
 	public static loadServerIcon(...args: any[]): any {
 		return Bukkit.$javaClass.loadServerIcon(...args);
 	}

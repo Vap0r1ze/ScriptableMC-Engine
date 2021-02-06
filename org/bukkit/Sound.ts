@@ -1,9 +1,12 @@
 declare var Java: any;
+import Keyed from './Keyed.js'
+import NamespacedKey from './NamespacedKey.js'
 
-export default interface Sound {
+export default interface Sound extends Keyed {
 	compareTo(arg0: any): number;
 	compareTo(arg0: any): number;
 	getDeclaringClass(): any;
+	getKey(): NamespacedKey;
 	name(): string;
 	ordinal(): number;
 }
@@ -1891,6 +1894,9 @@ export default class Sound {
 	public static get ENTITY_PARROT_IMITATE_PIGLIN(): Sound {
 		return this.$javaClass.ENTITY_PARROT_IMITATE_PIGLIN;
 	}
+	public static get ENTITY_PARROT_IMITATE_PIGLIN_BRUTE(): Sound {
+		return this.$javaClass.ENTITY_PARROT_IMITATE_PIGLIN_BRUTE;
+	}
 	public static get ENTITY_PARROT_IMITATE_PILLAGER(): Sound {
 		return this.$javaClass.ENTITY_PARROT_IMITATE_PILLAGER;
 	}
@@ -1968,6 +1974,24 @@ export default class Sound {
 	}
 	public static get ENTITY_PIGLIN_ANGRY(): Sound {
 		return this.$javaClass.ENTITY_PIGLIN_ANGRY;
+	}
+	public static get ENTITY_PIGLIN_BRUTE_AMBIENT(): Sound {
+		return this.$javaClass.ENTITY_PIGLIN_BRUTE_AMBIENT;
+	}
+	public static get ENTITY_PIGLIN_BRUTE_ANGRY(): Sound {
+		return this.$javaClass.ENTITY_PIGLIN_BRUTE_ANGRY;
+	}
+	public static get ENTITY_PIGLIN_BRUTE_CONVERTED_TO_ZOMBIFIED(): Sound {
+		return this.$javaClass.ENTITY_PIGLIN_BRUTE_CONVERTED_TO_ZOMBIFIED;
+	}
+	public static get ENTITY_PIGLIN_BRUTE_DEATH(): Sound {
+		return this.$javaClass.ENTITY_PIGLIN_BRUTE_DEATH;
+	}
+	public static get ENTITY_PIGLIN_BRUTE_HURT(): Sound {
+		return this.$javaClass.ENTITY_PIGLIN_BRUTE_HURT;
+	}
+	public static get ENTITY_PIGLIN_BRUTE_STEP(): Sound {
+		return this.$javaClass.ENTITY_PIGLIN_BRUTE_STEP;
 	}
 	public static get ENTITY_PIGLIN_CELEBRATE(): Sound {
 		return this.$javaClass.ENTITY_PIGLIN_CELEBRATE;

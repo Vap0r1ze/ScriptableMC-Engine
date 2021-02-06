@@ -8,21 +8,21 @@ import MemoryConfigurationOptions from '../../../../org/bukkit/configuration/Mem
 import YamlConfiguration from './YamlConfiguration.js'
 
 export default interface YamlConfigurationOptions extends FileConfigurationOptions {
-	configuration(): FileConfiguration;
-	configuration(): MemoryConfiguration;
 	configuration(): YamlConfiguration;
 	configuration(): Configuration;
+	configuration(): MemoryConfiguration;
+	configuration(): FileConfiguration;
 	copyDefaults(): boolean;
+	copyDefaults(value: boolean): FileConfigurationOptions;
 	copyDefaults(value: boolean): MemoryConfigurationOptions;
 	copyDefaults(value: boolean): ConfigurationOptions;
-	copyDefaults(value: boolean): FileConfigurationOptions;
 	copyDefaults(value: boolean): YamlConfigurationOptions;
 	copyHeader(): boolean;
-	copyHeader(value: boolean): FileConfigurationOptions;
 	copyHeader(value: boolean): YamlConfigurationOptions;
+	copyHeader(value: boolean): FileConfigurationOptions;
 	header(): string;
-	header(value: string): FileConfigurationOptions;
 	header(value: string): YamlConfigurationOptions;
+	header(value: string): FileConfigurationOptions;
 	indent(): number;
 	indent(value: number): YamlConfigurationOptions;
 	pathSeparator(): string;

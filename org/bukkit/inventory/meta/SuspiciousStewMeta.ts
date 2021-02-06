@@ -17,12 +17,12 @@ export default interface SuspiciousStewMeta extends ItemMeta {
 	addEnchant(arg0: Enchantment, arg1: number, arg2: boolean): boolean;
 	addItemFlags(arg0: Array<ItemFlag>): void;
 	clearCustomEffects(): boolean;
-	clone(): SuspiciousStewMeta;
-	clone(): ItemMeta;
 	clone(): any;
+	clone(): ItemMeta;
+	clone(): SuspiciousStewMeta;
 	getAttributeModifiers(): Multimap;
-	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
 	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
+	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
 	getCustomEffects(): Array<PotionEffect>;
 	getCustomModelData(): number;
 	getCustomTagContainer(): CustomItemTagContainer;

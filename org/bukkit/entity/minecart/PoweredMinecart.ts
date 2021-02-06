@@ -44,6 +44,7 @@ export default interface PoweredMinecart extends Minecart {
 	getFallDistance(): number;
 	getFireTicks(): number;
 	getFlyingVelocityMod(): Vector;
+	getFuel(): number;
 	getHeight(): number;
 	getLastDamageCause(): EntityDamageEvent;
 	getLocation(): Location;
@@ -70,12 +71,13 @@ export default interface PoweredMinecart extends Minecart {
 	getWorld(): World;
 	hasGravity(): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	isCustomNameVisible(): boolean;
 	isDead(): boolean;
 	isEmpty(): boolean;
 	isGlowing(): boolean;
+	isInWater(): boolean;
 	isInsideVehicle(): boolean;
 	isInvulnerable(): boolean;
 	isOnGround(): boolean;
@@ -96,6 +98,8 @@ export default interface PoweredMinecart extends Minecart {
 	removeScoreboardTag(arg0: string): boolean;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	setCustomName(arg0: string): void;
 	setCustomNameVisible(arg0: boolean): void;
 	setDamage(arg0: number): void;
@@ -106,6 +110,7 @@ export default interface PoweredMinecart extends Minecart {
 	setFallDistance(arg0: number): void;
 	setFireTicks(arg0: number): void;
 	setFlyingVelocityMod(arg0: Vector): void;
+	setFuel(arg0: number): void;
 	setGlowing(arg0: boolean): void;
 	setGravity(arg0: boolean): void;
 	setInvulnerable(arg0: boolean): void;
@@ -121,10 +126,10 @@ export default interface PoweredMinecart extends Minecart {
 	setSlowWhenEmpty(arg0: boolean): void;
 	setTicksLived(arg0: number): void;
 	setVelocity(arg0: Vector): void;
-	spigot(): Entity$Spigot;
 	spigot(): CommandSender$Spigot;
-	teleport(arg0: Entity): boolean;
+	spigot(): Entity$Spigot;
 	teleport(arg0: Location): boolean;
+	teleport(arg0: Entity): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }

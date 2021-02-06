@@ -16,8 +16,8 @@ export default interface BlockCommandSender extends CommandSender {
 	getEffectivePermissions(): any;
 	getName(): string;
 	getServer(): Server;
-	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
+	hasPermission(arg0: Permission): boolean;
 	isOp(): boolean;
 	isPermissionSet(arg0: string): boolean;
 	isPermissionSet(arg0: Permission): boolean;
@@ -25,6 +25,8 @@ export default interface BlockCommandSender extends CommandSender {
 	removeAttachment(arg0: PermissionAttachment): void;
 	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: string, arg1: Array<string>): void;
+	sendMessage(arg0: string, arg1: string): void;
 	setOp(arg0: boolean): void;
 	spigot(): CommandSender$Spigot;
 }

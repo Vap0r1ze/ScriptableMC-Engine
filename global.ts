@@ -18,6 +18,7 @@ import org_bukkit_inventory_AnvilInventory from './org/bukkit/inventory/AnvilInv
 import org_bukkit_entity_AreaEffectCloud from './org/bukkit/entity/AreaEffectCloud.js'
 import org_bukkit_event_entity_AreaEffectCloudApplyEvent from './org/bukkit/event/entity/AreaEffectCloudApplyEvent.js'
 import org_bukkit_entity_ArmorStand from './org/bukkit/entity/ArmorStand.js'
+import org_bukkit_entity_ArmorStand$LockType from './org/bukkit/entity/ArmorStand$LockType.js'
 import org_bukkit_entity_Arrow from './org/bukkit/entity/Arrow.js'
 import org_bukkit_Art from './org/bukkit/Art.js'
 import org_bukkit_event_player_AsyncPlayerChatEvent from './org/bukkit/event/player/AsyncPlayerChatEvent.js'
@@ -120,6 +121,7 @@ import org_bukkit_conversations_BooleanPrompt from './org/bukkit/conversations/B
 import org_bukkit_entity_Boss from './org/bukkit/entity/Boss.js'
 import org_bukkit_boss_BossBar from './org/bukkit/boss/BossBar.js'
 import org_bukkit_util_BoundingBox from './org/bukkit/util/BoundingBox.js'
+import org_bukkit_entity_Breedable from './org/bukkit/entity/Breedable.js'
 import org_bukkit_event_inventory_BrewEvent from './org/bukkit/event/inventory/BrewEvent.js'
 import org_bukkit_inventory_BrewerInventory from './org/bukkit/inventory/BrewerInventory.js'
 import org_bukkit_block_BrewingStand from './org/bukkit/block/BrewingStand.js'
@@ -339,6 +341,7 @@ import org_bukkit_event_block_EntityBlockFormEvent from './org/bukkit/event/bloc
 import org_bukkit_block_EntityBlockStorage from './org/bukkit/block/EntityBlockStorage.js'
 import org_bukkit_event_entity_EntityBreakDoorEvent from './org/bukkit/event/entity/EntityBreakDoorEvent.js'
 import org_bukkit_event_entity_EntityBreedEvent from './org/bukkit/event/entity/EntityBreedEvent.js'
+import org_bukkit_entity_EntityCategory from './org/bukkit/entity/EntityCategory.js'
 import org_bukkit_event_entity_EntityChangeBlockEvent from './org/bukkit/event/entity/EntityChangeBlockEvent.js'
 import org_bukkit_event_entity_EntityCombustByBlockEvent from './org/bukkit/event/entity/EntityCombustByBlockEvent.js'
 import org_bukkit_event_entity_EntityCombustByEntityEvent from './org/bukkit/event/entity/EntityCombustByEntityEvent.js'
@@ -439,6 +442,7 @@ import org_bukkit_event_entity_FireworkExplodeEvent from './org/bukkit/event/ent
 import org_bukkit_inventory_meta_FireworkMeta from './org/bukkit/inventory/meta/FireworkMeta.js'
 import org_bukkit_entity_Fish from './org/bukkit/entity/Fish.js'
 import org_bukkit_entity_FishHook from './org/bukkit/entity/FishHook.js'
+import org_bukkit_entity_FishHook$HookState from './org/bukkit/entity/FishHook$HookState.js'
 import org_bukkit_metadata_FixedMetadataValue from './org/bukkit/metadata/FixedMetadataValue.js'
 import org_bukkit_conversations_FixedSetPrompt from './org/bukkit/conversations/FixedSetPrompt.js'
 import java_nio_FloatBuffer from './java/nio/FloatBuffer.js'
@@ -1000,6 +1004,7 @@ import org_bukkit_entity_Snowball from './org/bukkit/entity/Snowball.js'
 import org_bukkit_entity_Snowman from './org/bukkit/entity/Snowman.js'
 import org_bukkit_Sound from './org/bukkit/Sound.js'
 import org_bukkit_SoundCategory from './org/bukkit/SoundCategory.js'
+import org_bukkit_SoundGroup from './org/bukkit/SoundGroup.js'
 import org_bukkit_event_world_SpawnChangeEvent from './org/bukkit/event/world/SpawnChangeEvent.js'
 import org_bukkit_material_SpawnEgg from './org/bukkit/material/SpawnEgg.js'
 import org_bukkit_inventory_meta_SpawnEggMeta from './org/bukkit/inventory/meta/SpawnEggMeta.js'
@@ -1170,12 +1175,14 @@ export namespace org.bukkit.entity {
 	export const Animals = org_bukkit_entity_Animals;
 	export const AreaEffectCloud = org_bukkit_entity_AreaEffectCloud;
 	export const ArmorStand = org_bukkit_entity_ArmorStand;
+	export const ArmorStand$LockType = org_bukkit_entity_ArmorStand$LockType;
 	export const Arrow = org_bukkit_entity_Arrow;
 	export const Bat = org_bukkit_entity_Bat;
 	export const Bee = org_bukkit_entity_Bee;
 	export const Blaze = org_bukkit_entity_Blaze;
 	export const Boat = org_bukkit_entity_Boat;
 	export const Boss = org_bukkit_entity_Boss;
+	export const Breedable = org_bukkit_entity_Breedable;
 	export const Cat = org_bukkit_entity_Cat;
 	export const Cat$Type = org_bukkit_entity_Cat$Type;
 	export const CaveSpider = org_bukkit_entity_CaveSpider;
@@ -1204,6 +1211,7 @@ export namespace org.bukkit.entity {
 	export const Endermite = org_bukkit_entity_Endermite;
 	export const Entity = org_bukkit_entity_Entity;
 	export const Entity$Spigot = org_bukkit_entity_Entity$Spigot;
+	export const EntityCategory = org_bukkit_entity_EntityCategory;
 	export const EntityType = org_bukkit_entity_EntityType;
 	export const Evoker = org_bukkit_entity_Evoker;
 	export const Evoker$Spell = org_bukkit_entity_Evoker$Spell;
@@ -1215,6 +1223,7 @@ export namespace org.bukkit.entity {
 	export const Firework = org_bukkit_entity_Firework;
 	export const Fish = org_bukkit_entity_Fish;
 	export const FishHook = org_bukkit_entity_FishHook;
+	export const FishHook$HookState = org_bukkit_entity_FishHook$HookState;
 	export const Flying = org_bukkit_entity_Flying;
 	export const Fox = org_bukkit_entity_Fox;
 	export const Fox$Type = org_bukkit_entity_Fox$Type;
@@ -1576,6 +1585,7 @@ export namespace org.bukkit {
 	export const SkullType = org_bukkit_SkullType;
 	export const Sound = org_bukkit_Sound;
 	export const SoundCategory = org_bukkit_SoundCategory;
+	export const SoundGroup = org_bukkit_SoundGroup;
 	export const Statistic = org_bukkit_Statistic;
 	export const Statistic$Type = org_bukkit_Statistic$Type;
 	export const StructureType = org_bukkit_StructureType;

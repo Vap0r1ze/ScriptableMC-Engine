@@ -4,6 +4,8 @@ import BaseComponent from '../../../net/md_5/bungee/api/chat/BaseComponent.js'
 export default interface CommandSender$Spigot {
 	sendMessage(component: BaseComponent): void;
 	sendMessage(components: Array<BaseComponent>): void;
+	sendMessage(sender: string, component: BaseComponent): void;
+	sendMessage(sender: string, components: Array<BaseComponent>): void;
 }
 
 export default class CommandSender$Spigot {
