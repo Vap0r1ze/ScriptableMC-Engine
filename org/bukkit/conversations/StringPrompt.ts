@@ -12,6 +12,9 @@ export default class StringPrompt {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.StringPrompt');
 	}
+	public static $isInstance(obj: any): obj is StringPrompt {
+		return obj instanceof StringPrompt.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

@@ -4,6 +4,9 @@ export default class Criterias {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.Criterias');
 	}
+	public static $isInstance(obj: any): obj is Criterias {
+		return obj instanceof Criterias.$javaClass;
+	}
 
 	public static get DEATHS(): string {
 		return Criterias.$javaClass.DEATHS;

@@ -21,6 +21,9 @@ export default class PlayerCommandPreprocessEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerCommandPreprocessEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerCommandPreprocessEvent {
+		return obj instanceof PlayerCommandPreprocessEvent.$javaClass;
+	}
 
 	constructor(player: Player, message: string);
 	constructor(player: Player, message: string, recipients: any);

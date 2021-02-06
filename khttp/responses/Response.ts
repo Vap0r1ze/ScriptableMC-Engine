@@ -27,6 +27,9 @@ export default class Response {
 	public static get $javaClass(): any {
 		return Java.type('khttp.responses.Response');
 	}
+	public static $isInstance(obj: any): obj is Response {
+		return obj instanceof Response.$javaClass;
+	}
 
 }
 

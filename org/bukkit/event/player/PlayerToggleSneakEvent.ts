@@ -18,6 +18,9 @@ export default class PlayerToggleSneakEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerToggleSneakEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerToggleSneakEvent {
+		return obj instanceof PlayerToggleSneakEvent.$javaClass;
+	}
 
 	constructor(player: Player, isSneaking: boolean);
 	constructor(...args: any[]) {

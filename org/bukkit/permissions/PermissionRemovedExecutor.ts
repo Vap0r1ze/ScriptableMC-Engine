@@ -9,6 +9,9 @@ export default class PermissionRemovedExecutor {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.permissions.PermissionRemovedExecutor');
 	}
+	public static $isInstance(obj: any): obj is PermissionRemovedExecutor {
+		return obj instanceof PermissionRemovedExecutor.$javaClass;
+	}
 
 }
 

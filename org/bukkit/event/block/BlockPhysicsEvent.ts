@@ -21,6 +21,9 @@ export default class BlockPhysicsEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockPhysicsEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockPhysicsEvent {
+		return obj instanceof BlockPhysicsEvent.$javaClass;
+	}
 
 	constructor(block: Block, changed: BlockData);
 	constructor(block: Block, changed: BlockData, sourceBlock: Block);

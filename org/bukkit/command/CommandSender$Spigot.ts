@@ -12,6 +12,9 @@ export default class CommandSender$Spigot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.CommandSender$Spigot');
 	}
+	public static $isInstance(obj: any): obj is CommandSender$Spigot {
+		return obj instanceof CommandSender$Spigot.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

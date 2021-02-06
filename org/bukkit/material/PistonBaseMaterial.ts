@@ -26,6 +26,9 @@ export default class PistonBaseMaterial {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.PistonBaseMaterial');
 	}
+	public static $isInstance(obj: any): obj is PistonBaseMaterial {
+		return obj instanceof PistonBaseMaterial.$javaClass;
+	}
 
 	constructor(type: Material);
 	constructor(type: Material, data: number);

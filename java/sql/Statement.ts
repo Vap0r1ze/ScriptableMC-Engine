@@ -63,6 +63,9 @@ export default class Statement {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Statement');
 	}
+	public static $isInstance(obj: any): obj is Statement {
+		return obj instanceof Statement.$javaClass;
+	}
 
 	public static get CLOSE_ALL_RESULTS(): number {
 		return Statement.$javaClass.CLOSE_ALL_RESULTS;

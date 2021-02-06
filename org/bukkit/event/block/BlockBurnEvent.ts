@@ -18,6 +18,9 @@ export default class BlockBurnEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockBurnEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockBurnEvent {
+		return obj instanceof BlockBurnEvent.$javaClass;
+	}
 
 	constructor(block: Block);
 	constructor(block: Block, ignitingBlock: Block);

@@ -117,6 +117,9 @@ export default class Vehicle {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Vehicle');
 	}
+	public static $isInstance(obj: any): obj is Vehicle {
+		return obj instanceof Vehicle.$javaClass;
+	}
 
 }
 

@@ -13,6 +13,9 @@ export default class Server$Spigot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Server$Spigot');
 	}
+	public static $isInstance(obj: any): obj is Server$Spigot {
+		return obj instanceof Server$Spigot.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

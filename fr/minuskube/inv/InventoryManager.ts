@@ -18,6 +18,9 @@ export default class InventoryManager {
 	public static get $javaClass(): any {
 		return Java.type('fr.minuskube.inv.InventoryManager');
 	}
+	public static $isInstance(obj: any): obj is InventoryManager {
+		return obj instanceof InventoryManager.$javaClass;
+	}
 
 	constructor(plugin: JavaPlugin);
 	constructor(...args: any[]) {

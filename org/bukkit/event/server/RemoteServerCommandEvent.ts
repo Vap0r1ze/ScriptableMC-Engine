@@ -18,6 +18,9 @@ export default class RemoteServerCommandEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.RemoteServerCommandEvent');
 	}
+	public static $isInstance(obj: any): obj is RemoteServerCommandEvent {
+		return obj instanceof RemoteServerCommandEvent.$javaClass;
+	}
 
 	constructor(sender: CommandSender, command: string);
 	constructor(...args: any[]) {

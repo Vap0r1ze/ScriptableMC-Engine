@@ -12,6 +12,9 @@ export default class ServerEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.ServerEvent');
 	}
+	public static $isInstance(obj: any): obj is ServerEvent {
+		return obj instanceof ServerEvent.$javaClass;
+	}
 
 	constructor();
 	constructor(isAsync: boolean);

@@ -23,6 +23,9 @@ export default class PlayerItemMendEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerItemMendEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerItemMendEvent {
+		return obj instanceof PlayerItemMendEvent.$javaClass;
+	}
 
 	constructor(who: Player, item: ItemStack, experienceOrb: ExperienceOrb, repairAmount: number);
 	constructor(...args: any[]) {

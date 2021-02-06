@@ -21,6 +21,9 @@ export default class AuthorNagException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.AuthorNagException');
 	}
+	public static $isInstance(obj: any): obj is AuthorNagException {
+		return obj instanceof AuthorNagException.$javaClass;
+	}
 
 	constructor(message: string);
 	constructor(...args: any[]) {

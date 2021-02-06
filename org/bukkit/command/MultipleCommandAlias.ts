@@ -34,6 +34,9 @@ export default class MultipleCommandAlias {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.MultipleCommandAlias');
 	}
+	public static $isInstance(obj: any): obj is MultipleCommandAlias {
+		return obj instanceof MultipleCommandAlias.$javaClass;
+	}
 
 	constructor(_name: string, commands: Array<Command>);
 	constructor(...args: any[]) {

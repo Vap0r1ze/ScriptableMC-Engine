@@ -44,6 +44,9 @@ export default class Conduit {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Conduit');
 	}
+	public static $isInstance(obj: any): obj is Conduit {
+		return obj instanceof Conduit.$javaClass;
+	}
 
 }
 

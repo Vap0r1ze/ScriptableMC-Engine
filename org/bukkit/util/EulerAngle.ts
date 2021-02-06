@@ -15,6 +15,9 @@ export default class EulerAngle {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.EulerAngle');
 	}
+	public static $isInstance(obj: any): obj is EulerAngle {
+		return obj instanceof EulerAngle.$javaClass;
+	}
 
 	constructor(x: number, y: number, z: number);
 	constructor(...args: any[]) {

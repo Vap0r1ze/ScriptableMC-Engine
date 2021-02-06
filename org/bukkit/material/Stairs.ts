@@ -26,6 +26,9 @@ export default class Stairs {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Stairs');
 	}
+	public static $isInstance(obj: any): obj is Stairs {
+		return obj instanceof Stairs.$javaClass;
+	}
 
 	constructor(type: Material);
 	constructor(type: Material, data: number);

@@ -29,6 +29,9 @@ export default class GenericResponse {
 	public static get $javaClass(): any {
 		return Java.type('khttp.responses.GenericResponse');
 	}
+	public static $isInstance(obj: any): obj is GenericResponse {
+		return obj instanceof GenericResponse.$javaClass;
+	}
 
 	constructor(request: Request);
 	constructor(...args: any[]) {

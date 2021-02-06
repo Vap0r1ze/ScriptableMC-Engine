@@ -24,6 +24,9 @@ export default class WorldBorder {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.WorldBorder');
 	}
+	public static $isInstance(obj: any): obj is WorldBorder {
+		return obj instanceof WorldBorder.$javaClass;
+	}
 
 }
 

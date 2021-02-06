@@ -26,6 +26,9 @@ export default class VillagerCareerChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.VillagerCareerChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is VillagerCareerChangeEvent {
+		return obj instanceof VillagerCareerChangeEvent.$javaClass;
+	}
 
 	constructor(what: Villager, profession: Villager$Profession, reason: VillagerCareerChangeEvent$ChangeReason);
 	constructor(...args: any[]) {

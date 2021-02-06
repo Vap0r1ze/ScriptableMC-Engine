@@ -153,6 +153,9 @@ export default class TippedArrow {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.TippedArrow');
 	}
+	public static $isInstance(obj: any): obj is TippedArrow {
+		return obj instanceof TippedArrow.$javaClass;
+	}
 
 }
 

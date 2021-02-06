@@ -57,6 +57,9 @@ export default class FurnaceInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.FurnaceInventory');
 	}
+	public static $isInstance(obj: any): obj is FurnaceInventory {
+		return obj instanceof FurnaceInventory.$javaClass;
+	}
 
 }
 

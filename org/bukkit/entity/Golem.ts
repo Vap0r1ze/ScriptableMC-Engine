@@ -212,6 +212,9 @@ export default class Golem {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Golem');
 	}
+	public static $isInstance(obj: any): obj is Golem {
+		return obj instanceof Golem.$javaClass;
+	}
 
 }
 

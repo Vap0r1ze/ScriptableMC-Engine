@@ -16,6 +16,9 @@ export default class HoverEvent {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.HoverEvent');
 	}
+	public static $isInstance(obj: any): obj is HoverEvent {
+		return obj instanceof HoverEvent.$javaClass;
+	}
 
 	constructor(action: HoverEvent$Action, value: Array<BaseComponent>);
 	constructor(action: HoverEvent$Action, contents: Array<any>);

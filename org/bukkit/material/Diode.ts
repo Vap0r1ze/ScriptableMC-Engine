@@ -26,6 +26,9 @@ export default class Diode {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Diode');
 	}
+	public static $isInstance(obj: any): obj is Diode {
+		return obj instanceof Diode.$javaClass;
+	}
 
 	constructor();
 	constructor(facingDirection: BlockFace);

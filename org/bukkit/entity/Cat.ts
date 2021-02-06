@@ -240,6 +240,9 @@ export default class Cat {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Cat');
 	}
+	public static $isInstance(obj: any): obj is Cat {
+		return obj instanceof Cat.$javaClass;
+	}
 
 }
 

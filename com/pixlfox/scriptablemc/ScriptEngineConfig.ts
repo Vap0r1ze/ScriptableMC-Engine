@@ -23,6 +23,9 @@ export default class ScriptEngineConfig {
 	public static get $javaClass(): any {
 		return Java.type('com.pixlfox.scriptablemc.ScriptEngineConfig');
 	}
+	public static $isInstance(obj: any): obj is ScriptEngineConfig {
+		return obj instanceof ScriptEngineConfig.$javaClass;
+	}
 
 	constructor(config: FileConfiguration);
 	constructor(...args: any[]) {

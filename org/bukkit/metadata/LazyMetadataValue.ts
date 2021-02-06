@@ -21,6 +21,9 @@ export default class LazyMetadataValue {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.metadata.LazyMetadataValue');
 	}
+	public static $isInstance(obj: any): obj is LazyMetadataValue {
+		return obj instanceof LazyMetadataValue.$javaClass;
+	}
 
 	constructor(owningPlugin: Plugin, lazyValue: any);
 	constructor(owningPlugin: Plugin, cacheStrategy: LazyMetadataValue$CacheStrategy, lazyValue: any);

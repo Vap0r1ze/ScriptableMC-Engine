@@ -53,6 +53,9 @@ export default class LlamaInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.LlamaInventory');
 	}
+	public static $isInstance(obj: any): obj is LlamaInventory {
+		return obj instanceof LlamaInventory.$javaClass;
+	}
 
 }
 

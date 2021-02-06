@@ -232,6 +232,9 @@ export default class WanderingTrader {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.WanderingTrader');
 	}
+	public static $isInstance(obj: any): obj is WanderingTrader {
+		return obj instanceof WanderingTrader.$javaClass;
+	}
 
 }
 

@@ -22,6 +22,9 @@ export default class Writer {
 	public static get $javaClass(): any {
 		return Java.type('java.io.Writer');
 	}
+	public static $isInstance(obj: any): obj is Writer {
+		return obj instanceof Writer.$javaClass;
+	}
 
 }
 

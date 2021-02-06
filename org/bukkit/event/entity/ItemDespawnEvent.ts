@@ -23,6 +23,9 @@ export default class ItemDespawnEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.ItemDespawnEvent');
 	}
+	public static $isInstance(obj: any): obj is ItemDespawnEvent {
+		return obj instanceof ItemDespawnEvent.$javaClass;
+	}
 
 	constructor(despawnee: Item, loc: Location);
 	constructor(...args: any[]) {

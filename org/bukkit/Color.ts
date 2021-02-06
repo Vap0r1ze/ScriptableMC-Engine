@@ -20,6 +20,9 @@ export default class Color {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Color');
 	}
+	public static $isInstance(obj: any): obj is Color {
+		return obj instanceof Color.$javaClass;
+	}
 
 	public static get AQUA(): Color {
 		return Color.$javaClass.AQUA;

@@ -13,6 +13,9 @@ export default class ByteStreams {
 	public static get $javaClass(): any {
 		return Java.type('com.google.common.io.ByteStreams');
 	}
+	public static $isInstance(obj: any): obj is ByteStreams {
+		return obj instanceof ByteStreams.$javaClass;
+	}
 
 	public static copy(from: InputStream, to: OutputStream): number;
 	public static copy(from: ReadableByteChannel, to: WritableByteChannel): number;

@@ -20,6 +20,9 @@ export default class Attachable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Attachable');
 	}
+	public static $isInstance(obj: any): obj is Attachable {
+		return obj instanceof Attachable.$javaClass;
+	}
 
 }
 

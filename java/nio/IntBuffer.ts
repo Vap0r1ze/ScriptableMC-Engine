@@ -43,6 +43,9 @@ export default class IntBuffer {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.IntBuffer');
 	}
+	public static $isInstance(obj: any): obj is IntBuffer {
+		return obj instanceof IntBuffer.$javaClass;
+	}
 
 	public static allocate(arg0: number): IntBuffer;
 	public static allocate(...args: any[]): any {

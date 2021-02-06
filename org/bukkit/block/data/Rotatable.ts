@@ -21,6 +21,9 @@ export default class Rotatable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Rotatable');
 	}
+	public static $isInstance(obj: any): obj is Rotatable {
+		return obj instanceof Rotatable.$javaClass;
+	}
 
 }
 

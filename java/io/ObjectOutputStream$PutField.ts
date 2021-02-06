@@ -18,6 +18,9 @@ export default class ObjectOutputStream$PutField {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ObjectOutputStream$PutField');
 	}
+	public static $isInstance(obj: any): obj is ObjectOutputStream$PutField {
+		return obj instanceof ObjectOutputStream$PutField.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

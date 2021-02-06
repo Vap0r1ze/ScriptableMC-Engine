@@ -231,6 +231,9 @@ export default class Panda {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Panda');
 	}
+	public static $isInstance(obj: any): obj is Panda {
+		return obj instanceof Panda.$javaClass;
+	}
 
 }
 

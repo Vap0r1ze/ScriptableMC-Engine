@@ -15,6 +15,9 @@ export default class ObjectStreamField {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ObjectStreamField');
 	}
+	public static $isInstance(obj: any): obj is ObjectStreamField {
+		return obj instanceof ObjectStreamField.$javaClass;
+	}
 
 	constructor(arg0: string, arg1: any);
 	constructor(arg0: string, arg1: any, arg2: boolean);

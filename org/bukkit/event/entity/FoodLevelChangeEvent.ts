@@ -25,6 +25,9 @@ export default class FoodLevelChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.FoodLevelChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is FoodLevelChangeEvent {
+		return obj instanceof FoodLevelChangeEvent.$javaClass;
+	}
 
 	constructor(what: HumanEntity, level: number);
 	constructor(what: HumanEntity, level: number, item: ItemStack);

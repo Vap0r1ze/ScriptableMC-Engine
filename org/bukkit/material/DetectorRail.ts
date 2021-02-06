@@ -30,6 +30,9 @@ export default class DetectorRail {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.DetectorRail');
 	}
+	public static $isInstance(obj: any): obj is DetectorRail {
+		return obj instanceof DetectorRail.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

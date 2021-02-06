@@ -221,6 +221,9 @@ export default class Illusioner {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Illusioner');
 	}
+	public static $isInstance(obj: any): obj is Illusioner {
+		return obj instanceof Illusioner.$javaClass;
+	}
 
 }
 

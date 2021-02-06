@@ -31,6 +31,9 @@ export default class EntityShootBowEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityShootBowEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityShootBowEvent {
+		return obj instanceof EntityShootBowEvent.$javaClass;
+	}
 
 	constructor(shooter: LivingEntity, bow: ItemStack, consumable: ItemStack, projectile: Entity, hand: EquipmentSlot, force: number, consumeItem: boolean);
 	constructor(...args: any[]) {

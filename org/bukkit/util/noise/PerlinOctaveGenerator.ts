@@ -24,6 +24,9 @@ export default class PerlinOctaveGenerator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.noise.PerlinOctaveGenerator');
 	}
+	public static $isInstance(obj: any): obj is PerlinOctaveGenerator {
+		return obj instanceof PerlinOctaveGenerator.$javaClass;
+	}
 
 	constructor(world: World, octaves: number);
 	constructor(rand: any, octaves: number);

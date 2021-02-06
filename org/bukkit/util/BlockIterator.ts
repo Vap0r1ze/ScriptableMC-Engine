@@ -17,6 +17,9 @@ export default class BlockIterator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.BlockIterator');
 	}
+	public static $isInstance(obj: any): obj is BlockIterator {
+		return obj instanceof BlockIterator.$javaClass;
+	}
 
 	constructor(loc: Location);
 	constructor(entity: LivingEntity);

@@ -9,6 +9,9 @@ export default class ConfigurationSerialization {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.serialization.ConfigurationSerialization');
 	}
+	public static $isInstance(obj: any): obj is ConfigurationSerialization {
+		return obj instanceof ConfigurationSerialization.$javaClass;
+	}
 
 	public static get SERIALIZED_TYPE_KEY(): string {
 		return ConfigurationSerialization.$javaClass.SERIALIZED_TYPE_KEY;

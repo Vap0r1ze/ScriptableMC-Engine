@@ -18,6 +18,9 @@ export default class PerlinNoiseGenerator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.noise.PerlinNoiseGenerator');
 	}
+	public static $isInstance(obj: any): obj is PerlinNoiseGenerator {
+		return obj instanceof PerlinNoiseGenerator.$javaClass;
+	}
 
 	constructor(world: World);
 	constructor(rand: any);

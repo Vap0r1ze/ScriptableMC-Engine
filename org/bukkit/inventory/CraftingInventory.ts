@@ -55,6 +55,9 @@ export default class CraftingInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.CraftingInventory');
 	}
+	public static $isInstance(obj: any): obj is CraftingInventory {
+		return obj instanceof CraftingInventory.$javaClass;
+	}
 
 }
 

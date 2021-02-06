@@ -14,6 +14,9 @@ export default class Note {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Note');
 	}
+	public static $isInstance(obj: any): obj is Note {
+		return obj instanceof Note.$javaClass;
+	}
 
 	constructor(note: number);
 	constructor(octave: number, tone: Note$Tone, sharped: boolean);

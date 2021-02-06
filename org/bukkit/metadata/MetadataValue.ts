@@ -19,6 +19,9 @@ export default class MetadataValue {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.metadata.MetadataValue');
 	}
+	public static $isInstance(obj: any): obj is MetadataValue {
+		return obj instanceof MetadataValue.$javaClass;
+	}
 
 }
 

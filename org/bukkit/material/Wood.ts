@@ -21,6 +21,9 @@ export default class Wood {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Wood');
 	}
+	public static $isInstance(obj: any): obj is Wood {
+		return obj instanceof Wood.$javaClass;
+	}
 
 	constructor();
 	constructor(species: TreeSpecies);

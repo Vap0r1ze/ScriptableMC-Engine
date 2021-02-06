@@ -21,6 +21,9 @@ export default class StructureBlock {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.StructureBlock');
 	}
+	public static $isInstance(obj: any): obj is StructureBlock {
+		return obj instanceof StructureBlock.$javaClass;
+	}
 
 }
 

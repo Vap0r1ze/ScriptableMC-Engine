@@ -19,6 +19,9 @@ export default class PlayerGameModeChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerGameModeChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerGameModeChangeEvent {
+		return obj instanceof PlayerGameModeChangeEvent.$javaClass;
+	}
 
 	constructor(player: Player, newGameMode: GameMode);
 	constructor(...args: any[]) {

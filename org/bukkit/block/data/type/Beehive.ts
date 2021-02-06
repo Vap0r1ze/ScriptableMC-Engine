@@ -26,6 +26,9 @@ export default class Beehive {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Beehive');
 	}
+	public static $isInstance(obj: any): obj is Beehive {
+		return obj instanceof Beehive.$javaClass;
+	}
 
 }
 

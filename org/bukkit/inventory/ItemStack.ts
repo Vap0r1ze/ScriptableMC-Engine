@@ -36,6 +36,9 @@ export default class ItemStack {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.ItemStack');
 	}
+	public static $isInstance(obj: any): obj is ItemStack {
+		return obj instanceof ItemStack.$javaClass;
+	}
 
 	constructor(type: Material);
 	constructor(stack: ItemStack);

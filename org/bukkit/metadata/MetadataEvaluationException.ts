@@ -21,6 +21,9 @@ export default class MetadataEvaluationException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.metadata.MetadataEvaluationException');
 	}
+	public static $isInstance(obj: any): obj is MetadataEvaluationException {
+		return obj instanceof MetadataEvaluationException.$javaClass;
+	}
 
 }
 

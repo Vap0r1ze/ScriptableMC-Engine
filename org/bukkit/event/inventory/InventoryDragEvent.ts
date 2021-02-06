@@ -33,6 +33,9 @@ export default class InventoryDragEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.InventoryDragEvent');
 	}
+	public static $isInstance(obj: any): obj is InventoryDragEvent {
+		return obj instanceof InventoryDragEvent.$javaClass;
+	}
 
 	constructor(what: InventoryView, newCursor: ItemStack, oldCursor: ItemStack, right: boolean, slots: any);
 	constructor(...args: any[]) {

@@ -19,6 +19,9 @@ export default class PlayerAnimationEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerAnimationEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerAnimationEvent {
+		return obj instanceof PlayerAnimationEvent.$javaClass;
+	}
 
 	constructor(player: Player);
 	constructor(...args: any[]) {

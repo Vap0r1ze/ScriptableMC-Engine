@@ -141,6 +141,9 @@ export default class SpectralArrow {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.SpectralArrow');
 	}
+	public static $isInstance(obj: any): obj is SpectralArrow {
+		return obj instanceof SpectralArrow.$javaClass;
+	}
 
 }
 

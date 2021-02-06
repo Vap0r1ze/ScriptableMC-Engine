@@ -27,6 +27,9 @@ export default class Comparator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Comparator');
 	}
+	public static $isInstance(obj: any): obj is Comparator {
+		return obj instanceof Comparator.$javaClass;
+	}
 
 	constructor();
 	constructor(facingDirection: BlockFace);

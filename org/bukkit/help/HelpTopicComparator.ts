@@ -18,6 +18,9 @@ export default class HelpTopicComparator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.help.HelpTopicComparator');
 	}
+	public static $isInstance(obj: any): obj is HelpTopicComparator {
+		return obj instanceof HelpTopicComparator.$javaClass;
+	}
 
 	public static helpTopicComparatorInstance(): HelpTopicComparator;
 	public static helpTopicComparatorInstance(...args: any[]): any {

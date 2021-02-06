@@ -29,6 +29,9 @@ export default class BlockPlaceEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockPlaceEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockPlaceEvent {
+		return obj instanceof BlockPlaceEvent.$javaClass;
+	}
 
 	constructor(placedBlock: Block, replacedBlockState: BlockState, placedAgainst: Block, itemInHand: ItemStack, thePlayer: Player, canBuild: boolean);
 	constructor(placedBlock: Block, replacedBlockState: BlockState, placedAgainst: Block, itemInHand: ItemStack, thePlayer: Player, canBuild: boolean, hand: EquipmentSlot);

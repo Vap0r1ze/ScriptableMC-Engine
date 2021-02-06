@@ -10,6 +10,9 @@ export default class Directional {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Directional');
 	}
+	public static $isInstance(obj: any): obj is Directional {
+		return obj instanceof Directional.$javaClass;
+	}
 
 }
 

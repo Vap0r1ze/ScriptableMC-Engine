@@ -218,6 +218,9 @@ export default class Enderman {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Enderman');
 	}
+	public static $isInstance(obj: any): obj is Enderman {
+		return obj instanceof Enderman.$javaClass;
+	}
 
 }
 

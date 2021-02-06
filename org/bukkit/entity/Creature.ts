@@ -212,6 +212,9 @@ export default class Creature {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Creature');
 	}
+	public static $isInstance(obj: any): obj is Creature {
+		return obj instanceof Creature.$javaClass;
+	}
 
 }
 

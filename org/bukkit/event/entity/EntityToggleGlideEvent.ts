@@ -21,6 +21,9 @@ export default class EntityToggleGlideEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityToggleGlideEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityToggleGlideEvent {
+		return obj instanceof EntityToggleGlideEvent.$javaClass;
+	}
 
 	constructor(who: LivingEntity, isGliding: boolean);
 	constructor(...args: any[]) {

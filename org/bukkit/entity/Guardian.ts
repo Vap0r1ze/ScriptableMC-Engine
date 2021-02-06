@@ -214,6 +214,9 @@ export default class Guardian {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Guardian');
 	}
+	public static $isInstance(obj: any): obj is Guardian {
+		return obj instanceof Guardian.$javaClass;
+	}
 
 }
 

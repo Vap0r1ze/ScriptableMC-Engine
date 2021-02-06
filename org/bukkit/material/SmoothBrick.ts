@@ -23,6 +23,9 @@ export default class SmoothBrick {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.SmoothBrick');
 	}
+	public static $isInstance(obj: any): obj is SmoothBrick {
+		return obj instanceof SmoothBrick.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

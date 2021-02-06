@@ -212,6 +212,9 @@ export default class Ghast {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Ghast');
 	}
+	public static $isInstance(obj: any): obj is Ghast {
+		return obj instanceof Ghast.$javaClass;
+	}
 
 }
 

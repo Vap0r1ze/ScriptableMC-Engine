@@ -18,6 +18,9 @@ export default class ThunderChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.weather.ThunderChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is ThunderChangeEvent {
+		return obj instanceof ThunderChangeEvent.$javaClass;
+	}
 
 	constructor(world: World, to: boolean);
 	constructor(...args: any[]) {

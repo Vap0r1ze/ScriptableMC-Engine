@@ -12,6 +12,9 @@ export default class WritableByteChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.WritableByteChannel');
 	}
+	public static $isInstance(obj: any): obj is WritableByteChannel {
+		return obj instanceof WritableByteChannel.$javaClass;
+	}
 
 }
 

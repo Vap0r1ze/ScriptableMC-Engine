@@ -12,6 +12,9 @@ export default class ItemTagType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.tags.ItemTagType');
 	}
+	public static $isInstance(obj: any): obj is ItemTagType {
+		return obj instanceof ItemTagType.$javaClass;
+	}
 
 	public static get BYTE(): ItemTagType {
 		return ItemTagType.$javaClass.BYTE;

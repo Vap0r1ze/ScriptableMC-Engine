@@ -26,6 +26,9 @@ export default class StructureGrowEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.world.StructureGrowEvent');
 	}
+	public static $isInstance(obj: any): obj is StructureGrowEvent {
+		return obj instanceof StructureGrowEvent.$javaClass;
+	}
 
 	constructor(location: Location, species: TreeType, bonemeal: boolean, player: Player, blocks: Array<any>);
 	constructor(...args: any[]) {

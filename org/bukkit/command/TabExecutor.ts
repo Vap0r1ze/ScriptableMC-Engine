@@ -13,6 +13,9 @@ export default class TabExecutor {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.TabExecutor');
 	}
+	public static $isInstance(obj: any): obj is TabExecutor {
+		return obj instanceof TabExecutor.$javaClass;
+	}
 
 }
 

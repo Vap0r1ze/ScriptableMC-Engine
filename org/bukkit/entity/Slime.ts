@@ -214,6 +214,9 @@ export default class Slime {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Slime');
 	}
+	public static $isInstance(obj: any): obj is Slime {
+		return obj instanceof Slime.$javaClass;
+	}
 
 }
 

@@ -35,6 +35,9 @@ export default class TimingsCommand {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.defaults.TimingsCommand');
 	}
+	public static $isInstance(obj: any): obj is TimingsCommand {
+		return obj instanceof TimingsCommand.$javaClass;
+	}
 
 	constructor(_name: string);
 	constructor(...args: any[]) {

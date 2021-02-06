@@ -23,6 +23,9 @@ export default class PrepareAnvilEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.PrepareAnvilEvent');
 	}
+	public static $isInstance(obj: any): obj is PrepareAnvilEvent {
+		return obj instanceof PrepareAnvilEvent.$javaClass;
+	}
 
 	constructor(inventory: InventoryView, result: ItemStack);
 	constructor(...args: any[]) {

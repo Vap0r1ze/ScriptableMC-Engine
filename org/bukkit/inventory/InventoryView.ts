@@ -28,6 +28,9 @@ export default class InventoryView {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.InventoryView');
 	}
+	public static $isInstance(obj: any): obj is InventoryView {
+		return obj instanceof InventoryView.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

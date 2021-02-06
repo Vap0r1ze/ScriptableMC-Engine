@@ -212,6 +212,9 @@ export default class Cod {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Cod');
 	}
+	public static $isInstance(obj: any): obj is Cod {
+		return obj instanceof Cod.$javaClass;
+	}
 
 }
 

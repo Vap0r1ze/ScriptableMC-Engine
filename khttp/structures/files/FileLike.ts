@@ -12,6 +12,9 @@ export default class FileLike {
 	public static get $javaClass(): any {
 		return Java.type('khttp.structures.files.FileLike');
 	}
+	public static $isInstance(obj: any): obj is FileLike {
+		return obj instanceof FileLike.$javaClass;
+	}
 
 	constructor(file: File);
 	constructor(path: Path);

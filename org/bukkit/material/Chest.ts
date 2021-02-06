@@ -23,6 +23,9 @@ export default class Chest {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Chest');
 	}
+	public static $isInstance(obj: any): obj is Chest {
+		return obj instanceof Chest.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

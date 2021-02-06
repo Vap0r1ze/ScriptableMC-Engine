@@ -17,6 +17,9 @@ export default class BasicFileAttributes {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.attribute.BasicFileAttributes');
 	}
+	public static $isInstance(obj: any): obj is BasicFileAttributes {
+		return obj instanceof BasicFileAttributes.$javaClass;
+	}
 
 }
 

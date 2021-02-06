@@ -43,6 +43,9 @@ export default class CookieJar {
 	public static get $javaClass(): any {
 		return Java.type('khttp.structures.cookie.CookieJar');
 	}
+	public static $isInstance(obj: any): obj is CookieJar {
+		return obj instanceof CookieJar.$javaClass;
+	}
 
 	constructor();
 	constructor(cookies: any);

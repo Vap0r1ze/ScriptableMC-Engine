@@ -64,6 +64,9 @@ export default class ShulkerBox {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.ShulkerBox');
 	}
+	public static $isInstance(obj: any): obj is ShulkerBox {
+		return obj instanceof ShulkerBox.$javaClass;
+	}
 
 }
 

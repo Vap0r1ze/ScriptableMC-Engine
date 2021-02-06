@@ -119,6 +119,9 @@ export default class ExperienceOrb {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ExperienceOrb');
 	}
+	public static $isInstance(obj: any): obj is ExperienceOrb {
+		return obj instanceof ExperienceOrb.$javaClass;
+	}
 
 }
 

@@ -23,6 +23,9 @@ export default class ProjectileLaunchEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.ProjectileLaunchEvent');
 	}
+	public static $isInstance(obj: any): obj is ProjectileLaunchEvent {
+		return obj instanceof ProjectileLaunchEvent.$javaClass;
+	}
 
 	constructor(what: Entity);
 	constructor(...args: any[]) {

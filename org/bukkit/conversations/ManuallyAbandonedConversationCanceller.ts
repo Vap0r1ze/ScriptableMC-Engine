@@ -14,6 +14,9 @@ export default class ManuallyAbandonedConversationCanceller {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.ManuallyAbandonedConversationCanceller');
 	}
+	public static $isInstance(obj: any): obj is ManuallyAbandonedConversationCanceller {
+		return obj instanceof ManuallyAbandonedConversationCanceller.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

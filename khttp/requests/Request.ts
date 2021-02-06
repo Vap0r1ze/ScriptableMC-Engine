@@ -24,6 +24,9 @@ export default class Request {
 	public static get $javaClass(): any {
 		return Java.type('khttp.requests.Request');
 	}
+	public static $isInstance(obj: any): obj is Request {
+		return obj instanceof Request.$javaClass;
+	}
 
 }
 

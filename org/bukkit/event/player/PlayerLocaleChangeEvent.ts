@@ -15,6 +15,9 @@ export default class PlayerLocaleChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerLocaleChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerLocaleChangeEvent {
+		return obj instanceof PlayerLocaleChangeEvent.$javaClass;
+	}
 
 	constructor(who: Player, locale: string);
 	constructor(...args: any[]) {

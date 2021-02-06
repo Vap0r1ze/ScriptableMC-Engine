@@ -15,6 +15,9 @@ export default class RayTraceResult {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.RayTraceResult');
 	}
+	public static $isInstance(obj: any): obj is RayTraceResult {
+		return obj instanceof RayTraceResult.$javaClass;
+	}
 
 	constructor(hitPosition: Vector);
 	constructor(hitPosition: Vector, hitBlockFace: BlockFace);

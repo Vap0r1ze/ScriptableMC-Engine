@@ -21,6 +21,9 @@ export default class MessageTooLargeException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.messaging.MessageTooLargeException');
 	}
+	public static $isInstance(obj: any): obj is MessageTooLargeException {
+		return obj instanceof MessageTooLargeException.$javaClass;
+	}
 
 	constructor();
 	constructor(msg: string);

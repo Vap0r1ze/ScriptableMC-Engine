@@ -43,6 +43,9 @@ export default class ShortBuffer {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.ShortBuffer');
 	}
+	public static $isInstance(obj: any): obj is ShortBuffer {
+		return obj instanceof ShortBuffer.$javaClass;
+	}
 
 	public static allocate(arg0: number): ShortBuffer;
 	public static allocate(...args: any[]): any {

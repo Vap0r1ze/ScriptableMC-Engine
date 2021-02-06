@@ -51,6 +51,9 @@ export default class BeaconInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.BeaconInventory');
 	}
+	public static $isInstance(obj: any): obj is BeaconInventory {
+		return obj instanceof BeaconInventory.$javaClass;
+	}
 
 }
 

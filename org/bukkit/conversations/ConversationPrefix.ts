@@ -9,6 +9,9 @@ export default class ConversationPrefix {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.ConversationPrefix');
 	}
+	public static $isInstance(obj: any): obj is ConversationPrefix {
+		return obj instanceof ConversationPrefix.$javaClass;
+	}
 
 }
 

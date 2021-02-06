@@ -62,6 +62,9 @@ export default class BlastFurnace {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.BlastFurnace');
 	}
+	public static $isInstance(obj: any): obj is BlastFurnace {
+		return obj instanceof BlastFurnace.$javaClass;
+	}
 
 }
 

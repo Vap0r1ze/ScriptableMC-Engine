@@ -212,6 +212,9 @@ export default class Salmon {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Salmon');
 	}
+	public static $isInstance(obj: any): obj is Salmon {
+		return obj instanceof Salmon.$javaClass;
+	}
 
 }
 

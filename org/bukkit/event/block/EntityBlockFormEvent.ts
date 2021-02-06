@@ -20,6 +20,9 @@ export default class EntityBlockFormEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.EntityBlockFormEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityBlockFormEvent {
+		return obj instanceof EntityBlockFormEvent.$javaClass;
+	}
 
 	constructor(entity: Entity, block: Block, blockstate: BlockState);
 	constructor(...args: any[]) {

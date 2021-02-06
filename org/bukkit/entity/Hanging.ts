@@ -122,6 +122,9 @@ export default class Hanging {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Hanging');
 	}
+	public static $isInstance(obj: any): obj is Hanging {
+		return obj instanceof Hanging.$javaClass;
+	}
 
 }
 

@@ -23,6 +23,9 @@ export default class PlayerChatEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerChatEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerChatEvent {
+		return obj instanceof PlayerChatEvent.$javaClass;
+	}
 
 	constructor(player: Player, message: string);
 	constructor(player: Player, message: string, format: string, recipients: any);

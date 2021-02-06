@@ -54,6 +54,9 @@ export default class AnvilInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.AnvilInventory');
 	}
+	public static $isInstance(obj: any): obj is AnvilInventory {
+		return obj instanceof AnvilInventory.$javaClass;
+	}
 
 }
 

@@ -20,6 +20,9 @@ export default class FlowerPot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.FlowerPot');
 	}
+	public static $isInstance(obj: any): obj is FlowerPot {
+		return obj instanceof FlowerPot.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

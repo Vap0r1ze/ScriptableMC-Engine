@@ -22,6 +22,9 @@ export default class Rail {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Rail');
 	}
+	public static $isInstance(obj: any): obj is Rail {
+		return obj instanceof Rail.$javaClass;
+	}
 
 }
 

@@ -60,6 +60,9 @@ export default class TranslatableComponent {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.TranslatableComponent');
 	}
+	public static $isInstance(obj: any): obj is TranslatableComponent {
+		return obj instanceof TranslatableComponent.$javaClass;
+	}
 
 	constructor();
 	constructor(original: TranslatableComponent);

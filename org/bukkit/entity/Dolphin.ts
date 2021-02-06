@@ -212,6 +212,9 @@ export default class Dolphin {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Dolphin');
 	}
+	public static $isInstance(obj: any): obj is Dolphin {
+		return obj instanceof Dolphin.$javaClass;
+	}
 
 }
 

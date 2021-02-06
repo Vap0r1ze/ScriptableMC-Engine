@@ -34,6 +34,9 @@ export default class PluginsCommand {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.defaults.PluginsCommand');
 	}
+	public static $isInstance(obj: any): obj is PluginsCommand {
+		return obj instanceof PluginsCommand.$javaClass;
+	}
 
 	constructor(_name: string);
 	constructor(...args: any[]) {

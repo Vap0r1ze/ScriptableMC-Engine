@@ -226,6 +226,9 @@ export default class PolarBear {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.PolarBear');
 	}
+	public static $isInstance(obj: any): obj is PolarBear {
+		return obj instanceof PolarBear.$javaClass;
+	}
 
 }
 

@@ -20,6 +20,9 @@ export default class Waterlogged {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Waterlogged');
 	}
+	public static $isInstance(obj: any): obj is Waterlogged {
+		return obj instanceof Waterlogged.$javaClass;
+	}
 
 }
 

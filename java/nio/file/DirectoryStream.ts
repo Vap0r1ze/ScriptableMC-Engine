@@ -12,6 +12,9 @@ export default class DirectoryStream {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.DirectoryStream');
 	}
+	public static $isInstance(obj: any): obj is DirectoryStream {
+		return obj instanceof DirectoryStream.$javaClass;
+	}
 
 }
 

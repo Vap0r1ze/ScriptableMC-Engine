@@ -20,6 +20,9 @@ export default class RedstoneWire {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.RedstoneWire');
 	}
+	public static $isInstance(obj: any): obj is RedstoneWire {
+		return obj instanceof RedstoneWire.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

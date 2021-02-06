@@ -24,6 +24,9 @@ export default class EntityTeleportEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityTeleportEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityTeleportEvent {
+		return obj instanceof EntityTeleportEvent.$javaClass;
+	}
 
 	constructor(what: Entity, from: Location, to: Location);
 	constructor(...args: any[]) {

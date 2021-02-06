@@ -212,6 +212,9 @@ export default class Ambient {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Ambient');
 	}
+	public static $isInstance(obj: any): obj is Ambient {
+		return obj instanceof Ambient.$javaClass;
+	}
 
 }
 

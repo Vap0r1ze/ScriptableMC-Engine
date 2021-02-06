@@ -73,6 +73,9 @@ export default class PotionMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.PotionMeta');
 	}
+	public static $isInstance(obj: any): obj is PotionMeta {
+		return obj instanceof PotionMeta.$javaClass;
+	}
 
 }
 

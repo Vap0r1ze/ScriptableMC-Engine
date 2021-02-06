@@ -24,6 +24,9 @@ export default class MerchantRecipe {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.MerchantRecipe');
 	}
+	public static $isInstance(obj: any): obj is MerchantRecipe {
+		return obj instanceof MerchantRecipe.$javaClass;
+	}
 
 	constructor(result: ItemStack, maxUses: number);
 	constructor(result: ItemStack, uses: number, maxUses: number, experienceReward: boolean);

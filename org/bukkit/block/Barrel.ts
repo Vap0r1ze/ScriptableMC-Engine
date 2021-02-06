@@ -62,6 +62,9 @@ export default class Barrel {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Barrel');
 	}
+	public static $isInstance(obj: any): obj is Barrel {
+		return obj instanceof Barrel.$javaClass;
+	}
 
 }
 

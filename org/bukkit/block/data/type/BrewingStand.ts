@@ -22,6 +22,9 @@ export default class BrewingStand {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.BrewingStand');
 	}
+	public static $isInstance(obj: any): obj is BrewingStand {
+		return obj instanceof BrewingStand.$javaClass;
+	}
 
 }
 

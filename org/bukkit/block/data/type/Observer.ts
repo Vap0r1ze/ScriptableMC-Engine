@@ -26,6 +26,9 @@ export default class Observer {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Observer');
 	}
+	public static $isInstance(obj: any): obj is Observer {
+		return obj instanceof Observer.$javaClass;
+	}
 
 }
 

@@ -27,6 +27,9 @@ export default class Multimap {
 	public static get $javaClass(): any {
 		return Java.type('com.google.common.collect.Multimap');
 	}
+	public static $isInstance(obj: any): obj is Multimap {
+		return obj instanceof Multimap.$javaClass;
+	}
 
 }
 

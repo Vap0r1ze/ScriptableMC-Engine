@@ -21,6 +21,9 @@ export default class EntityToggleSwimEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityToggleSwimEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityToggleSwimEvent {
+		return obj instanceof EntityToggleSwimEvent.$javaClass;
+	}
 
 	constructor(who: LivingEntity, isSwimming: boolean);
 	constructor(...args: any[]) {

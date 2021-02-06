@@ -26,6 +26,9 @@ export default class EntityBreakDoorEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityBreakDoorEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityBreakDoorEvent {
+		return obj instanceof EntityBreakDoorEvent.$javaClass;
+	}
 
 	constructor(entity: LivingEntity, targetBlock: Block);
 	constructor(...args: any[]) {

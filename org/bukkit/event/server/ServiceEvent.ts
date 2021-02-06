@@ -14,6 +14,9 @@ export default class ServiceEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.ServiceEvent');
 	}
+	public static $isInstance(obj: any): obj is ServiceEvent {
+		return obj instanceof ServiceEvent.$javaClass;
+	}
 
 	constructor(provider: RegisteredServiceProvider);
 	constructor(...args: any[]) {

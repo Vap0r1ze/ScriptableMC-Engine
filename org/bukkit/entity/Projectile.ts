@@ -122,6 +122,9 @@ export default class Projectile {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Projectile');
 	}
+	public static $isInstance(obj: any): obj is Projectile {
+		return obj instanceof Projectile.$javaClass;
+	}
 
 }
 

@@ -15,6 +15,9 @@ export default class HelpMap {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.help.HelpMap');
 	}
+	public static $isInstance(obj: any): obj is HelpMap {
+		return obj instanceof HelpMap.$javaClass;
+	}
 
 }
 

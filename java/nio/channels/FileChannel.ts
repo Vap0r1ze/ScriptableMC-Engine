@@ -44,6 +44,9 @@ export default class FileChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.FileChannel');
 	}
+	public static $isInstance(obj: any): obj is FileChannel {
+		return obj instanceof FileChannel.$javaClass;
+	}
 
 	public static open(arg0: Path, arg1: Array<OpenOption>): FileChannel;
 	public static open(arg0: Path, arg1: any, arg2: Array<FileAttribute>): FileChannel;

@@ -23,6 +23,9 @@ export default class ServerListPingEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.ServerListPingEvent');
 	}
+	public static $isInstance(obj: any): obj is ServerListPingEvent {
+		return obj instanceof ServerListPingEvent.$javaClass;
+	}
 
 	constructor(address: any, motd: string, numPlayers: number, maxPlayers: number);
 	constructor(...args: any[]) {

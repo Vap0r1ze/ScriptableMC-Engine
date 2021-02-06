@@ -22,6 +22,9 @@ export default class FileInputStream {
 	public static get $javaClass(): any {
 		return Java.type('java.io.FileInputStream');
 	}
+	public static $isInstance(obj: any): obj is FileInputStream {
+		return obj instanceof FileInputStream.$javaClass;
+	}
 
 	constructor(arg0: FileDescriptor);
 	constructor(arg0: File);

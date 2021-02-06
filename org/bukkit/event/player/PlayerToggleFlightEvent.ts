@@ -18,6 +18,9 @@ export default class PlayerToggleFlightEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerToggleFlightEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerToggleFlightEvent {
+		return obj instanceof PlayerToggleFlightEvent.$javaClass;
+	}
 
 	constructor(player: Player, isFlying: boolean);
 	constructor(...args: any[]) {

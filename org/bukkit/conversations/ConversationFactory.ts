@@ -25,6 +25,9 @@ export default class ConversationFactory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.ConversationFactory');
 	}
+	public static $isInstance(obj: any): obj is ConversationFactory {
+		return obj instanceof ConversationFactory.$javaClass;
+	}
 
 	constructor(plugin: Plugin);
 	constructor(...args: any[]) {

@@ -21,6 +21,9 @@ export default class EntityInteractEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityInteractEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityInteractEvent {
+		return obj instanceof EntityInteractEvent.$javaClass;
+	}
 
 	constructor(entity: Entity, block: Block);
 	constructor(...args: any[]) {

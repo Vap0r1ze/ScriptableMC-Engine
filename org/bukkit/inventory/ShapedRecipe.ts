@@ -26,6 +26,9 @@ export default class ShapedRecipe {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.ShapedRecipe');
 	}
+	public static $isInstance(obj: any): obj is ShapedRecipe {
+		return obj instanceof ShapedRecipe.$javaClass;
+	}
 
 	constructor(result: ItemStack);
 	constructor(key: NamespacedKey, result: ItemStack);

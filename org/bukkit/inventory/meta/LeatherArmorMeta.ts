@@ -60,6 +60,9 @@ export default class LeatherArmorMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.LeatherArmorMeta');
 	}
+	public static $isInstance(obj: any): obj is LeatherArmorMeta {
+		return obj instanceof LeatherArmorMeta.$javaClass;
+	}
 
 }
 

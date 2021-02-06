@@ -102,6 +102,9 @@ export default class YamlConfiguration {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.file.YamlConfiguration');
 	}
+	public static $isInstance(obj: any): obj is YamlConfiguration {
+		return obj instanceof YamlConfiguration.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

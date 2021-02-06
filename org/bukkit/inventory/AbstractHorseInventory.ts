@@ -51,6 +51,9 @@ export default class AbstractHorseInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.AbstractHorseInventory');
 	}
+	public static $isInstance(obj: any): obj is AbstractHorseInventory {
+		return obj instanceof AbstractHorseInventory.$javaClass;
+	}
 
 }
 

@@ -23,6 +23,9 @@ export default class PlayerUnleashEntityEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerUnleashEntityEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerUnleashEntityEvent {
+		return obj instanceof PlayerUnleashEntityEvent.$javaClass;
+	}
 
 	constructor(entity: Entity, player: Player);
 	constructor(...args: any[]) {

@@ -25,6 +25,9 @@ export default class CreeperPowerEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.CreeperPowerEvent');
 	}
+	public static $isInstance(obj: any): obj is CreeperPowerEvent {
+		return obj instanceof CreeperPowerEvent.$javaClass;
+	}
 
 	constructor(creeper: Creeper, cause: CreeperPowerEvent$PowerCause);
 	constructor(creeper: Creeper, bolt: LightningStrike, cause: CreeperPowerEvent$PowerCause);

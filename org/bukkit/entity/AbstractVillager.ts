@@ -235,6 +235,9 @@ export default class AbstractVillager {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.AbstractVillager');
 	}
+	public static $isInstance(obj: any): obj is AbstractVillager {
+		return obj instanceof AbstractVillager.$javaClass;
+	}
 
 }
 

@@ -76,6 +76,9 @@ export default class Structure {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Structure');
 	}
+	public static $isInstance(obj: any): obj is Structure {
+		return obj instanceof Structure.$javaClass;
+	}
 
 }
 

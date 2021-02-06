@@ -17,6 +17,9 @@ export default class Score {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.Score');
 	}
+	public static $isInstance(obj: any): obj is Score {
+		return obj instanceof Score.$javaClass;
+	}
 
 }
 

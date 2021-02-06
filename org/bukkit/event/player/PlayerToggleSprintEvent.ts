@@ -18,6 +18,9 @@ export default class PlayerToggleSprintEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerToggleSprintEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerToggleSprintEvent {
+		return obj instanceof PlayerToggleSprintEvent.$javaClass;
+	}
 
 	constructor(player: Player, isSprinting: boolean);
 	constructor(...args: any[]) {

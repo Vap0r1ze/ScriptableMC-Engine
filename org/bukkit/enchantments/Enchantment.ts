@@ -20,6 +20,9 @@ export default class Enchantment {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.enchantments.Enchantment');
 	}
+	public static $isInstance(obj: any): obj is Enchantment {
+		return obj instanceof Enchantment.$javaClass;
+	}
 
 	constructor(key: NamespacedKey);
 	constructor(...args: any[]) {

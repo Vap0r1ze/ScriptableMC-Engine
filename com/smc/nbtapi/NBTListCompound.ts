@@ -51,6 +51,9 @@ export default class NBTListCompound {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.nbtapi.NBTListCompound');
 	}
+	public static $isInstance(obj: any): obj is NBTListCompound {
+		return obj instanceof NBTListCompound.$javaClass;
+	}
 
 }
 

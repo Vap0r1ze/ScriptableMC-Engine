@@ -29,6 +29,9 @@ export default class Bell {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Bell');
 	}
+	public static $isInstance(obj: any): obj is Bell {
+		return obj instanceof Bell.$javaClass;
+	}
 
 }
 

@@ -23,6 +23,9 @@ export default class PortalCreateEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.world.PortalCreateEvent');
 	}
+	public static $isInstance(obj: any): obj is PortalCreateEvent {
+		return obj instanceof PortalCreateEvent.$javaClass;
+	}
 
 	constructor(blocks: Array<any>, world: World, reason: PortalCreateEvent$CreateReason);
 	constructor(blocks: Array<any>, world: World, entity: Entity, reason: PortalCreateEvent$CreateReason);

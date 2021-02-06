@@ -42,6 +42,9 @@ export default class ScriptablePluginEngine {
 	public static get $javaClass(): any {
 		return Java.type('com.pixlfox.scriptablemc.core.ScriptablePluginEngine');
 	}
+	public static $isInstance(obj: any): obj is ScriptablePluginEngine {
+		return obj instanceof ScriptablePluginEngine.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

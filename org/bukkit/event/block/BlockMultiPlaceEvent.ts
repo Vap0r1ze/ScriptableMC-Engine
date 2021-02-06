@@ -29,6 +29,9 @@ export default class BlockMultiPlaceEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockMultiPlaceEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockMultiPlaceEvent {
+		return obj instanceof BlockMultiPlaceEvent.$javaClass;
+	}
 
 	constructor(states: Array<any>, clicked: Block, itemInHand: ItemStack, thePlayer: Player, canBuild: boolean);
 	constructor(...args: any[]) {

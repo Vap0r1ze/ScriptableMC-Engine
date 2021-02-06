@@ -16,6 +16,9 @@ export default class PlayerAdvancementDoneEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerAdvancementDoneEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerAdvancementDoneEvent {
+		return obj instanceof PlayerAdvancementDoneEvent.$javaClass;
+	}
 
 	constructor(who: Player, advancement: Advancement);
 	constructor(...args: any[]) {

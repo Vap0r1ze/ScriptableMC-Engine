@@ -27,6 +27,9 @@ export default class Cocoa {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Cocoa');
 	}
+	public static $isInstance(obj: any): obj is Cocoa {
+		return obj instanceof Cocoa.$javaClass;
+	}
 
 }
 

@@ -24,6 +24,9 @@ export default class EntityPickupItemEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityPickupItemEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityPickupItemEvent {
+		return obj instanceof EntityPickupItemEvent.$javaClass;
+	}
 
 	constructor(entity: LivingEntity, item: Item, remaining: number);
 	constructor(...args: any[]) {

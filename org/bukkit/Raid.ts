@@ -22,6 +22,9 @@ export default class Raid {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Raid');
 	}
+	public static $isInstance(obj: any): obj is Raid {
+		return obj instanceof Raid.$javaClass;
+	}
 
 }
 

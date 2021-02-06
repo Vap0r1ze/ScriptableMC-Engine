@@ -226,6 +226,9 @@ export default class Turtle {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Turtle');
 	}
+	public static $isInstance(obj: any): obj is Turtle {
+		return obj instanceof Turtle.$javaClass;
+	}
 
 }
 

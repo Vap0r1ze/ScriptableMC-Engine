@@ -12,6 +12,9 @@ export default class FileTime {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.attribute.FileTime');
 	}
+	public static $isInstance(obj: any): obj is FileTime {
+		return obj instanceof FileTime.$javaClass;
+	}
 
 	public static from(arg0: any): FileTime;
 	public static from(arg0: number, arg1: any): FileTime;

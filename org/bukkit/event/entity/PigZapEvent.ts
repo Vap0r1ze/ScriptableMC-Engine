@@ -29,6 +29,9 @@ export default class PigZapEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.PigZapEvent');
 	}
+	public static $isInstance(obj: any): obj is PigZapEvent {
+		return obj instanceof PigZapEvent.$javaClass;
+	}
 
 	constructor(pig: Pig, bolt: LightningStrike, pigzombie: PigZombie);
 	constructor(...args: any[]) {

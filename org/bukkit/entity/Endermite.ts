@@ -214,6 +214,9 @@ export default class Endermite {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Endermite');
 	}
+	public static $isInstance(obj: any): obj is Endermite {
+		return obj instanceof Endermite.$javaClass;
+	}
 
 }
 

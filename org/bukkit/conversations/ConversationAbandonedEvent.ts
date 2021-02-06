@@ -14,6 +14,9 @@ export default class ConversationAbandonedEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.ConversationAbandonedEvent');
 	}
+	public static $isInstance(obj: any): obj is ConversationAbandonedEvent {
+		return obj instanceof ConversationAbandonedEvent.$javaClass;
+	}
 
 	constructor(conversation: Conversation);
 	constructor(conversation: Conversation, canceller: ConversationCanceller);

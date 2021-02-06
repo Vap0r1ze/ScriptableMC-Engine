@@ -5,6 +5,9 @@ export default class MinecraftVersions {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.version.MinecraftVersions');
 	}
+	public static $isInstance(obj: any): obj is MinecraftVersions {
+		return obj instanceof MinecraftVersions.$javaClass;
+	}
 
 	public static get RUNTIME_VERSION(): Version {
 		return MinecraftVersions.$javaClass.RUNTIME_VERSION;

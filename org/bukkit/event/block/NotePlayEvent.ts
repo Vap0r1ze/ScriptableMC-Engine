@@ -23,6 +23,9 @@ export default class NotePlayEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.NotePlayEvent');
 	}
+	public static $isInstance(obj: any): obj is NotePlayEvent {
+		return obj instanceof NotePlayEvent.$javaClass;
+	}
 
 	constructor(block: Block, instrument: Instrument, note: Note);
 	constructor(...args: any[]) {

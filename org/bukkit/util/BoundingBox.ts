@@ -58,6 +58,9 @@ export default class BoundingBox {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.BoundingBox');
 	}
+	public static $isInstance(obj: any): obj is BoundingBox {
+		return obj instanceof BoundingBox.$javaClass;
+	}
 
 	constructor();
 	constructor(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number);

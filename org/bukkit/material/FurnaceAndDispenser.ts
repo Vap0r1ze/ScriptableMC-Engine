@@ -23,6 +23,9 @@ export default class FurnaceAndDispenser {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.FurnaceAndDispenser');
 	}
+	public static $isInstance(obj: any): obj is FurnaceAndDispenser {
+		return obj instanceof FurnaceAndDispenser.$javaClass;
+	}
 
 	constructor(type: Material);
 	constructor(type: Material, data: number);

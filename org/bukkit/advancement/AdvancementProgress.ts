@@ -15,6 +15,9 @@ export default class AdvancementProgress {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.advancement.AdvancementProgress');
 	}
+	public static $isInstance(obj: any): obj is AdvancementProgress {
+		return obj instanceof AdvancementProgress.$javaClass;
+	}
 
 }
 

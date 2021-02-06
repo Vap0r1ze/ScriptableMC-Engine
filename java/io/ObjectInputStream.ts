@@ -42,6 +42,9 @@ export default class ObjectInputStream {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ObjectInputStream');
 	}
+	public static $isInstance(obj: any): obj is ObjectInputStream {
+		return obj instanceof ObjectInputStream.$javaClass;
+	}
 
 	constructor(arg0: InputStream);
 	constructor(...args: any[]) {

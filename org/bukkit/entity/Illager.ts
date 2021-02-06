@@ -218,6 +218,9 @@ export default class Illager {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Illager');
 	}
+	public static $isInstance(obj: any): obj is Illager {
+		return obj instanceof Illager.$javaClass;
+	}
 
 }
 

@@ -21,6 +21,9 @@ export default class PlayerPickupArrowEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerPickupArrowEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerPickupArrowEvent {
+		return obj instanceof PlayerPickupArrowEvent.$javaClass;
+	}
 
 	constructor(player: Player, item: Item, arrow: AbstractArrow);
 	constructor(...args: any[]) {

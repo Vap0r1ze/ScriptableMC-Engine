@@ -15,6 +15,9 @@ export default class SoundGroup {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.SoundGroup');
 	}
+	public static $isInstance(obj: any): obj is SoundGroup {
+		return obj instanceof SoundGroup.$javaClass;
+	}
 
 }
 

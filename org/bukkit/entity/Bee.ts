@@ -238,6 +238,9 @@ export default class Bee {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Bee');
 	}
+	public static $isInstance(obj: any): obj is Bee {
+		return obj instanceof Bee.$javaClass;
+	}
 
 }
 

@@ -5,6 +5,9 @@ export default class ChatPaginator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.ChatPaginator');
 	}
+	public static $isInstance(obj: any): obj is ChatPaginator {
+		return obj instanceof ChatPaginator.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

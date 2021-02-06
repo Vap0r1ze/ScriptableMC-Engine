@@ -16,6 +16,9 @@ export default class AttributeModifier {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.attribute.AttributeModifier');
 	}
+	public static $isInstance(obj: any): obj is AttributeModifier {
+		return obj instanceof AttributeModifier.$javaClass;
+	}
 
 	constructor(_name: string, amount: number, operation: AttributeModifier$Operation);
 	constructor(uuid: string, _name: string, amount: number, operation: AttributeModifier$Operation);

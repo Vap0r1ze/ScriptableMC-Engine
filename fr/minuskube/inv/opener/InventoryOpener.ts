@@ -15,6 +15,9 @@ export default class InventoryOpener {
 	public static get $javaClass(): any {
 		return Java.type('fr.minuskube.inv.opener.InventoryOpener');
 	}
+	public static $isInstance(obj: any): obj is InventoryOpener {
+		return obj instanceof InventoryOpener.$javaClass;
+	}
 
 }
 

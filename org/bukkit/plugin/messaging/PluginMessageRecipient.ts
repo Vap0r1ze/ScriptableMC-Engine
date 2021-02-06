@@ -10,6 +10,9 @@ export default class PluginMessageRecipient {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.messaging.PluginMessageRecipient');
 	}
+	public static $isInstance(obj: any): obj is PluginMessageRecipient {
+		return obj instanceof PluginMessageRecipient.$javaClass;
+	}
 
 }
 

@@ -12,6 +12,9 @@ export default class ChunkGenerator$BiomeGrid {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.generator.ChunkGenerator$BiomeGrid');
 	}
+	public static $isInstance(obj: any): obj is ChunkGenerator$BiomeGrid {
+		return obj instanceof ChunkGenerator$BiomeGrid.$javaClass;
+	}
 
 }
 

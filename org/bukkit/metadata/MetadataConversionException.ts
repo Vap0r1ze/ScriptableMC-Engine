@@ -21,6 +21,9 @@ export default class MetadataConversionException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.metadata.MetadataConversionException');
 	}
+	public static $isInstance(obj: any): obj is MetadataConversionException {
+		return obj instanceof MetadataConversionException.$javaClass;
+	}
 
 }
 

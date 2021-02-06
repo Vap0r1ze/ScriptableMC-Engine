@@ -20,6 +20,9 @@ export default class PlayerVelocityEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerVelocityEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerVelocityEvent {
+		return obj instanceof PlayerVelocityEvent.$javaClass;
+	}
 
 	constructor(player: Player, velocity: Vector);
 	constructor(...args: any[]) {

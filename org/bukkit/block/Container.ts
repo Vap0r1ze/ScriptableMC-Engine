@@ -56,6 +56,9 @@ export default class Container {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Container');
 	}
+	public static $isInstance(obj: any): obj is Container {
+		return obj instanceof Container.$javaClass;
+	}
 
 }
 

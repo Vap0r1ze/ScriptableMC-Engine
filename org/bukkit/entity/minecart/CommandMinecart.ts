@@ -139,6 +139,9 @@ export default class CommandMinecart {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.minecart.CommandMinecart');
 	}
+	public static $isInstance(obj: any): obj is CommandMinecart {
+		return obj instanceof CommandMinecart.$javaClass;
+	}
 
 }
 

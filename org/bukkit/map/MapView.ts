@@ -29,6 +29,9 @@ export default class MapView {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MapView');
 	}
+	public static $isInstance(obj: any): obj is MapView {
+		return obj instanceof MapView.$javaClass;
+	}
 
 }
 

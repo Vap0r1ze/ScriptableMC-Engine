@@ -15,8 +15,8 @@ export default interface BlockDataMeta extends ItemMeta {
 	addAttributeModifier(arg0: Attribute, arg1: AttributeModifier): boolean;
 	addEnchant(arg0: Enchantment, arg1: number, arg2: boolean): boolean;
 	addItemFlags(arg0: Array<ItemFlag>): void;
-	clone(): ItemMeta;
 	clone(): any;
+	clone(): ItemMeta;
 	getAttributeModifiers(): Multimap;
 	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
 	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
@@ -60,6 +60,9 @@ export default interface BlockDataMeta extends ItemMeta {
 export default class BlockDataMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.BlockDataMeta');
+	}
+	public static $isInstance(obj: any): obj is BlockDataMeta {
+		return obj instanceof BlockDataMeta.$javaClass;
 	}
 
 }

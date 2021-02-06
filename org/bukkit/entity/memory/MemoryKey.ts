@@ -11,6 +11,9 @@ export default class MemoryKey {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.memory.MemoryKey');
 	}
+	public static $isInstance(obj: any): obj is MemoryKey {
+		return obj instanceof MemoryKey.$javaClass;
+	}
 
 	public static get ADMIRING_DISABLED(): MemoryKey {
 		return MemoryKey.$javaClass.ADMIRING_DISABLED;

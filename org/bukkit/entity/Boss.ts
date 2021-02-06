@@ -119,6 +119,9 @@ export default class Boss {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Boss');
 	}
+	public static $isInstance(obj: any): obj is Boss {
+		return obj instanceof Boss.$javaClass;
+	}
 
 }
 

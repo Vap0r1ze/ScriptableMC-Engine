@@ -19,6 +19,9 @@ export default class RaidSpawnWaveEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.raid.RaidSpawnWaveEvent');
 	}
+	public static $isInstance(obj: any): obj is RaidSpawnWaveEvent {
+		return obj instanceof RaidSpawnWaveEvent.$javaClass;
+	}
 
 	constructor(raid: Raid, world: World, leader: Raider, raiders: Array<any>);
 	constructor(...args: any[]) {

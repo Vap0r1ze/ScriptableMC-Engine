@@ -22,6 +22,9 @@ export default class SignChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.SignChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is SignChangeEvent {
+		return obj instanceof SignChangeEvent.$javaClass;
+	}
 
 	constructor(theBlock: Block, thePlayer: Player, theLines: Array<string>);
 	constructor(...args: any[]) {

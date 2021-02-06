@@ -14,6 +14,9 @@ export default class GatheringByteChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.GatheringByteChannel');
 	}
+	public static $isInstance(obj: any): obj is GatheringByteChannel {
+		return obj instanceof GatheringByteChannel.$javaClass;
+	}
 
 }
 

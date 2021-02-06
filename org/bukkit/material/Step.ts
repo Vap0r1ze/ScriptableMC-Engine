@@ -25,6 +25,9 @@ export default class Step {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Step');
 	}
+	public static $isInstance(obj: any): obj is Step {
+		return obj instanceof Step.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

@@ -13,6 +13,9 @@ export default class BooleanPrompt {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.BooleanPrompt');
 	}
+	public static $isInstance(obj: any): obj is BooleanPrompt {
+		return obj instanceof BooleanPrompt.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

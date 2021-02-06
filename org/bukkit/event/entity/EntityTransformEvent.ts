@@ -23,6 +23,9 @@ export default class EntityTransformEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityTransformEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityTransformEvent {
+		return obj instanceof EntityTransformEvent.$javaClass;
+	}
 
 	constructor(original: Entity, convertedList: Array<any>, transformReason: EntityTransformEvent$TransformReason);
 	constructor(...args: any[]) {

@@ -60,6 +60,9 @@ export default class SpawnEggMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.SpawnEggMeta');
 	}
+	public static $isInstance(obj: any): obj is SpawnEggMeta {
+		return obj instanceof SpawnEggMeta.$javaClass;
+	}
 
 }
 

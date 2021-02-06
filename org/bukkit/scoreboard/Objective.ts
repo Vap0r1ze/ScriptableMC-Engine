@@ -25,6 +25,9 @@ export default class Objective {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.Objective');
 	}
+	public static $isInstance(obj: any): obj is Objective {
+		return obj instanceof Objective.$javaClass;
+	}
 
 }
 

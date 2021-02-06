@@ -12,6 +12,9 @@ export default class SerializablePermission {
 	public static get $javaClass(): any {
 		return Java.type('java.io.SerializablePermission');
 	}
+	public static $isInstance(obj: any): obj is SerializablePermission {
+		return obj instanceof SerializablePermission.$javaClass;
+	}
 
 	constructor(arg0: string);
 	constructor(arg0: string, arg1: string);

@@ -20,6 +20,9 @@ export default class Openable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Openable');
 	}
+	public static $isInstance(obj: any): obj is Openable {
+		return obj instanceof Openable.$javaClass;
+	}
 
 }
 

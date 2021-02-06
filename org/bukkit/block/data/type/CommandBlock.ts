@@ -25,6 +25,9 @@ export default class CommandBlock {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.CommandBlock');
 	}
+	public static $isInstance(obj: any): obj is CommandBlock {
+		return obj instanceof CommandBlock.$javaClass;
+	}
 
 }
 

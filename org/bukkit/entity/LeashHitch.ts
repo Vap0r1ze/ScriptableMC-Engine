@@ -122,6 +122,9 @@ export default class LeashHitch {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.LeashHitch');
 	}
+	public static $isInstance(obj: any): obj is LeashHitch {
+		return obj instanceof LeashHitch.$javaClass;
+	}
 
 }
 

@@ -129,6 +129,9 @@ export default class Firework {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Firework');
 	}
+	public static $isInstance(obj: any): obj is Firework {
+		return obj instanceof Firework.$javaClass;
+	}
 
 }
 

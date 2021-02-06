@@ -21,6 +21,9 @@ export default class DataOutput {
 	public static get $javaClass(): any {
 		return Java.type('java.io.DataOutput');
 	}
+	public static $isInstance(obj: any): obj is DataOutput {
+		return obj instanceof DataOutput.$javaClass;
+	}
 
 }
 

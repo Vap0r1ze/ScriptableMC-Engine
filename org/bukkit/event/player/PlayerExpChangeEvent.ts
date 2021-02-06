@@ -16,6 +16,9 @@ export default class PlayerExpChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerExpChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerExpChangeEvent {
+		return obj instanceof PlayerExpChangeEvent.$javaClass;
+	}
 
 	constructor(player: Player, expAmount: number);
 	constructor(...args: any[]) {

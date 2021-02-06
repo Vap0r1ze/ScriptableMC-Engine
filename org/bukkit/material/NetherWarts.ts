@@ -21,6 +21,9 @@ export default class NetherWarts {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.NetherWarts');
 	}
+	public static $isInstance(obj: any): obj is NetherWarts {
+		return obj instanceof NetherWarts.$javaClass;
+	}
 
 	constructor();
 	constructor(state: NetherWartsState);

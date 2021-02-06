@@ -22,6 +22,9 @@ export default class PlayerPreLoginEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerPreLoginEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerPreLoginEvent {
+		return obj instanceof PlayerPreLoginEvent.$javaClass;
+	}
 
 	constructor(_name: string, ipAddress: any);
 	constructor(_name: string, ipAddress: any, uniqueId: string);

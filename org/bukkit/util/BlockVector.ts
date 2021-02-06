@@ -30,8 +30,8 @@ export default interface BlockVector extends Vector {
 	length(): number;
 	lengthSquared(): number;
 	midpoint(other: Vector): Vector;
-	multiply(m: number): Vector;
 	multiply(vec: Vector): Vector;
+	multiply(m: number): Vector;
 	multiply(m: number): Vector;
 	multiply(m: number): Vector;
 	normalize(): Vector;
@@ -60,6 +60,9 @@ export default interface BlockVector extends Vector {
 export default class BlockVector {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.BlockVector');
+	}
+	public static $isInstance(obj: any): obj is BlockVector {
+		return obj instanceof BlockVector.$javaClass;
 	}
 
 	constructor();

@@ -22,6 +22,9 @@ export default class Vine {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Vine');
 	}
+	public static $isInstance(obj: any): obj is Vine {
+		return obj instanceof Vine.$javaClass;
+	}
 
 	constructor();
 	constructor(data: number);

@@ -9,6 +9,9 @@ export default class CompletionHandler {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.CompletionHandler');
 	}
+	public static $isInstance(obj: any): obj is CompletionHandler {
+		return obj instanceof CompletionHandler.$javaClass;
+	}
 
 }
 

@@ -22,6 +22,9 @@ export default class SpawnerSpawnEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.SpawnerSpawnEvent');
 	}
+	public static $isInstance(obj: any): obj is SpawnerSpawnEvent {
+		return obj instanceof SpawnerSpawnEvent.$javaClass;
+	}
 
 	constructor(spawnee: Entity, spawner: CreatureSpawner);
 	constructor(...args: any[]) {

@@ -9,6 +9,9 @@ export default class Sittable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Sittable');
 	}
+	public static $isInstance(obj: any): obj is Sittable {
+		return obj instanceof Sittable.$javaClass;
+	}
 
 }
 

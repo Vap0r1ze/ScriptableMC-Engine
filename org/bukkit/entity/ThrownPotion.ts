@@ -128,6 +128,9 @@ export default class ThrownPotion {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ThrownPotion');
 	}
+	public static $isInstance(obj: any): obj is ThrownPotion {
+		return obj instanceof ThrownPotion.$javaClass;
+	}
 
 }
 

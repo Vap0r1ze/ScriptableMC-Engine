@@ -244,6 +244,9 @@ export default class Villager {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Villager');
 	}
+	public static $isInstance(obj: any): obj is Villager {
+		return obj instanceof Villager.$javaClass;
+	}
 
 }
 

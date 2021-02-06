@@ -43,6 +43,9 @@ export default class ConsoleCommandSender {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.ConsoleCommandSender');
 	}
+	public static $isInstance(obj: any): obj is ConsoleCommandSender {
+		return obj instanceof ConsoleCommandSender.$javaClass;
+	}
 
 }
 

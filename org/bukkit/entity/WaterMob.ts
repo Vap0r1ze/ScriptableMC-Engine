@@ -212,6 +212,9 @@ export default class WaterMob {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.WaterMob');
 	}
+	public static $isInstance(obj: any): obj is WaterMob {
+		return obj instanceof WaterMob.$javaClass;
+	}
 
 }
 

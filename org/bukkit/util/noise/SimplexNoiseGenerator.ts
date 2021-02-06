@@ -19,6 +19,9 @@ export default class SimplexNoiseGenerator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.noise.SimplexNoiseGenerator');
 	}
+	public static $isInstance(obj: any): obj is SimplexNoiseGenerator {
+		return obj instanceof SimplexNoiseGenerator.$javaClass;
+	}
 
 	constructor(rand: any);
 	constructor(world: World);

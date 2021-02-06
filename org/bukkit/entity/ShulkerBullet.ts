@@ -125,6 +125,9 @@ export default class ShulkerBullet {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ShulkerBullet');
 	}
+	public static $isInstance(obj: any): obj is ShulkerBullet {
+		return obj instanceof ShulkerBullet.$javaClass;
+	}
 
 }
 

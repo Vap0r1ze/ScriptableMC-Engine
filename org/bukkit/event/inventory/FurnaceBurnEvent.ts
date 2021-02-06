@@ -23,6 +23,9 @@ export default class FurnaceBurnEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.FurnaceBurnEvent');
 	}
+	public static $isInstance(obj: any): obj is FurnaceBurnEvent {
+		return obj instanceof FurnaceBurnEvent.$javaClass;
+	}
 
 	constructor(furnace: Block, fuel: ItemStack, burnTime: number);
 	constructor(...args: any[]) {

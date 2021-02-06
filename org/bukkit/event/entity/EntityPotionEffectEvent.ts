@@ -31,6 +31,9 @@ export default class EntityPotionEffectEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityPotionEffectEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityPotionEffectEvent {
+		return obj instanceof EntityPotionEffectEvent.$javaClass;
+	}
 
 	constructor(livingEntity: LivingEntity, oldEffect: PotionEffect, newEffect: PotionEffect, cause: EntityPotionEffectEvent$Cause, action: EntityPotionEffectEvent$Action, override: boolean);
 	constructor(...args: any[]) {

@@ -9,6 +9,9 @@ export default class ItemTagAdapterContext {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.tags.ItemTagAdapterContext');
 	}
+	public static $isInstance(obj: any): obj is ItemTagAdapterContext {
+		return obj instanceof ItemTagAdapterContext.$javaClass;
+	}
 
 }
 

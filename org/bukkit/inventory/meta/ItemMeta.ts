@@ -14,8 +14,8 @@ export default interface ItemMeta extends ConfigurationSerializable, PersistentD
 	addAttributeModifier(arg0: Attribute, arg1: AttributeModifier): boolean;
 	addEnchant(arg0: Enchantment, arg1: number, arg2: boolean): boolean;
 	addItemFlags(arg0: Array<ItemFlag>): void;
-	clone(): ItemMeta;
 	clone(): any;
+	clone(): ItemMeta;
 	getAttributeModifiers(): Multimap;
 	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
 	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
@@ -56,6 +56,9 @@ export default interface ItemMeta extends ConfigurationSerializable, PersistentD
 export default class ItemMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.ItemMeta');
+	}
+	public static $isInstance(obj: any): obj is ItemMeta {
+		return obj instanceof ItemMeta.$javaClass;
 	}
 
 }

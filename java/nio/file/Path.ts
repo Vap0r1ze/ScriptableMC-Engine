@@ -44,6 +44,9 @@ export default class Path {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.Path');
 	}
+	public static $isInstance(obj: any): obj is Path {
+		return obj instanceof Path.$javaClass;
+	}
 
 }
 

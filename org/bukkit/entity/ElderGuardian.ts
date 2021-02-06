@@ -214,6 +214,9 @@ export default class ElderGuardian {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ElderGuardian');
 	}
+	public static $isInstance(obj: any): obj is ElderGuardian {
+		return obj instanceof ElderGuardian.$javaClass;
+	}
 
 }
 

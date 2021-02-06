@@ -126,6 +126,9 @@ export default class Painting {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Painting');
 	}
+	public static $isInstance(obj: any): obj is Painting {
+		return obj instanceof Painting.$javaClass;
+	}
 
 }
 

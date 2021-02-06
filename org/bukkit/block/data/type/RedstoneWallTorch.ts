@@ -26,6 +26,9 @@ export default class RedstoneWallTorch {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.RedstoneWallTorch');
 	}
+	public static $isInstance(obj: any): obj is RedstoneWallTorch {
+		return obj instanceof RedstoneWallTorch.$javaClass;
+	}
 
 }
 

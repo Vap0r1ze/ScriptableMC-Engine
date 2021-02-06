@@ -204,6 +204,9 @@ export default class LivingEntity {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.LivingEntity');
 	}
+	public static $isInstance(obj: any): obj is LivingEntity {
+		return obj instanceof LivingEntity.$javaClass;
+	}
 
 }
 

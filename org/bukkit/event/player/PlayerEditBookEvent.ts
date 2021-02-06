@@ -24,6 +24,9 @@ export default class PlayerEditBookEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerEditBookEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerEditBookEvent {
+		return obj instanceof PlayerEditBookEvent.$javaClass;
+	}
 
 	constructor(who: Player, slot: number, previousBookMeta: BookMeta, newBookMeta: BookMeta, isSigning: boolean);
 	constructor(...args: any[]) {

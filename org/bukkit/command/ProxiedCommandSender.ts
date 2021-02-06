@@ -35,6 +35,9 @@ export default class ProxiedCommandSender {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.ProxiedCommandSender');
 	}
+	public static $isInstance(obj: any): obj is ProxiedCommandSender {
+		return obj instanceof ProxiedCommandSender.$javaClass;
+	}
 
 }
 

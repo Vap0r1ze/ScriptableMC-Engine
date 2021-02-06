@@ -232,6 +232,9 @@ export default class Zombie {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Zombie');
 	}
+	public static $isInstance(obj: any): obj is Zombie {
+		return obj instanceof Zombie.$javaClass;
+	}
 
 }
 

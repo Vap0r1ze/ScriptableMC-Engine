@@ -20,6 +20,9 @@ export default class FixedMetadataValue {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.metadata.FixedMetadataValue');
 	}
+	public static $isInstance(obj: any): obj is FixedMetadataValue {
+		return obj instanceof FixedMetadataValue.$javaClass;
+	}
 
 	constructor(owningPlugin: Plugin, value: any);
 	constructor(...args: any[]) {

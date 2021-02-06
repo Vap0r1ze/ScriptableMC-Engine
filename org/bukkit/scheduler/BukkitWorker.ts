@@ -11,6 +11,9 @@ export default class BukkitWorker {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scheduler.BukkitWorker');
 	}
+	public static $isInstance(obj: any): obj is BukkitWorker {
+		return obj instanceof BukkitWorker.$javaClass;
+	}
 
 }
 

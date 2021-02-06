@@ -147,6 +147,9 @@ export default class HopperMinecart {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.minecart.HopperMinecart');
 	}
+	public static $isInstance(obj: any): obj is HopperMinecart {
+		return obj instanceof HopperMinecart.$javaClass;
+	}
 
 }
 

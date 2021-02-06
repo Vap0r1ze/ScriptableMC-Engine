@@ -29,6 +29,9 @@ export default class ExpBottleEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.ExpBottleEvent');
 	}
+	public static $isInstance(obj: any): obj is ExpBottleEvent {
+		return obj instanceof ExpBottleEvent.$javaClass;
+	}
 
 	constructor(bottle: ThrownExpBottle, exp: number);
 	constructor(...args: any[]) {

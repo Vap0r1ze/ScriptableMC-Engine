@@ -50,6 +50,9 @@ export default class PrintWriter {
 	public static get $javaClass(): any {
 		return Java.type('java.io.PrintWriter');
 	}
+	public static $isInstance(obj: any): obj is PrintWriter {
+		return obj instanceof PrintWriter.$javaClass;
+	}
 
 	constructor(arg0: string);
 	constructor(arg0: File);

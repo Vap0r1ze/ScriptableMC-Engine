@@ -53,6 +53,9 @@ export default class EnchantingInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.EnchantingInventory');
 	}
+	public static $isInstance(obj: any): obj is EnchantingInventory {
+		return obj instanceof EnchantingInventory.$javaClass;
+	}
 
 }
 

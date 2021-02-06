@@ -32,6 +32,9 @@ export default class WorldCreator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.WorldCreator');
 	}
+	public static $isInstance(obj: any): obj is WorldCreator {
+		return obj instanceof WorldCreator.$javaClass;
+	}
 
 	constructor(_name: string);
 	constructor(...args: any[]) {

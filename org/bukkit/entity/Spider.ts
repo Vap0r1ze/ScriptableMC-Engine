@@ -212,6 +212,9 @@ export default class Spider {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Spider');
 	}
+	public static $isInstance(obj: any): obj is Spider {
+		return obj instanceof Spider.$javaClass;
+	}
 
 }
 

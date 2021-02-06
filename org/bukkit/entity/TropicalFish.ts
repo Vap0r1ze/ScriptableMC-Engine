@@ -220,6 +220,9 @@ export default class TropicalFish {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.TropicalFish');
 	}
+	public static $isInstance(obj: any): obj is TropicalFish {
+		return obj instanceof TropicalFish.$javaClass;
+	}
 
 }
 

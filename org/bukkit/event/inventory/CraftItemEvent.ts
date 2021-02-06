@@ -46,6 +46,9 @@ export default class CraftItemEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.CraftItemEvent');
 	}
+	public static $isInstance(obj: any): obj is CraftItemEvent {
+		return obj instanceof CraftItemEvent.$javaClass;
+	}
 
 	constructor(recipe: Recipe, what: InventoryView, type: InventoryType$SlotType, slot: number, click: ClickType, action: InventoryAction);
 	constructor(recipe: Recipe, what: InventoryView, type: InventoryType$SlotType, slot: number, click: ClickType, action: InventoryAction, key: number);

@@ -23,6 +23,9 @@ export default class Lantern {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Lantern');
 	}
+	public static $isInstance(obj: any): obj is Lantern {
+		return obj instanceof Lantern.$javaClass;
+	}
 
 }
 

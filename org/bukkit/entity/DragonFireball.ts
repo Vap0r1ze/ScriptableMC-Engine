@@ -129,6 +129,9 @@ export default class DragonFireball {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.DragonFireball');
 	}
+	public static $isInstance(obj: any): obj is DragonFireball {
+		return obj instanceof DragonFireball.$javaClass;
+	}
 
 }
 

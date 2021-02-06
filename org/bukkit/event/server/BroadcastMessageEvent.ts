@@ -18,6 +18,9 @@ export default class BroadcastMessageEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.BroadcastMessageEvent');
 	}
+	public static $isInstance(obj: any): obj is BroadcastMessageEvent {
+		return obj instanceof BroadcastMessageEvent.$javaClass;
+	}
 
 	constructor(message: string, recipients: any);
 	constructor(isAsync: boolean, message: string, recipients: any);

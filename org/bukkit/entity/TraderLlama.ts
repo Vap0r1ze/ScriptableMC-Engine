@@ -255,6 +255,9 @@ export default class TraderLlama {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.TraderLlama');
 	}
+	public static $isInstance(obj: any): obj is TraderLlama {
+		return obj instanceof TraderLlama.$javaClass;
+	}
 
 }
 

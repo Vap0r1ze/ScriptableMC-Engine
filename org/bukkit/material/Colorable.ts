@@ -10,6 +10,9 @@ export default class Colorable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Colorable');
 	}
+	public static $isInstance(obj: any): obj is Colorable {
+		return obj instanceof Colorable.$javaClass;
+	}
 
 }
 

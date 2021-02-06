@@ -10,6 +10,9 @@ export default class NamespacedKey {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.NamespacedKey');
 	}
+	public static $isInstance(obj: any): obj is NamespacedKey {
+		return obj instanceof NamespacedKey.$javaClass;
+	}
 
 	constructor(plugin: Plugin, key: string);
 	constructor(namespace: string, key: string);

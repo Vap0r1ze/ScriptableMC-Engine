@@ -16,6 +16,9 @@ export default class PlayerLevelChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerLevelChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerLevelChangeEvent {
+		return obj instanceof PlayerLevelChangeEvent.$javaClass;
+	}
 
 	constructor(player: Player, oldLevel: number, newLevel: number);
 	constructor(...args: any[]) {

@@ -10,6 +10,9 @@ export default class GroupPrincipal {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.attribute.GroupPrincipal');
 	}
+	public static $isInstance(obj: any): obj is GroupPrincipal {
+		return obj instanceof GroupPrincipal.$javaClass;
+	}
 
 }
 

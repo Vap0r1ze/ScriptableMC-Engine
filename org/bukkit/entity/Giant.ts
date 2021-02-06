@@ -212,6 +212,9 @@ export default class Giant {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Giant');
 	}
+	public static $isInstance(obj: any): obj is Giant {
+		return obj instanceof Giant.$javaClass;
+	}
 
 }
 

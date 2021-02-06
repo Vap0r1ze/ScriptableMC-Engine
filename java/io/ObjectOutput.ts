@@ -25,6 +25,9 @@ export default class ObjectOutput {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ObjectOutput');
 	}
+	public static $isInstance(obj: any): obj is ObjectOutput {
+		return obj instanceof ObjectOutput.$javaClass;
+	}
 
 }
 

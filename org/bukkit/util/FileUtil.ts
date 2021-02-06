@@ -5,6 +5,9 @@ export default class FileUtil {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.FileUtil');
 	}
+	public static $isInstance(obj: any): obj is FileUtil {
+		return obj instanceof FileUtil.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

@@ -9,6 +9,9 @@ export default class UserPrincipal {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.attribute.UserPrincipal');
 	}
+	public static $isInstance(obj: any): obj is UserPrincipal {
+		return obj instanceof UserPrincipal.$javaClass;
+	}
 
 }
 

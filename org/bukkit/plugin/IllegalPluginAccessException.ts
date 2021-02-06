@@ -21,6 +21,9 @@ export default class IllegalPluginAccessException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.IllegalPluginAccessException');
 	}
+	public static $isInstance(obj: any): obj is IllegalPluginAccessException {
+		return obj instanceof IllegalPluginAccessException.$javaClass;
+	}
 
 	constructor();
 	constructor(msg: string);

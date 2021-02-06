@@ -11,8 +11,8 @@ export default interface UnsafeValues {
 	checkSupported(arg0: PluginDescriptionFile): void;
 	fromLegacy(arg0: MaterialData): Material;
 	fromLegacy(arg0: Material): Material;
-	fromLegacy(arg0: MaterialData, arg1: boolean): Material;
 	fromLegacy(arg0: Material, arg1: number): BlockData;
+	fromLegacy(arg0: MaterialData, arg1: boolean): Material;
 	getDataVersion(): number;
 	getMaterial(arg0: string, arg1: number): Material;
 	loadAdvancement(arg0: NamespacedKey, arg1: string): Advancement;
@@ -25,6 +25,9 @@ export default interface UnsafeValues {
 export default class UnsafeValues {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.UnsafeValues');
+	}
+	public static $isInstance(obj: any): obj is UnsafeValues {
+		return obj instanceof UnsafeValues.$javaClass;
 	}
 
 }

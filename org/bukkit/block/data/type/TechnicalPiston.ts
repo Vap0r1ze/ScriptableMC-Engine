@@ -26,6 +26,9 @@ export default class TechnicalPiston {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.TechnicalPiston');
 	}
+	public static $isInstance(obj: any): obj is TechnicalPiston {
+		return obj instanceof TechnicalPiston.$javaClass;
+	}
 
 }
 

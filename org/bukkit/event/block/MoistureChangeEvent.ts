@@ -19,6 +19,9 @@ export default class MoistureChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.MoistureChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is MoistureChangeEvent {
+		return obj instanceof MoistureChangeEvent.$javaClass;
+	}
 
 	constructor(block: Block, newState: BlockState);
 	constructor(...args: any[]) {

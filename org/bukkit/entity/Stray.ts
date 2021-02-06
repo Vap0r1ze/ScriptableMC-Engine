@@ -215,6 +215,9 @@ export default class Stray {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Stray');
 	}
+	public static $isInstance(obj: any): obj is Stray {
+		return obj instanceof Stray.$javaClass;
+	}
 
 }
 

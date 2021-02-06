@@ -59,6 +59,9 @@ export default class ScoreComponent {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.ScoreComponent');
 	}
+	public static $isInstance(obj: any): obj is ScoreComponent {
+		return obj instanceof ScoreComponent.$javaClass;
+	}
 
 	constructor(original: ScoreComponent);
 	constructor(_name: string, objective: string);

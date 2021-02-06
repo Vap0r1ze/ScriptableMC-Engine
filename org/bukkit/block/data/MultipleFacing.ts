@@ -23,6 +23,9 @@ export default class MultipleFacing {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.MultipleFacing');
 	}
+	public static $isInstance(obj: any): obj is MultipleFacing {
+		return obj instanceof MultipleFacing.$javaClass;
+	}
 
 }
 

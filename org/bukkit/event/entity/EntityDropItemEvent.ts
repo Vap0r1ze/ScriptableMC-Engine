@@ -21,6 +21,9 @@ export default class EntityDropItemEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityDropItemEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityDropItemEvent {
+		return obj instanceof EntityDropItemEvent.$javaClass;
+	}
 
 	constructor(entity: Entity, drop: Item);
 	constructor(...args: any[]) {

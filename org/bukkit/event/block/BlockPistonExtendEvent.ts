@@ -21,6 +21,9 @@ export default class BlockPistonExtendEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockPistonExtendEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockPistonExtendEvent {
+		return obj instanceof BlockPistonExtendEvent.$javaClass;
+	}
 
 	constructor(block: Block, length: number, direction: BlockFace);
 	constructor(block: Block, blocks: Array<any>, direction: BlockFace);

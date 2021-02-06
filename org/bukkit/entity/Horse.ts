@@ -256,6 +256,9 @@ export default class Horse {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Horse');
 	}
+	public static $isInstance(obj: any): obj is Horse {
+		return obj instanceof Horse.$javaClass;
+	}
 
 }
 

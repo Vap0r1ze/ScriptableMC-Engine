@@ -18,6 +18,9 @@ export default class InventoryEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.InventoryEvent');
 	}
+	public static $isInstance(obj: any): obj is InventoryEvent {
+		return obj instanceof InventoryEvent.$javaClass;
+	}
 
 	constructor(transaction: InventoryView);
 	constructor(...args: any[]) {

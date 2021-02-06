@@ -14,6 +14,9 @@ export default class HangingEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.hanging.HangingEvent');
 	}
+	public static $isInstance(obj: any): obj is HangingEvent {
+		return obj instanceof HangingEvent.$javaClass;
+	}
 
 }
 

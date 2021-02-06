@@ -126,6 +126,9 @@ export default class Snowball {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Snowball');
 	}
+	public static $isInstance(obj: any): obj is Snowball {
+		return obj instanceof Snowball.$javaClass;
+	}
 
 }
 

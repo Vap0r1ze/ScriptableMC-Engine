@@ -21,6 +21,9 @@ export default class BlockCookEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockCookEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockCookEvent {
+		return obj instanceof BlockCookEvent.$javaClass;
+	}
 
 	constructor(block: Block, source: ItemStack, result: ItemStack);
 	constructor(...args: any[]) {

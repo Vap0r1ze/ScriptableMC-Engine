@@ -224,6 +224,9 @@ export default class Evoker {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Evoker');
 	}
+	public static $isInstance(obj: any): obj is Evoker {
+		return obj instanceof Evoker.$javaClass;
+	}
 
 }
 

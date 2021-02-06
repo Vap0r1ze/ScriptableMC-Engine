@@ -37,6 +37,9 @@ export default class PlayerInteractEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerInteractEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerInteractEvent {
+		return obj instanceof PlayerInteractEvent.$javaClass;
+	}
 
 	constructor(who: Player, action: Action, item: ItemStack, clickedBlock: Block, clickedFace: BlockFace);
 	constructor(who: Player, action: Action, item: ItemStack, clickedBlock: Block, clickedFace: BlockFace, hand: EquipmentSlot);

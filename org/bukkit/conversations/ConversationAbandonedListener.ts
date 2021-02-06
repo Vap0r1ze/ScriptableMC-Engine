@@ -9,6 +9,9 @@ export default class ConversationAbandonedListener {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.ConversationAbandonedListener');
 	}
+	public static $isInstance(obj: any): obj is ConversationAbandonedListener {
+		return obj instanceof ConversationAbandonedListener.$javaClass;
+	}
 
 }
 

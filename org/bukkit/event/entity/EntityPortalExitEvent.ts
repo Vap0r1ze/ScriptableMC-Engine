@@ -27,6 +27,9 @@ export default class EntityPortalExitEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityPortalExitEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityPortalExitEvent {
+		return obj instanceof EntityPortalExitEvent.$javaClass;
+	}
 
 	constructor(entity: Entity, from: Location, to: Location, before: Vector, after: Vector);
 	constructor(...args: any[]) {

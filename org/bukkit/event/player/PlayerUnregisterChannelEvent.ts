@@ -15,6 +15,9 @@ export default class PlayerUnregisterChannelEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerUnregisterChannelEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerUnregisterChannelEvent {
+		return obj instanceof PlayerUnregisterChannelEvent.$javaClass;
+	}
 
 	constructor(player: Player, channel: string);
 	constructor(...args: any[]) {

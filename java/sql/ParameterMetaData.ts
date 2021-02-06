@@ -19,6 +19,9 @@ export default class ParameterMetaData {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.ParameterMetaData');
 	}
+	public static $isInstance(obj: any): obj is ParameterMetaData {
+		return obj instanceof ParameterMetaData.$javaClass;
+	}
 
 	public static get parameterModeIn(): number {
 		return ParameterMetaData.$javaClass.parameterModeIn;

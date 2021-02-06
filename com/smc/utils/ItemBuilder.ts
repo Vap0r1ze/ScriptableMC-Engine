@@ -20,6 +20,9 @@ export default class ItemBuilder {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.utils.ItemBuilder');
 	}
+	public static $isInstance(obj: any): obj is ItemBuilder {
+		return obj instanceof ItemBuilder.$javaClass;
+	}
 
 	constructor(itemStack: ItemStack);
 	constructor(material: Material);

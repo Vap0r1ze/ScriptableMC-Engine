@@ -22,6 +22,9 @@ export default class PlayerMoveEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerMoveEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerMoveEvent {
+		return obj instanceof PlayerMoveEvent.$javaClass;
+	}
 
 	constructor(player: Player, from: Location, to: Location);
 	constructor(...args: any[]) {

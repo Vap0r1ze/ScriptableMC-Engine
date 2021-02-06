@@ -26,6 +26,9 @@ export default class ChunkSnapshot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.ChunkSnapshot');
 	}
+	public static $isInstance(obj: any): obj is ChunkSnapshot {
+		return obj instanceof ChunkSnapshot.$javaClass;
+	}
 
 }
 

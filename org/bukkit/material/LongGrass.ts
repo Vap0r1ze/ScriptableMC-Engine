@@ -21,6 +21,9 @@ export default class LongGrass {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.LongGrass');
 	}
+	public static $isInstance(obj: any): obj is LongGrass {
+		return obj instanceof LongGrass.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

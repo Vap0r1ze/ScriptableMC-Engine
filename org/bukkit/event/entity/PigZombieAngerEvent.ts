@@ -24,6 +24,9 @@ export default class PigZombieAngerEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.PigZombieAngerEvent');
 	}
+	public static $isInstance(obj: any): obj is PigZombieAngerEvent {
+		return obj instanceof PigZombieAngerEvent.$javaClass;
+	}
 
 	constructor(pigZombie: PigZombie, target: Entity, newAnger: number);
 	constructor(...args: any[]) {

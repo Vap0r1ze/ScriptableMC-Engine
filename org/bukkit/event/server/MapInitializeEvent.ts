@@ -14,6 +14,9 @@ export default class MapInitializeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.MapInitializeEvent');
 	}
+	public static $isInstance(obj: any): obj is MapInitializeEvent {
+		return obj instanceof MapInitializeEvent.$javaClass;
+	}
 
 	constructor(mapView: MapView);
 	constructor(...args: any[]) {

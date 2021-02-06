@@ -22,6 +22,9 @@ export default class DirectionalContainer {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.DirectionalContainer');
 	}
+	public static $isInstance(obj: any): obj is DirectionalContainer {
+		return obj instanceof DirectionalContainer.$javaClass;
+	}
 
 	constructor(type: Material);
 	constructor(type: Material, data: number);

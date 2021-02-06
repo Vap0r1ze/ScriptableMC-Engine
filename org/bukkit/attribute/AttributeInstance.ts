@@ -17,6 +17,9 @@ export default class AttributeInstance {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.attribute.AttributeInstance');
 	}
+	public static $isInstance(obj: any): obj is AttributeInstance {
+		return obj instanceof AttributeInstance.$javaClass;
+	}
 
 }
 

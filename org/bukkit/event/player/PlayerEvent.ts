@@ -14,6 +14,9 @@ export default class PlayerEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerEvent {
+		return obj instanceof PlayerEvent.$javaClass;
+	}
 
 	constructor(who: Player);
 	constructor(...args: any[]) {

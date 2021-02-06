@@ -61,6 +61,9 @@ export default class FireworkEffectMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.FireworkEffectMeta');
 	}
+	public static $isInstance(obj: any): obj is FireworkEffectMeta {
+		return obj instanceof FireworkEffectMeta.$javaClass;
+	}
 
 }
 

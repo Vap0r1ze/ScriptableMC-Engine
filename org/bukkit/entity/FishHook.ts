@@ -137,6 +137,9 @@ export default class FishHook {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.FishHook');
 	}
+	public static $isInstance(obj: any): obj is FishHook {
+		return obj instanceof FishHook.$javaClass;
+	}
 
 }
 

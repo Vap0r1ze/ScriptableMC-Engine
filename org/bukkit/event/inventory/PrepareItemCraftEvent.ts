@@ -23,6 +23,9 @@ export default class PrepareItemCraftEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.PrepareItemCraftEvent');
 	}
+	public static $isInstance(obj: any): obj is PrepareItemCraftEvent {
+		return obj instanceof PrepareItemCraftEvent.$javaClass;
+	}
 
 	constructor(what: CraftingInventory, view: InventoryView, isRepair: boolean);
 	constructor(...args: any[]) {

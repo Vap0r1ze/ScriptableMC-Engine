@@ -17,6 +17,9 @@ export default class ChunkLoadEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.world.ChunkLoadEvent');
 	}
+	public static $isInstance(obj: any): obj is ChunkLoadEvent {
+		return obj instanceof ChunkLoadEvent.$javaClass;
+	}
 
 	constructor(chunk: Chunk, newChunk: boolean);
 	constructor(...args: any[]) {

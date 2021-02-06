@@ -21,6 +21,9 @@ export default class FireworkExplodeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.FireworkExplodeEvent');
 	}
+	public static $isInstance(obj: any): obj is FireworkExplodeEvent {
+		return obj instanceof FireworkExplodeEvent.$javaClass;
+	}
 
 	constructor(what: Firework);
 	constructor(...args: any[]) {

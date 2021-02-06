@@ -18,6 +18,9 @@ export default class Version {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.version.Version');
 	}
+	public static $isInstance(obj: any): obj is Version {
+		return obj instanceof Version.$javaClass;
+	}
 
 	constructor(major: number, minor: number, build: number, $constructor_marker: any);
 	constructor(...args: any[]) {

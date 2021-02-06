@@ -32,6 +32,9 @@ export default class Repeater {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Repeater');
 	}
+	public static $isInstance(obj: any): obj is Repeater {
+		return obj instanceof Repeater.$javaClass;
+	}
 
 }
 

@@ -26,6 +26,9 @@ export default class VillagerReplenishTradeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.VillagerReplenishTradeEvent');
 	}
+	public static $isInstance(obj: any): obj is VillagerReplenishTradeEvent {
+		return obj instanceof VillagerReplenishTradeEvent.$javaClass;
+	}
 
 	constructor(what: AbstractVillager, recipe: MerchantRecipe, bonus: number);
 	constructor(...args: any[]) {

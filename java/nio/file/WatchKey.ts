@@ -13,6 +13,9 @@ export default class WatchKey {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.WatchKey');
 	}
+	public static $isInstance(obj: any): obj is WatchKey {
+		return obj instanceof WatchKey.$javaClass;
+	}
 
 }
 

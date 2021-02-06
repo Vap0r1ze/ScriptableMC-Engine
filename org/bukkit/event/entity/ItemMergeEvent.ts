@@ -22,6 +22,9 @@ export default class ItemMergeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.ItemMergeEvent');
 	}
+	public static $isInstance(obj: any): obj is ItemMergeEvent {
+		return obj instanceof ItemMergeEvent.$javaClass;
+	}
 
 	constructor(item: Item, target: Item);
 	constructor(...args: any[]) {

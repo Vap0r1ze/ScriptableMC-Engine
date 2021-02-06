@@ -21,6 +21,9 @@ export default class BatToggleSleepEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.BatToggleSleepEvent');
 	}
+	public static $isInstance(obj: any): obj is BatToggleSleepEvent {
+		return obj instanceof BatToggleSleepEvent.$javaClass;
+	}
 
 	constructor(what: Bat, awake: boolean);
 	constructor(...args: any[]) {

@@ -119,6 +119,9 @@ export default class ComplexEntityPart {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ComplexEntityPart');
 	}
+	public static $isInstance(obj: any): obj is ComplexEntityPart {
+		return obj instanceof ComplexEntityPart.$javaClass;
+	}
 
 }
 

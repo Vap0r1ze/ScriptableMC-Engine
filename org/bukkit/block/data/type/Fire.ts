@@ -28,6 +28,9 @@ export default class Fire {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Fire');
 	}
+	public static $isInstance(obj: any): obj is Fire {
+		return obj instanceof Fire.$javaClass;
+	}
 
 }
 

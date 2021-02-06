@@ -231,6 +231,9 @@ export default class Tameable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Tameable');
 	}
+	public static $isInstance(obj: any): obj is Tameable {
+		return obj instanceof Tameable.$javaClass;
+	}
 
 }
 

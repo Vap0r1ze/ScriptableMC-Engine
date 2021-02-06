@@ -37,6 +37,9 @@ export default class Timestamp {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Timestamp');
 	}
+	public static $isInstance(obj: any): obj is Timestamp {
+		return obj instanceof Timestamp.$javaClass;
+	}
 
 	constructor(arg0: number);
 	constructor(arg0: number, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number);

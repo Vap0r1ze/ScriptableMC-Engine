@@ -14,6 +14,9 @@ export default class ServiceUnregisterEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.ServiceUnregisterEvent');
 	}
+	public static $isInstance(obj: any): obj is ServiceUnregisterEvent {
+		return obj instanceof ServiceUnregisterEvent.$javaClass;
+	}
 
 	constructor(serviceProvider: RegisteredServiceProvider);
 	constructor(...args: any[]) {

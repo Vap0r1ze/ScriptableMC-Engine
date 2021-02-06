@@ -36,6 +36,9 @@ export default class YamlConfigurationOptions {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.file.YamlConfigurationOptions');
 	}
+	public static $isInstance(obj: any): obj is YamlConfigurationOptions {
+		return obj instanceof YamlConfigurationOptions.$javaClass;
+	}
 
 }
 

@@ -21,6 +21,9 @@ export default class FurnaceExtractEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.FurnaceExtractEvent');
 	}
+	public static $isInstance(obj: any): obj is FurnaceExtractEvent {
+		return obj instanceof FurnaceExtractEvent.$javaClass;
+	}
 
 	constructor(player: Player, block: Block, itemType: Material, itemAmount: number, exp: number);
 	constructor(...args: any[]) {

@@ -33,6 +33,9 @@ export default class FormattedCommandAlias {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.FormattedCommandAlias');
 	}
+	public static $isInstance(obj: any): obj is FormattedCommandAlias {
+		return obj instanceof FormattedCommandAlias.$javaClass;
+	}
 
 	constructor(alias: string, formatStrings: Array<string>);
 	constructor(...args: any[]) {

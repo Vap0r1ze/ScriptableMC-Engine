@@ -10,6 +10,9 @@ export default class AsynchronousChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.AsynchronousChannel');
 	}
+	public static $isInstance(obj: any): obj is AsynchronousChannel {
+		return obj instanceof AsynchronousChannel.$javaClass;
+	}
 
 }
 

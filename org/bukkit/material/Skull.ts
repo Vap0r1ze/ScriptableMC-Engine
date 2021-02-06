@@ -22,6 +22,9 @@ export default class Skull {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Skull');
 	}
+	public static $isInstance(obj: any): obj is Skull {
+		return obj instanceof Skull.$javaClass;
+	}
 
 	constructor();
 	constructor(direction: BlockFace);

@@ -17,6 +17,9 @@ export default class LeavesDecayEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.LeavesDecayEvent');
 	}
+	public static $isInstance(obj: any): obj is LeavesDecayEvent {
+		return obj instanceof LeavesDecayEvent.$javaClass;
+	}
 
 	constructor(block: Block);
 	constructor(...args: any[]) {

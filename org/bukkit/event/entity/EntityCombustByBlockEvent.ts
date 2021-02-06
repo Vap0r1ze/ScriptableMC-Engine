@@ -22,6 +22,9 @@ export default class EntityCombustByBlockEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityCombustByBlockEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityCombustByBlockEvent {
+		return obj instanceof EntityCombustByBlockEvent.$javaClass;
+	}
 
 	constructor(combuster: Block, combustee: Entity, duration: number);
 	constructor(...args: any[]) {

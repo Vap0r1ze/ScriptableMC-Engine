@@ -12,6 +12,9 @@ export default class PluginNameConversationPrefix {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.PluginNameConversationPrefix');
 	}
+	public static $isInstance(obj: any): obj is PluginNameConversationPrefix {
+		return obj instanceof PluginNameConversationPrefix.$javaClass;
+	}
 
 	constructor(plugin: Plugin);
 	constructor(plugin: Plugin, separator: string, prefixColor: ChatColor);

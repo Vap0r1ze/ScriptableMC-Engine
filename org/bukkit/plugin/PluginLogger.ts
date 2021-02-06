@@ -63,6 +63,9 @@ export default class PluginLogger {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.PluginLogger');
 	}
+	public static $isInstance(obj: any): obj is PluginLogger {
+		return obj instanceof PluginLogger.$javaClass;
+	}
 
 	constructor(context: Plugin);
 	constructor(...args: any[]) {

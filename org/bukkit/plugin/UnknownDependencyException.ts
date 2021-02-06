@@ -21,6 +21,9 @@ export default class UnknownDependencyException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.UnknownDependencyException');
 	}
+	public static $isInstance(obj: any): obj is UnknownDependencyException {
+		return obj instanceof UnknownDependencyException.$javaClass;
+	}
 
 	constructor();
 	constructor(message: string);

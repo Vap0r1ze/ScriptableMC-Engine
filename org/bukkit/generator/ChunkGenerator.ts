@@ -21,6 +21,9 @@ export default class ChunkGenerator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.generator.ChunkGenerator');
 	}
+	public static $isInstance(obj: any): obj is ChunkGenerator {
+		return obj instanceof ChunkGenerator.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

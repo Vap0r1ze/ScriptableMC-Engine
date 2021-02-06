@@ -26,6 +26,9 @@ export default class SmartInventory {
 	public static get $javaClass(): any {
 		return Java.type('fr.minuskube.inv.SmartInventory');
 	}
+	public static $isInstance(obj: any): obj is SmartInventory {
+		return obj instanceof SmartInventory.$javaClass;
+	}
 
 	public static builder(): SmartInventory$Builder;
 	public static builder(...args: any[]): any {

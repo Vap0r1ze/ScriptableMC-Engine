@@ -21,6 +21,9 @@ export default class FaceAttachable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.FaceAttachable');
 	}
+	public static $isInstance(obj: any): obj is FaceAttachable {
+		return obj instanceof FaceAttachable.$javaClass;
+	}
 
 }
 

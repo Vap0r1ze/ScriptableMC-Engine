@@ -12,6 +12,9 @@ export default class ValidatingPrompt {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.ValidatingPrompt');
 	}
+	public static $isInstance(obj: any): obj is ValidatingPrompt {
+		return obj instanceof ValidatingPrompt.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

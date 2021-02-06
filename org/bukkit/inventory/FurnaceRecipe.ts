@@ -29,6 +29,9 @@ export default class FurnaceRecipe {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.FurnaceRecipe');
 	}
+	public static $isInstance(obj: any): obj is FurnaceRecipe {
+		return obj instanceof FurnaceRecipe.$javaClass;
+	}
 
 	constructor(result: ItemStack, source: Material);
 	constructor(result: ItemStack, source: MaterialData);

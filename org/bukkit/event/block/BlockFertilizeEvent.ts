@@ -21,6 +21,9 @@ export default class BlockFertilizeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockFertilizeEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockFertilizeEvent {
+		return obj instanceof BlockFertilizeEvent.$javaClass;
+	}
 
 	constructor(theBlock: Block, player: Player, blocks: Array<any>);
 	constructor(...args: any[]) {

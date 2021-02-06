@@ -21,6 +21,9 @@ export default class PlayerKickEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerKickEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerKickEvent {
+		return obj instanceof PlayerKickEvent.$javaClass;
+	}
 
 	constructor(playerKicked: Player, kickReason: string, leaveMessage: string);
 	constructor(...args: any[]) {

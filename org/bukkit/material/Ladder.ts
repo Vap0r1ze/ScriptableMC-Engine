@@ -24,6 +24,9 @@ export default class Ladder {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Ladder');
 	}
+	public static $isInstance(obj: any): obj is Ladder {
+		return obj instanceof Ladder.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

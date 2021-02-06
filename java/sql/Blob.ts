@@ -20,6 +20,9 @@ export default class Blob {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Blob');
 	}
+	public static $isInstance(obj: any): obj is Blob {
+		return obj instanceof Blob.$javaClass;
+	}
 
 }
 

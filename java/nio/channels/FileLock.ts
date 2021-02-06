@@ -18,6 +18,9 @@ export default class FileLock {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.FileLock');
 	}
+	public static $isInstance(obj: any): obj is FileLock {
+		return obj instanceof FileLock.$javaClass;
+	}
 
 }
 

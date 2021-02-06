@@ -218,6 +218,9 @@ export default class Vindicator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Vindicator');
 	}
+	public static $isInstance(obj: any): obj is Vindicator {
+		return obj instanceof Vindicator.$javaClass;
+	}
 
 }
 

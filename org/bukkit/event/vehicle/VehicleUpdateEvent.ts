@@ -14,6 +14,9 @@ export default class VehicleUpdateEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.vehicle.VehicleUpdateEvent');
 	}
+	public static $isInstance(obj: any): obj is VehicleUpdateEvent {
+		return obj instanceof VehicleUpdateEvent.$javaClass;
+	}
 
 	constructor(vehicle: Vehicle);
 	constructor(...args: any[]) {

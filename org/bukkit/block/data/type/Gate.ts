@@ -31,6 +31,9 @@ export default class Gate {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Gate');
 	}
+	public static $isInstance(obj: any): obj is Gate {
+		return obj instanceof Gate.$javaClass;
+	}
 
 }
 

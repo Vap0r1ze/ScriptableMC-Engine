@@ -30,6 +30,9 @@ export default class BossBar {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.boss.BossBar');
 	}
+	public static $isInstance(obj: any): obj is BossBar {
+		return obj instanceof BossBar.$javaClass;
+	}
 
 }
 

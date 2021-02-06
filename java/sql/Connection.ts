@@ -74,6 +74,9 @@ export default class Connection {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Connection');
 	}
+	public static $isInstance(obj: any): obj is Connection {
+		return obj instanceof Connection.$javaClass;
+	}
 
 	public static get TRANSACTION_NONE(): number {
 		return Connection.$javaClass.TRANSACTION_NONE;

@@ -21,6 +21,9 @@ export default class SpawnEgg {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.SpawnEgg');
 	}
+	public static $isInstance(obj: any): obj is SpawnEgg {
+		return obj instanceof SpawnEgg.$javaClass;
+	}
 
 	constructor();
 	constructor(type: EntityType);

@@ -10,6 +10,9 @@ export default class ClickEvent {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.ClickEvent');
 	}
+	public static $isInstance(obj: any): obj is ClickEvent {
+		return obj instanceof ClickEvent.$javaClass;
+	}
 
 	constructor(action: ClickEvent$Action, value: string);
 	constructor(...args: any[]) {

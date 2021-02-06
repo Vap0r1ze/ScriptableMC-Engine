@@ -31,6 +31,9 @@ export default class Conversation {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.Conversation');
 	}
+	public static $isInstance(obj: any): obj is Conversation {
+		return obj instanceof Conversation.$javaClass;
+	}
 
 	constructor(plugin: Plugin, forWhom: Conversable, firstPrompt: Prompt);
 	constructor(plugin: Plugin, forWhom: Conversable, firstPrompt: Prompt, initialSessionData: any);

@@ -43,6 +43,9 @@ export default class FloatBuffer {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.FloatBuffer');
 	}
+	public static $isInstance(obj: any): obj is FloatBuffer {
+		return obj instanceof FloatBuffer.$javaClass;
+	}
 
 	public static allocate(arg0: number): FloatBuffer;
 	public static allocate(...args: any[]): any {

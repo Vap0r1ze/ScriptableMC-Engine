@@ -16,6 +16,9 @@ export default class PlayerItemBreakEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerItemBreakEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerItemBreakEvent {
+		return obj instanceof PlayerItemBreakEvent.$javaClass;
+	}
 
 	constructor(player: Player, brokenItem: ItemStack);
 	constructor(...args: any[]) {

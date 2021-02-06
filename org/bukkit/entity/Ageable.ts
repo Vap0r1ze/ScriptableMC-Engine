@@ -221,6 +221,9 @@ export default class Ageable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Ageable');
 	}
+	public static $isInstance(obj: any): obj is Ageable {
+		return obj instanceof Ageable.$javaClass;
+	}
 
 }
 

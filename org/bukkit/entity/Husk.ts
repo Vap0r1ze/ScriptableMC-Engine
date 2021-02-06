@@ -231,6 +231,9 @@ export default class Husk {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Husk');
 	}
+	public static $isInstance(obj: any): obj is Husk {
+		return obj instanceof Husk.$javaClass;
+	}
 
 }
 

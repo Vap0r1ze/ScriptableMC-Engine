@@ -19,6 +19,9 @@ export default class HangingBreakEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.hanging.HangingBreakEvent');
 	}
+	public static $isInstance(obj: any): obj is HangingBreakEvent {
+		return obj instanceof HangingBreakEvent.$javaClass;
+	}
 
 	constructor(hanging: Hanging, cause: HangingBreakEvent$RemoveCause);
 	constructor(...args: any[]) {

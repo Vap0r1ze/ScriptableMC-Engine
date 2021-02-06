@@ -49,6 +49,9 @@ export default class Location {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Location');
 	}
+	public static $isInstance(obj: any): obj is Location {
+		return obj instanceof Location.$javaClass;
+	}
 
 	constructor(world: World, x: number, y: number, z: number);
 	constructor(world: World, x: number, y: number, z: number, yaw: number, pitch: number);

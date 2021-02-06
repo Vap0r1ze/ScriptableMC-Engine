@@ -14,6 +14,9 @@ export default class ByteChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.ByteChannel');
 	}
+	public static $isInstance(obj: any): obj is ByteChannel {
+		return obj instanceof ByteChannel.$javaClass;
+	}
 
 }
 

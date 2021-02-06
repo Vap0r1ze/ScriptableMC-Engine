@@ -53,6 +53,9 @@ export default class NBTFile {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.nbtapi.NBTFile');
 	}
+	public static $isInstance(obj: any): obj is NBTFile {
+		return obj instanceof NBTFile.$javaClass;
+	}
 
 	constructor(file: File);
 	constructor(...args: any[]) {

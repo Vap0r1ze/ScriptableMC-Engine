@@ -17,6 +17,9 @@ export default class ByteArrayOutputStream {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ByteArrayOutputStream');
 	}
+	public static $isInstance(obj: any): obj is ByteArrayOutputStream {
+		return obj instanceof ByteArrayOutputStream.$javaClass;
+	}
 
 	constructor();
 	constructor(arg0: number);

@@ -13,6 +13,9 @@ export default class FileUtils {
 	public static get $javaClass(): any {
 		return Java.type('org.apache.commons.io.FileUtils');
 	}
+	public static $isInstance(obj: any): obj is FileUtils {
+		return obj instanceof FileUtils.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

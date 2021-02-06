@@ -18,6 +18,9 @@ export default class EntityPoseChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityPoseChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityPoseChangeEvent {
+		return obj instanceof EntityPoseChangeEvent.$javaClass;
+	}
 
 	constructor(who: Entity, pose: Pose);
 	constructor(...args: any[]) {

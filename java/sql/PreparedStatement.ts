@@ -78,8 +78,8 @@ export default interface PreparedStatement extends Statement {
 	setBinaryStream(arg0: number, arg1: InputStream): void;
 	setBinaryStream(arg0: number, arg1: InputStream, arg2: number): void;
 	setBinaryStream(arg0: number, arg1: InputStream, arg2: number): void;
-	setBlob(arg0: number, arg1: Blob): void;
 	setBlob(arg0: number, arg1: InputStream): void;
+	setBlob(arg0: number, arg1: Blob): void;
 	setBlob(arg0: number, arg1: InputStream, arg2: number): void;
 	setBoolean(arg0: number, arg1: boolean): void;
 	setByte(arg0: number, arg1: number): void;
@@ -87,8 +87,8 @@ export default interface PreparedStatement extends Statement {
 	setCharacterStream(arg0: number, arg1: Reader): void;
 	setCharacterStream(arg0: number, arg1: Reader, arg2: number): void;
 	setCharacterStream(arg0: number, arg1: Reader, arg2: number): void;
-	setClob(arg0: number, arg1: Clob): void;
 	setClob(arg0: number, arg1: Reader): void;
+	setClob(arg0: number, arg1: Clob): void;
 	setClob(arg0: number, arg1: Reader, arg2: number): void;
 	setCursorName(arg0: string): void;
 	setDate(arg0: number, arg1: Date): void;
@@ -105,17 +105,17 @@ export default interface PreparedStatement extends Statement {
 	setMaxRows(arg0: number): void;
 	setNCharacterStream(arg0: number, arg1: Reader): void;
 	setNCharacterStream(arg0: number, arg1: Reader, arg2: number): void;
-	setNClob(arg0: number, arg1: Reader): void;
 	setNClob(arg0: number, arg1: NClob): void;
+	setNClob(arg0: number, arg1: Reader): void;
 	setNClob(arg0: number, arg1: Reader, arg2: number): void;
 	setNString(arg0: number, arg1: string): void;
 	setNull(arg0: number, arg1: number): void;
 	setNull(arg0: number, arg1: number, arg2: string): void;
 	setObject(arg0: number, arg1: any): void;
-	setObject(arg0: number, arg1: any, arg2: number): void;
 	setObject(arg0: number, arg1: any, arg2: SQLType): void;
-	setObject(arg0: number, arg1: any, arg2: number, arg3: number): void;
+	setObject(arg0: number, arg1: any, arg2: number): void;
 	setObject(arg0: number, arg1: any, arg2: SQLType, arg3: number): void;
+	setObject(arg0: number, arg1: any, arg2: number, arg3: number): void;
 	setPoolable(arg0: boolean): void;
 	setQueryTimeout(arg0: number): void;
 	setRef(arg0: number, arg1: Ref): void;
@@ -135,6 +135,9 @@ export default interface PreparedStatement extends Statement {
 export default class PreparedStatement {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.PreparedStatement');
+	}
+	public static $isInstance(obj: any): obj is PreparedStatement {
+		return obj instanceof PreparedStatement.$javaClass;
 	}
 
 	public static get CLOSE_ALL_RESULTS(): number {

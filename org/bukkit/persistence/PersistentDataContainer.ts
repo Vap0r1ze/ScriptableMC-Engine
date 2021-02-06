@@ -18,6 +18,9 @@ export default class PersistentDataContainer {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.persistence.PersistentDataContainer');
 	}
+	public static $isInstance(obj: any): obj is PersistentDataContainer {
+		return obj instanceof PersistentDataContainer.$javaClass;
+	}
 
 }
 

@@ -25,6 +25,9 @@ export default class EntityChangeBlockEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityChangeBlockEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityChangeBlockEvent {
+		return obj instanceof EntityChangeBlockEvent.$javaClass;
+	}
 
 	constructor(what: Entity, block: Block, to: BlockData);
 	constructor(...args: any[]) {

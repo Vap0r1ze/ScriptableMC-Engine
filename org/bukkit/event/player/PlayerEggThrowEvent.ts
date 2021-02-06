@@ -23,6 +23,9 @@ export default class PlayerEggThrowEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerEggThrowEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerEggThrowEvent {
+		return obj instanceof PlayerEggThrowEvent.$javaClass;
+	}
 
 	constructor(player: Player, egg: Egg, hatching: boolean, numHatches: number, hatchingType: EntityType);
 	constructor(...args: any[]) {

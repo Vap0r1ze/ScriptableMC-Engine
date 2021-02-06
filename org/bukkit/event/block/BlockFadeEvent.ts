@@ -19,6 +19,9 @@ export default class BlockFadeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockFadeEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockFadeEvent {
+		return obj instanceof BlockFadeEvent.$javaClass;
+	}
 
 	constructor(block: Block, newState: BlockState);
 	constructor(...args: any[]) {

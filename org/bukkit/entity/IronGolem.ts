@@ -214,6 +214,9 @@ export default class IronGolem {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.IronGolem');
 	}
+	public static $isInstance(obj: any): obj is IronGolem {
+		return obj instanceof IronGolem.$javaClass;
+	}
 
 }
 

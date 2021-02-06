@@ -27,6 +27,9 @@ export default class MysqlWrapper {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.utils.MysqlWrapper');
 	}
+	public static $isInstance(obj: any): obj is MysqlWrapper {
+		return obj instanceof MysqlWrapper.$javaClass;
+	}
 
 	constructor(host: string, port: number, database: string, username: string, password: string);
 	constructor(...args: any[]) {

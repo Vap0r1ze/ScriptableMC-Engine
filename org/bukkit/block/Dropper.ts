@@ -60,6 +60,9 @@ export default class Dropper {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Dropper');
 	}
+	public static $isInstance(obj: any): obj is Dropper {
+		return obj instanceof Dropper.$javaClass;
+	}
 
 }
 

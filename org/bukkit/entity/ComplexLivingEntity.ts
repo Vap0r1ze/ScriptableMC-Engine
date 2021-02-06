@@ -203,6 +203,9 @@ export default class ComplexLivingEntity {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ComplexLivingEntity');
 	}
+	public static $isInstance(obj: any): obj is ComplexLivingEntity {
+		return obj instanceof ComplexLivingEntity.$javaClass;
+	}
 
 }
 

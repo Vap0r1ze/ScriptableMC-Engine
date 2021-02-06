@@ -35,6 +35,9 @@ export default class ObjectOutputStream {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ObjectOutputStream');
 	}
+	public static $isInstance(obj: any): obj is ObjectOutputStream {
+		return obj instanceof ObjectOutputStream.$javaClass;
+	}
 
 	constructor(arg0: OutputStream);
 	constructor(...args: any[]) {

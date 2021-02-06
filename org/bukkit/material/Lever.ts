@@ -27,6 +27,9 @@ export default class Lever {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Lever');
 	}
+	public static $isInstance(obj: any): obj is Lever {
+		return obj instanceof Lever.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

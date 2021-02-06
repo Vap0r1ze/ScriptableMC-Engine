@@ -14,6 +14,9 @@ export default class ServerLoadEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.ServerLoadEvent');
 	}
+	public static $isInstance(obj: any): obj is ServerLoadEvent {
+		return obj instanceof ServerLoadEvent.$javaClass;
+	}
 
 	constructor(type: ServerLoadEvent$LoadType);
 	constructor(...args: any[]) {

@@ -6,6 +6,9 @@ export default class DefaultPermissions {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.permissions.DefaultPermissions');
 	}
+	public static $isInstance(obj: any): obj is DefaultPermissions {
+		return obj instanceof DefaultPermissions.$javaClass;
+	}
 
 	public static registerCorePermissions(): void;
 	public static registerCorePermissions(...args: any[]): any {

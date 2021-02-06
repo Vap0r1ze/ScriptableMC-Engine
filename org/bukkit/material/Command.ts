@@ -21,6 +21,9 @@ export default class Command {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Command');
 	}
+	public static $isInstance(obj: any): obj is Command {
+		return obj instanceof Command.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

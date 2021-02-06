@@ -212,6 +212,9 @@ export default class Blaze {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Blaze');
 	}
+	public static $isInstance(obj: any): obj is Blaze {
+		return obj instanceof Blaze.$javaClass;
+	}
 
 }
 

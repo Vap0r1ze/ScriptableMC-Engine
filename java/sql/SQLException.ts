@@ -28,6 +28,9 @@ export default class SQLException {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.SQLException');
 	}
+	public static $isInstance(obj: any): obj is SQLException {
+		return obj instanceof SQLException.$javaClass;
+	}
 
 	constructor();
 	constructor(arg0: string);

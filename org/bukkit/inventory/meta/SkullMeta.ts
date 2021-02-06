@@ -63,6 +63,9 @@ export default class SkullMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.SkullMeta');
 	}
+	public static $isInstance(obj: any): obj is SkullMeta {
+		return obj instanceof SkullMeta.$javaClass;
+	}
 
 }
 

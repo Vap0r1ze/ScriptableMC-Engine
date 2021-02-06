@@ -7,8 +7,8 @@ import PluginMessageListenerRegistration from './PluginMessageListenerRegistrati
 
 export default interface StandardMessenger extends Messenger {
 	dispatchIncomingMessage(source: Player, channel: string, message: Array<number>): void;
-	getIncomingChannelRegistrations(plugin: Plugin): any;
 	getIncomingChannelRegistrations(channel: string): any;
+	getIncomingChannelRegistrations(plugin: Plugin): any;
 	getIncomingChannelRegistrations(plugin: Plugin, channel: string): any;
 	getIncomingChannels(): any;
 	getIncomingChannels(plugin: Plugin): any;
@@ -30,6 +30,9 @@ export default interface StandardMessenger extends Messenger {
 export default class StandardMessenger {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.messaging.StandardMessenger');
+	}
+	public static $isInstance(obj: any): obj is StandardMessenger {
+		return obj instanceof StandardMessenger.$javaClass;
 	}
 
 	constructor();

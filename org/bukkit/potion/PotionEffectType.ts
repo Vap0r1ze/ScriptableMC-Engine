@@ -15,6 +15,9 @@ export default class PotionEffectType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.potion.PotionEffectType');
 	}
+	public static $isInstance(obj: any): obj is PotionEffectType {
+		return obj instanceof PotionEffectType.$javaClass;
+	}
 
 	public static get ABSORPTION(): PotionEffectType {
 		return PotionEffectType.$javaClass.ABSORPTION;

@@ -13,6 +13,9 @@ export default class BukkitTask {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scheduler.BukkitTask');
 	}
+	public static $isInstance(obj: any): obj is BukkitTask {
+		return obj instanceof BukkitTask.$javaClass;
+	}
 
 }
 

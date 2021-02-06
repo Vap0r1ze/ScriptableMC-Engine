@@ -49,6 +49,9 @@ export default class CartographyInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.CartographyInventory');
 	}
+	public static $isInstance(obj: any): obj is CartographyInventory {
+		return obj instanceof CartographyInventory.$javaClass;
+	}
 
 }
 

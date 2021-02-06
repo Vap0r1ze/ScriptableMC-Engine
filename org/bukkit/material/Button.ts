@@ -27,6 +27,9 @@ export default class Button {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Button');
 	}
+	public static $isInstance(obj: any): obj is Button {
+		return obj instanceof Button.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

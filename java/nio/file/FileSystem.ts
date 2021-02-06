@@ -25,6 +25,9 @@ export default class FileSystem {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.FileSystem');
 	}
+	public static $isInstance(obj: any): obj is FileSystem {
+		return obj instanceof FileSystem.$javaClass;
+	}
 
 }
 

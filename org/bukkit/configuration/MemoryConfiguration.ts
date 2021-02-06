@@ -89,6 +89,9 @@ export default class MemoryConfiguration {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.MemoryConfiguration');
 	}
+	public static $isInstance(obj: any): obj is MemoryConfiguration {
+		return obj instanceof MemoryConfiguration.$javaClass;
+	}
 
 	constructor();
 	constructor(defaults: Configuration);

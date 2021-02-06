@@ -18,6 +18,9 @@ export default class MapCanvas {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MapCanvas');
 	}
+	public static $isInstance(obj: any): obj is MapCanvas {
+		return obj instanceof MapCanvas.$javaClass;
+	}
 
 }
 

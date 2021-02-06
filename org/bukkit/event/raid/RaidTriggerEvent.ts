@@ -21,6 +21,9 @@ export default class RaidTriggerEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.raid.RaidTriggerEvent');
 	}
+	public static $isInstance(obj: any): obj is RaidTriggerEvent {
+		return obj instanceof RaidTriggerEvent.$javaClass;
+	}
 
 	constructor(raid: Raid, world: World, player: Player);
 	constructor(...args: any[]) {

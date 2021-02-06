@@ -214,6 +214,9 @@ export default class MagmaCube {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.MagmaCube');
 	}
+	public static $isInstance(obj: any): obj is MagmaCube {
+		return obj instanceof MagmaCube.$javaClass;
+	}
 
 }
 

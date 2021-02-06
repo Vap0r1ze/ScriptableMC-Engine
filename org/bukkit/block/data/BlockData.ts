@@ -17,6 +17,9 @@ export default class BlockData {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.BlockData');
 	}
+	public static $isInstance(obj: any): obj is BlockData {
+		return obj instanceof BlockData.$javaClass;
+	}
 
 }
 

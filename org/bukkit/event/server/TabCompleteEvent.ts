@@ -20,6 +20,9 @@ export default class TabCompleteEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.TabCompleteEvent');
 	}
+	public static $isInstance(obj: any): obj is TabCompleteEvent {
+		return obj instanceof TabCompleteEvent.$javaClass;
+	}
 
 	constructor(sender: CommandSender, buffer: string, completions: Array<any>);
 	constructor(...args: any[]) {

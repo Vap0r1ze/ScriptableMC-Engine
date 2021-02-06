@@ -42,6 +42,9 @@ export default class InventoryClickEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.InventoryClickEvent');
 	}
+	public static $isInstance(obj: any): obj is InventoryClickEvent {
+		return obj instanceof InventoryClickEvent.$javaClass;
+	}
 
 	constructor(view: InventoryView, type: InventoryType$SlotType, slot: number, click: ClickType, action: InventoryAction);
 	constructor(view: InventoryView, type: InventoryType$SlotType, slot: number, click: ClickType, action: InventoryAction, key: number);

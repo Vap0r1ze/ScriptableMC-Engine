@@ -212,6 +212,9 @@ export default class Squid {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Squid');
 	}
+	public static $isInstance(obj: any): obj is Squid {
+		return obj instanceof Squid.$javaClass;
+	}
 
 }
 

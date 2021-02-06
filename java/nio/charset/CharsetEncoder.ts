@@ -28,6 +28,9 @@ export default class CharsetEncoder {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.charset.CharsetEncoder');
 	}
+	public static $isInstance(obj: any): obj is CharsetEncoder {
+		return obj instanceof CharsetEncoder.$javaClass;
+	}
 
 }
 

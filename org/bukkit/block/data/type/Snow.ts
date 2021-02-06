@@ -22,6 +22,9 @@ export default class Snow {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Snow');
 	}
+	public static $isInstance(obj: any): obj is Snow {
+		return obj instanceof Snow.$javaClass;
+	}
 
 }
 

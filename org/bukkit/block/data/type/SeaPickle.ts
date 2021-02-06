@@ -25,6 +25,9 @@ export default class SeaPickle {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.SeaPickle');
 	}
+	public static $isInstance(obj: any): obj is SeaPickle {
+		return obj instanceof SeaPickle.$javaClass;
+	}
 
 }
 

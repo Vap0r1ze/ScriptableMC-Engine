@@ -9,6 +9,9 @@ export default class SerializableAs {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.serialization.SerializableAs');
 	}
+	public static $isInstance(obj: any): obj is SerializableAs {
+		return obj instanceof SerializableAs.$javaClass;
+	}
 
 }
 

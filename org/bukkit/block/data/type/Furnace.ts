@@ -26,6 +26,9 @@ export default class Furnace {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Furnace');
 	}
+	public static $isInstance(obj: any): obj is Furnace {
+		return obj instanceof Furnace.$javaClass;
+	}
 
 }
 

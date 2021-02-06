@@ -24,6 +24,9 @@ export default class DaylightDetector {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.DaylightDetector');
 	}
+	public static $isInstance(obj: any): obj is DaylightDetector {
+		return obj instanceof DaylightDetector.$javaClass;
+	}
 
 }
 

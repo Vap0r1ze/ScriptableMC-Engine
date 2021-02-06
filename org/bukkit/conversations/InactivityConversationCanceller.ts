@@ -15,6 +15,9 @@ export default class InactivityConversationCanceller {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.InactivityConversationCanceller');
 	}
+	public static $isInstance(obj: any): obj is InactivityConversationCanceller {
+		return obj instanceof InactivityConversationCanceller.$javaClass;
+	}
 
 	constructor(plugin: Plugin, timeoutSeconds: number);
 	constructor(...args: any[]) {

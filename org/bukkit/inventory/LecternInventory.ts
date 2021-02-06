@@ -51,6 +51,9 @@ export default class LecternInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.LecternInventory');
 	}
+	public static $isInstance(obj: any): obj is LecternInventory {
+		return obj instanceof LecternInventory.$javaClass;
+	}
 
 }
 

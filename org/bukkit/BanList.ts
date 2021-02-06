@@ -13,6 +13,9 @@ export default class BanList {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.BanList');
 	}
+	public static $isInstance(obj: any): obj is BanList {
+		return obj instanceof BanList.$javaClass;
+	}
 
 }
 

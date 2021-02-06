@@ -34,6 +34,9 @@ export default class ShapelessRecipe {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.ShapelessRecipe');
 	}
+	public static $isInstance(obj: any): obj is ShapelessRecipe {
+		return obj instanceof ShapelessRecipe.$javaClass;
+	}
 
 	constructor(result: ItemStack);
 	constructor(key: NamespacedKey, result: ItemStack);

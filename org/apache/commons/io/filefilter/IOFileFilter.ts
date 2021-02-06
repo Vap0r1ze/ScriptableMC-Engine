@@ -12,6 +12,9 @@ export default class IOFileFilter {
 	public static get $javaClass(): any {
 		return Java.type('org.apache.commons.io.filefilter.IOFileFilter');
 	}
+	public static $isInstance(obj: any): obj is IOFileFilter {
+		return obj instanceof IOFileFilter.$javaClass;
+	}
 
 }
 

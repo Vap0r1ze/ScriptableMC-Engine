@@ -24,6 +24,9 @@ export default class CampfireRecipe {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.CampfireRecipe');
 	}
+	public static $isInstance(obj: any): obj is CampfireRecipe {
+		return obj instanceof CampfireRecipe.$javaClass;
+	}
 
 	constructor(key: NamespacedKey, result: ItemStack, source: Material, experience: number, cookingTime: number);
 	constructor(key: NamespacedKey, result: ItemStack, input: RecipeChoice, experience: number, cookingTime: number);

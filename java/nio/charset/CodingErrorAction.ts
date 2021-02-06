@@ -4,6 +4,9 @@ export default class CodingErrorAction {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.charset.CodingErrorAction');
 	}
+	public static $isInstance(obj: any): obj is CodingErrorAction {
+		return obj instanceof CodingErrorAction.$javaClass;
+	}
 
 	public static get IGNORE(): CodingErrorAction {
 		return CodingErrorAction.$javaClass.IGNORE;

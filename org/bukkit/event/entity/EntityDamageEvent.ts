@@ -29,6 +29,9 @@ export default class EntityDamageEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityDamageEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityDamageEvent {
+		return obj instanceof EntityDamageEvent.$javaClass;
+	}
 
 	constructor(damagee: Entity, cause: EntityDamageEvent$DamageCause, damage: number);
 	constructor(damagee: Entity, cause: EntityDamageEvent$DamageCause, modifiers: any, modifierFunctions: any);

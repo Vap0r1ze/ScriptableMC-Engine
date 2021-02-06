@@ -100,6 +100,9 @@ export default class FileConfiguration {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.file.FileConfiguration');
 	}
+	public static $isInstance(obj: any): obj is FileConfiguration {
+		return obj instanceof FileConfiguration.$javaClass;
+	}
 
 	constructor();
 	constructor(defaults: Configuration);

@@ -56,6 +56,9 @@ export default class File {
 	public static get $javaClass(): any {
 		return Java.type('java.io.File');
 	}
+	public static $isInstance(obj: any): obj is File {
+		return obj instanceof File.$javaClass;
+	}
 
 	constructor(arg0: string);
 	constructor(arg0: any);

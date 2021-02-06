@@ -22,6 +22,9 @@ export default class BlockPistonRetractEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockPistonRetractEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockPistonRetractEvent {
+		return obj instanceof BlockPistonRetractEvent.$javaClass;
+	}
 
 	constructor(block: Block, blocks: Array<any>, direction: BlockFace);
 	constructor(...args: any[]) {

@@ -39,6 +39,9 @@ export default class Chunk {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Chunk');
 	}
+	public static $isInstance(obj: any): obj is Chunk {
+		return obj instanceof Chunk.$javaClass;
+	}
 
 }
 

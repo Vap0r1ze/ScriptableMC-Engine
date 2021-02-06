@@ -21,6 +21,9 @@ export default class SheepRegrowWoolEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.SheepRegrowWoolEvent');
 	}
+	public static $isInstance(obj: any): obj is SheepRegrowWoolEvent {
+		return obj instanceof SheepRegrowWoolEvent.$javaClass;
+	}
 
 	constructor(sheep: Sheep);
 	constructor(...args: any[]) {

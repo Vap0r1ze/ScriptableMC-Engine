@@ -22,6 +22,9 @@ export default class MapCursor {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MapCursor');
 	}
+	public static $isInstance(obj: any): obj is MapCursor {
+		return obj instanceof MapCursor.$javaClass;
+	}
 
 	constructor(x: number, y: number, direction: number, type: MapCursor$Type, visible: boolean);
 	constructor(x: number, y: number, direction: number, type: number, visible: boolean);

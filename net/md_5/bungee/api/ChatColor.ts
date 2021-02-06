@@ -11,6 +11,9 @@ export default class ChatColor {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.ChatColor');
 	}
+	public static $isInstance(obj: any): obj is ChatColor {
+		return obj instanceof ChatColor.$javaClass;
+	}
 
 	public static get ALL_CODES(): string {
 		return ChatColor.$javaClass.ALL_CODES;

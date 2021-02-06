@@ -14,6 +14,9 @@ export default class BasicAuthorization {
 	public static get $javaClass(): any {
 		return Java.type('khttp.structures.authorization.BasicAuthorization');
 	}
+	public static $isInstance(obj: any): obj is BasicAuthorization {
+		return obj instanceof BasicAuthorization.$javaClass;
+	}
 
 	constructor(user: string, password: string);
 	constructor(...args: any[]) {

@@ -132,6 +132,9 @@ export default class SmallFireball {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.SmallFireball');
 	}
+	public static $isInstance(obj: any): obj is SmallFireball {
+		return obj instanceof SmallFireball.$javaClass;
+	}
 
 }
 

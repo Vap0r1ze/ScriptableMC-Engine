@@ -33,6 +33,9 @@ export default class Multiset {
 	public static get $javaClass(): any {
 		return Java.type('com.google.common.collect.Multiset');
 	}
+	public static $isInstance(obj: any): obj is Multiset {
+		return obj instanceof Multiset.$javaClass;
+	}
 
 }
 

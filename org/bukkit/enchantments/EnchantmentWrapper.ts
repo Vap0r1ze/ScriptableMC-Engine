@@ -21,6 +21,9 @@ export default class EnchantmentWrapper {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.enchantments.EnchantmentWrapper');
 	}
+	public static $isInstance(obj: any): obj is EnchantmentWrapper {
+		return obj instanceof EnchantmentWrapper.$javaClass;
+	}
 
 	constructor(_name: string);
 	constructor(...args: any[]) {

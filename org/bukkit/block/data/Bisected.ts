@@ -21,6 +21,9 @@ export default class Bisected {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Bisected');
 	}
+	public static $isInstance(obj: any): obj is Bisected {
+		return obj instanceof Bisected.$javaClass;
+	}
 
 }
 

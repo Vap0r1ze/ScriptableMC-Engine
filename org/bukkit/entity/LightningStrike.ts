@@ -120,6 +120,9 @@ export default class LightningStrike {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.LightningStrike');
 	}
+	public static $isInstance(obj: any): obj is LightningStrike {
+		return obj instanceof LightningStrike.$javaClass;
+	}
 
 }
 

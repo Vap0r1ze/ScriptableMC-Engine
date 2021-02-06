@@ -21,6 +21,9 @@ export default class TexturedMaterial {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.TexturedMaterial');
 	}
+	public static $isInstance(obj: any): obj is TexturedMaterial {
+		return obj instanceof TexturedMaterial.$javaClass;
+	}
 
 	constructor(m: Material);
 	constructor(type: Material, data: number);

@@ -13,6 +13,9 @@ export default class RegexPrompt {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.RegexPrompt');
 	}
+	public static $isInstance(obj: any): obj is RegexPrompt {
+		return obj instanceof RegexPrompt.$javaClass;
+	}
 
 	constructor(regex: string);
 	constructor(pattern: any);

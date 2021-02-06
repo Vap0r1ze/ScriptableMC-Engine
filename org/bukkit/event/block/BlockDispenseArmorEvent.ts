@@ -24,6 +24,9 @@ export default class BlockDispenseArmorEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockDispenseArmorEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockDispenseArmorEvent {
+		return obj instanceof BlockDispenseArmorEvent.$javaClass;
+	}
 
 	constructor(block: Block, dispensed: ItemStack, target: LivingEntity);
 	constructor(...args: any[]) {

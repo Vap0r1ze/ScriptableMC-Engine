@@ -17,6 +17,9 @@ export default class FireworkEffect {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.FireworkEffect');
 	}
+	public static $isInstance(obj: any): obj is FireworkEffect {
+		return obj instanceof FireworkEffect.$javaClass;
+	}
 
 	public static builder(): FireworkEffect$Builder;
 	public static builder(...args: any[]): any {

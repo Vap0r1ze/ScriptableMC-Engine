@@ -20,6 +20,9 @@ export default class SQLXML {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.SQLXML');
 	}
+	public static $isInstance(obj: any): obj is SQLXML {
+		return obj instanceof SQLXML.$javaClass;
+	}
 
 }
 

@@ -221,6 +221,9 @@ export default class Breedable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Breedable');
 	}
+	public static $isInstance(obj: any): obj is Breedable {
+		return obj instanceof Breedable.$javaClass;
+	}
 
 }
 

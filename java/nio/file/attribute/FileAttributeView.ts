@@ -9,6 +9,9 @@ export default class FileAttributeView {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.attribute.FileAttributeView');
 	}
+	public static $isInstance(obj: any): obj is FileAttributeView {
+		return obj instanceof FileAttributeView.$javaClass;
+	}
 
 }
 

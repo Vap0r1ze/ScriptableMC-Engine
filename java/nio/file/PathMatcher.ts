@@ -9,6 +9,9 @@ export default class PathMatcher {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.PathMatcher');
 	}
+	public static $isInstance(obj: any): obj is PathMatcher {
+		return obj instanceof PathMatcher.$javaClass;
+	}
 
 }
 

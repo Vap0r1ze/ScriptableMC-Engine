@@ -18,6 +18,9 @@ export default class FileOutputStream {
 	public static get $javaClass(): any {
 		return Java.type('java.io.FileOutputStream');
 	}
+	public static $isInstance(obj: any): obj is FileOutputStream {
+		return obj instanceof FileOutputStream.$javaClass;
+	}
 
 	constructor(arg0: FileDescriptor);
 	constructor(arg0: File);

@@ -143,6 +143,9 @@ export default class Trident {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Trident');
 	}
+	public static $isInstance(obj: any): obj is Trident {
+		return obj instanceof Trident.$javaClass;
+	}
 
 }
 

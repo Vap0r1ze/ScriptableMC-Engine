@@ -19,6 +19,9 @@ export default class BukkitRunnable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scheduler.BukkitRunnable');
 	}
+	public static $isInstance(obj: any): obj is BukkitRunnable {
+		return obj instanceof BukkitRunnable.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

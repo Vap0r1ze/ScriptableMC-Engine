@@ -62,6 +62,9 @@ export default class KnowledgeBookMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.KnowledgeBookMeta');
 	}
+	public static $isInstance(obj: any): obj is KnowledgeBookMeta {
+		return obj instanceof KnowledgeBookMeta.$javaClass;
+	}
 
 }
 

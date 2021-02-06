@@ -44,6 +44,9 @@ export default class Comparator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Comparator');
 	}
+	public static $isInstance(obj: any): obj is Comparator {
+		return obj instanceof Comparator.$javaClass;
+	}
 
 }
 

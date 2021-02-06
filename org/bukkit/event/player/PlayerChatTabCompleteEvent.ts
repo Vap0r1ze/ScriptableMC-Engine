@@ -17,6 +17,9 @@ export default class PlayerChatTabCompleteEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerChatTabCompleteEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerChatTabCompleteEvent {
+		return obj instanceof PlayerChatTabCompleteEvent.$javaClass;
+	}
 
 	constructor(who: Player, message: string, completions: Array<any>);
 	constructor(...args: any[]) {

@@ -18,6 +18,9 @@ export default class RaidFinishEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.raid.RaidFinishEvent');
 	}
+	public static $isInstance(obj: any): obj is RaidFinishEvent {
+		return obj instanceof RaidFinishEvent.$javaClass;
+	}
 
 	constructor(raid: Raid, world: World, winners: Array<any>);
 	constructor(...args: any[]) {

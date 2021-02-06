@@ -28,6 +28,9 @@ export default class SimplexOctaveGenerator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.noise.SimplexOctaveGenerator');
 	}
+	public static $isInstance(obj: any): obj is SimplexOctaveGenerator {
+		return obj instanceof SimplexOctaveGenerator.$javaClass;
+	}
 
 	constructor(world: World, octaves: number);
 	constructor(seed: number, octaves: number);

@@ -19,6 +19,9 @@ export default class JavaPluginLoader {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.java.JavaPluginLoader');
 	}
+	public static $isInstance(obj: any): obj is JavaPluginLoader {
+		return obj instanceof JavaPluginLoader.$javaClass;
+	}
 
 	constructor(instance: Server);
 	constructor(...args: any[]) {

@@ -21,6 +21,9 @@ export default class Pagination {
 	public static get $javaClass(): any {
 		return Java.type('fr.minuskube.inv.content.Pagination');
 	}
+	public static $isInstance(obj: any): obj is Pagination {
+		return obj instanceof Pagination.$javaClass;
+	}
 
 }
 

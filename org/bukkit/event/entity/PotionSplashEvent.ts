@@ -33,6 +33,9 @@ export default class PotionSplashEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.PotionSplashEvent');
 	}
+	public static $isInstance(obj: any): obj is PotionSplashEvent {
+		return obj instanceof PotionSplashEvent.$javaClass;
+	}
 
 	constructor(potion: ThrownPotion, affectedEntities: any);
 	constructor(...args: any[]) {

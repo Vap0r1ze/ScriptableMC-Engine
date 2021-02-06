@@ -16,6 +16,9 @@ export default class LineIterator {
 	public static get $javaClass(): any {
 		return Java.type('org.apache.commons.io.LineIterator');
 	}
+	public static $isInstance(obj: any): obj is LineIterator {
+		return obj instanceof LineIterator.$javaClass;
+	}
 
 	constructor(reader: Reader);
 	constructor(...args: any[]) {

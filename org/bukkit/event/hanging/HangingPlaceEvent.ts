@@ -23,6 +23,9 @@ export default class HangingPlaceEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.hanging.HangingPlaceEvent');
 	}
+	public static $isInstance(obj: any): obj is HangingPlaceEvent {
+		return obj instanceof HangingPlaceEvent.$javaClass;
+	}
 
 	constructor(hanging: Hanging, player: Player, block: Block, blockFace: BlockFace);
 	constructor(...args: any[]) {

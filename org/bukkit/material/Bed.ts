@@ -24,6 +24,9 @@ export default class Bed {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Bed');
 	}
+	public static $isInstance(obj: any): obj is Bed {
+		return obj instanceof Bed.$javaClass;
+	}
 
 	constructor();
 	constructor(direction: BlockFace);

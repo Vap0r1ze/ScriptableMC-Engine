@@ -25,6 +25,9 @@ export default class Dispenser {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Dispenser');
 	}
+	public static $isInstance(obj: any): obj is Dispenser {
+		return obj instanceof Dispenser.$javaClass;
+	}
 
 	constructor();
 	constructor(direction: BlockFace);

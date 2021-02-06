@@ -44,6 +44,9 @@ export default class CaseInsensitiveMap {
 	public static get $javaClass(): any {
 		return Java.type('khttp.structures.maps.CaseInsensitiveMap');
 	}
+	public static $isInstance(obj: any): obj is CaseInsensitiveMap {
+		return obj instanceof CaseInsensitiveMap.$javaClass;
+	}
 
 	constructor(map: any);
 	constructor(...args: any[]) {

@@ -26,6 +26,9 @@ export default class PlayerBucketEmptyEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerBucketEmptyEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerBucketEmptyEvent {
+		return obj instanceof PlayerBucketEmptyEvent.$javaClass;
+	}
 
 	constructor(who: Player, blockClicked: Block, blockFace: BlockFace, bucket: Material, itemInHand: ItemStack);
 	constructor(who: Player, block: Block, blockClicked: Block, blockFace: BlockFace, bucket: Material, itemInHand: ItemStack);

@@ -214,6 +214,9 @@ export default class Snowman {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Snowman');
 	}
+	public static $isInstance(obj: any): obj is Snowman {
+		return obj instanceof Snowman.$javaClass;
+	}
 
 }
 

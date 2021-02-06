@@ -21,6 +21,9 @@ export default class BlockShearEntityEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockShearEntityEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockShearEntityEvent {
+		return obj instanceof BlockShearEntityEvent.$javaClass;
+	}
 
 	constructor(dispenser: Block, sheared: Entity, tool: ItemStack);
 	constructor(...args: any[]) {

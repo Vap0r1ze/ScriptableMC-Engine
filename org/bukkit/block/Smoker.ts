@@ -62,6 +62,9 @@ export default class Smoker {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Smoker');
 	}
+	public static $isInstance(obj: any): obj is Smoker {
+		return obj instanceof Smoker.$javaClass;
+	}
 
 }
 

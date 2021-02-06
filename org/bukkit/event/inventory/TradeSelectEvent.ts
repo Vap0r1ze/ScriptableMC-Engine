@@ -29,6 +29,9 @@ export default class TradeSelectEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.TradeSelectEvent');
 	}
+	public static $isInstance(obj: any): obj is TradeSelectEvent {
+		return obj instanceof TradeSelectEvent.$javaClass;
+	}
 
 	constructor(transaction: InventoryView, newIndex: number);
 	constructor(...args: any[]) {

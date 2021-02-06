@@ -24,6 +24,9 @@ export default class BlockIgniteEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockIgniteEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockIgniteEvent {
+		return obj instanceof BlockIgniteEvent.$javaClass;
+	}
 
 	constructor(theBlock: Block, cause: BlockIgniteEvent$IgniteCause, ignitingEntity: Entity);
 	constructor(theBlock: Block, cause: BlockIgniteEvent$IgniteCause, ignitingBlock: Block);

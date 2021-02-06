@@ -8,8 +8,8 @@ import Slime from '../../../../org/bukkit/entity/Slime.js'
 
 export default interface SlimeSplitEvent extends EntityEvent, Cancellable {
 	getCount(): number;
-	getEntity(): Entity;
 	getEntity(): Slime;
+	getEntity(): Entity;
 	getEntityType(): EntityType;
 	getEventName(): string;
 	getHandlers(): HandlerList;
@@ -22,6 +22,9 @@ export default interface SlimeSplitEvent extends EntityEvent, Cancellable {
 export default class SlimeSplitEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.SlimeSplitEvent');
+	}
+	public static $isInstance(obj: any): obj is SlimeSplitEvent {
+		return obj instanceof SlimeSplitEvent.$javaClass;
 	}
 
 	constructor(slime: Slime, count: number);

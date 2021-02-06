@@ -25,6 +25,9 @@ export default class EndPortalFrame {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.EndPortalFrame');
 	}
+	public static $isInstance(obj: any): obj is EndPortalFrame {
+		return obj instanceof EndPortalFrame.$javaClass;
+	}
 
 }
 

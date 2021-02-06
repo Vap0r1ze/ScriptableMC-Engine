@@ -16,6 +16,9 @@ export default class Conversable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.Conversable');
 	}
+	public static $isInstance(obj: any): obj is Conversable {
+		return obj instanceof Conversable.$javaClass;
+	}
 
 }
 

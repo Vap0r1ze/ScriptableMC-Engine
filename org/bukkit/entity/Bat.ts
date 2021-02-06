@@ -214,6 +214,9 @@ export default class Bat {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Bat');
 	}
+	public static $isInstance(obj: any): obj is Bat {
+		return obj instanceof Bat.$javaClass;
+	}
 
 }
 

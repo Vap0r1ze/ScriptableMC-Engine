@@ -53,8 +53,8 @@ export default interface Server extends PluginMessageRecipient {
 	broadcast(arg0: string, arg1: string): number;
 	broadcastMessage(arg0: string): number;
 	clearRecipes(): void;
-	createBlockData(arg0: Material): BlockData;
 	createBlockData(arg0: string): BlockData;
+	createBlockData(arg0: Material): BlockData;
 	createBlockData(arg0: Material, arg1: any): BlockData;
 	createBlockData(arg0: Material, arg1: string): BlockData;
 	createBossBar(arg0: string, arg1: BarColor, arg2: BarStyle, arg3: Array<BarFlag>): BossBar;
@@ -62,10 +62,10 @@ export default interface Server extends PluginMessageRecipient {
 	createChunkData(arg0: World): ChunkGenerator$ChunkData;
 	createExplorerMap(arg0: World, arg1: Location, arg2: StructureType): ItemStack;
 	createExplorerMap(arg0: World, arg1: Location, arg2: StructureType, arg3: number, arg4: boolean): ItemStack;
-	createInventory(arg0: InventoryHolder, arg1: InventoryType): Inventory;
 	createInventory(arg0: InventoryHolder, arg1: number): Inventory;
-	createInventory(arg0: InventoryHolder, arg1: number, arg2: string): Inventory;
+	createInventory(arg0: InventoryHolder, arg1: InventoryType): Inventory;
 	createInventory(arg0: InventoryHolder, arg1: InventoryType, arg2: string): Inventory;
+	createInventory(arg0: InventoryHolder, arg1: number, arg2: string): Inventory;
 	createMap(arg0: World): MapView;
 	createMerchant(arg0: string): Merchant;
 	createWorld(arg0: WorldCreator): World;
@@ -173,6 +173,9 @@ export default interface Server extends PluginMessageRecipient {
 export default class Server {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Server');
+	}
+	public static $isInstance(obj: any): obj is Server {
+		return obj instanceof Server.$javaClass;
 	}
 
 	public static get BROADCAST_CHANNEL_ADMINISTRATIVE(): string {

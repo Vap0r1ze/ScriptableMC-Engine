@@ -69,8 +69,8 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	getBiome(arg0: number, arg1: number, arg2: number): Biome;
 	getBlockAt(arg0: Location): Block;
 	getBlockAt(arg0: number, arg1: number, arg2: number): Block;
-	getChunkAt(arg0: Location): Chunk;
 	getChunkAt(arg0: Block): Chunk;
+	getChunkAt(arg0: Location): Chunk;
 	getChunkAt(arg0: number, arg1: number): Chunk;
 	getClearWeatherDuration(): number;
 	getDifficulty(): Difficulty;
@@ -89,12 +89,12 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	getGameRules(): Array<string>;
 	getGenerator(): ChunkGenerator;
 	getHighestBlockAt(arg0: Location): Block;
-	getHighestBlockAt(arg0: number, arg1: number): Block;
 	getHighestBlockAt(arg0: Location, arg1: HeightMap): Block;
+	getHighestBlockAt(arg0: number, arg1: number): Block;
 	getHighestBlockAt(arg0: number, arg1: number, arg2: HeightMap): Block;
 	getHighestBlockYAt(arg0: Location): number;
-	getHighestBlockYAt(arg0: Location, arg1: HeightMap): number;
 	getHighestBlockYAt(arg0: number, arg1: number): number;
+	getHighestBlockYAt(arg0: Location, arg1: HeightMap): number;
 	getHighestBlockYAt(arg0: number, arg1: number, arg2: HeightMap): number;
 	getHumidity(arg0: number, arg1: number): number;
 	getHumidity(arg0: number, arg1: number, arg2: number): number;
@@ -153,12 +153,12 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	loadChunk(arg0: number, arg1: number, arg2: boolean): boolean;
 	locateNearestRaid(arg0: Location, arg1: number): Raid;
 	locateNearestStructure(arg0: Location, arg1: StructureType, arg2: number, arg3: boolean): Location;
-	playEffect(arg0: Location, arg1: Effect, arg2: any): void;
 	playEffect(arg0: Location, arg1: Effect, arg2: number): void;
+	playEffect(arg0: Location, arg1: Effect, arg2: any): void;
 	playEffect(arg0: Location, arg1: Effect, arg2: any, arg3: number): void;
 	playEffect(arg0: Location, arg1: Effect, arg2: number, arg3: number): void;
-	playSound(arg0: Location, arg1: Sound, arg2: number, arg3: number): void;
 	playSound(arg0: Location, arg1: string, arg2: number, arg3: number): void;
+	playSound(arg0: Location, arg1: Sound, arg2: number, arg3: number): void;
 	playSound(arg0: Location, arg1: Sound, arg2: SoundCategory, arg3: number, arg4: number): void;
 	playSound(arg0: Location, arg1: string, arg2: SoundCategory, arg3: number, arg4: number): void;
 	rayTrace(arg0: Location, arg1: Vector, arg2: number, arg3: FluidCollisionMode, arg4: boolean, arg5: number, arg6: any): RayTraceResult;
@@ -166,8 +166,8 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	rayTraceBlocks(arg0: Location, arg1: Vector, arg2: number, arg3: FluidCollisionMode): RayTraceResult;
 	rayTraceBlocks(arg0: Location, arg1: Vector, arg2: number, arg3: FluidCollisionMode, arg4: boolean): RayTraceResult;
 	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number): RayTraceResult;
-	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number, arg3: any): RayTraceResult;
 	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number, arg3: number): RayTraceResult;
+	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number, arg3: any): RayTraceResult;
 	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number, arg3: number, arg4: any): RayTraceResult;
 	refreshChunk(arg0: number, arg1: number): boolean;
 	regenerateChunk(arg0: number, arg1: number): boolean;
@@ -219,15 +219,15 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number): void;
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: any): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number): void;
-	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: any): void;
-	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: any): void;
+	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number): void;
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number): void;
-	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
+	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: any): void;
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: any): void;
-	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: any, arg8: boolean): void;
-	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: any): void;
+	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number): void;
+	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: any): void;
+	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: any, arg8: boolean): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: any): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: any, arg10: boolean): void;
 	spigot(): World$Spigot;
@@ -242,6 +242,9 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 export default class World {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.World');
+	}
+	public static $isInstance(obj: any): obj is World {
+		return obj instanceof World.$javaClass;
 	}
 
 }

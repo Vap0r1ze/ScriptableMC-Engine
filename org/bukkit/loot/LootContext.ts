@@ -15,6 +15,9 @@ export default class LootContext {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.loot.LootContext');
 	}
+	public static $isInstance(obj: any): obj is LootContext {
+		return obj instanceof LootContext.$javaClass;
+	}
 
 	public static get DEFAULT_LOOT_MODIFIER(): number {
 		return LootContext.$javaClass.DEFAULT_LOOT_MODIFIER;

@@ -53,6 +53,9 @@ export default class NBTItem {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.nbtapi.NBTItem');
 	}
+	public static $isInstance(obj: any): obj is NBTItem {
+		return obj instanceof NBTItem.$javaClass;
+	}
 
 	constructor(item: ItemStack);
 	constructor(...args: any[]) {

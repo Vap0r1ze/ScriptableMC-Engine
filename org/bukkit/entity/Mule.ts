@@ -248,6 +248,9 @@ export default class Mule {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Mule');
 	}
+	public static $isInstance(obj: any): obj is Mule {
+		return obj instanceof Mule.$javaClass;
+	}
 
 }
 

@@ -24,6 +24,9 @@ export default class Observer {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Observer');
 	}
+	public static $isInstance(obj: any): obj is Observer {
+		return obj instanceof Observer.$javaClass;
+	}
 
 	constructor();
 	constructor(direction: BlockFace);

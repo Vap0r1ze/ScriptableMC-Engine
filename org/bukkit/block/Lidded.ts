@@ -9,6 +9,9 @@ export default class Lidded {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Lidded');
 	}
+	public static $isInstance(obj: any): obj is Lidded {
+		return obj instanceof Lidded.$javaClass;
+	}
 
 }
 

@@ -10,6 +10,9 @@ export default class TabCompleter {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.TabCompleter');
 	}
+	public static $isInstance(obj: any): obj is TabCompleter {
+		return obj instanceof TabCompleter.$javaClass;
+	}
 
 }
 

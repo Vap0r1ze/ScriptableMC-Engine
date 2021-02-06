@@ -21,6 +21,9 @@ export default class PlayerTakeLecternBookEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerTakeLecternBookEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerTakeLecternBookEvent {
+		return obj instanceof PlayerTakeLecternBookEvent.$javaClass;
+	}
 
 	constructor(who: Player, lectern: Lectern);
 	constructor(...args: any[]) {

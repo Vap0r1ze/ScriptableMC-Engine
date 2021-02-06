@@ -4,6 +4,9 @@ export default class ByteOrder {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.ByteOrder');
 	}
+	public static $isInstance(obj: any): obj is ByteOrder {
+		return obj instanceof ByteOrder.$javaClass;
+	}
 
 	public static get BIG_ENDIAN(): ByteOrder {
 		return ByteOrder.$javaClass.BIG_ENDIAN;

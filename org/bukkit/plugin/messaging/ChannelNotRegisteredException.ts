@@ -21,6 +21,9 @@ export default class ChannelNotRegisteredException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.messaging.ChannelNotRegisteredException');
 	}
+	public static $isInstance(obj: any): obj is ChannelNotRegisteredException {
+		return obj instanceof ChannelNotRegisteredException.$javaClass;
+	}
 
 	constructor();
 	constructor(channel: string);

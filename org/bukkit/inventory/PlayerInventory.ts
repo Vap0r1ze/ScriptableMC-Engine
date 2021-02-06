@@ -58,8 +58,8 @@ export default interface PlayerInventory extends Inventory {
 	setExtraContents(arg0: Array<ItemStack>): void;
 	setHeldItemSlot(arg0: number): void;
 	setHelmet(arg0: ItemStack): void;
-	setItem(arg0: number, arg1: ItemStack): void;
 	setItem(arg0: EquipmentSlot, arg1: ItemStack): void;
+	setItem(arg0: number, arg1: ItemStack): void;
 	setItemInHand(arg0: ItemStack): void;
 	setItemInMainHand(arg0: ItemStack): void;
 	setItemInOffHand(arg0: ItemStack): void;
@@ -72,6 +72,9 @@ export default interface PlayerInventory extends Inventory {
 export default class PlayerInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.PlayerInventory');
+	}
+	public static $isInstance(obj: any): obj is PlayerInventory {
+		return obj instanceof PlayerInventory.$javaClass;
 	}
 
 }

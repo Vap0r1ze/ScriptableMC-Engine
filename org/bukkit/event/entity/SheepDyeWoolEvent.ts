@@ -24,6 +24,9 @@ export default class SheepDyeWoolEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.SheepDyeWoolEvent');
 	}
+	public static $isInstance(obj: any): obj is SheepDyeWoolEvent {
+		return obj instanceof SheepDyeWoolEvent.$javaClass;
+	}
 
 	constructor(sheep: Sheep, color: DyeColor);
 	constructor(...args: any[]) {

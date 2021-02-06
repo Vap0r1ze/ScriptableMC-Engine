@@ -21,6 +21,9 @@ export default class EventException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.EventException');
 	}
+	public static $isInstance(obj: any): obj is EventException {
+		return obj instanceof EventException.$javaClass;
+	}
 
 	constructor();
 	constructor(message: string);

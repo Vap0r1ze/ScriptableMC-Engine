@@ -22,6 +22,9 @@ export default class InventoryMoveItemEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.InventoryMoveItemEvent');
 	}
+	public static $isInstance(obj: any): obj is InventoryMoveItemEvent {
+		return obj instanceof InventoryMoveItemEvent.$javaClass;
+	}
 
 	constructor(sourceInventory: Inventory, itemStack: ItemStack, destinationInventory: Inventory, didSourceInitiate: boolean);
 	constructor(...args: any[]) {

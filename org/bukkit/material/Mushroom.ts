@@ -27,6 +27,9 @@ export default class Mushroom {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Mushroom');
 	}
+	public static $isInstance(obj: any): obj is Mushroom {
+		return obj instanceof Mushroom.$javaClass;
+	}
 
 	constructor(shroom: Material);
 	constructor(shroom: Material, data: number);

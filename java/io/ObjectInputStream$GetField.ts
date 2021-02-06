@@ -19,6 +19,9 @@ export default class ObjectInputStream$GetField {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ObjectInputStream$GetField');
 	}
+	public static $isInstance(obj: any): obj is ObjectInputStream$GetField {
+		return obj instanceof ObjectInputStream$GetField.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

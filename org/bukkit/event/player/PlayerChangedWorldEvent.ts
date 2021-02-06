@@ -16,6 +16,9 @@ export default class PlayerChangedWorldEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerChangedWorldEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerChangedWorldEvent {
+		return obj instanceof PlayerChangedWorldEvent.$javaClass;
+	}
 
 	constructor(player: Player, from: World);
 	constructor(...args: any[]) {

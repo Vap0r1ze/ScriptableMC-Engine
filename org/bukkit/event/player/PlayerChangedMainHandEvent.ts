@@ -16,6 +16,9 @@ export default class PlayerChangedMainHandEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerChangedMainHandEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerChangedMainHandEvent {
+		return obj instanceof PlayerChangedMainHandEvent.$javaClass;
+	}
 
 	constructor(who: Player, mainHand: MainHand);
 	constructor(...args: any[]) {

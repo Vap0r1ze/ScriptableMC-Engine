@@ -23,6 +23,9 @@ export default class AreaEffectCloudApplyEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.AreaEffectCloudApplyEvent');
 	}
+	public static $isInstance(obj: any): obj is AreaEffectCloudApplyEvent {
+		return obj instanceof AreaEffectCloudApplyEvent.$javaClass;
+	}
 
 	constructor(entity: AreaEffectCloud, affectedEntities: Array<any>);
 	constructor(...args: any[]) {

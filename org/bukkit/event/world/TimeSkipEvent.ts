@@ -21,6 +21,9 @@ export default class TimeSkipEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.world.TimeSkipEvent');
 	}
+	public static $isInstance(obj: any): obj is TimeSkipEvent {
+		return obj instanceof TimeSkipEvent.$javaClass;
+	}
 
 	constructor(world: World, skipReason: TimeSkipEvent$SkipReason, skipAmount: number);
 	constructor(...args: any[]) {

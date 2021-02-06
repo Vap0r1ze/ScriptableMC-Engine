@@ -13,6 +13,9 @@ export default class ComplexRecipe {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.ComplexRecipe');
 	}
+	public static $isInstance(obj: any): obj is ComplexRecipe {
+		return obj instanceof ComplexRecipe.$javaClass;
+	}
 
 }
 

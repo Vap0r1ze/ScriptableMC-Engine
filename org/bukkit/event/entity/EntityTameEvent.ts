@@ -23,6 +23,9 @@ export default class EntityTameEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityTameEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityTameEvent {
+		return obj instanceof EntityTameEvent.$javaClass;
+	}
 
 	constructor(entity: LivingEntity, owner: AnimalTamer);
 	constructor(...args: any[]) {

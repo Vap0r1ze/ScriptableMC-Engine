@@ -41,6 +41,9 @@ export default class BukkitObjectInputStream {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.io.BukkitObjectInputStream');
 	}
+	public static $isInstance(obj: any): obj is BukkitObjectInputStream {
+		return obj instanceof BukkitObjectInputStream.$javaClass;
+	}
 
 	constructor(_in: InputStream);
 	constructor(...args: any[]) {

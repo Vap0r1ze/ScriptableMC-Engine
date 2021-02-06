@@ -25,6 +25,9 @@ export default class Charset {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.charset.Charset');
 	}
+	public static $isInstance(obj: any): obj is Charset {
+		return obj instanceof Charset.$javaClass;
+	}
 
 	public static availableCharsets(): any;
 	public static availableCharsets(...args: any[]): any {

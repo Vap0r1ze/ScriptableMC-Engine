@@ -56,6 +56,9 @@ export default class Skull {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Skull');
 	}
+	public static $isInstance(obj: any): obj is Skull {
+		return obj instanceof Skull.$javaClass;
+	}
 
 }
 

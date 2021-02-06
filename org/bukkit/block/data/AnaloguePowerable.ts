@@ -21,6 +21,9 @@ export default class AnaloguePowerable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.AnaloguePowerable');
 	}
+	public static $isInstance(obj: any): obj is AnaloguePowerable {
+		return obj instanceof AnaloguePowerable.$javaClass;
+	}
 
 }
 

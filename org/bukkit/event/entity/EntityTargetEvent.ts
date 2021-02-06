@@ -23,6 +23,9 @@ export default class EntityTargetEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityTargetEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityTargetEvent {
+		return obj instanceof EntityTargetEvent.$javaClass;
+	}
 
 	constructor(entity: Entity, target: Entity, reason: EntityTargetEvent$TargetReason);
 	constructor(...args: any[]) {

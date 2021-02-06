@@ -10,6 +10,9 @@ export default class HelpTopicFactory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.help.HelpTopicFactory');
 	}
+	public static $isInstance(obj: any): obj is HelpTopicFactory {
+		return obj instanceof HelpTopicFactory.$javaClass;
+	}
 
 }
 

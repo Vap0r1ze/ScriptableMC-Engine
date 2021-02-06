@@ -32,6 +32,9 @@ export default class Time {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Time');
 	}
+	public static $isInstance(obj: any): obj is Time {
+		return obj instanceof Time.$javaClass;
+	}
 
 	constructor(arg0: number);
 	constructor(arg0: number, arg1: number, arg2: number);

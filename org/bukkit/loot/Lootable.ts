@@ -12,6 +12,9 @@ export default class Lootable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.loot.Lootable');
 	}
+	public static $isInstance(obj: any): obj is Lootable {
+		return obj instanceof Lootable.$javaClass;
+	}
 
 }
 

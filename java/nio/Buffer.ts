@@ -24,6 +24,9 @@ export default class Buffer {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.Buffer');
 	}
+	public static $isInstance(obj: any): obj is Buffer {
+		return obj instanceof Buffer.$javaClass;
+	}
 
 }
 

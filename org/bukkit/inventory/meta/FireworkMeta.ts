@@ -18,9 +18,9 @@ export default interface FireworkMeta extends ItemMeta {
 	addEnchant(arg0: Enchantment, arg1: number, arg2: boolean): boolean;
 	addItemFlags(arg0: Array<ItemFlag>): void;
 	clearEffects(): void;
-	clone(): any;
-	clone(): ItemMeta;
 	clone(): FireworkMeta;
+	clone(): ItemMeta;
+	clone(): any;
 	getAttributeModifiers(): Multimap;
 	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
 	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
@@ -67,6 +67,9 @@ export default interface FireworkMeta extends ItemMeta {
 export default class FireworkMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.FireworkMeta');
+	}
+	public static $isInstance(obj: any): obj is FireworkMeta {
+		return obj instanceof FireworkMeta.$javaClass;
 	}
 
 }

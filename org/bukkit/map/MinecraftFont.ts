@@ -14,6 +14,9 @@ export default class MinecraftFont {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MinecraftFont');
 	}
+	public static $isInstance(obj: any): obj is MinecraftFont {
+		return obj instanceof MinecraftFont.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

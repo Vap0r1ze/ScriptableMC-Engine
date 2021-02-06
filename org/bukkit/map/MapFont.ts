@@ -13,6 +13,9 @@ export default class MapFont {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MapFont');
 	}
+	public static $isInstance(obj: any): obj is MapFont {
+		return obj instanceof MapFont.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

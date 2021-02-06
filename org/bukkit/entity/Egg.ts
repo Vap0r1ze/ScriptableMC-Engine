@@ -126,6 +126,9 @@ export default class Egg {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Egg');
 	}
+	public static $isInstance(obj: any): obj is Egg {
+		return obj instanceof Egg.$javaClass;
+	}
 
 }
 

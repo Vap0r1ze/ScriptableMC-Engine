@@ -17,6 +17,9 @@ export default class HandlerList {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.HandlerList');
 	}
+	public static $isInstance(obj: any): obj is HandlerList {
+		return obj instanceof HandlerList.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

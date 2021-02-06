@@ -20,6 +20,9 @@ export default class BubbleColumn {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.BubbleColumn');
 	}
+	public static $isInstance(obj: any): obj is BubbleColumn {
+		return obj instanceof BubbleColumn.$javaClass;
+	}
 
 }
 

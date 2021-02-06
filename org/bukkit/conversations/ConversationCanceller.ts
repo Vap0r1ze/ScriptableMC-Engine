@@ -13,6 +13,9 @@ export default class ConversationCanceller {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.ConversationCanceller');
 	}
+	public static $isInstance(obj: any): obj is ConversationCanceller {
+		return obj instanceof ConversationCanceller.$javaClass;
+	}
 
 }
 

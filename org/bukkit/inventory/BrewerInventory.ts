@@ -55,6 +55,9 @@ export default class BrewerInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.BrewerInventory');
 	}
+	public static $isInstance(obj: any): obj is BrewerInventory {
+		return obj instanceof BrewerInventory.$javaClass;
+	}
 
 }
 

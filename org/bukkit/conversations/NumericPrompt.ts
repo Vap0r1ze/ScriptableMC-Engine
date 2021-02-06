@@ -13,6 +13,9 @@ export default class NumericPrompt {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.NumericPrompt');
 	}
+	public static $isInstance(obj: any): obj is NumericPrompt {
+		return obj instanceof NumericPrompt.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

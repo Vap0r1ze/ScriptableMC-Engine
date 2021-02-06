@@ -10,6 +10,9 @@ export default class Attributable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.attribute.Attributable');
 	}
+	public static $isInstance(obj: any): obj is Attributable {
+		return obj instanceof Attributable.$javaClass;
+	}
 
 }
 

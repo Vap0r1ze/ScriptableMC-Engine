@@ -25,6 +25,9 @@ export default class EnderDragonChangePhaseEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EnderDragonChangePhaseEvent');
 	}
+	public static $isInstance(obj: any): obj is EnderDragonChangePhaseEvent {
+		return obj instanceof EnderDragonChangePhaseEvent.$javaClass;
+	}
 
 	constructor(enderDragon: EnderDragon, currentPhase: EnderDragon$Phase, newPhase: EnderDragon$Phase);
 	constructor(...args: any[]) {

@@ -19,6 +19,9 @@ export default class BlockSpreadEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockSpreadEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockSpreadEvent {
+		return obj instanceof BlockSpreadEvent.$javaClass;
+	}
 
 	constructor(block: Block, source: Block, newState: BlockState);
 	constructor(...args: any[]) {

@@ -17,6 +17,9 @@ export default class RegisteredListener {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.RegisteredListener');
 	}
+	public static $isInstance(obj: any): obj is RegisteredListener {
+		return obj instanceof RegisteredListener.$javaClass;
+	}
 
 	constructor(listener: Listener, executor: EventExecutor, priority: EventPriority, plugin: Plugin, ignoreCancelled: boolean);
 	constructor(...args: any[]) {

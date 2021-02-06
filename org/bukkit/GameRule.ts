@@ -9,6 +9,9 @@ export default class GameRule {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.GameRule');
 	}
+	public static $isInstance(obj: any): obj is GameRule {
+		return obj instanceof GameRule.$javaClass;
+	}
 
 	public static get ANNOUNCE_ADVANCEMENTS(): GameRule {
 		return GameRule.$javaClass.ANNOUNCE_ADVANCEMENTS;

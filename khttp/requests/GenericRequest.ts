@@ -25,6 +25,9 @@ export default class GenericRequest {
 	public static get $javaClass(): any {
 		return Java.type('khttp.requests.GenericRequest');
 	}
+	public static $isInstance(obj: any): obj is GenericRequest {
+		return obj instanceof GenericRequest.$javaClass;
+	}
 
 	constructor(method: string, url: string, params: any, headers: any, data: any, json: any, auth: Authorization, cookies: any, timeout: number, allowRedirects: boolean, stream: boolean, files: Array<any>, sslContext: any, hostnameVerifier: any);
 	constructor(...args: any[]) {

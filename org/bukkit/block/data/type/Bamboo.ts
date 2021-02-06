@@ -29,6 +29,9 @@ export default class Bamboo {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Bamboo');
 	}
+	public static $isInstance(obj: any): obj is Bamboo {
+		return obj instanceof Bamboo.$javaClass;
+	}
 
 }
 

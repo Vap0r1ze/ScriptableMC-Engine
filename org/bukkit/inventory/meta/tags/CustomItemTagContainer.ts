@@ -16,6 +16,9 @@ export default class CustomItemTagContainer {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.tags.CustomItemTagContainer');
 	}
+	public static $isInstance(obj: any): obj is CustomItemTagContainer {
+		return obj instanceof CustomItemTagContainer.$javaClass;
+	}
 
 }
 

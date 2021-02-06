@@ -33,6 +33,9 @@ export default class RemoteConsoleCommandSender {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.RemoteConsoleCommandSender');
 	}
+	public static $isInstance(obj: any): obj is RemoteConsoleCommandSender {
+		return obj instanceof RemoteConsoleCommandSender.$javaClass;
+	}
 
 }
 

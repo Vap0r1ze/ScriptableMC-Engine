@@ -20,6 +20,9 @@ export default class PlayerPickupItemEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerPickupItemEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerPickupItemEvent {
+		return obj instanceof PlayerPickupItemEvent.$javaClass;
+	}
 
 	constructor(player: Player, item: Item, remaining: number);
 	constructor(...args: any[]) {

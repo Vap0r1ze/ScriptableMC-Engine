@@ -23,6 +23,9 @@ export default class Player$Spigot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Player$Spigot');
 	}
+	public static $isInstance(obj: any): obj is Player$Spigot {
+		return obj instanceof Player$Spigot.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

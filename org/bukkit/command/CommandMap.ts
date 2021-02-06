@@ -18,6 +18,9 @@ export default class CommandMap {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.CommandMap');
 	}
+	public static $isInstance(obj: any): obj is CommandMap {
+		return obj instanceof CommandMap.$javaClass;
+	}
 
 }
 

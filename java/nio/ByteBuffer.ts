@@ -80,6 +80,9 @@ export default class ByteBuffer {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.ByteBuffer');
 	}
+	public static $isInstance(obj: any): obj is ByteBuffer {
+		return obj instanceof ByteBuffer.$javaClass;
+	}
 
 	public static allocate(arg0: number): ByteBuffer;
 	public static allocate(...args: any[]): any {

@@ -14,6 +14,9 @@ export default class PlayerNamePrompt {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.PlayerNamePrompt');
 	}
+	public static $isInstance(obj: any): obj is PlayerNamePrompt {
+		return obj instanceof PlayerNamePrompt.$javaClass;
+	}
 
 	constructor(plugin: Plugin);
 	constructor(...args: any[]) {

@@ -132,6 +132,9 @@ export default class EnderDragonPart {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.EnderDragonPart');
 	}
+	public static $isInstance(obj: any): obj is EnderDragonPart {
+		return obj instanceof EnderDragonPart.$javaClass;
+	}
 
 }
 

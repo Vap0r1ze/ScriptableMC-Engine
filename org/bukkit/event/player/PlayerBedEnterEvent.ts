@@ -24,6 +24,9 @@ export default class PlayerBedEnterEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerBedEnterEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerBedEnterEvent {
+		return obj instanceof PlayerBedEnterEvent.$javaClass;
+	}
 
 	constructor(who: Player, bed: Block);
 	constructor(who: Player, bed: Block, bedEnterResult: PlayerBedEnterEvent$BedEnterResult);

@@ -20,6 +20,9 @@ export default class BlockFromToEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockFromToEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockFromToEvent {
+		return obj instanceof BlockFromToEvent.$javaClass;
+	}
 
 	constructor(block: Block, face: BlockFace);
 	constructor(block: Block, toBlock: Block);

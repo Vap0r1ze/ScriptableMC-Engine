@@ -22,6 +22,9 @@ export default class Wool {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Wool');
 	}
+	public static $isInstance(obj: any): obj is Wool {
+		return obj instanceof Wool.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

@@ -36,6 +36,9 @@ export default class PlayerDeathEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.PlayerDeathEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerDeathEvent {
+		return obj instanceof PlayerDeathEvent.$javaClass;
+	}
 
 	constructor(player: Player, drops: Array<any>, droppedExp: number, deathMessage: string);
 	constructor(player: Player, drops: Array<any>, droppedExp: number, newExp: number, deathMessage: string);

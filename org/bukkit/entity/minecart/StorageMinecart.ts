@@ -145,6 +145,9 @@ export default class StorageMinecart {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.minecart.StorageMinecart');
 	}
+	public static $isInstance(obj: any): obj is StorageMinecart {
+		return obj instanceof StorageMinecart.$javaClass;
+	}
 
 }
 

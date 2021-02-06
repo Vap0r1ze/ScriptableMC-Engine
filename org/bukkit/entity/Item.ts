@@ -126,6 +126,9 @@ export default class Item {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Item');
 	}
+	public static $isInstance(obj: any): obj is Item {
+		return obj instanceof Item.$javaClass;
+	}
 
 }
 

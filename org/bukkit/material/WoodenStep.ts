@@ -25,6 +25,9 @@ export default class WoodenStep {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.WoodenStep');
 	}
+	public static $isInstance(obj: any): obj is WoodenStep {
+		return obj instanceof WoodenStep.$javaClass;
+	}
 
 	constructor();
 	constructor(species: TreeSpecies);

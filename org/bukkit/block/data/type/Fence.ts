@@ -27,6 +27,9 @@ export default class Fence {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Fence');
 	}
+	public static $isInstance(obj: any): obj is Fence {
+		return obj instanceof Fence.$javaClass;
+	}
 
 }
 

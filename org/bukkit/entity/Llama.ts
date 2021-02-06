@@ -255,6 +255,9 @@ export default class Llama {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Llama');
 	}
+	public static $isInstance(obj: any): obj is Llama {
+		return obj instanceof Llama.$javaClass;
+	}
 
 }
 

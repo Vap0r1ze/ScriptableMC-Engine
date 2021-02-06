@@ -20,6 +20,9 @@ export default class Lightable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Lightable');
 	}
+	public static $isInstance(obj: any): obj is Lightable {
+		return obj instanceof Lightable.$javaClass;
+	}
 
 }
 

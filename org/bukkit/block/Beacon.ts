@@ -60,6 +60,9 @@ export default class Beacon {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Beacon');
 	}
+	public static $isInstance(obj: any): obj is Beacon {
+		return obj instanceof Beacon.$javaClass;
+	}
 
 }
 

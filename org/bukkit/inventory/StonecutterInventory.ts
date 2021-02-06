@@ -49,6 +49,9 @@ export default class StonecutterInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.StonecutterInventory');
 	}
+	public static $isInstance(obj: any): obj is StonecutterInventory {
+		return obj instanceof StonecutterInventory.$javaClass;
+	}
 
 }
 

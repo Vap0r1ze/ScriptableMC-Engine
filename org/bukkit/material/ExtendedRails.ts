@@ -25,6 +25,9 @@ export default class ExtendedRails {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.ExtendedRails');
 	}
+	public static $isInstance(obj: any): obj is ExtendedRails {
+		return obj instanceof ExtendedRails.$javaClass;
+	}
 
 	constructor(type: Material);
 	constructor(type: Material, data: number);

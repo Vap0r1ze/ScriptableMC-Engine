@@ -28,6 +28,9 @@ export default class EntityBreedEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityBreedEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityBreedEvent {
+		return obj instanceof EntityBreedEvent.$javaClass;
+	}
 
 	constructor(child: LivingEntity, mother: LivingEntity, father: LivingEntity, breeder: LivingEntity, bredWith: ItemStack, experience: number);
 	constructor(...args: any[]) {

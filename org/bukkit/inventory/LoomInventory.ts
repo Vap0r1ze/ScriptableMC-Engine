@@ -49,6 +49,9 @@ export default class LoomInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.LoomInventory');
 	}
+	public static $isInstance(obj: any): obj is LoomInventory {
+		return obj instanceof LoomInventory.$javaClass;
+	}
 
 }
 

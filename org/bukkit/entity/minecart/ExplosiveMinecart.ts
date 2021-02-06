@@ -136,6 +136,9 @@ export default class ExplosiveMinecart {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.minecart.ExplosiveMinecart');
 	}
+	public static $isInstance(obj: any): obj is ExplosiveMinecart {
+		return obj instanceof ExplosiveMinecart.$javaClass;
+	}
 
 }
 

@@ -10,6 +10,9 @@ export default class Struct {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Struct');
 	}
+	public static $isInstance(obj: any): obj is Struct {
+		return obj instanceof Struct.$javaClass;
+	}
 
 }
 

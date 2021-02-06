@@ -49,6 +49,9 @@ export default class Bukkit {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Bukkit');
 	}
+	public static $isInstance(obj: any): obj is Bukkit {
+		return obj instanceof Bukkit.$javaClass;
+	}
 
 	public static addRecipe(recipe: Recipe): boolean;
 	public static addRecipe(...args: any[]): any {
@@ -288,8 +291,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getName(...args);
 	}
 
-	public static getOfflinePlayer(_name: string): OfflinePlayer;
 	public static getOfflinePlayer(id: string): OfflinePlayer;
+	public static getOfflinePlayer(_name: string): OfflinePlayer;
 	public static getOfflinePlayer(...args: any[]): any {
 		return Bukkit.$javaClass.getOfflinePlayer(...args);
 	}
@@ -314,8 +317,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getOperators(...args);
 	}
 
-	public static getPlayer(id: string): Player;
 	public static getPlayer(_name: string): Player;
+	public static getPlayer(id: string): Player;
 	public static getPlayer(...args: any[]): any {
 		return Bukkit.$javaClass.getPlayer(...args);
 	}
@@ -465,8 +468,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getWhitelistedPlayers(...args);
 	}
 
-	public static getWorld(uid: string): World;
 	public static getWorld(_name: string): World;
+	public static getWorld(uid: string): World;
 	public static getWorld(...args: any[]): any {
 		return Bukkit.$javaClass.getWorld(...args);
 	}
@@ -501,8 +504,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.isPrimaryThread(...args);
 	}
 
-	public static loadServerIcon(image: any): CachedServerIcon;
 	public static loadServerIcon(file: File): CachedServerIcon;
+	public static loadServerIcon(image: any): CachedServerIcon;
 	public static loadServerIcon(...args: any[]): any {
 		return Bukkit.$javaClass.loadServerIcon(...args);
 	}
@@ -597,8 +600,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.unbanIP(...args);
 	}
 
-	public static unloadWorld(_name: string, save: boolean): boolean;
 	public static unloadWorld(world: World, save: boolean): boolean;
+	public static unloadWorld(_name: string, save: boolean): boolean;
 	public static unloadWorld(...args: any[]): any {
 		return Bukkit.$javaClass.unloadWorld(...args);
 	}

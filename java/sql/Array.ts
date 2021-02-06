@@ -19,6 +19,9 @@ export default class _Array {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Array');
 	}
+	public static $isInstance(obj: any): obj is _Array {
+		return obj instanceof _Array.$javaClass;
+	}
 
 }
 

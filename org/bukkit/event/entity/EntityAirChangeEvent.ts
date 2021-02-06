@@ -21,6 +21,9 @@ export default class EntityAirChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityAirChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityAirChangeEvent {
+		return obj instanceof EntityAirChangeEvent.$javaClass;
+	}
 
 	constructor(what: Entity, amount: number);
 	constructor(...args: any[]) {

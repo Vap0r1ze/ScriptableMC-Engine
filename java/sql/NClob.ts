@@ -25,6 +25,9 @@ export default class NClob {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.NClob');
 	}
+	public static $isInstance(obj: any): obj is NClob {
+		return obj instanceof NClob.$javaClass;
+	}
 
 }
 

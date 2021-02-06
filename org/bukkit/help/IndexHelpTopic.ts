@@ -15,6 +15,9 @@ export default class IndexHelpTopic {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.help.IndexHelpTopic');
 	}
+	public static $isInstance(obj: any): obj is IndexHelpTopic {
+		return obj instanceof IndexHelpTopic.$javaClass;
+	}
 
 	constructor(_name: string, shortText: string, permission: string, topics: Array<any>);
 	constructor(_name: string, shortText: string, permission: string, topics: Array<any>, preamble: string);

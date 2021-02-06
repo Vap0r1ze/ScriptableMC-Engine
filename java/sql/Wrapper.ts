@@ -9,6 +9,9 @@ export default class Wrapper {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Wrapper');
 	}
+	public static $isInstance(obj: any): obj is Wrapper {
+		return obj instanceof Wrapper.$javaClass;
+	}
 
 }
 

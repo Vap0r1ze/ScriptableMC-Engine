@@ -241,6 +241,9 @@ export default class ArmorStand {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ArmorStand');
 	}
+	public static $isInstance(obj: any): obj is ArmorStand {
+		return obj instanceof ArmorStand.$javaClass;
+	}
 
 }
 

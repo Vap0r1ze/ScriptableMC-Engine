@@ -15,8 +15,8 @@ export default interface CrossbowMeta extends ItemMeta {
 	addChargedProjectile(arg0: ItemStack): void;
 	addEnchant(arg0: Enchantment, arg1: number, arg2: boolean): boolean;
 	addItemFlags(arg0: Array<ItemFlag>): void;
-	clone(): ItemMeta;
 	clone(): any;
+	clone(): ItemMeta;
 	getAttributeModifiers(): Multimap;
 	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
 	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
@@ -60,6 +60,9 @@ export default interface CrossbowMeta extends ItemMeta {
 export default class CrossbowMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.CrossbowMeta');
+	}
+	public static $isInstance(obj: any): obj is CrossbowMeta {
+		return obj instanceof CrossbowMeta.$javaClass;
 	}
 
 }

@@ -27,6 +27,9 @@ export default class Bed {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Bed');
 	}
+	public static $isInstance(obj: any): obj is Bed {
+		return obj instanceof Bed.$javaClass;
+	}
 
 }
 

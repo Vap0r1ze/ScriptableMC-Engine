@@ -73,6 +73,9 @@ export default class MapMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.MapMeta');
 	}
+	public static $isInstance(obj: any): obj is MapMeta {
+		return obj instanceof MapMeta.$javaClass;
+	}
 
 }
 

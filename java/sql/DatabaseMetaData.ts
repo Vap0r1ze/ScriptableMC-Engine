@@ -189,6 +189,9 @@ export default class DatabaseMetaData {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.DatabaseMetaData');
 	}
+	public static $isInstance(obj: any): obj is DatabaseMetaData {
+		return obj instanceof DatabaseMetaData.$javaClass;
+	}
 
 	public static get attributeNoNulls(): number {
 		return DatabaseMetaData.$javaClass.attributeNoNulls;

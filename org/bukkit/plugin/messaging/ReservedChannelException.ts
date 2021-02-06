@@ -21,6 +21,9 @@ export default class ReservedChannelException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.messaging.ReservedChannelException');
 	}
+	public static $isInstance(obj: any): obj is ReservedChannelException {
+		return obj instanceof ReservedChannelException.$javaClass;
+	}
 
 	constructor();
 	constructor(_name: string);

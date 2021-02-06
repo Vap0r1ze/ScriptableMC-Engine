@@ -153,6 +153,9 @@ export default class Arrow {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Arrow');
 	}
+	public static $isInstance(obj: any): obj is Arrow {
+		return obj instanceof Arrow.$javaClass;
+	}
 
 }
 

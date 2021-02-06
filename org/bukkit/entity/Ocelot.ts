@@ -229,6 +229,9 @@ export default class Ocelot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Ocelot');
 	}
+	public static $isInstance(obj: any): obj is Ocelot {
+		return obj instanceof Ocelot.$javaClass;
+	}
 
 }
 

@@ -229,6 +229,9 @@ export default class MushroomCow {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.MushroomCow');
 	}
+	public static $isInstance(obj: any): obj is MushroomCow {
+		return obj instanceof MushroomCow.$javaClass;
+	}
 
 }
 

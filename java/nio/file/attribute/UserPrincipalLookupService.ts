@@ -11,6 +11,9 @@ export default class UserPrincipalLookupService {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.attribute.UserPrincipalLookupService');
 	}
+	public static $isInstance(obj: any): obj is UserPrincipalLookupService {
+		return obj instanceof UserPrincipalLookupService.$javaClass;
+	}
 
 }
 

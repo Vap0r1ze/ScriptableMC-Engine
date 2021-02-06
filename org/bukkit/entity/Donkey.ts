@@ -248,6 +248,9 @@ export default class Donkey {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Donkey');
 	}
+	public static $isInstance(obj: any): obj is Donkey {
+		return obj instanceof Donkey.$javaClass;
+	}
 
 }
 

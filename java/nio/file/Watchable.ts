@@ -13,6 +13,9 @@ export default class Watchable {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.Watchable');
 	}
+	public static $isInstance(obj: any): obj is Watchable {
+		return obj instanceof Watchable.$javaClass;
+	}
 
 }
 

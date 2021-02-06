@@ -23,6 +23,9 @@ export default class SlotIterator {
 	public static get $javaClass(): any {
 		return Java.type('fr.minuskube.inv.content.SlotIterator');
 	}
+	public static $isInstance(obj: any): obj is SlotIterator {
+		return obj instanceof SlotIterator.$javaClass;
+	}
 
 }
 

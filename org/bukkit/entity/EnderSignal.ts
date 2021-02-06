@@ -126,6 +126,9 @@ export default class EnderSignal {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.EnderSignal');
 	}
+	public static $isInstance(obj: any): obj is EnderSignal {
+		return obj instanceof EnderSignal.$javaClass;
+	}
 
 }
 

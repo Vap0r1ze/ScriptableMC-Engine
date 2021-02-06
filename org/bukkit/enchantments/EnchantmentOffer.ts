@@ -14,6 +14,9 @@ export default class EnchantmentOffer {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.enchantments.EnchantmentOffer');
 	}
+	public static $isInstance(obj: any): obj is EnchantmentOffer {
+		return obj instanceof EnchantmentOffer.$javaClass;
+	}
 
 	constructor(enchantment: Enchantment, enchantmentLevel: number, cost: number);
 	constructor(...args: any[]) {

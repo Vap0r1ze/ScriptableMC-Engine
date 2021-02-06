@@ -21,6 +21,9 @@ export default class InvalidPluginException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.InvalidPluginException');
 	}
+	public static $isInstance(obj: any): obj is InvalidPluginException {
+		return obj instanceof InvalidPluginException.$javaClass;
+	}
 
 	constructor();
 	constructor(message: string);

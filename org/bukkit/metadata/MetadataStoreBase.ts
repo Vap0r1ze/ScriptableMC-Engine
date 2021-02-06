@@ -14,6 +14,9 @@ export default class MetadataStoreBase {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.metadata.MetadataStoreBase');
 	}
+	public static $isInstance(obj: any): obj is MetadataStoreBase {
+		return obj instanceof MetadataStoreBase.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

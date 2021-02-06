@@ -126,6 +126,9 @@ export default class EnderPearl {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.EnderPearl');
 	}
+	public static $isInstance(obj: any): obj is EnderPearl {
+		return obj instanceof EnderPearl.$javaClass;
+	}
 
 }
 

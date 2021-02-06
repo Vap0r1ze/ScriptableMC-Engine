@@ -30,6 +30,9 @@ export default class PoweredRail {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.PoweredRail');
 	}
+	public static $isInstance(obj: any): obj is PoweredRail {
+		return obj instanceof PoweredRail.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

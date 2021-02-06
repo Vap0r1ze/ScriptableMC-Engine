@@ -12,6 +12,9 @@ export default class Repairable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.Repairable');
 	}
+	public static $isInstance(obj: any): obj is Repairable {
+		return obj instanceof Repairable.$javaClass;
+	}
 
 }
 

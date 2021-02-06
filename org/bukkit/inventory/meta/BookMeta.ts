@@ -77,6 +77,9 @@ export default class BookMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.BookMeta');
 	}
+	public static $isInstance(obj: any): obj is BookMeta {
+		return obj instanceof BookMeta.$javaClass;
+	}
 
 }
 

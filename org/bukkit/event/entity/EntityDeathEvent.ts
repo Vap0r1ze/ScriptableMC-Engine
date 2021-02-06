@@ -22,6 +22,9 @@ export default class EntityDeathEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityDeathEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityDeathEvent {
+		return obj instanceof EntityDeathEvent.$javaClass;
+	}
 
 	constructor(entity: LivingEntity, drops: Array<any>);
 	constructor(what: LivingEntity, drops: Array<any>, droppedExp: number);

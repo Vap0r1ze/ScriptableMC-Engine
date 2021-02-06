@@ -58,6 +58,9 @@ export default class CharBuffer {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.CharBuffer');
 	}
+	public static $isInstance(obj: any): obj is CharBuffer {
+		return obj instanceof CharBuffer.$javaClass;
+	}
 
 	public static allocate(arg0: number): CharBuffer;
 	public static allocate(...args: any[]): any {

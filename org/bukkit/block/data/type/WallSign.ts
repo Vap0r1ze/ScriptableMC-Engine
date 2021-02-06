@@ -26,6 +26,9 @@ export default class WallSign {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.WallSign');
 	}
+	public static $isInstance(obj: any): obj is WallSign {
+		return obj instanceof WallSign.$javaClass;
+	}
 
 }
 

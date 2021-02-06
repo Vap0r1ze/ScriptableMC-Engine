@@ -30,6 +30,9 @@ export default class Messenger {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.messaging.Messenger');
 	}
+	public static $isInstance(obj: any): obj is Messenger {
+		return obj instanceof Messenger.$javaClass;
+	}
 
 	public static get MAX_CHANNEL_SIZE(): number {
 		return Messenger.$javaClass.MAX_CHANNEL_SIZE;

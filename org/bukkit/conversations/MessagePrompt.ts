@@ -12,6 +12,9 @@ export default class MessagePrompt {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.MessagePrompt');
 	}
+	public static $isInstance(obj: any): obj is MessagePrompt {
+		return obj instanceof MessagePrompt.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

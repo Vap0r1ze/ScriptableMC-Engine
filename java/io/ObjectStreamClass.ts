@@ -14,6 +14,9 @@ export default class ObjectStreamClass {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ObjectStreamClass');
 	}
+	public static $isInstance(obj: any): obj is ObjectStreamClass {
+		return obj instanceof ObjectStreamClass.$javaClass;
+	}
 
 	public static get NO_FIELDS(): Array<ObjectStreamField> {
 		return ObjectStreamClass.$javaClass.NO_FIELDS;

@@ -31,6 +31,9 @@ export default class ResultSetMetaData {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.ResultSetMetaData');
 	}
+	public static $isInstance(obj: any): obj is ResultSetMetaData {
+		return obj instanceof ResultSetMetaData.$javaClass;
+	}
 
 	public static get columnNoNulls(): number {
 		return ResultSetMetaData.$javaClass.columnNoNulls;

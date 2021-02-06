@@ -212,6 +212,9 @@ export default class Mob {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Mob');
 	}
+	public static $isInstance(obj: any): obj is Mob {
+		return obj instanceof Mob.$javaClass;
+	}
 
 }
 

@@ -220,6 +220,9 @@ export default class Creeper {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Creeper');
 	}
+	public static $isInstance(obj: any): obj is Creeper {
+		return obj instanceof Creeper.$javaClass;
+	}
 
 }
 

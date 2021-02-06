@@ -38,8 +38,8 @@ export default interface SimplePluginManager extends PluginManager {
 	registerEvent(event: any, listener: Listener, priority: EventPriority, executor: EventExecutor, plugin: Plugin, ignoreCancelled: boolean): void;
 	registerEvents(listener: Listener, plugin: Plugin): void;
 	registerInterface(loader: any): void;
-	removePermission(_name: string): void;
 	removePermission(perm: Permission): void;
+	removePermission(_name: string): void;
 	subscribeToDefaultPerms(op: boolean, permissible: Permissible): void;
 	subscribeToPermission(permission: string, permissible: Permissible): void;
 	unsubscribeFromDefaultPerms(op: boolean, permissible: Permissible): void;
@@ -51,6 +51,9 @@ export default interface SimplePluginManager extends PluginManager {
 export default class SimplePluginManager {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.SimplePluginManager');
+	}
+	public static $isInstance(obj: any): obj is SimplePluginManager {
+		return obj instanceof SimplePluginManager.$javaClass;
 	}
 
 	constructor(instance: Server, commandMap: SimpleCommandMap);

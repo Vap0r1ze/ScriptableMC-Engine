@@ -21,6 +21,9 @@ export default class StonecuttingRecipe {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.StonecuttingRecipe');
 	}
+	public static $isInstance(obj: any): obj is StonecuttingRecipe {
+		return obj instanceof StonecuttingRecipe.$javaClass;
+	}
 
 	constructor(key: NamespacedKey, result: ItemStack, source: Material);
 	constructor(key: NamespacedKey, result: ItemStack, input: RecipeChoice);

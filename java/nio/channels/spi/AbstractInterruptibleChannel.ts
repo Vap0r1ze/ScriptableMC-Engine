@@ -11,6 +11,9 @@ export default class AbstractInterruptibleChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.spi.AbstractInterruptibleChannel');
 	}
+	public static $isInstance(obj: any): obj is AbstractInterruptibleChannel {
+		return obj instanceof AbstractInterruptibleChannel.$javaClass;
+	}
 
 }
 

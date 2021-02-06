@@ -46,6 +46,9 @@ export default class PrintStream {
 	public static get $javaClass(): any {
 		return Java.type('java.io.PrintStream');
 	}
+	public static $isInstance(obj: any): obj is PrintStream {
+		return obj instanceof PrintStream.$javaClass;
+	}
 
 	constructor(arg0: OutputStream);
 	constructor(arg0: string);

@@ -37,12 +37,12 @@ export default interface FileSystemProvider {
 	newByteChannel(arg0: Path, arg1: any, arg2: Array<FileAttribute>): SeekableByteChannel;
 	newDirectoryStream(arg0: Path, arg1: DirectoryStream$Filter): DirectoryStream;
 	newFileChannel(arg0: Path, arg1: any, arg2: Array<FileAttribute>): FileChannel;
-	newFileSystem(arg0: Path, arg1: any): FileSystem;
 	newFileSystem(arg0: any, arg1: any): FileSystem;
+	newFileSystem(arg0: Path, arg1: any): FileSystem;
 	newInputStream(arg0: Path, arg1: Array<OpenOption>): InputStream;
 	newOutputStream(arg0: Path, arg1: Array<OpenOption>): OutputStream;
-	readAttributes(arg0: Path, arg1: string, arg2: Array<LinkOption>): any;
 	readAttributes(arg0: Path, arg1: any, arg2: Array<LinkOption>): BasicFileAttributes;
+	readAttributes(arg0: Path, arg1: string, arg2: Array<LinkOption>): any;
 	readSymbolicLink(arg0: Path): Path;
 	setAttribute(arg0: Path, arg1: string, arg2: any, arg3: Array<LinkOption>): void;
 }
@@ -50,6 +50,9 @@ export default interface FileSystemProvider {
 export default class FileSystemProvider {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.spi.FileSystemProvider');
+	}
+	public static $isInstance(obj: any): obj is FileSystemProvider {
+		return obj instanceof FileSystemProvider.$javaClass;
 	}
 
 	public static installedProviders(): Array<FileSystemProvider>;

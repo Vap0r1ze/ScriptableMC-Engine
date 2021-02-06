@@ -34,6 +34,9 @@ export default class HelpCommand {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.defaults.HelpCommand');
 	}
+	public static $isInstance(obj: any): obj is HelpCommand {
+		return obj instanceof HelpCommand.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

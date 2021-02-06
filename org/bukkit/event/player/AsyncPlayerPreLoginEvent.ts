@@ -26,6 +26,9 @@ export default class AsyncPlayerPreLoginEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.AsyncPlayerPreLoginEvent');
 	}
+	public static $isInstance(obj: any): obj is AsyncPlayerPreLoginEvent {
+		return obj instanceof AsyncPlayerPreLoginEvent.$javaClass;
+	}
 
 	constructor(_name: string, ipAddress: any);
 	constructor(_name: string, ipAddress: any, uniqueId: string);

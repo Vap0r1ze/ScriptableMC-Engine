@@ -16,8 +16,8 @@ export default interface BannerMeta extends ItemMeta {
 	addEnchant(arg0: Enchantment, arg1: number, arg2: boolean): boolean;
 	addItemFlags(arg0: Array<ItemFlag>): void;
 	addPattern(arg0: Pattern): void;
-	clone(): ItemMeta;
 	clone(): any;
+	clone(): ItemMeta;
 	getAttributeModifiers(): Multimap;
 	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
 	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
@@ -66,6 +66,9 @@ export default interface BannerMeta extends ItemMeta {
 export default class BannerMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.BannerMeta');
+	}
+	public static $isInstance(obj: any): obj is BannerMeta {
+		return obj instanceof BannerMeta.$javaClass;
 	}
 
 }

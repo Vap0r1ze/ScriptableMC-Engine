@@ -214,6 +214,9 @@ export default class Vex {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Vex');
 	}
+	public static $isInstance(obj: any): obj is Vex {
+		return obj instanceof Vex.$javaClass;
+	}
 
 }
 

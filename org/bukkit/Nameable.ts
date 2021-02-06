@@ -9,6 +9,9 @@ export default class Nameable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Nameable');
 	}
+	public static $isInstance(obj: any): obj is Nameable {
+		return obj instanceof Nameable.$javaClass;
+	}
 
 }
 

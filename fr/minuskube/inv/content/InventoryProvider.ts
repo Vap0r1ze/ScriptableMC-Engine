@@ -11,6 +11,9 @@ export default class InventoryProvider {
 	public static get $javaClass(): any {
 		return Java.type('fr.minuskube.inv.content.InventoryProvider');
 	}
+	public static $isInstance(obj: any): obj is InventoryProvider {
+		return obj instanceof InventoryProvider.$javaClass;
+	}
 
 }
 

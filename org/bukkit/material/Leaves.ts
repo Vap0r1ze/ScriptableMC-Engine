@@ -27,6 +27,9 @@ export default class Leaves {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Leaves');
 	}
+	public static $isInstance(obj: any): obj is Leaves {
+		return obj instanceof Leaves.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

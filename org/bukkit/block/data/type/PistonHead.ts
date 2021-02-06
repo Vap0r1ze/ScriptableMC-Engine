@@ -28,6 +28,9 @@ export default class PistonHead {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.PistonHead');
 	}
+	public static $isInstance(obj: any): obj is PistonHead {
+		return obj instanceof PistonHead.$javaClass;
+	}
 
 }
 

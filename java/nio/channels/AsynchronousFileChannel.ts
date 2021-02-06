@@ -29,6 +29,9 @@ export default class AsynchronousFileChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.AsynchronousFileChannel');
 	}
+	public static $isInstance(obj: any): obj is AsynchronousFileChannel {
+		return obj instanceof AsynchronousFileChannel.$javaClass;
+	}
 
 	public static open(arg0: Path, arg1: Array<OpenOption>): AsynchronousFileChannel;
 	public static open(arg0: Path, arg1: any, arg2: any, arg3: Array<FileAttribute>): AsynchronousFileChannel;

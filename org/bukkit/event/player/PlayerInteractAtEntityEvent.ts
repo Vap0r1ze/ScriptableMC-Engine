@@ -22,6 +22,9 @@ export default class PlayerInteractAtEntityEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerInteractAtEntityEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerInteractAtEntityEvent {
+		return obj instanceof PlayerInteractAtEntityEvent.$javaClass;
+	}
 
 	constructor(who: Player, clickedEntity: Entity, position: Vector);
 	constructor(who: Player, clickedEntity: Entity, position: Vector, hand: EquipmentSlot);

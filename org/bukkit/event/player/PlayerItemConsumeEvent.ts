@@ -20,6 +20,9 @@ export default class PlayerItemConsumeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerItemConsumeEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerItemConsumeEvent {
+		return obj instanceof PlayerItemConsumeEvent.$javaClass;
+	}
 
 	constructor(player: Player, item: ItemStack);
 	constructor(...args: any[]) {

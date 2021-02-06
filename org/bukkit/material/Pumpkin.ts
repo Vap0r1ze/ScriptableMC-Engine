@@ -23,6 +23,9 @@ export default class Pumpkin {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Pumpkin');
 	}
+	public static $isInstance(obj: any): obj is Pumpkin {
+		return obj instanceof Pumpkin.$javaClass;
+	}
 
 	constructor();
 	constructor(direction: BlockFace);

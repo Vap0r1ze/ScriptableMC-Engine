@@ -23,6 +23,9 @@ export default class ByteArrayDataOutput {
 	public static get $javaClass(): any {
 		return Java.type('com.google.common.io.ByteArrayDataOutput');
 	}
+	public static $isInstance(obj: any): obj is ByteArrayDataOutput {
+		return obj instanceof ByteArrayDataOutput.$javaClass;
+	}
 
 }
 

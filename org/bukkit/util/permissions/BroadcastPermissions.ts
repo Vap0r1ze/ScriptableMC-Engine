@@ -5,6 +5,9 @@ export default class BroadcastPermissions {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.permissions.BroadcastPermissions');
 	}
+	public static $isInstance(obj: any): obj is BroadcastPermissions {
+		return obj instanceof BroadcastPermissions.$javaClass;
+	}
 
 	public static registerPermissions(parent: Permission): Permission;
 	public static registerPermissions(...args: any[]): any {

@@ -50,6 +50,9 @@ export default class NBTCompoundList {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.nbtapi.NBTCompoundList');
 	}
+	public static $isInstance(obj: any): obj is NBTCompoundList {
+		return obj instanceof NBTCompoundList.$javaClass;
+	}
 
 }
 

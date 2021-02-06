@@ -13,6 +13,9 @@ export default class PermissionAttachmentInfo {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.permissions.PermissionAttachmentInfo');
 	}
+	public static $isInstance(obj: any): obj is PermissionAttachmentInfo {
+		return obj instanceof PermissionAttachmentInfo.$javaClass;
+	}
 
 	constructor(permissible: Permissible, permission: string, attachment: PermissionAttachment, value: boolean);
 	constructor(...args: any[]) {

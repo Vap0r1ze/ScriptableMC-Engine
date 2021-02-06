@@ -10,6 +10,9 @@ export default class Content {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.hover.content.Content');
 	}
+	public static $isInstance(obj: any): obj is Content {
+		return obj instanceof Content.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

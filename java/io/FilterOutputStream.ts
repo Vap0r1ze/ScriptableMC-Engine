@@ -13,6 +13,9 @@ export default class FilterOutputStream {
 	public static get $javaClass(): any {
 		return Java.type('java.io.FilterOutputStream');
 	}
+	public static $isInstance(obj: any): obj is FilterOutputStream {
+		return obj instanceof FilterOutputStream.$javaClass;
+	}
 
 	constructor(arg0: OutputStream);
 	constructor(...args: any[]) {

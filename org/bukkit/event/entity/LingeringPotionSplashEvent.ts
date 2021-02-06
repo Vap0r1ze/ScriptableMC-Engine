@@ -30,6 +30,9 @@ export default class LingeringPotionSplashEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.LingeringPotionSplashEvent');
 	}
+	public static $isInstance(obj: any): obj is LingeringPotionSplashEvent {
+		return obj instanceof LingeringPotionSplashEvent.$javaClass;
+	}
 
 	constructor(potion: ThrownPotion, entity: AreaEffectCloud);
 	constructor(...args: any[]) {

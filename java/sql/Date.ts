@@ -32,6 +32,9 @@ export default class Date {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Date');
 	}
+	public static $isInstance(obj: any): obj is Date {
+		return obj instanceof Date.$javaClass;
+	}
 
 	constructor(arg0: number);
 	constructor(arg0: number, arg1: number, arg2: number);

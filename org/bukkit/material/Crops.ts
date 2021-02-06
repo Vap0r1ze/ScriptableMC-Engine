@@ -21,6 +21,9 @@ export default class Crops {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Crops');
 	}
+	public static $isInstance(obj: any): obj is Crops {
+		return obj instanceof Crops.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

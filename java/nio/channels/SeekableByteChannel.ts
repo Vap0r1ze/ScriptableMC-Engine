@@ -17,6 +17,9 @@ export default class SeekableByteChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.SeekableByteChannel');
 	}
+	public static $isInstance(obj: any): obj is SeekableByteChannel {
+		return obj instanceof SeekableByteChannel.$javaClass;
+	}
 
 }
 

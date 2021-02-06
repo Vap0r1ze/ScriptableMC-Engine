@@ -25,6 +25,9 @@ export default class EntityExplodeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityExplodeEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityExplodeEvent {
+		return obj instanceof EntityExplodeEvent.$javaClass;
+	}
 
 	constructor(what: Entity, location: Location, blocks: Array<any>, _yield: number);
 	constructor(...args: any[]) {

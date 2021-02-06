@@ -25,6 +25,9 @@ export default class PlayerStatisticIncrementEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerStatisticIncrementEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerStatisticIncrementEvent {
+		return obj instanceof PlayerStatisticIncrementEvent.$javaClass;
+	}
 
 	constructor(player: Player, statistic: Statistic, initialValue: number, newValue: number);
 	constructor(player: Player, statistic: Statistic, initialValue: number, newValue: number, entityType: EntityType);

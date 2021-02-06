@@ -51,6 +51,9 @@ export default class EntityEquipment {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.EntityEquipment');
 	}
+	public static $isInstance(obj: any): obj is EntityEquipment {
+		return obj instanceof EntityEquipment.$javaClass;
+	}
 
 }
 

@@ -24,6 +24,9 @@ export default class Permissible {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.permissions.Permissible');
 	}
+	public static $isInstance(obj: any): obj is Permissible {
+		return obj instanceof Permissible.$javaClass;
+	}
 
 }
 

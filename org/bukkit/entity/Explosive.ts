@@ -121,6 +121,9 @@ export default class Explosive {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Explosive');
 	}
+	public static $isInstance(obj: any): obj is Explosive {
+		return obj instanceof Explosive.$javaClass;
+	}
 
 }
 

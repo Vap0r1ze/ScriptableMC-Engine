@@ -13,6 +13,9 @@ export default class ConfigurationOptions {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.ConfigurationOptions');
 	}
+	public static $isInstance(obj: any): obj is ConfigurationOptions {
+		return obj instanceof ConfigurationOptions.$javaClass;
+	}
 
 }
 

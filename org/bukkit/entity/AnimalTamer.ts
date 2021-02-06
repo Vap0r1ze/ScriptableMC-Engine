@@ -9,6 +9,9 @@ export default class AnimalTamer {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.AnimalTamer');
 	}
+	public static $isInstance(obj: any): obj is AnimalTamer {
+		return obj instanceof AnimalTamer.$javaClass;
+	}
 
 }
 

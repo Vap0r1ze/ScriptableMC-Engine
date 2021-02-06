@@ -18,6 +18,9 @@ export default class FileStore {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.FileStore');
 	}
+	public static $isInstance(obj: any): obj is FileStore {
+		return obj instanceof FileStore.$javaClass;
+	}
 
 }
 

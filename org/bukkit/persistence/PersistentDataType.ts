@@ -12,6 +12,9 @@ export default class PersistentDataType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.persistence.PersistentDataType');
 	}
+	public static $isInstance(obj: any): obj is PersistentDataType {
+		return obj instanceof PersistentDataType.$javaClass;
+	}
 
 	public static get BYTE(): PersistentDataType {
 		return PersistentDataType.$javaClass.BYTE;

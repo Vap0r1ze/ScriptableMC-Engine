@@ -22,6 +22,9 @@ export default class BlockCanBuildEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockCanBuildEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockCanBuildEvent {
+		return obj instanceof BlockCanBuildEvent.$javaClass;
+	}
 
 	constructor(block: Block, type: BlockData, canBuild: boolean);
 	constructor(block: Block, player: Player, type: BlockData, canBuild: boolean);

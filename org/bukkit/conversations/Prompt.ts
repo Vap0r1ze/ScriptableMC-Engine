@@ -11,6 +11,9 @@ export default class Prompt {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.Prompt');
 	}
+	public static $isInstance(obj: any): obj is Prompt {
+		return obj instanceof Prompt.$javaClass;
+	}
 
 	public static get END_OF_CONVERSATION(): Prompt {
 		return Prompt.$javaClass.END_OF_CONVERSATION;

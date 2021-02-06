@@ -26,6 +26,9 @@ export default class RedstoneRail {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.RedstoneRail');
 	}
+	public static $isInstance(obj: any): obj is RedstoneRail {
+		return obj instanceof RedstoneRail.$javaClass;
+	}
 
 }
 

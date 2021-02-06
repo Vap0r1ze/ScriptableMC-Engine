@@ -15,6 +15,9 @@ export default class PlayerChannelEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerChannelEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerChannelEvent {
+		return obj instanceof PlayerChannelEvent.$javaClass;
+	}
 
 	constructor(player: Player, channel: string);
 	constructor(...args: any[]) {

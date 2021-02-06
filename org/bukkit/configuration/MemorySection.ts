@@ -80,6 +80,9 @@ export default class MemorySection {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.MemorySection');
 	}
+	public static $isInstance(obj: any): obj is MemorySection {
+		return obj instanceof MemorySection.$javaClass;
+	}
 
 	public static createPath(section: ConfigurationSection, key: string): string;
 	public static createPath(section: ConfigurationSection, key: string, relativeTo: ConfigurationSection): string;

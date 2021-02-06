@@ -33,6 +33,9 @@ export default class Stairs {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Stairs');
 	}
+	public static $isInstance(obj: any): obj is Stairs {
+		return obj instanceof Stairs.$javaClass;
+	}
 
 }
 

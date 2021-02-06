@@ -28,6 +28,9 @@ export default class RedstoneTorch {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.RedstoneTorch');
 	}
+	public static $isInstance(obj: any): obj is RedstoneTorch {
+		return obj instanceof RedstoneTorch.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

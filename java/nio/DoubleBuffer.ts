@@ -43,6 +43,9 @@ export default class DoubleBuffer {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.DoubleBuffer');
 	}
+	public static $isInstance(obj: any): obj is DoubleBuffer {
+		return obj instanceof DoubleBuffer.$javaClass;
+	}
 
 	public static allocate(arg0: number): DoubleBuffer;
 	public static allocate(...args: any[]): any {

@@ -20,6 +20,9 @@ export default class MetadataValueAdapter {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.metadata.MetadataValueAdapter');
 	}
+	public static $isInstance(obj: any): obj is MetadataValueAdapter {
+		return obj instanceof MetadataValueAdapter.$javaClass;
+	}
 
 }
 

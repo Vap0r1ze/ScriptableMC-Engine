@@ -10,6 +10,9 @@ export default class Channel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.Channel');
 	}
+	public static $isInstance(obj: any): obj is Channel {
+		return obj instanceof Channel.$javaClass;
+	}
 
 }
 

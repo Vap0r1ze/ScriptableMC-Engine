@@ -20,6 +20,9 @@ export default class ServicesManager {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.ServicesManager');
 	}
+	public static $isInstance(obj: any): obj is ServicesManager {
+		return obj instanceof ServicesManager.$javaClass;
+	}
 
 }
 

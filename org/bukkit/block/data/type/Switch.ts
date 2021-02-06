@@ -33,6 +33,9 @@ export default class Switch {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Switch');
 	}
+	public static $isInstance(obj: any): obj is Switch {
+		return obj instanceof Switch.$javaClass;
+	}
 
 }
 

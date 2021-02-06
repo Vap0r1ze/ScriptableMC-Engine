@@ -51,6 +51,9 @@ export default class NBTEntity {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.nbtapi.NBTEntity');
 	}
+	public static $isInstance(obj: any): obj is NBTEntity {
+		return obj instanceof NBTEntity.$javaClass;
+	}
 
 	constructor(entity: Entity);
 	constructor(...args: any[]) {

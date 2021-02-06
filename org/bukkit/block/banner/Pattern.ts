@@ -13,6 +13,9 @@ export default class Pattern {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.banner.Pattern');
 	}
+	public static $isInstance(obj: any): obj is Pattern {
+		return obj instanceof Pattern.$javaClass;
+	}
 
 	constructor(map: any);
 	constructor(color: DyeColor, pattern: PatternType);

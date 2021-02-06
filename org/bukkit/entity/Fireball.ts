@@ -130,6 +130,9 @@ export default class Fireball {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Fireball');
 	}
+	public static $isInstance(obj: any): obj is Fireball {
+		return obj instanceof Fireball.$javaClass;
+	}
 
 }
 

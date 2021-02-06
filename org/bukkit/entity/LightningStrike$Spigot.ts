@@ -14,6 +14,9 @@ export default class LightningStrike$Spigot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.LightningStrike$Spigot');
 	}
+	public static $isInstance(obj: any): obj is LightningStrike$Spigot {
+		return obj instanceof LightningStrike$Spigot.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

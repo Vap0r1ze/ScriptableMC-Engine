@@ -84,6 +84,9 @@ export default class MappedByteBuffer {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.MappedByteBuffer');
 	}
+	public static $isInstance(obj: any): obj is MappedByteBuffer {
+		return obj instanceof MappedByteBuffer.$javaClass;
+	}
 
 	public static allocate(arg0: number): ByteBuffer;
 	public static allocate(...args: any[]): any {

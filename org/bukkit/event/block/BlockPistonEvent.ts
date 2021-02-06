@@ -20,6 +20,9 @@ export default class BlockPistonEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockPistonEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockPistonEvent {
+		return obj instanceof BlockPistonEvent.$javaClass;
+	}
 
 	constructor(block: Block, direction: BlockFace);
 	constructor(...args: any[]) {

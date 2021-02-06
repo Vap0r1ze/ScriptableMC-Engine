@@ -52,6 +52,9 @@ export default class Jukebox {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Jukebox');
 	}
+	public static $isInstance(obj: any): obj is Jukebox {
+		return obj instanceof Jukebox.$javaClass;
+	}
 
 }
 

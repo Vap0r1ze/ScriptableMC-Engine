@@ -16,6 +16,9 @@ export default class PlayerQuitEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerQuitEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerQuitEvent {
+		return obj instanceof PlayerQuitEvent.$javaClass;
+	}
 
 	constructor(who: Player, quitMessage: string);
 	constructor(...args: any[]) {

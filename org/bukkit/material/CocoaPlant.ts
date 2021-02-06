@@ -27,6 +27,9 @@ export default class CocoaPlant {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.CocoaPlant');
 	}
+	public static $isInstance(obj: any): obj is CocoaPlant {
+		return obj instanceof CocoaPlant.$javaClass;
+	}
 
 	constructor();
 	constructor(sz: CocoaPlant$CocoaPlantSize);

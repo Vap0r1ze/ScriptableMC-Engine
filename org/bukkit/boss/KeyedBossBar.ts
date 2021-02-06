@@ -34,6 +34,9 @@ export default class KeyedBossBar {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.boss.KeyedBossBar');
 	}
+	public static $isInstance(obj: any): obj is KeyedBossBar {
+		return obj instanceof KeyedBossBar.$javaClass;
+	}
 
 }
 

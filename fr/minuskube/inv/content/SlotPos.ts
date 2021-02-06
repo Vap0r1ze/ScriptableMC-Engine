@@ -9,6 +9,9 @@ export default class SlotPos {
 	public static get $javaClass(): any {
 		return Java.type('fr.minuskube.inv.content.SlotPos');
 	}
+	public static $isInstance(obj: any): obj is SlotPos {
+		return obj instanceof SlotPos.$javaClass;
+	}
 
 	constructor(row: number, column: number);
 	constructor(...args: any[]) {

@@ -19,6 +19,9 @@ export default class SpongeAbsorbEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.SpongeAbsorbEvent');
 	}
+	public static $isInstance(obj: any): obj is SpongeAbsorbEvent {
+		return obj instanceof SpongeAbsorbEvent.$javaClass;
+	}
 
 	constructor(block: Block, waterblocks: Array<any>);
 	constructor(...args: any[]) {

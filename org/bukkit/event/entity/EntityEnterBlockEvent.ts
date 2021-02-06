@@ -21,6 +21,9 @@ export default class EntityEnterBlockEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityEnterBlockEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityEnterBlockEvent {
+		return obj instanceof EntityEnterBlockEvent.$javaClass;
+	}
 
 	constructor(entity: Entity, block: Block);
 	constructor(...args: any[]) {

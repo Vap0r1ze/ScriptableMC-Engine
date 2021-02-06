@@ -24,6 +24,9 @@ export default class CauldronLevelChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.CauldronLevelChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is CauldronLevelChangeEvent {
+		return obj instanceof CauldronLevelChangeEvent.$javaClass;
+	}
 
 	constructor(block: Block, entity: Entity, reason: CauldronLevelChangeEvent$ChangeReason, oldLevel: number, newLevel: number);
 	constructor(...args: any[]) {

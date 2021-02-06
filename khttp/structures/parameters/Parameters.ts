@@ -46,6 +46,9 @@ export default class Parameters {
 	public static get $javaClass(): any {
 		return Java.type('khttp.structures.parameters.Parameters');
 	}
+	public static $isInstance(obj: any): obj is Parameters {
+		return obj instanceof Parameters.$javaClass;
+	}
 
 	constructor(parameters: any);
 	constructor(parameters: Array<any>);

@@ -12,11 +12,11 @@ export default interface PermissibleBase extends Permissible {
 	addAttachment(plugin: Plugin, _name: string, value: boolean, ticks: number): PermissionAttachment;
 	clearPermissions(): void;
 	getEffectivePermissions(): any;
-	hasPermission(perm: Permission): boolean;
 	hasPermission(inName: string): boolean;
+	hasPermission(perm: Permission): boolean;
 	isOp(): boolean;
-	isPermissionSet(perm: Permission): boolean;
 	isPermissionSet(_name: string): boolean;
+	isPermissionSet(perm: Permission): boolean;
 	recalculatePermissions(): void;
 	removeAttachment(attachment: PermissionAttachment): void;
 	setOp(value: boolean): void;
@@ -25,6 +25,9 @@ export default interface PermissibleBase extends Permissible {
 export default class PermissibleBase {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.permissions.PermissibleBase');
+	}
+	public static $isInstance(obj: any): obj is PermissibleBase {
+		return obj instanceof PermissibleBase.$javaClass;
 	}
 
 	constructor(opable: ServerOperator);

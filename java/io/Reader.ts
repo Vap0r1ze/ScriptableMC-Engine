@@ -19,6 +19,9 @@ export default class Reader {
 	public static get $javaClass(): any {
 		return Java.type('java.io.Reader');
 	}
+	public static $isInstance(obj: any): obj is Reader {
+		return obj instanceof Reader.$javaClass;
+	}
 
 }
 

@@ -50,6 +50,9 @@ export default class EndGateway {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.EndGateway');
 	}
+	public static $isInstance(obj: any): obj is EndGateway {
+		return obj instanceof EndGateway.$javaClass;
+	}
 
 }
 

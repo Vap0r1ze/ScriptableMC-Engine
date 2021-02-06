@@ -214,6 +214,9 @@ export default class Phantom {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Phantom');
 	}
+	public static $isInstance(obj: any): obj is Phantom {
+		return obj instanceof Phantom.$javaClass;
+	}
 
 }
 

@@ -41,6 +41,9 @@ export default class Team {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.Team');
 	}
+	public static $isInstance(obj: any): obj is Team {
+		return obj instanceof Team.$javaClass;
+	}
 
 }
 

@@ -66,6 +66,9 @@ export default class TropicalFishBucketMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.TropicalFishBucketMeta');
 	}
+	public static $isInstance(obj: any): obj is TropicalFishBucketMeta {
+		return obj instanceof TropicalFishBucketMeta.$javaClass;
+	}
 
 }
 

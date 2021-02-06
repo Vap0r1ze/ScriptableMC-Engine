@@ -23,6 +23,9 @@ export default class MonsterEggs {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.MonsterEggs');
 	}
+	public static $isInstance(obj: any): obj is MonsterEggs {
+		return obj instanceof MonsterEggs.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

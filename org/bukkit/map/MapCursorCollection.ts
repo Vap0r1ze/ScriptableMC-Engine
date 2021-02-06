@@ -16,6 +16,9 @@ export default class MapCursorCollection {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MapCursorCollection');
 	}
+	public static $isInstance(obj: any): obj is MapCursorCollection {
+		return obj instanceof MapCursorCollection.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

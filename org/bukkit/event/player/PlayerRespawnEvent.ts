@@ -19,6 +19,9 @@ export default class PlayerRespawnEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerRespawnEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerRespawnEvent {
+		return obj instanceof PlayerRespawnEvent.$javaClass;
+	}
 
 	constructor(respawnPlayer: Player, respawnLocation: Location, isBedSpawn: boolean);
 	constructor(respawnPlayer: Player, respawnLocation: Location, isBedSpawn: boolean, isAnchorSpawn: boolean);

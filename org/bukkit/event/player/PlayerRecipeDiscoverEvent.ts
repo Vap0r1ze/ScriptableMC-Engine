@@ -19,6 +19,9 @@ export default class PlayerRecipeDiscoverEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerRecipeDiscoverEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerRecipeDiscoverEvent {
+		return obj instanceof PlayerRecipeDiscoverEvent.$javaClass;
+	}
 
 	constructor(who: Player, recipe: NamespacedKey);
 	constructor(...args: any[]) {

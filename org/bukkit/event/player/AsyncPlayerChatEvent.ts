@@ -22,6 +22,9 @@ export default class AsyncPlayerChatEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.AsyncPlayerChatEvent');
 	}
+	public static $isInstance(obj: any): obj is AsyncPlayerChatEvent {
+		return obj instanceof AsyncPlayerChatEvent.$javaClass;
+	}
 
 	constructor(async: boolean, who: Player, message: string, players: any);
 	constructor(...args: any[]) {

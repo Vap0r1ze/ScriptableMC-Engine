@@ -12,6 +12,9 @@ export default class SmartInventoryProvider {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.smartinvs.SmartInventoryProvider');
 	}
+	public static $isInstance(obj: any): obj is SmartInventoryProvider {
+		return obj instanceof SmartInventoryProvider.$javaClass;
+	}
 
 	constructor(scriptableObject: any);
 	constructor(...args: any[]) {

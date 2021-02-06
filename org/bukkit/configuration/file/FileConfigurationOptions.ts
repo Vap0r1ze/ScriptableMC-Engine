@@ -6,13 +6,13 @@ import MemoryConfiguration from '../../../../org/bukkit/configuration/MemoryConf
 import MemoryConfigurationOptions from '../../../../org/bukkit/configuration/MemoryConfigurationOptions.js'
 
 export default interface FileConfigurationOptions extends MemoryConfigurationOptions {
-	configuration(): Configuration;
 	configuration(): MemoryConfiguration;
 	configuration(): FileConfiguration;
+	configuration(): Configuration;
 	copyDefaults(): boolean;
+	copyDefaults(value: boolean): MemoryConfigurationOptions;
 	copyDefaults(value: boolean): ConfigurationOptions;
 	copyDefaults(value: boolean): FileConfigurationOptions;
-	copyDefaults(value: boolean): MemoryConfigurationOptions;
 	copyHeader(): boolean;
 	copyHeader(value: boolean): FileConfigurationOptions;
 	header(): string;
@@ -26,6 +26,9 @@ export default interface FileConfigurationOptions extends MemoryConfigurationOpt
 export default class FileConfigurationOptions {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.file.FileConfigurationOptions');
+	}
+	public static $isInstance(obj: any): obj is FileConfigurationOptions {
+		return obj instanceof FileConfigurationOptions.$javaClass;
 	}
 
 }

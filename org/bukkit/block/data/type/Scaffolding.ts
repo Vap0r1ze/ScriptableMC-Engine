@@ -26,6 +26,9 @@ export default class Scaffolding {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Scaffolding');
 	}
+	public static $isInstance(obj: any): obj is Scaffolding {
+		return obj instanceof Scaffolding.$javaClass;
+	}
 
 }
 

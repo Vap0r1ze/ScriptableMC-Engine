@@ -21,6 +21,9 @@ export default class Coal {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Coal');
 	}
+	public static $isInstance(obj: any): obj is Coal {
+		return obj instanceof Coal.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

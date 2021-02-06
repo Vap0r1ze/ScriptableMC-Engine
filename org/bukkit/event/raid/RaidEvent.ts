@@ -16,6 +16,9 @@ export default class RaidEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.raid.RaidEvent');
 	}
+	public static $isInstance(obj: any): obj is RaidEvent {
+		return obj instanceof RaidEvent.$javaClass;
+	}
 
 }
 

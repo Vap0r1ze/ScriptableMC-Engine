@@ -42,6 +42,9 @@ export default class ComponentBuilder {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.ComponentBuilder');
 	}
+	public static $isInstance(obj: any): obj is ComponentBuilder {
+		return obj instanceof ComponentBuilder.$javaClass;
+	}
 
 	constructor();
 	constructor(text: string);

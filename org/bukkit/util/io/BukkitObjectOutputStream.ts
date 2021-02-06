@@ -34,6 +34,9 @@ export default class BukkitObjectOutputStream {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.io.BukkitObjectOutputStream');
 	}
+	public static $isInstance(obj: any): obj is BukkitObjectOutputStream {
+		return obj instanceof BukkitObjectOutputStream.$javaClass;
+	}
 
 	constructor(out: OutputStream);
 	constructor(...args: any[]) {

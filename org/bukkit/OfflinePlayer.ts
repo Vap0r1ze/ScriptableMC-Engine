@@ -10,9 +10,9 @@ import Statistic from './Statistic.js'
 
 export default interface OfflinePlayer extends ServerOperator, AnimalTamer, ConfigurationSerializable {
 	decrementStatistic(arg0: Statistic): void;
+	decrementStatistic(arg0: Statistic, arg1: EntityType): void;
 	decrementStatistic(arg0: Statistic, arg1: Material): void;
 	decrementStatistic(arg0: Statistic, arg1: number): void;
-	decrementStatistic(arg0: Statistic, arg1: EntityType): void;
 	decrementStatistic(arg0: Statistic, arg1: EntityType, arg2: number): void;
 	decrementStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
 	getBedSpawnLocation(): Location;
@@ -27,8 +27,8 @@ export default interface OfflinePlayer extends ServerOperator, AnimalTamer, Conf
 	hasPlayedBefore(): boolean;
 	incrementStatistic(arg0: Statistic): void;
 	incrementStatistic(arg0: Statistic, arg1: Material): void;
-	incrementStatistic(arg0: Statistic, arg1: number): void;
 	incrementStatistic(arg0: Statistic, arg1: EntityType): void;
+	incrementStatistic(arg0: Statistic, arg1: number): void;
 	incrementStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
 	incrementStatistic(arg0: Statistic, arg1: EntityType, arg2: number): void;
 	isBanned(): boolean;
@@ -38,14 +38,17 @@ export default interface OfflinePlayer extends ServerOperator, AnimalTamer, Conf
 	serialize(): any;
 	setOp(arg0: boolean): void;
 	setStatistic(arg0: Statistic, arg1: number): void;
-	setStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
 	setStatistic(arg0: Statistic, arg1: EntityType, arg2: number): void;
+	setStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
 	setWhitelisted(arg0: boolean): void;
 }
 
 export default class OfflinePlayer {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.OfflinePlayer');
+	}
+	public static $isInstance(obj: any): obj is OfflinePlayer {
+		return obj instanceof OfflinePlayer.$javaClass;
 	}
 
 }

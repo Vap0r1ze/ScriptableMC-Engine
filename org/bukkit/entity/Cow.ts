@@ -226,6 +226,9 @@ export default class Cow {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Cow');
 	}
+	public static $isInstance(obj: any): obj is Cow {
+		return obj instanceof Cow.$javaClass;
+	}
 
 }
 

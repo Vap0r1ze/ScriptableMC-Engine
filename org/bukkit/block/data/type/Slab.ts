@@ -24,6 +24,9 @@ export default class Slab {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Slab');
 	}
+	public static $isInstance(obj: any): obj is Slab {
+		return obj instanceof Slab.$javaClass;
+	}
 
 }
 

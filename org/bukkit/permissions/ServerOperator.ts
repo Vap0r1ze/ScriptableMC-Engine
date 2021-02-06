@@ -9,6 +9,9 @@ export default class ServerOperator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.permissions.ServerOperator');
 	}
+	public static $isInstance(obj: any): obj is ServerOperator {
+		return obj instanceof ServerOperator.$javaClass;
+	}
 
 }
 

@@ -27,6 +27,9 @@ export default class GlassPane {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.GlassPane');
 	}
+	public static $isInstance(obj: any): obj is GlassPane {
+		return obj instanceof GlassPane.$javaClass;
+	}
 
 }
 

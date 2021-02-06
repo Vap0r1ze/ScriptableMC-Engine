@@ -5,6 +5,9 @@ export default class ObjectStreamConstants {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ObjectStreamConstants');
 	}
+	public static $isInstance(obj: any): obj is ObjectStreamConstants {
+		return obj instanceof ObjectStreamConstants.$javaClass;
+	}
 
 	public static get PROTOCOL_VERSION_1(): number {
 		return ObjectStreamConstants.$javaClass.PROTOCOL_VERSION_1;

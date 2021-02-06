@@ -42,6 +42,9 @@ export default class InventoryCreativeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.InventoryCreativeEvent');
 	}
+	public static $isInstance(obj: any): obj is InventoryCreativeEvent {
+		return obj instanceof InventoryCreativeEvent.$javaClass;
+	}
 
 	constructor(what: InventoryView, type: InventoryType$SlotType, slot: number, newItem: ItemStack);
 	constructor(...args: any[]) {

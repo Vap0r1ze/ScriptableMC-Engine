@@ -11,6 +11,9 @@ export default class Ref {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Ref');
 	}
+	public static $isInstance(obj: any): obj is Ref {
+		return obj instanceof Ref.$javaClass;
+	}
 
 }
 

@@ -10,6 +10,9 @@ export default class SQLType {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.SQLType');
 	}
+	public static $isInstance(obj: any): obj is SQLType {
+		return obj instanceof SQLType.$javaClass;
+	}
 
 }
 

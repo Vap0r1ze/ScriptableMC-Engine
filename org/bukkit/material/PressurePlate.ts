@@ -20,6 +20,9 @@ export default class PressurePlate {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.PressurePlate');
 	}
+	public static $isInstance(obj: any): obj is PressurePlate {
+		return obj instanceof PressurePlate.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

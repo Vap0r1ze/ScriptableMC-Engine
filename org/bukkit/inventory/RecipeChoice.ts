@@ -16,6 +16,9 @@ export default class RecipeChoice {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.RecipeChoice');
 	}
+	public static $isInstance(obj: any): obj is RecipeChoice {
+		return obj instanceof RecipeChoice.$javaClass;
+	}
 
 }
 

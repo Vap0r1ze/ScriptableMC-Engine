@@ -6,6 +6,9 @@ export default class PluginCommandYamlParser {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.PluginCommandYamlParser');
 	}
+	public static $isInstance(obj: any): obj is PluginCommandYamlParser {
+		return obj instanceof PluginCommandYamlParser.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

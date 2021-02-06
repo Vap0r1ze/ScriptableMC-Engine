@@ -231,6 +231,9 @@ export default class Drowned {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Drowned');
 	}
+	public static $isInstance(obj: any): obj is Drowned {
+		return obj instanceof Drowned.$javaClass;
+	}
 
 }
 

@@ -23,6 +23,9 @@ export default class SimpleAttachableMaterialData {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.SimpleAttachableMaterialData');
 	}
+	public static $isInstance(obj: any): obj is SimpleAttachableMaterialData {
+		return obj instanceof SimpleAttachableMaterialData.$javaClass;
+	}
 
 	constructor(type: Material);
 	constructor(type: Material, data: number);

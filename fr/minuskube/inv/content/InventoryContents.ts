@@ -36,6 +36,9 @@ export default class InventoryContents {
 	public static get $javaClass(): any {
 		return Java.type('fr.minuskube.inv.content.InventoryContents');
 	}
+	public static $isInstance(obj: any): obj is InventoryContents {
+		return obj instanceof InventoryContents.$javaClass;
+	}
 
 }
 

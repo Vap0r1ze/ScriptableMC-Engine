@@ -38,6 +38,9 @@ export default class Plugin {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.Plugin');
 	}
+	public static $isInstance(obj: any): obj is Plugin {
+		return obj instanceof Plugin.$javaClass;
+	}
 
 }
 

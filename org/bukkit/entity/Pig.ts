@@ -237,6 +237,9 @@ export default class Pig {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Pig');
 	}
+	public static $isInstance(obj: any): obj is Pig {
+		return obj instanceof Pig.$javaClass;
+	}
 
 }
 

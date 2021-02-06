@@ -12,6 +12,9 @@ export default class Tag {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Tag');
 	}
+	public static $isInstance(obj: any): obj is Tag {
+		return obj instanceof Tag.$javaClass;
+	}
 
 	public static get ACACIA_LOGS(): Tag {
 		return Tag.$javaClass.ACACIA_LOGS;

@@ -42,6 +42,9 @@ export default class PluginCommand {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.PluginCommand');
 	}
+	public static $isInstance(obj: any): obj is PluginCommand {
+		return obj instanceof PluginCommand.$javaClass;
+	}
 
 	public static broadcastCommandMessage(source: CommandSender, message: string): void;
 	public static broadcastCommandMessage(source: CommandSender, message: string, sendToSource: boolean): void;

@@ -19,6 +19,9 @@ export default class YamlRepresenter {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.file.YamlRepresenter');
 	}
+	public static $isInstance(obj: any): obj is YamlRepresenter {
+		return obj instanceof YamlRepresenter.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

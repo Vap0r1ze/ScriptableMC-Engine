@@ -26,6 +26,9 @@ export default class PlayerArmorStandManipulateEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerArmorStandManipulateEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerArmorStandManipulateEvent {
+		return obj instanceof PlayerArmorStandManipulateEvent.$javaClass;
+	}
 
 	constructor(who: Player, clickedEntity: ArmorStand, playerItem: ItemStack, armorStandItem: ItemStack, slot: EquipmentSlot);
 	constructor(...args: any[]) {

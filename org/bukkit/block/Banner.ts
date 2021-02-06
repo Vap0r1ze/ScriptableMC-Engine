@@ -55,6 +55,9 @@ export default class Banner {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Banner');
 	}
+	public static $isInstance(obj: any): obj is Banner {
+		return obj instanceof Banner.$javaClass;
+	}
 
 }
 

@@ -10,6 +10,9 @@ export default class CommandExecutor {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.CommandExecutor');
 	}
+	public static $isInstance(obj: any): obj is CommandExecutor {
+		return obj instanceof CommandExecutor.$javaClass;
+	}
 
 }
 

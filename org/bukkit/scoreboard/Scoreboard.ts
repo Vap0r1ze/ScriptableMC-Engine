@@ -15,21 +15,24 @@ export default interface Scoreboard {
 	getObjectivesByCriteria(arg0: string): any;
 	getPlayerTeam(arg0: OfflinePlayer): Team;
 	getPlayers(): any;
-	getScores(arg0: OfflinePlayer): any;
 	getScores(arg0: string): any;
+	getScores(arg0: OfflinePlayer): any;
 	getTeam(arg0: string): Team;
 	getTeams(): any;
 	registerNewObjective(arg0: string, arg1: string): Objective;
 	registerNewObjective(arg0: string, arg1: string, arg2: string): Objective;
 	registerNewObjective(arg0: string, arg1: string, arg2: string, arg3: RenderType): Objective;
 	registerNewTeam(arg0: string): Team;
-	resetScores(arg0: OfflinePlayer): void;
 	resetScores(arg0: string): void;
+	resetScores(arg0: OfflinePlayer): void;
 }
 
 export default class Scoreboard {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.Scoreboard');
+	}
+	public static $isInstance(obj: any): obj is Scoreboard {
+		return obj instanceof Scoreboard.$javaClass;
 	}
 
 }

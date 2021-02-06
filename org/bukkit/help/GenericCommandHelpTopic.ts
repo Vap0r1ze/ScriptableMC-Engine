@@ -16,6 +16,9 @@ export default class GenericCommandHelpTopic {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.help.GenericCommandHelpTopic');
 	}
+	public static $isInstance(obj: any): obj is GenericCommandHelpTopic {
+		return obj instanceof GenericCommandHelpTopic.$javaClass;
+	}
 
 	constructor(command: Command);
 	constructor(...args: any[]) {

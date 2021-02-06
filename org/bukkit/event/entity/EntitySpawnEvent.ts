@@ -21,6 +21,9 @@ export default class EntitySpawnEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntitySpawnEvent');
 	}
+	public static $isInstance(obj: any): obj is EntitySpawnEvent {
+		return obj instanceof EntitySpawnEvent.$javaClass;
+	}
 
 	constructor(spawnee: Entity);
 	constructor(...args: any[]) {

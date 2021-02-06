@@ -10,6 +10,9 @@ export default class StructureType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.StructureType');
 	}
+	public static $isInstance(obj: any): obj is StructureType {
+		return obj instanceof StructureType.$javaClass;
+	}
 
 	public static get BASTION_REMNANT(): StructureType {
 		return StructureType.$javaClass.BASTION_REMNANT;

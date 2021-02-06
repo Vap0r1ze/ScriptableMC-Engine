@@ -24,6 +24,9 @@ export default class SmokingRecipe {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.SmokingRecipe');
 	}
+	public static $isInstance(obj: any): obj is SmokingRecipe {
+		return obj instanceof SmokingRecipe.$javaClass;
+	}
 
 	constructor(key: NamespacedKey, result: ItemStack, source: Material, experience: number, cookingTime: number);
 	constructor(key: NamespacedKey, result: ItemStack, input: RecipeChoice, experience: number, cookingTime: number);

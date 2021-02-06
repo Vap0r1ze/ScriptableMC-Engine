@@ -6,6 +6,9 @@ export default class Http {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.utils.Http');
 	}
+	public static $isInstance(obj: any): obj is Http {
+		return obj instanceof Http.$javaClass;
+	}
 
 	public static delete(url: string): Response;
 	public static delete(url: string, headers: any): Response;

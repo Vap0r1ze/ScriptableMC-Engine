@@ -22,6 +22,9 @@ export default class OctaveGenerator {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.noise.OctaveGenerator');
 	}
+	public static $isInstance(obj: any): obj is OctaveGenerator {
+		return obj instanceof OctaveGenerator.$javaClass;
+	}
 
 }
 

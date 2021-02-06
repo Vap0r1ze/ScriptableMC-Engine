@@ -13,6 +13,9 @@ export default class FixedSetPrompt {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.FixedSetPrompt');
 	}
+	public static $isInstance(obj: any): obj is FixedSetPrompt {
+		return obj instanceof FixedSetPrompt.$javaClass;
+	}
 
 	constructor(fixedSet: Array<string>);
 	constructor(...args: any[]) {

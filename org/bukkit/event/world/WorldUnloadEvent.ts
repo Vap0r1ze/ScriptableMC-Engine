@@ -17,6 +17,9 @@ export default class WorldUnloadEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.world.WorldUnloadEvent');
 	}
+	public static $isInstance(obj: any): obj is WorldUnloadEvent {
+		return obj instanceof WorldUnloadEvent.$javaClass;
+	}
 
 	constructor(world: World);
 	constructor(...args: any[]) {

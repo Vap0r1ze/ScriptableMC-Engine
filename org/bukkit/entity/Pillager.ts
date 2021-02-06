@@ -221,6 +221,9 @@ export default class Pillager {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Pillager');
 	}
+	public static $isInstance(obj: any): obj is Pillager {
+		return obj instanceof Pillager.$javaClass;
+	}
 
 }
 

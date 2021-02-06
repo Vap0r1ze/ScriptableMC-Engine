@@ -51,6 +51,9 @@ export default class EntityBlockStorage {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.EntityBlockStorage');
 	}
+	public static $isInstance(obj: any): obj is EntityBlockStorage {
+		return obj instanceof EntityBlockStorage.$javaClass;
+	}
 
 }
 

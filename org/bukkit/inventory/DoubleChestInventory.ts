@@ -53,6 +53,9 @@ export default class DoubleChestInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.DoubleChestInventory');
 	}
+	public static $isInstance(obj: any): obj is DoubleChestInventory {
+		return obj instanceof DoubleChestInventory.$javaClass;
+	}
 
 }
 

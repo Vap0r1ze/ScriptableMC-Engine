@@ -33,6 +33,9 @@ export default class CommandSender {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.CommandSender');
 	}
+	public static $isInstance(obj: any): obj is CommandSender {
+		return obj instanceof CommandSender.$javaClass;
+	}
 
 }
 

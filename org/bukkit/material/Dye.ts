@@ -22,6 +22,9 @@ export default class Dye {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Dye');
 	}
+	public static $isInstance(obj: any): obj is Dye {
+		return obj instanceof Dye.$javaClass;
+	}
 
 	constructor();
 	constructor(color: DyeColor);

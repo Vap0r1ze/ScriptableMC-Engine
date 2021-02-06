@@ -14,6 +14,9 @@ export default class PluginEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.PluginEvent');
 	}
+	public static $isInstance(obj: any): obj is PluginEvent {
+		return obj instanceof PluginEvent.$javaClass;
+	}
 
 	constructor(plugin: Plugin);
 	constructor(...args: any[]) {

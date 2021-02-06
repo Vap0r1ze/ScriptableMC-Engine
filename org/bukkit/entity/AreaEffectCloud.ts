@@ -152,6 +152,9 @@ export default class AreaEffectCloud {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.AreaEffectCloud');
 	}
+	public static $isInstance(obj: any): obj is AreaEffectCloud {
+		return obj instanceof AreaEffectCloud.$javaClass;
+	}
 
 }
 

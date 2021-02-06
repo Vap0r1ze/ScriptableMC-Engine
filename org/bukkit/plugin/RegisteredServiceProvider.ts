@@ -15,6 +15,9 @@ export default class RegisteredServiceProvider {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.RegisteredServiceProvider');
 	}
+	public static $isInstance(obj: any): obj is RegisteredServiceProvider {
+		return obj instanceof RegisteredServiceProvider.$javaClass;
+	}
 
 	constructor(service: any, provider: any, priority: ServicePriority, plugin: Plugin);
 	constructor(...args: any[]) {

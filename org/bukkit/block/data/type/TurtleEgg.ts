@@ -25,6 +25,9 @@ export default class TurtleEgg {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.TurtleEgg');
 	}
+	public static $isInstance(obj: any): obj is TurtleEgg {
+		return obj instanceof TurtleEgg.$javaClass;
+	}
 
 }
 

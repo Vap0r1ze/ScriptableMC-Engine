@@ -36,6 +36,9 @@ export default class TrapDoor {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.TrapDoor');
 	}
+	public static $isInstance(obj: any): obj is TrapDoor {
+		return obj instanceof TrapDoor.$javaClass;
+	}
 
 }
 

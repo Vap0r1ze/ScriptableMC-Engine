@@ -139,6 +139,9 @@ export default class AbstractArrow {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.AbstractArrow');
 	}
+	public static $isInstance(obj: any): obj is AbstractArrow {
+		return obj instanceof AbstractArrow.$javaClass;
+	}
 
 }
 

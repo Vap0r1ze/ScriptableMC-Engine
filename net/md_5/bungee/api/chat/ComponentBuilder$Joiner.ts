@@ -10,6 +10,9 @@ export default class ComponentBuilder$Joiner {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.ComponentBuilder$Joiner');
 	}
+	public static $isInstance(obj: any): obj is ComponentBuilder$Joiner {
+		return obj instanceof ComponentBuilder$Joiner.$javaClass;
+	}
 
 }
 

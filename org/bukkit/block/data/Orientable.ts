@@ -22,6 +22,9 @@ export default class Orientable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Orientable');
 	}
+	public static $isInstance(obj: any): obj is Orientable {
+		return obj instanceof Orientable.$javaClass;
+	}
 
 }
 

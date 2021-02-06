@@ -14,6 +14,9 @@ export default class BlockProjectileSource {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.projectiles.BlockProjectileSource');
 	}
+	public static $isInstance(obj: any): obj is BlockProjectileSource {
+		return obj instanceof BlockProjectileSource.$javaClass;
+	}
 
 }
 

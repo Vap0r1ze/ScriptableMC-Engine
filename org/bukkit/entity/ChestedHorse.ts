@@ -248,6 +248,9 @@ export default class ChestedHorse {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ChestedHorse');
 	}
+	public static $isInstance(obj: any): obj is ChestedHorse {
+		return obj instanceof ChestedHorse.$javaClass;
+	}
 
 }
 

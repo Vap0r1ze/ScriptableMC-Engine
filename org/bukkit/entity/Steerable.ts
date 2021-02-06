@@ -234,6 +234,9 @@ export default class Steerable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Steerable');
 	}
+	public static $isInstance(obj: any): obj is Steerable {
+		return obj instanceof Steerable.$javaClass;
+	}
 
 }
 

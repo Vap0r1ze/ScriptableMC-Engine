@@ -20,6 +20,9 @@ export default class DragonBattle {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.boss.DragonBattle');
 	}
+	public static $isInstance(obj: any): obj is DragonBattle {
+		return obj instanceof DragonBattle.$javaClass;
+	}
 
 }
 

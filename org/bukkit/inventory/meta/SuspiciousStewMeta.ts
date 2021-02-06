@@ -65,6 +65,9 @@ export default class SuspiciousStewMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.SuspiciousStewMeta');
 	}
+	public static $isInstance(obj: any): obj is SuspiciousStewMeta {
+		return obj instanceof SuspiciousStewMeta.$javaClass;
+	}
 
 }
 

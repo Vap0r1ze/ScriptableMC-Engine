@@ -31,6 +31,9 @@ export default class SQLWarning {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.SQLWarning');
 	}
+	public static $isInstance(obj: any): obj is SQLWarning {
+		return obj instanceof SQLWarning.$javaClass;
+	}
 
 	constructor();
 	constructor(arg0: string);

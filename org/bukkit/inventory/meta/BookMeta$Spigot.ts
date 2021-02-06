@@ -14,6 +14,9 @@ export default class BookMeta$Spigot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.BookMeta$Spigot');
 	}
+	public static $isInstance(obj: any): obj is BookMeta$Spigot {
+		return obj instanceof BookMeta$Spigot.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

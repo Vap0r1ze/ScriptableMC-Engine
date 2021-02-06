@@ -21,6 +21,9 @@ export default class CommandException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.CommandException');
 	}
+	public static $isInstance(obj: any): obj is CommandException {
+		return obj instanceof CommandException.$javaClass;
+	}
 
 	constructor();
 	constructor(msg: string);

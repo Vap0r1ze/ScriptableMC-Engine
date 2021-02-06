@@ -49,26 +49,26 @@ export default interface CallableStatement extends PreparedStatement {
 	executeUpdate(arg0: string, arg1: Array<string>): number;
 	getArray(arg0: string): _Array;
 	getArray(arg0: number): _Array;
-	getBigDecimal(arg0: string): any;
 	getBigDecimal(arg0: number): any;
+	getBigDecimal(arg0: string): any;
 	getBigDecimal(arg0: number, arg1: number): any;
-	getBlob(arg0: string): Blob;
 	getBlob(arg0: number): Blob;
-	getBoolean(arg0: number): boolean;
+	getBlob(arg0: string): Blob;
 	getBoolean(arg0: string): boolean;
+	getBoolean(arg0: number): boolean;
 	getByte(arg0: number): number;
 	getByte(arg0: string): number;
 	getBytes(arg0: string): Array<number>;
 	getBytes(arg0: number): Array<number>;
-	getCharacterStream(arg0: string): Reader;
 	getCharacterStream(arg0: number): Reader;
-	getClob(arg0: number): Clob;
+	getCharacterStream(arg0: string): Reader;
 	getClob(arg0: string): Clob;
+	getClob(arg0: number): Clob;
 	getConnection(): Connection;
 	getDate(arg0: number): Date;
 	getDate(arg0: string): Date;
-	getDate(arg0: number, arg1: any): Date;
 	getDate(arg0: string, arg1: any): Date;
+	getDate(arg0: number, arg1: any): Date;
 	getDouble(arg0: number): number;
 	getDouble(arg0: string): number;
 	getFetchDirection(): number;
@@ -89,14 +89,14 @@ export default interface CallableStatement extends PreparedStatement {
 	getMoreResults(arg0: number): boolean;
 	getNCharacterStream(arg0: string): Reader;
 	getNCharacterStream(arg0: number): Reader;
-	getNClob(arg0: string): NClob;
 	getNClob(arg0: number): NClob;
-	getNString(arg0: number): string;
+	getNClob(arg0: string): NClob;
 	getNString(arg0: string): string;
+	getNString(arg0: number): string;
 	getObject(arg0: number): any;
 	getObject(arg0: string): any;
-	getObject(arg0: string, arg1: any): any;
 	getObject(arg0: number, arg1: any): any;
+	getObject(arg0: string, arg1: any): any;
 	getObject(arg0: string, arg1: any): any;
 	getObject(arg0: number, arg1: any): any;
 	getParameterMetaData(): ParameterMetaData;
@@ -109,16 +109,16 @@ export default interface CallableStatement extends PreparedStatement {
 	getResultSetType(): number;
 	getRowId(arg0: string): RowId;
 	getRowId(arg0: number): RowId;
-	getSQLXML(arg0: string): SQLXML;
 	getSQLXML(arg0: number): SQLXML;
-	getShort(arg0: string): number;
+	getSQLXML(arg0: string): SQLXML;
 	getShort(arg0: number): number;
-	getString(arg0: string): string;
+	getShort(arg0: string): number;
 	getString(arg0: number): string;
-	getTime(arg0: string): Time;
+	getString(arg0: string): string;
 	getTime(arg0: number): Time;
-	getTime(arg0: string, arg1: any): Time;
+	getTime(arg0: string): Time;
 	getTime(arg0: number, arg1: any): Time;
+	getTime(arg0: string, arg1: any): Time;
 	getTimestamp(arg0: string): Timestamp;
 	getTimestamp(arg0: number): Timestamp;
 	getTimestamp(arg0: string, arg1: any): Timestamp;
@@ -140,9 +140,9 @@ export default interface CallableStatement extends PreparedStatement {
 	registerOutParameter(arg0: number, arg1: SQLType, arg2: number): void;
 	registerOutParameter(arg0: string, arg1: SQLType, arg2: string): void;
 	registerOutParameter(arg0: string, arg1: number, arg2: string): void;
+	registerOutParameter(arg0: string, arg1: number, arg2: number): void;
 	registerOutParameter(arg0: number, arg1: number, arg2: string): void;
 	registerOutParameter(arg0: number, arg1: number, arg2: number): void;
-	registerOutParameter(arg0: string, arg1: number, arg2: number): void;
 	setArray(arg0: number, arg1: _Array): void;
 	setAsciiStream(arg0: string, arg1: InputStream): void;
 	setAsciiStream(arg0: number, arg1: InputStream): void;
@@ -160,8 +160,8 @@ export default interface CallableStatement extends PreparedStatement {
 	setBinaryStream(arg0: number, arg1: InputStream, arg2: number): void;
 	setBlob(arg0: string, arg1: Blob): void;
 	setBlob(arg0: string, arg1: InputStream): void;
-	setBlob(arg0: number, arg1: Blob): void;
 	setBlob(arg0: number, arg1: InputStream): void;
+	setBlob(arg0: number, arg1: Blob): void;
 	setBlob(arg0: string, arg1: InputStream, arg2: number): void;
 	setBlob(arg0: number, arg1: InputStream, arg2: number): void;
 	setBoolean(arg0: string, arg1: boolean): void;
@@ -178,8 +178,8 @@ export default interface CallableStatement extends PreparedStatement {
 	setCharacterStream(arg0: number, arg1: Reader, arg2: number): void;
 	setClob(arg0: string, arg1: Reader): void;
 	setClob(arg0: string, arg1: Clob): void;
-	setClob(arg0: number, arg1: Clob): void;
 	setClob(arg0: number, arg1: Reader): void;
+	setClob(arg0: number, arg1: Clob): void;
 	setClob(arg0: string, arg1: Reader, arg2: number): void;
 	setClob(arg0: number, arg1: Reader, arg2: number): void;
 	setCursorName(arg0: string): void;
@@ -207,8 +207,8 @@ export default interface CallableStatement extends PreparedStatement {
 	setNCharacterStream(arg0: number, arg1: Reader, arg2: number): void;
 	setNClob(arg0: string, arg1: Reader): void;
 	setNClob(arg0: string, arg1: NClob): void;
-	setNClob(arg0: number, arg1: Reader): void;
 	setNClob(arg0: number, arg1: NClob): void;
+	setNClob(arg0: number, arg1: Reader): void;
 	setNClob(arg0: string, arg1: Reader, arg2: number): void;
 	setNClob(arg0: number, arg1: Reader, arg2: number): void;
 	setNString(arg0: string, arg1: string): void;
@@ -221,12 +221,12 @@ export default interface CallableStatement extends PreparedStatement {
 	setObject(arg0: number, arg1: any): void;
 	setObject(arg0: string, arg1: any, arg2: number): void;
 	setObject(arg0: string, arg1: any, arg2: SQLType): void;
-	setObject(arg0: number, arg1: any, arg2: number): void;
 	setObject(arg0: number, arg1: any, arg2: SQLType): void;
+	setObject(arg0: number, arg1: any, arg2: number): void;
 	setObject(arg0: string, arg1: any, arg2: number, arg3: number): void;
 	setObject(arg0: string, arg1: any, arg2: SQLType, arg3: number): void;
-	setObject(arg0: number, arg1: any, arg2: number, arg3: number): void;
 	setObject(arg0: number, arg1: any, arg2: SQLType, arg3: number): void;
+	setObject(arg0: number, arg1: any, arg2: number, arg3: number): void;
 	setPoolable(arg0: boolean): void;
 	setQueryTimeout(arg0: number): void;
 	setRef(arg0: number, arg1: Ref): void;
@@ -256,6 +256,9 @@ export default interface CallableStatement extends PreparedStatement {
 export default class CallableStatement {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.CallableStatement');
+	}
+	public static $isInstance(obj: any): obj is CallableStatement {
+		return obj instanceof CallableStatement.$javaClass;
 	}
 
 	public static get CLOSE_ALL_RESULTS(): number {

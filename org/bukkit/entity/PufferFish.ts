@@ -214,6 +214,9 @@ export default class PufferFish {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.PufferFish');
 	}
+	public static $isInstance(obj: any): obj is PufferFish {
+		return obj instanceof PufferFish.$javaClass;
+	}
 
 }
 

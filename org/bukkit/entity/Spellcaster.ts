@@ -221,6 +221,9 @@ export default class Spellcaster {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Spellcaster');
 	}
+	public static $isInstance(obj: any): obj is Spellcaster {
+		return obj instanceof Spellcaster.$javaClass;
+	}
 
 }
 

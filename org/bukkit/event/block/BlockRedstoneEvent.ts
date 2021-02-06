@@ -17,6 +17,9 @@ export default class BlockRedstoneEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockRedstoneEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockRedstoneEvent {
+		return obj instanceof BlockRedstoneEvent.$javaClass;
+	}
 
 	constructor(block: Block, oldCurrent: number, newCurrent: number);
 	constructor(...args: any[]) {

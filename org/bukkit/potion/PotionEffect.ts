@@ -20,6 +20,9 @@ export default class PotionEffect {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.potion.PotionEffect');
 	}
+	public static $isInstance(obj: any): obj is PotionEffect {
+		return obj instanceof PotionEffect.$javaClass;
+	}
 
 	constructor(map: any);
 	constructor(type: PotionEffectType, duration: number, amplifier: number);

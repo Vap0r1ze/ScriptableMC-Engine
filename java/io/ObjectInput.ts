@@ -30,6 +30,9 @@ export default class ObjectInput {
 	public static get $javaClass(): any {
 		return Java.type('java.io.ObjectInput');
 	}
+	public static $isInstance(obj: any): obj is ObjectInput {
+		return obj instanceof ObjectInput.$javaClass;
+	}
 
 }
 

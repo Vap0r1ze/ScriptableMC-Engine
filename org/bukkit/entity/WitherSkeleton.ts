@@ -215,6 +215,9 @@ export default class WitherSkeleton {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.WitherSkeleton');
 	}
+	public static $isInstance(obj: any): obj is WitherSkeleton {
+		return obj instanceof WitherSkeleton.$javaClass;
+	}
 
 }
 

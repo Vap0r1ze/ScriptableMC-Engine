@@ -21,6 +21,9 @@ export default class PlayerBedLeaveEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerBedLeaveEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerBedLeaveEvent {
+		return obj instanceof PlayerBedLeaveEvent.$javaClass;
+	}
 
 	constructor(who: Player, bed: Block, setBedSpawn: boolean);
 	constructor(...args: any[]) {

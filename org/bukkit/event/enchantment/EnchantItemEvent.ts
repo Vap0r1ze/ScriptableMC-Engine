@@ -31,6 +31,9 @@ export default class EnchantItemEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.enchantment.EnchantItemEvent');
 	}
+	public static $isInstance(obj: any): obj is EnchantItemEvent {
+		return obj instanceof EnchantItemEvent.$javaClass;
+	}
 
 	constructor(enchanter: Player, view: InventoryView, table: Block, item: ItemStack, level: number, enchants: any, i: number);
 	constructor(...args: any[]) {

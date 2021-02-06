@@ -239,6 +239,9 @@ export default class Wolf {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Wolf');
 	}
+	public static $isInstance(obj: any): obj is Wolf {
+		return obj instanceof Wolf.$javaClass;
+	}
 
 }
 

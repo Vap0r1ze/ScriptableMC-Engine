@@ -16,6 +16,9 @@ export default class BlockExpEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockExpEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockExpEvent {
+		return obj instanceof BlockExpEvent.$javaClass;
+	}
 
 	constructor(block: Block, exp: number);
 	constructor(...args: any[]) {

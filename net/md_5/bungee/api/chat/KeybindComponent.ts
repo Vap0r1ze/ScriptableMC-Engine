@@ -55,6 +55,9 @@ export default class KeybindComponent {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.KeybindComponent');
 	}
+	public static $isInstance(obj: any): obj is KeybindComponent {
+		return obj instanceof KeybindComponent.$javaClass;
+	}
 
 	constructor();
 	constructor(original: KeybindComponent);

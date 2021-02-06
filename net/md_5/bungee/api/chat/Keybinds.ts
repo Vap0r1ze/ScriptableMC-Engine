@@ -4,6 +4,9 @@ export default class Keybinds {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.Keybinds');
 	}
+	public static $isInstance(obj: any): obj is Keybinds {
+		return obj instanceof Keybinds.$javaClass;
+	}
 
 	public static get ADVANCEMENTS(): string {
 		return Keybinds.$javaClass.ADVANCEMENTS;

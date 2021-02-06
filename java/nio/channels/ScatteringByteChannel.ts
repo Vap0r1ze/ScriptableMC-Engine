@@ -14,6 +14,9 @@ export default class ScatteringByteChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.ScatteringByteChannel');
 	}
+	public static $isInstance(obj: any): obj is ScatteringByteChannel {
+		return obj instanceof ScatteringByteChannel.$javaClass;
+	}
 
 }
 

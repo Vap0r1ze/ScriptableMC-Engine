@@ -23,6 +23,9 @@ export default class TimedRegisteredListener {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.TimedRegisteredListener');
 	}
+	public static $isInstance(obj: any): obj is TimedRegisteredListener {
+		return obj instanceof TimedRegisteredListener.$javaClass;
+	}
 
 	constructor(pluginListener: Listener, eventExecutor: EventExecutor, eventPriority: EventPriority, registeredPlugin: Plugin, listenCancelled: boolean);
 	constructor(...args: any[]) {

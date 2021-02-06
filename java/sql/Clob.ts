@@ -24,6 +24,9 @@ export default class Clob {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.Clob');
 	}
+	public static $isInstance(obj: any): obj is Clob {
+		return obj instanceof Clob.$javaClass;
+	}
 
 }
 

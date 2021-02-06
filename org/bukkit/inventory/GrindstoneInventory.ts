@@ -49,6 +49,9 @@ export default class GrindstoneInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.GrindstoneInventory');
 	}
+	public static $isInstance(obj: any): obj is GrindstoneInventory {
+		return obj instanceof GrindstoneInventory.$javaClass;
+	}
 
 }
 

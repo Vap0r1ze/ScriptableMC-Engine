@@ -25,6 +25,9 @@ export default class Sign {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Sign');
 	}
+	public static $isInstance(obj: any): obj is Sign {
+		return obj instanceof Sign.$javaClass;
+	}
 
 }
 

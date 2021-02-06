@@ -21,6 +21,9 @@ export default class ChannelNameTooLongException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.messaging.ChannelNameTooLongException');
 	}
+	public static $isInstance(obj: any): obj is ChannelNameTooLongException {
+		return obj instanceof ChannelNameTooLongException.$javaClass;
+	}
 
 	constructor();
 	constructor(channel: string);

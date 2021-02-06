@@ -29,6 +29,9 @@ export default class Chest {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Chest');
 	}
+	public static $isInstance(obj: any): obj is Chest {
+		return obj instanceof Chest.$javaClass;
+	}
 
 }
 

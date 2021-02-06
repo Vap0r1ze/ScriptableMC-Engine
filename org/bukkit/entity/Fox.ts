@@ -240,6 +240,9 @@ export default class Fox {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Fox');
 	}
+	public static $isInstance(obj: any): obj is Fox {
+		return obj instanceof Fox.$javaClass;
+	}
 
 }
 

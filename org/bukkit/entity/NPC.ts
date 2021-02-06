@@ -212,6 +212,9 @@ export default class NPC {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.NPC');
 	}
+	public static $isInstance(obj: any): obj is NPC {
+		return obj instanceof NPC.$javaClass;
+	}
 
 }
 

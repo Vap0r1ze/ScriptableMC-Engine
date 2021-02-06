@@ -51,6 +51,9 @@ export default class NBTContainer {
 	public static get $javaClass(): any {
 		return Java.type('com.smc.nbtapi.NBTContainer');
 	}
+	public static $isInstance(obj: any): obj is NBTContainer {
+		return obj instanceof NBTContainer.$javaClass;
+	}
 
 	constructor();
 	constructor(nbtString: string);

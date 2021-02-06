@@ -12,6 +12,9 @@ export default class BlockChangeDelegate {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.BlockChangeDelegate');
 	}
+	public static $isInstance(obj: any): obj is BlockChangeDelegate {
+		return obj instanceof BlockChangeDelegate.$javaClass;
+	}
 
 }
 

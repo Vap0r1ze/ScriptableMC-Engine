@@ -25,6 +25,9 @@ export default class Sapling {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Sapling');
 	}
+	public static $isInstance(obj: any): obj is Sapling {
+		return obj instanceof Sapling.$javaClass;
+	}
 
 	constructor();
 	constructor(species: TreeSpecies);

@@ -15,6 +15,9 @@ export default class Cookie {
 	public static get $javaClass(): any {
 		return Java.type('khttp.structures.cookie.Cookie');
 	}
+	public static $isInstance(obj: any): obj is Cookie {
+		return obj instanceof Cookie.$javaClass;
+	}
 
 	constructor(cookie: Cookie);
 	constructor(string: string);

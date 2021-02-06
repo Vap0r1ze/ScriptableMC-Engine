@@ -10,6 +10,9 @@ export default class ScoreboardManager {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.ScoreboardManager');
 	}
+	public static $isInstance(obj: any): obj is ScoreboardManager {
+		return obj instanceof ScoreboardManager.$javaClass;
+	}
 
 }
 

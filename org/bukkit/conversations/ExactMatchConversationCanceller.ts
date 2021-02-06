@@ -14,6 +14,9 @@ export default class ExactMatchConversationCanceller {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.ExactMatchConversationCanceller');
 	}
+	public static $isInstance(obj: any): obj is ExactMatchConversationCanceller {
+		return obj instanceof ExactMatchConversationCanceller.$javaClass;
+	}
 
 	constructor(escapeSequence: string);
 	constructor(...args: any[]) {

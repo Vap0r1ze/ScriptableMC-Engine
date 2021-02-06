@@ -128,6 +128,9 @@ export default class LingeringPotion {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.LingeringPotion');
 	}
+	public static $isInstance(obj: any): obj is LingeringPotion {
+		return obj instanceof LingeringPotion.$javaClass;
+	}
 
 }
 

@@ -121,6 +121,9 @@ export default class EnderCrystal {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.EnderCrystal');
 	}
+	public static $isInstance(obj: any): obj is EnderCrystal {
+		return obj instanceof EnderCrystal.$javaClass;
+	}
 
 }
 

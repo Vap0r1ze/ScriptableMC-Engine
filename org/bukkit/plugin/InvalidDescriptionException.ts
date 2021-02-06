@@ -21,6 +21,9 @@ export default class InvalidDescriptionException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.InvalidDescriptionException');
 	}
+	public static $isInstance(obj: any): obj is InvalidDescriptionException {
+		return obj instanceof InvalidDescriptionException.$javaClass;
+	}
 
 	constructor();
 	constructor(message: string);

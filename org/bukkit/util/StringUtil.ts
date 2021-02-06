@@ -4,6 +4,9 @@ export default class StringUtil {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.StringUtil');
 	}
+	public static $isInstance(obj: any): obj is StringUtil {
+		return obj instanceof StringUtil.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

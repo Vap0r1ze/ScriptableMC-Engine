@@ -23,6 +23,9 @@ export default class BlockBreakEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockBreakEvent');
 	}
+	public static $isInstance(obj: any): obj is BlockBreakEvent {
+		return obj instanceof BlockBreakEvent.$javaClass;
+	}
 
 	constructor(theBlock: Block, player: Player);
 	constructor(...args: any[]) {

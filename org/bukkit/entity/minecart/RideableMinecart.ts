@@ -136,6 +136,9 @@ export default class RideableMinecart {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.minecart.RideableMinecart');
 	}
+	public static $isInstance(obj: any): obj is RideableMinecart {
+		return obj instanceof RideableMinecart.$javaClass;
+	}
 
 }
 

@@ -21,6 +21,9 @@ export default class InvalidConfigurationException {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.InvalidConfigurationException');
 	}
+	public static $isInstance(obj: any): obj is InvalidConfigurationException {
+		return obj instanceof InvalidConfigurationException.$javaClass;
+	}
 
 	constructor();
 	constructor(cause: any);

@@ -10,6 +10,9 @@ export default class Lockable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Lockable');
 	}
+	public static $isInstance(obj: any): obj is Lockable {
+		return obj instanceof Lockable.$javaClass;
+	}
 
 }
 

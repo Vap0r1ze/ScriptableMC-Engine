@@ -55,6 +55,9 @@ export default class SelectorComponent {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.SelectorComponent');
 	}
+	public static $isInstance(obj: any): obj is SelectorComponent {
+		return obj instanceof SelectorComponent.$javaClass;
+	}
 
 	constructor(selector: string);
 	constructor(original: SelectorComponent);

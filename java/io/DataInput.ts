@@ -22,6 +22,9 @@ export default class DataInput {
 	public static get $javaClass(): any {
 		return Java.type('java.io.DataInput');
 	}
+	public static $isInstance(obj: any): obj is DataInput {
+		return obj instanceof DataInput.$javaClass;
+	}
 
 }
 

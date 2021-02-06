@@ -13,6 +13,9 @@ export default class WatchService {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.WatchService');
 	}
+	public static $isInstance(obj: any): obj is WatchService {
+		return obj instanceof WatchService.$javaClass;
+	}
 
 }
 

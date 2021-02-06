@@ -23,6 +23,9 @@ export default class Rails {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Rails');
 	}
+	public static $isInstance(obj: any): obj is Rails {
+		return obj instanceof Rails.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

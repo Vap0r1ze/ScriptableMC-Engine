@@ -20,6 +20,9 @@ export default class TNT {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.TNT');
 	}
+	public static $isInstance(obj: any): obj is TNT {
+		return obj instanceof TNT.$javaClass;
+	}
 
 }
 

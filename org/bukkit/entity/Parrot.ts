@@ -237,6 +237,9 @@ export default class Parrot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Parrot');
 	}
+	public static $isInstance(obj: any): obj is Parrot {
+		return obj instanceof Parrot.$javaClass;
+	}
 
 }
 

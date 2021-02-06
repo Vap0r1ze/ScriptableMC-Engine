@@ -35,6 +35,9 @@ export default class PluginDescriptionFile {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.PluginDescriptionFile');
 	}
+	public static $isInstance(obj: any): obj is PluginDescriptionFile {
+		return obj instanceof PluginDescriptionFile.$javaClass;
+	}
 
 	constructor(reader: Reader);
 	constructor(stream: InputStream);

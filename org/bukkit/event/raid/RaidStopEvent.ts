@@ -18,6 +18,9 @@ export default class RaidStopEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.raid.RaidStopEvent');
 	}
+	public static $isInstance(obj: any): obj is RaidStopEvent {
+		return obj instanceof RaidStopEvent.$javaClass;
+	}
 
 	constructor(raid: Raid, world: World, reason: RaidStopEvent$Reason);
 	constructor(...args: any[]) {

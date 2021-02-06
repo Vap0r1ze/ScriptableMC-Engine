@@ -123,6 +123,9 @@ export default class LlamaSpit {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.LlamaSpit');
 	}
+	public static $isInstance(obj: any): obj is LlamaSpit {
+		return obj instanceof LlamaSpit.$javaClass;
+	}
 
 }
 

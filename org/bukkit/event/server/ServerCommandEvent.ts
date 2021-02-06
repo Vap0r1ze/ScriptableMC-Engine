@@ -19,6 +19,9 @@ export default class ServerCommandEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.ServerCommandEvent');
 	}
+	public static $isInstance(obj: any): obj is ServerCommandEvent {
+		return obj instanceof ServerCommandEvent.$javaClass;
+	}
 
 	constructor(sender: CommandSender, command: string);
 	constructor(...args: any[]) {

@@ -136,6 +136,9 @@ export default class SpawnerMinecart {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.minecart.SpawnerMinecart');
 	}
+	public static $isInstance(obj: any): obj is SpawnerMinecart {
+		return obj instanceof SpawnerMinecart.$javaClass;
+	}
 
 }
 

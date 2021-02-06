@@ -43,6 +43,9 @@ export default class LongBuffer {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.LongBuffer');
 	}
+	public static $isInstance(obj: any): obj is LongBuffer {
+		return obj instanceof LongBuffer.$javaClass;
+	}
 
 	public static allocate(arg0: number): LongBuffer;
 	public static allocate(...args: any[]): any {

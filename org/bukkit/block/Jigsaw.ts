@@ -44,6 +44,9 @@ export default class Jigsaw {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Jigsaw');
 	}
+	public static $isInstance(obj: any): obj is Jigsaw {
+		return obj instanceof Jigsaw.$javaClass;
+	}
 
 }
 

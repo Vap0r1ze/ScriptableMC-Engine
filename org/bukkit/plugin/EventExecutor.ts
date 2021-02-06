@@ -10,6 +10,9 @@ export default class EventExecutor {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.EventExecutor');
 	}
+	public static $isInstance(obj: any): obj is EventExecutor {
+		return obj instanceof EventExecutor.$javaClass;
+	}
 
 }
 

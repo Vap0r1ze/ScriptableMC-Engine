@@ -23,6 +23,9 @@ export default class SimpleCommandMap {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.SimpleCommandMap');
 	}
+	public static $isInstance(obj: any): obj is SimpleCommandMap {
+		return obj instanceof SimpleCommandMap.$javaClass;
+	}
 
 	constructor(server: Server);
 	constructor(...args: any[]) {

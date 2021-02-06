@@ -64,6 +64,9 @@ export default class EnchantmentStorageMeta {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.EnchantmentStorageMeta');
 	}
+	public static $isInstance(obj: any): obj is EnchantmentStorageMeta {
+		return obj instanceof EnchantmentStorageMeta.$javaClass;
+	}
 
 }
 

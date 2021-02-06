@@ -23,6 +23,9 @@ export default class PlayerTeleportEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerTeleportEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerTeleportEvent {
+		return obj instanceof PlayerTeleportEvent.$javaClass;
+	}
 
 	constructor(player: Player, from: Location, to: Location);
 	constructor(player: Player, from: Location, to: Location, cause: PlayerTeleportEvent$TeleportCause);

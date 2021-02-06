@@ -13,6 +13,9 @@ export default class MapRenderer {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MapRenderer');
 	}
+	public static $isInstance(obj: any): obj is MapRenderer {
+		return obj instanceof MapRenderer.$javaClass;
+	}
 
 	constructor();
 	constructor(contextual: boolean);

@@ -22,6 +22,9 @@ export default class Tripwire {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Tripwire');
 	}
+	public static $isInstance(obj: any): obj is Tripwire {
+		return obj instanceof Tripwire.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material, data: number);

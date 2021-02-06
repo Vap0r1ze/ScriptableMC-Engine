@@ -26,6 +26,9 @@ export default class EnderChest {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.EnderChest');
 	}
+	public static $isInstance(obj: any): obj is EnderChest {
+		return obj instanceof EnderChest.$javaClass;
+	}
 
 }
 

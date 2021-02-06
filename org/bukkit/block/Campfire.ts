@@ -52,6 +52,9 @@ export default class Campfire {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Campfire');
 	}
+	public static $isInstance(obj: any): obj is Campfire {
+		return obj instanceof Campfire.$javaClass;
+	}
 
 }
 

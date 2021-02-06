@@ -232,6 +232,9 @@ export default class Sheep {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Sheep');
 	}
+	public static $isInstance(obj: any): obj is Sheep {
+		return obj instanceof Sheep.$javaClass;
+	}
 
 }
 

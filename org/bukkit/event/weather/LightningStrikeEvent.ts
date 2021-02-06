@@ -21,6 +21,9 @@ export default class LightningStrikeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.weather.LightningStrikeEvent');
 	}
+	public static $isInstance(obj: any): obj is LightningStrikeEvent {
+		return obj instanceof LightningStrikeEvent.$javaClass;
+	}
 
 	constructor(world: World, bolt: LightningStrike);
 	constructor(world: World, bolt: LightningStrike, cause: LightningStrikeEvent$Cause);

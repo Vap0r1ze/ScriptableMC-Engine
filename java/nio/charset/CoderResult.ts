@@ -14,6 +14,9 @@ export default class CoderResult {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.charset.CoderResult');
 	}
+	public static $isInstance(obj: any): obj is CoderResult {
+		return obj instanceof CoderResult.$javaClass;
+	}
 
 	public static get OVERFLOW(): CoderResult {
 		return CoderResult.$javaClass.OVERFLOW;

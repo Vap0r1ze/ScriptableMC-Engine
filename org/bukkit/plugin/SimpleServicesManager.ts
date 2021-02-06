@@ -8,8 +8,8 @@ export default interface SimpleServicesManager extends ServicesManager {
 	getKnownServices(): Array<any>;
 	getKnownServices(): any;
 	getRegistration(service: any): RegisteredServiceProvider;
-	getRegistrations(service: any): Array<any>;
 	getRegistrations(plugin: Plugin): Array<any>;
+	getRegistrations(service: any): Array<any>;
 	getRegistrations(service: any): Array<any>;
 	isProvidedFor(service: any): boolean;
 	load(service: any): any;
@@ -22,6 +22,9 @@ export default interface SimpleServicesManager extends ServicesManager {
 export default class SimpleServicesManager {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.SimpleServicesManager');
+	}
+	public static $isInstance(obj: any): obj is SimpleServicesManager {
+		return obj instanceof SimpleServicesManager.$javaClass;
 	}
 
 	constructor();

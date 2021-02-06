@@ -55,6 +55,9 @@ export default class TextComponent {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.TextComponent');
 	}
+	public static $isInstance(obj: any): obj is TextComponent {
+		return obj instanceof TextComponent.$javaClass;
+	}
 
 	constructor();
 	constructor(extras: Array<BaseComponent>);

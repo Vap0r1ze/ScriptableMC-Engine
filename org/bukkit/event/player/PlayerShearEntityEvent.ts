@@ -23,6 +23,9 @@ export default class PlayerShearEntityEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerShearEntityEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerShearEntityEvent {
+		return obj instanceof PlayerShearEntityEvent.$javaClass;
+	}
 
 	constructor(who: Player, what: Entity);
 	constructor(who: Player, what: Entity, item: ItemStack, hand: EquipmentSlot);

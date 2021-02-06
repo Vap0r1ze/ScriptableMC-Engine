@@ -34,6 +34,9 @@ export default class VersionCommand {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.defaults.VersionCommand');
 	}
+	public static $isInstance(obj: any): obj is VersionCommand {
+		return obj instanceof VersionCommand.$javaClass;
+	}
 
 	constructor(_name: string);
 	constructor(...args: any[]) {

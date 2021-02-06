@@ -63,6 +63,9 @@ export default class CreatureSpawner {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.CreatureSpawner');
 	}
+	public static $isInstance(obj: any): obj is CreatureSpawner {
+		return obj instanceof CreatureSpawner.$javaClass;
+	}
 
 }
 

@@ -4,6 +4,9 @@ export default class MapPalette {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MapPalette');
 	}
+	public static $isInstance(obj: any): obj is MapPalette {
+		return obj instanceof MapPalette.$javaClass;
+	}
 
 	public static get BLUE(): number {
 		return MapPalette.$javaClass.BLUE;

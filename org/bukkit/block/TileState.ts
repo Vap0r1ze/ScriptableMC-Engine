@@ -45,6 +45,9 @@ export default class TileState {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.TileState');
 	}
+	public static $isInstance(obj: any): obj is TileState {
+		return obj instanceof TileState.$javaClass;
+	}
 
 }
 

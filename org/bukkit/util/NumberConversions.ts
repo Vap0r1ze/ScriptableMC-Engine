@@ -4,6 +4,9 @@ export default class NumberConversions {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.NumberConversions');
 	}
+	public static $isInstance(obj: any): obj is NumberConversions {
+		return obj instanceof NumberConversions.$javaClass;
+	}
 
 	public static ceil(num: number): number;
 	public static ceil(...args: any[]): any {

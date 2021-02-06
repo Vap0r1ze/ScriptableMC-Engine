@@ -24,6 +24,9 @@ export default class EntityTargetLivingEntityEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityTargetLivingEntityEvent');
 	}
+	public static $isInstance(obj: any): obj is EntityTargetLivingEntityEvent {
+		return obj instanceof EntityTargetLivingEntityEvent.$javaClass;
+	}
 
 	constructor(entity: Entity, target: LivingEntity, reason: EntityTargetEvent$TargetReason);
 	constructor(...args: any[]) {

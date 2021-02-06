@@ -135,6 +135,9 @@ export default class ItemFrame {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ItemFrame');
 	}
+	public static $isInstance(obj: any): obj is ItemFrame {
+		return obj instanceof ItemFrame.$javaClass;
+	}
 
 }
 

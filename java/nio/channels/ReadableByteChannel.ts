@@ -12,6 +12,9 @@ export default class ReadableByteChannel {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.channels.ReadableByteChannel');
 	}
+	public static $isInstance(obj: any): obj is ReadableByteChannel {
+		return obj instanceof ReadableByteChannel.$javaClass;
+	}
 
 }
 

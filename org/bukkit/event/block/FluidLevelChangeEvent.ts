@@ -20,6 +20,9 @@ export default class FluidLevelChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.FluidLevelChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is FluidLevelChangeEvent {
+		return obj instanceof FluidLevelChangeEvent.$javaClass;
+	}
 
 	constructor(theBlock: Block, newData: BlockData);
 	constructor(...args: any[]) {

@@ -17,6 +17,9 @@ export default class PluginLoader {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.PluginLoader');
 	}
+	public static $isInstance(obj: any): obj is PluginLoader {
+		return obj instanceof PluginLoader.$javaClass;
+	}
 
 }
 

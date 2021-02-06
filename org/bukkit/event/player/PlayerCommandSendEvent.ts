@@ -15,6 +15,9 @@ export default class PlayerCommandSendEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerCommandSendEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerCommandSendEvent {
+		return obj instanceof PlayerCommandSendEvent.$javaClass;
+	}
 
 	constructor(player: Player, commands: Array<any>);
 	constructor(...args: any[]) {

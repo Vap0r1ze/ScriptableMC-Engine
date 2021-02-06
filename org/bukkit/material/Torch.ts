@@ -24,6 +24,9 @@ export default class Torch {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Torch');
 	}
+	public static $isInstance(obj: any): obj is Torch {
+		return obj instanceof Torch.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

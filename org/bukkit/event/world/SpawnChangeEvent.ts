@@ -16,6 +16,9 @@ export default class SpawnChangeEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.world.SpawnChangeEvent');
 	}
+	public static $isInstance(obj: any): obj is SpawnChangeEvent {
+		return obj instanceof SpawnChangeEvent.$javaClass;
+	}
 
 	constructor(world: World, previousLocation: Location);
 	constructor(...args: any[]) {

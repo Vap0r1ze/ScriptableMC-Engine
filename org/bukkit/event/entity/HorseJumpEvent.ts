@@ -23,6 +23,9 @@ export default class HorseJumpEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.HorseJumpEvent');
 	}
+	public static $isInstance(obj: any): obj is HorseJumpEvent {
+		return obj instanceof HorseJumpEvent.$javaClass;
+	}
 
 	constructor(horse: AbstractHorse, power: number);
 	constructor(...args: any[]) {

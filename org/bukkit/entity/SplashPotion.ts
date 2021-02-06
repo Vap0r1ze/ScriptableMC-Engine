@@ -128,6 +128,9 @@ export default class SplashPotion {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.SplashPotion');
 	}
+	public static $isInstance(obj: any): obj is SplashPotion {
+		return obj instanceof SplashPotion.$javaClass;
+	}
 
 }
 

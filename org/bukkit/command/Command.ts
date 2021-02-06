@@ -32,6 +32,9 @@ export default class Command {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.Command');
 	}
+	public static $isInstance(obj: any): obj is Command {
+		return obj instanceof Command.$javaClass;
+	}
 
 	public static broadcastCommandMessage(source: CommandSender, message: string): void;
 	public static broadcastCommandMessage(source: CommandSender, message: string, sendToSource: boolean): void;

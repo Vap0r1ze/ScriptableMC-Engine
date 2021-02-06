@@ -20,6 +20,9 @@ export default class Snowable {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Snowable');
 	}
+	public static $isInstance(obj: any): obj is Snowable {
+		return obj instanceof Snowable.$javaClass;
+	}
 
 }
 

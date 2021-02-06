@@ -212,6 +212,9 @@ export default class Silverfish {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Silverfish');
 	}
+	public static $isInstance(obj: any): obj is Silverfish {
+		return obj instanceof Silverfish.$javaClass;
+	}
 
 }
 

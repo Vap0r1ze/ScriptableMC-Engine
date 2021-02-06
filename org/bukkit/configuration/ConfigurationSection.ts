@@ -79,6 +79,9 @@ export default class ConfigurationSection {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.ConfigurationSection');
 	}
+	public static $isInstance(obj: any): obj is ConfigurationSection {
+		return obj instanceof ConfigurationSection.$javaClass;
+	}
 
 }
 

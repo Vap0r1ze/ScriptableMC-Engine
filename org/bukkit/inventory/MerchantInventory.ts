@@ -54,6 +54,9 @@ export default class MerchantInventory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.MerchantInventory');
 	}
+	public static $isInstance(obj: any): obj is MerchantInventory {
+		return obj instanceof MerchantInventory.$javaClass;
+	}
 
 }
 

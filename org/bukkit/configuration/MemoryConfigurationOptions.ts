@@ -18,6 +18,9 @@ export default class MemoryConfigurationOptions {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.configuration.MemoryConfigurationOptions');
 	}
+	public static $isInstance(obj: any): obj is MemoryConfigurationOptions {
+		return obj instanceof MemoryConfigurationOptions.$javaClass;
+	}
 
 }
 

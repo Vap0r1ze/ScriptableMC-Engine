@@ -21,6 +21,9 @@ export default class Sandstone {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Sandstone');
 	}
+	public static $isInstance(obj: any): obj is Sandstone {
+		return obj instanceof Sandstone.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

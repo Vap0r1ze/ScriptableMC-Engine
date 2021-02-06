@@ -212,6 +212,9 @@ export default class CaveSpider {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.CaveSpider');
 	}
+	public static $isInstance(obj: any): obj is CaveSpider {
+		return obj instanceof CaveSpider.$javaClass;
+	}
 
 }
 

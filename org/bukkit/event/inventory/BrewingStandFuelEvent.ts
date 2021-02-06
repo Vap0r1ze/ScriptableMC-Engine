@@ -23,6 +23,9 @@ export default class BrewingStandFuelEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.BrewingStandFuelEvent');
 	}
+	public static $isInstance(obj: any): obj is BrewingStandFuelEvent {
+		return obj instanceof BrewingStandFuelEvent.$javaClass;
+	}
 
 	constructor(brewingStand: Block, fuel: ItemStack, fuelPower: number);
 	constructor(...args: any[]) {

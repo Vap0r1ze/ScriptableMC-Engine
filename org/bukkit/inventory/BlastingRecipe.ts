@@ -24,6 +24,9 @@ export default class BlastingRecipe {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.BlastingRecipe');
 	}
+	public static $isInstance(obj: any): obj is BlastingRecipe {
+		return obj instanceof BlastingRecipe.$javaClass;
+	}
 
 	constructor(key: NamespacedKey, result: ItemStack, source: Material, experience: number, cookingTime: number);
 	constructor(key: NamespacedKey, result: ItemStack, input: RecipeChoice, experience: number, cookingTime: number);

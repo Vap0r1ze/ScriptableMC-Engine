@@ -20,6 +20,9 @@ export default class DoubleChest {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.DoubleChest');
 	}
+	public static $isInstance(obj: any): obj is DoubleChest {
+		return obj instanceof DoubleChest.$javaClass;
+	}
 
 	constructor(chest: DoubleChestInventory);
 	constructor(...args: any[]) {

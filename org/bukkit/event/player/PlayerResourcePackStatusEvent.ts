@@ -16,6 +16,9 @@ export default class PlayerResourcePackStatusEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerResourcePackStatusEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerResourcePackStatusEvent {
+		return obj instanceof PlayerResourcePackStatusEvent.$javaClass;
+	}
 
 	constructor(who: Player, resourcePackStatus: PlayerResourcePackStatusEvent$Status);
 	constructor(...args: any[]) {

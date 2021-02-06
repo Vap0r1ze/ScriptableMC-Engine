@@ -246,6 +246,9 @@ export default class SkeletonHorse {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.SkeletonHorse');
 	}
+	public static $isInstance(obj: any): obj is SkeletonHorse {
+		return obj instanceof SkeletonHorse.$javaClass;
+	}
 
 }
 

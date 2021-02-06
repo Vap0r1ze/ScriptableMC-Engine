@@ -218,6 +218,9 @@ export default class Ravager {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Ravager');
 	}
+	public static $isInstance(obj: any): obj is Ravager {
+		return obj instanceof Ravager.$javaClass;
+	}
 
 }
 

@@ -22,6 +22,9 @@ export default class Cake {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Cake');
 	}
+	public static $isInstance(obj: any): obj is Cake {
+		return obj instanceof Cake.$javaClass;
+	}
 
 	constructor();
 	constructor(type: Material);

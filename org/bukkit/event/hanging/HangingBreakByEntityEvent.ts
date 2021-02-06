@@ -20,6 +20,9 @@ export default class HangingBreakByEntityEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.hanging.HangingBreakByEntityEvent');
 	}
+	public static $isInstance(obj: any): obj is HangingBreakByEntityEvent {
+		return obj instanceof HangingBreakByEntityEvent.$javaClass;
+	}
 
 	constructor(hanging: Hanging, remover: Entity);
 	constructor(hanging: Hanging, remover: Entity, cause: HangingBreakEvent$RemoveCause);

@@ -28,6 +28,9 @@ export default class Potion {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.potion.Potion');
 	}
+	public static $isInstance(obj: any): obj is Potion {
+		return obj instanceof Potion.$javaClass;
+	}
 
 	constructor(type: PotionType);
 	constructor(type: PotionType, level: number);

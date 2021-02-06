@@ -13,6 +13,9 @@ export default class Registry {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Registry');
 	}
+	public static $isInstance(obj: any): obj is Registry {
+		return obj instanceof Registry.$javaClass;
+	}
 
 	public static get ADVANCEMENT(): Registry {
 		return Registry.$javaClass.ADVANCEMENT;

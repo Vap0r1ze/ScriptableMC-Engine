@@ -257,6 +257,9 @@ export default class HumanEntity {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.HumanEntity');
 	}
+	public static $isInstance(obj: any): obj is HumanEntity {
+		return obj instanceof HumanEntity.$javaClass;
+	}
 
 }
 

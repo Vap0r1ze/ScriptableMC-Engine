@@ -20,6 +20,9 @@ export default class Cauldron {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.Cauldron');
 	}
+	public static $isInstance(obj: any): obj is Cauldron {
+		return obj instanceof Cauldron.$javaClass;
+	}
 
 	constructor();
 	constructor(data: number);

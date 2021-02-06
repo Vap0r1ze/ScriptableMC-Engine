@@ -51,6 +51,9 @@ export default class ScriptEngineMain {
 	public static get $javaClass(): any {
 		return Java.type('com.pixlfox.scriptablemc.ScriptEngineMain');
 	}
+	public static $isInstance(obj: any): obj is ScriptEngineMain {
+		return obj instanceof ScriptEngineMain.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

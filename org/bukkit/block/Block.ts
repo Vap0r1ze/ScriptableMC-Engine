@@ -73,6 +73,9 @@ export default class Block {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Block');
 	}
+	public static $isInstance(obj: any): obj is Block {
+		return obj instanceof Block.$javaClass;
+	}
 
 }
 

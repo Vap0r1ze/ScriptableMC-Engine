@@ -11,6 +11,9 @@ export default class World$Spigot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.World$Spigot');
 	}
+	public static $isInstance(obj: any): obj is World$Spigot {
+		return obj instanceof World$Spigot.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

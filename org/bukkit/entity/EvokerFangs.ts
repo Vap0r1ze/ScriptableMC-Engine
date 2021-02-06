@@ -120,6 +120,9 @@ export default class EvokerFangs {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.EvokerFangs');
 	}
+	public static $isInstance(obj: any): obj is EvokerFangs {
+		return obj instanceof EvokerFangs.$javaClass;
+	}
 
 }
 

@@ -20,6 +20,9 @@ export default class FurnaceSmeltEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.FurnaceSmeltEvent');
 	}
+	public static $isInstance(obj: any): obj is FurnaceSmeltEvent {
+		return obj instanceof FurnaceSmeltEvent.$javaClass;
+	}
 
 	constructor(furnace: Block, source: ItemStack, result: ItemStack);
 	constructor(...args: any[]) {

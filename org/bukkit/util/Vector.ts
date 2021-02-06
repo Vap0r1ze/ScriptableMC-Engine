@@ -30,8 +30,8 @@ export default interface Vector extends ConfigurationSerializable {
 	length(): number;
 	lengthSquared(): number;
 	midpoint(other: Vector): Vector;
-	multiply(m: number): Vector;
 	multiply(vec: Vector): Vector;
+	multiply(m: number): Vector;
 	multiply(m: number): Vector;
 	multiply(m: number): Vector;
 	normalize(): Vector;
@@ -60,6 +60,9 @@ export default interface Vector extends ConfigurationSerializable {
 export default class Vector {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.util.Vector');
+	}
+	public static $isInstance(obj: any): obj is Vector {
+		return obj instanceof Vector.$javaClass;
 	}
 
 	constructor();

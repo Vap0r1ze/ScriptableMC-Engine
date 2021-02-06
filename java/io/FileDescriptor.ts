@@ -9,6 +9,9 @@ export default class FileDescriptor {
 	public static get $javaClass(): any {
 		return Java.type('java.io.FileDescriptor');
 	}
+	public static $isInstance(obj: any): obj is FileDescriptor {
+		return obj instanceof FileDescriptor.$javaClass;
+	}
 
 	constructor();
 	constructor(...args: any[]) {

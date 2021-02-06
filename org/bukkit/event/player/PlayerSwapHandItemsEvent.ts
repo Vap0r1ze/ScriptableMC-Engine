@@ -22,6 +22,9 @@ export default class PlayerSwapHandItemsEvent {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerSwapHandItemsEvent');
 	}
+	public static $isInstance(obj: any): obj is PlayerSwapHandItemsEvent {
+		return obj instanceof PlayerSwapHandItemsEvent.$javaClass;
+	}
 
 	constructor(player: Player, mainHandItem: ItemStack, offHandItem: ItemStack);
 	constructor(...args: any[]) {

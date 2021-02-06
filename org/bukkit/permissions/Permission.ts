@@ -18,11 +18,14 @@ export default class Permission {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.permissions.Permission');
 	}
+	public static $isInstance(obj: any): obj is Permission {
+		return obj instanceof Permission.$javaClass;
+	}
 
 	constructor(_name: string);
-	constructor(_name: string, defaultValue: PermissionDefault);
 	constructor(_name: string, description: string);
 	constructor(_name: string, children: any);
+	constructor(_name: string, defaultValue: PermissionDefault);
 	constructor(_name: string, defaultValue: PermissionDefault, children: any);
 	constructor(_name: string, description: string, children: any);
 	constructor(_name: string, description: string, defaultValue: PermissionDefault);

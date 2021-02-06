@@ -34,6 +34,9 @@ export default class ReloadCommand {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.command.defaults.ReloadCommand');
 	}
+	public static $isInstance(obj: any): obj is ReloadCommand {
+		return obj instanceof ReloadCommand.$javaClass;
+	}
 
 	constructor(_name: string);
 	constructor(...args: any[]) {

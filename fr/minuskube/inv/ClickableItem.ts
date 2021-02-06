@@ -11,6 +11,9 @@ export default class ClickableItem {
 	public static get $javaClass(): any {
 		return Java.type('fr.minuskube.inv.ClickableItem');
 	}
+	public static $isInstance(obj: any): obj is ClickableItem {
+		return obj instanceof ClickableItem.$javaClass;
+	}
 
 	public static empty(item: ItemStack): ClickableItem;
 	public static empty(...args: any[]): any {
