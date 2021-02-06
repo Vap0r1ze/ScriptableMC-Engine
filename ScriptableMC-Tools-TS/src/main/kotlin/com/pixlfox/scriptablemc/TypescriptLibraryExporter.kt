@@ -745,6 +745,9 @@ class TypescriptLibraryExporter(args: Array<String> = arrayOf()) {
         tsEnumSource += "\tpublic static get \$javaClass(): any {\n"
         tsEnumSource += "\t\treturn Java.type('${_class.name}');\n"
         tsEnumSource += "\t}\n\n"
+        tsClassSource += "\tpublic static \$isInstance(obj: any): obj is $enumName {\n"
+        tsClassSource += "\t\treturn obj instanceof $enumName.\$javaClass;\n"
+        tsClassSource += "\t}\n\n"
 
         for (enumConstant in _class.enumConstants.sortedBy { it.name }) {
             tsEnumSource += "\tpublic static get ${enumConstant.name}(): $enumName {\n"
