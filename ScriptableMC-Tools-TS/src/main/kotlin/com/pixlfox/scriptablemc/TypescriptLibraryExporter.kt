@@ -675,6 +675,9 @@ class TypescriptLibraryExporter(args: Array<String> = arrayOf()) {
 
         tsClassSource += "\tpublic static get \$javaClass(): any {\n"
         tsClassSource += "\t\treturn Java.type('${getPackageName(_class.name)}.${stripPackageName(_class.name)}');\n"
+        tsClassSource += "\t}\n"
+        tsClassSource += "\tpublic static \$isInstance(obj: any): obj is $className {\n"
+        tsClassSource += "\t\treturn obj instanceof $className.\$javaClass;\n"
         tsClassSource += "\t}\n\n"
 
         for ((index, constructor) in _class.constructors.sortedBy { it.parameterCount }.withIndex()) {
