@@ -12,6 +12,9 @@ export default class SkullType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.SkullType');
 	}
+	public static $isInstance(obj: any): obj is SkullType {
+		return obj instanceof SkullType.$javaClass;
+	}
 
 	public static get CREEPER(): SkullType {
 		return this.$javaClass.CREEPER;

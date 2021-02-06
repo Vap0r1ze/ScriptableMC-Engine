@@ -12,6 +12,9 @@ export default class EntityPotionEffectEvent$Action {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityPotionEffectEvent$Action');
 	}
+	public static $isInstance(obj: any): obj is EntityPotionEffectEvent$Action {
+		return obj instanceof EntityPotionEffectEvent$Action.$javaClass;
+	}
 
 	public static get ADDED(): EntityPotionEffectEvent$Action {
 		return this.$javaClass.ADDED;

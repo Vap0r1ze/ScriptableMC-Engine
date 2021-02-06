@@ -16,6 +16,9 @@ export default class Effect {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Effect');
 	}
+	public static $isInstance(obj: any): obj is Effect {
+		return obj instanceof Effect.$javaClass;
+	}
 
 	public static get ANVIL_BREAK(): Effect {
 		return this.$javaClass.ANVIL_BREAK;

@@ -12,6 +12,9 @@ export default class EntityTargetEvent$TargetReason {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityTargetEvent$TargetReason');
 	}
+	public static $isInstance(obj: any): obj is EntityTargetEvent$TargetReason {
+		return obj instanceof EntityTargetEvent$TargetReason.$javaClass;
+	}
 
 	public static get CLOSEST_ENTITY(): EntityTargetEvent$TargetReason {
 		return this.$javaClass.CLOSEST_ENTITY;

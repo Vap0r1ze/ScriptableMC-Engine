@@ -13,6 +13,9 @@ export default class MapView$Scale {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MapView$Scale');
 	}
+	public static $isInstance(obj: any): obj is MapView$Scale {
+		return obj instanceof MapView$Scale.$javaClass;
+	}
 
 	public static get CLOSE(): MapView$Scale {
 		return this.$javaClass.CLOSE;

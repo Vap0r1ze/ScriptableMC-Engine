@@ -12,6 +12,9 @@ export default class EnderDragon$Phase {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.EnderDragon$Phase');
 	}
+	public static $isInstance(obj: any): obj is EnderDragon$Phase {
+		return obj instanceof EnderDragon$Phase.$javaClass;
+	}
 
 	public static get BREATH_ATTACK(): EnderDragon$Phase {
 		return this.$javaClass.BREATH_ATTACK;

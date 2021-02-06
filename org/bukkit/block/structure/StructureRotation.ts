@@ -12,6 +12,9 @@ export default class StructureRotation {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.structure.StructureRotation');
 	}
+	public static $isInstance(obj: any): obj is StructureRotation {
+		return obj instanceof StructureRotation.$javaClass;
+	}
 
 	public static get CLOCKWISE_180(): StructureRotation {
 		return this.$javaClass.CLOCKWISE_180;

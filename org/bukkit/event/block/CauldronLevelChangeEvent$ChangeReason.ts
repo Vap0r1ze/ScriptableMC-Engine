@@ -12,6 +12,9 @@ export default class CauldronLevelChangeEvent$ChangeReason {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.CauldronLevelChangeEvent$ChangeReason');
 	}
+	public static $isInstance(obj: any): obj is CauldronLevelChangeEvent$ChangeReason {
+		return obj instanceof CauldronLevelChangeEvent$ChangeReason.$javaClass;
+	}
 
 	public static get ARMOR_WASH(): CauldronLevelChangeEvent$ChangeReason {
 		return this.$javaClass.ARMOR_WASH;

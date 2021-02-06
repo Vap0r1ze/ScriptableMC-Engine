@@ -12,6 +12,9 @@ export default class MushroomCow$Variant {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.MushroomCow$Variant');
 	}
+	public static $isInstance(obj: any): obj is MushroomCow$Variant {
+		return obj instanceof MushroomCow$Variant.$javaClass;
+	}
 
 	public static get BROWN(): MushroomCow$Variant {
 		return this.$javaClass.BROWN;

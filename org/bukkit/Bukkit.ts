@@ -85,8 +85,8 @@ export default class Bukkit {
 
 	public static createBlockData(material: Material): BlockData;
 	public static createBlockData(data: string): BlockData;
-	public static createBlockData(material: Material, consumer: any): BlockData;
 	public static createBlockData(material: Material, data: string): BlockData;
+	public static createBlockData(material: Material, consumer: any): BlockData;
 	public static createBlockData(...args: any[]): any {
 		return Bukkit.$javaClass.createBlockData(...args);
 	}
@@ -317,8 +317,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getOperators(...args);
 	}
 
-	public static getPlayer(_name: string): Player;
 	public static getPlayer(id: string): Player;
+	public static getPlayer(_name: string): Player;
 	public static getPlayer(...args: any[]): any {
 		return Bukkit.$javaClass.getPlayer(...args);
 	}
@@ -468,8 +468,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getWhitelistedPlayers(...args);
 	}
 
-	public static getWorld(_name: string): World;
 	public static getWorld(uid: string): World;
+	public static getWorld(_name: string): World;
 	public static getWorld(...args: any[]): any {
 		return Bukkit.$javaClass.getWorld(...args);
 	}
@@ -600,8 +600,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.unbanIP(...args);
 	}
 
-	public static unloadWorld(world: World, save: boolean): boolean;
 	public static unloadWorld(_name: string, save: boolean): boolean;
+	public static unloadWorld(world: World, save: boolean): boolean;
 	public static unloadWorld(...args: any[]): any {
 		return Bukkit.$javaClass.unloadWorld(...args);
 	}

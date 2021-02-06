@@ -17,8 +17,8 @@ import Version from '../../../../com/smc/version/Version.js'
 export default interface ScriptablePluginContext extends Listener {
 	disable(): void;
 	enable(): void;
-	getBukkitServiceRegistration(_class: any): any;
 	getBukkitServiceRegistration(className: string): any;
+	getBukkitServiceRegistration(_class: any): any;
 	getCommands(): Array<PluginCommand>;
 	getEngine(): ScriptablePluginEngine;
 	getInventoryManager(): InventoryManager;

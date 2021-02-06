@@ -12,6 +12,9 @@ export default class RaidStopEvent$Reason {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.raid.RaidStopEvent$Reason');
 	}
+	public static $isInstance(obj: any): obj is RaidStopEvent$Reason {
+		return obj instanceof RaidStopEvent$Reason.$javaClass;
+	}
 
 	public static get FINISHED(): RaidStopEvent$Reason {
 		return this.$javaClass.FINISHED;

@@ -13,6 +13,9 @@ export default class Difficulty {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Difficulty');
 	}
+	public static $isInstance(obj: any): obj is Difficulty {
+		return obj instanceof Difficulty.$javaClass;
+	}
 
 	public static get EASY(): Difficulty {
 		return this.$javaClass.EASY;

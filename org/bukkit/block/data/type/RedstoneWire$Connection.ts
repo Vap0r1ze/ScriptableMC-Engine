@@ -12,6 +12,9 @@ export default class RedstoneWire$Connection {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.RedstoneWire$Connection');
 	}
+	public static $isInstance(obj: any): obj is RedstoneWire$Connection {
+		return obj instanceof RedstoneWire$Connection.$javaClass;
+	}
 
 	public static get NONE(): RedstoneWire$Connection {
 		return this.$javaClass.NONE;

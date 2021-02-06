@@ -13,6 +13,9 @@ export default class TreeSpecies {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.TreeSpecies');
 	}
+	public static $isInstance(obj: any): obj is TreeSpecies {
+		return obj instanceof TreeSpecies.$javaClass;
+	}
 
 	public static get ACACIA(): TreeSpecies {
 		return this.$javaClass.ACACIA;

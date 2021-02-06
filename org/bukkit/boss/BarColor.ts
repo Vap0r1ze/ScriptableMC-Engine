@@ -12,6 +12,9 @@ export default class BarColor {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.boss.BarColor');
 	}
+	public static $isInstance(obj: any): obj is BarColor {
+		return obj instanceof BarColor.$javaClass;
+	}
 
 	public static get BLUE(): BarColor {
 		return this.$javaClass.BLUE;

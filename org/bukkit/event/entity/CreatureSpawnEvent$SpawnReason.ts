@@ -12,6 +12,9 @@ export default class CreatureSpawnEvent$SpawnReason {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.CreatureSpawnEvent$SpawnReason');
 	}
+	public static $isInstance(obj: any): obj is CreatureSpawnEvent$SpawnReason {
+		return obj instanceof CreatureSpawnEvent$SpawnReason.$javaClass;
+	}
 
 	public static get BEEHIVE(): CreatureSpawnEvent$SpawnReason {
 		return this.$javaClass.BEEHIVE;

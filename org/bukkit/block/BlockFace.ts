@@ -18,6 +18,9 @@ export default class BlockFace {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.BlockFace');
 	}
+	public static $isInstance(obj: any): obj is BlockFace {
+		return obj instanceof BlockFace.$javaClass;
+	}
 
 	public static get DOWN(): BlockFace {
 		return this.$javaClass.DOWN;

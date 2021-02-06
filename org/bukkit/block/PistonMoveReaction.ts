@@ -13,6 +13,9 @@ export default class PistonMoveReaction {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.PistonMoveReaction');
 	}
+	public static $isInstance(obj: any): obj is PistonMoveReaction {
+		return obj instanceof PistonMoveReaction.$javaClass;
+	}
 
 	public static get BLOCK(): PistonMoveReaction {
 		return this.$javaClass.BLOCK;

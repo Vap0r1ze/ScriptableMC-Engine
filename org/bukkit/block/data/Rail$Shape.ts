@@ -12,6 +12,9 @@ export default class Rail$Shape {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.Rail$Shape');
 	}
+	public static $isInstance(obj: any): obj is Rail$Shape {
+		return obj instanceof Rail$Shape.$javaClass;
+	}
 
 	public static get ASCENDING_EAST(): Rail$Shape {
 		return this.$javaClass.ASCENDING_EAST;

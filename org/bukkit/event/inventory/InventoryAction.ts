@@ -12,6 +12,9 @@ export default class InventoryAction {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.InventoryAction');
 	}
+	public static $isInstance(obj: any): obj is InventoryAction {
+		return obj instanceof InventoryAction.$javaClass;
+	}
 
 	public static get CLONE_STACK(): InventoryAction {
 		return this.$javaClass.CLONE_STACK;

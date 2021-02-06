@@ -13,6 +13,9 @@ export default class Particle {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Particle');
 	}
+	public static $isInstance(obj: any): obj is Particle {
+		return obj instanceof Particle.$javaClass;
+	}
 
 	public static get ASH(): Particle {
 		return this.$javaClass.ASH;

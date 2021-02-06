@@ -12,6 +12,9 @@ export default class RenderType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.RenderType');
 	}
+	public static $isInstance(obj: any): obj is RenderType {
+		return obj instanceof RenderType.$javaClass;
+	}
 
 	public static get HEARTS(): RenderType {
 		return this.$javaClass.HEARTS;

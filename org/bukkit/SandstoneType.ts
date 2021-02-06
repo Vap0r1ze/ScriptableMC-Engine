@@ -13,6 +13,9 @@ export default class SandstoneType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.SandstoneType');
 	}
+	public static $isInstance(obj: any): obj is SandstoneType {
+		return obj instanceof SandstoneType.$javaClass;
+	}
 
 	public static get CRACKED(): SandstoneType {
 		return this.$javaClass.CRACKED;

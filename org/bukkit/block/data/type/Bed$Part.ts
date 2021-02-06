@@ -12,6 +12,9 @@ export default class Bed$Part {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Bed$Part');
 	}
+	public static $isInstance(obj: any): obj is Bed$Part {
+		return obj instanceof Bed$Part.$javaClass;
+	}
 
 	public static get FOOT(): Bed$Part {
 		return this.$javaClass.FOOT;

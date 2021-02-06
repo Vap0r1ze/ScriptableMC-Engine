@@ -12,6 +12,9 @@ export default class Evoker$Spell {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Evoker$Spell');
 	}
+	public static $isInstance(obj: any): obj is Evoker$Spell {
+		return obj instanceof Evoker$Spell.$javaClass;
+	}
 
 	public static get BLINDNESS(): Evoker$Spell {
 		return this.$javaClass.BLINDNESS;

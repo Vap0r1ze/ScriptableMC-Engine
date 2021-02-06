@@ -23,9 +23,9 @@ export default class Permission {
 	}
 
 	constructor(_name: string);
+	constructor(_name: string, defaultValue: PermissionDefault);
 	constructor(_name: string, description: string);
 	constructor(_name: string, children: any);
-	constructor(_name: string, defaultValue: PermissionDefault);
 	constructor(_name: string, defaultValue: PermissionDefault, children: any);
 	constructor(_name: string, description: string, children: any);
 	constructor(_name: string, description: string, defaultValue: PermissionDefault);

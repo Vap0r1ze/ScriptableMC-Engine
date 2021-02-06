@@ -12,6 +12,9 @@ export default class PlayerTeleportEvent$TeleportCause {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerTeleportEvent$TeleportCause');
 	}
+	public static $isInstance(obj: any): obj is PlayerTeleportEvent$TeleportCause {
+		return obj instanceof PlayerTeleportEvent$TeleportCause.$javaClass;
+	}
 
 	public static get CHORUS_FRUIT(): PlayerTeleportEvent$TeleportCause {
 		return this.$javaClass.CHORUS_FRUIT;

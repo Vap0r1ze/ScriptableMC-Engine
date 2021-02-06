@@ -12,6 +12,9 @@ export default class Team$OptionStatus {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.Team$OptionStatus');
 	}
+	public static $isInstance(obj: any): obj is Team$OptionStatus {
+		return obj instanceof Team$OptionStatus.$javaClass;
+	}
 
 	public static get ALWAYS(): Team$OptionStatus {
 		return this.$javaClass.ALWAYS;

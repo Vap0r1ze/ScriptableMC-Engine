@@ -12,6 +12,9 @@ export default class Skeleton$SkeletonType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Skeleton$SkeletonType');
 	}
+	public static $isInstance(obj: any): obj is Skeleton$SkeletonType {
+		return obj instanceof Skeleton$SkeletonType.$javaClass;
+	}
 
 	public static get NORMAL(): Skeleton$SkeletonType {
 		return this.$javaClass.NORMAL;

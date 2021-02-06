@@ -15,6 +15,9 @@ export default class InventoryType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.InventoryType');
 	}
+	public static $isInstance(obj: any): obj is InventoryType {
+		return obj instanceof InventoryType.$javaClass;
+	}
 
 	public static get ANVIL(): InventoryType {
 		return this.$javaClass.ANVIL;

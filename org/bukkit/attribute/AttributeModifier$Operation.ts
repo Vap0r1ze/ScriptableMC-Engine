@@ -12,6 +12,9 @@ export default class AttributeModifier$Operation {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.attribute.AttributeModifier$Operation');
 	}
+	public static $isInstance(obj: any): obj is AttributeModifier$Operation {
+		return obj instanceof AttributeModifier$Operation.$javaClass;
+	}
 
 	public static get ADD_NUMBER(): AttributeModifier$Operation {
 		return this.$javaClass.ADD_NUMBER;

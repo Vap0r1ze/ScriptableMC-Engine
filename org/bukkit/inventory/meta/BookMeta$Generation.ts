@@ -12,6 +12,9 @@ export default class BookMeta$Generation {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.meta.BookMeta$Generation');
 	}
+	public static $isInstance(obj: any): obj is BookMeta$Generation {
+		return obj instanceof BookMeta$Generation.$javaClass;
+	}
 
 	public static get COPY_OF_COPY(): BookMeta$Generation {
 		return this.$javaClass.COPY_OF_COPY;

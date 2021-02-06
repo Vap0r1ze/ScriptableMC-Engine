@@ -55,8 +55,8 @@ export default interface Server extends PluginMessageRecipient {
 	clearRecipes(): void;
 	createBlockData(arg0: string): BlockData;
 	createBlockData(arg0: Material): BlockData;
-	createBlockData(arg0: Material, arg1: any): BlockData;
 	createBlockData(arg0: Material, arg1: string): BlockData;
+	createBlockData(arg0: Material, arg1: any): BlockData;
 	createBossBar(arg0: string, arg1: BarColor, arg2: BarStyle, arg3: Array<BarFlag>): BossBar;
 	createBossBar(arg0: NamespacedKey, arg1: string, arg2: BarColor, arg3: BarStyle, arg4: Array<BarFlag>): KeyedBossBar;
 	createChunkData(arg0: World): ChunkGenerator$ChunkData;

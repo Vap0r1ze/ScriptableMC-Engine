@@ -12,6 +12,9 @@ export default class EntityCategory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.EntityCategory');
 	}
+	public static $isInstance(obj: any): obj is EntityCategory {
+		return obj instanceof EntityCategory.$javaClass;
+	}
 
 	public static get ARTHROPOD(): EntityCategory {
 		return this.$javaClass.ARTHROPOD;

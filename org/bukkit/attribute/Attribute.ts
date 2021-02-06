@@ -15,6 +15,9 @@ export default class Attribute {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.attribute.Attribute');
 	}
+	public static $isInstance(obj: any): obj is Attribute {
+		return obj instanceof Attribute.$javaClass;
+	}
 
 	public static get GENERIC_ARMOR(): Attribute {
 		return this.$javaClass.GENERIC_ARMOR;

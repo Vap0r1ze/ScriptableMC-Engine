@@ -13,6 +13,9 @@ export default class World$Environment {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.World$Environment');
 	}
+	public static $isInstance(obj: any): obj is World$Environment {
+		return obj instanceof World$Environment.$javaClass;
+	}
 
 	public static get NETHER(): World$Environment {
 		return this.$javaClass.NETHER;

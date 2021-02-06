@@ -12,6 +12,9 @@ export default class EntityTransformEvent$TransformReason {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityTransformEvent$TransformReason');
 	}
+	public static $isInstance(obj: any): obj is EntityTransformEvent$TransformReason {
+		return obj instanceof EntityTransformEvent$TransformReason.$javaClass;
+	}
 
 	public static get CURED(): EntityTransformEvent$TransformReason {
 		return this.$javaClass.CURED;

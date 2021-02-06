@@ -12,6 +12,9 @@ export default class Axis {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Axis');
 	}
+	public static $isInstance(obj: any): obj is Axis {
+		return obj instanceof Axis.$javaClass;
+	}
 
 	public static get X(): Axis {
 		return this.$javaClass.X;

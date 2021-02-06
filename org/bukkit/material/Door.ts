@@ -8,9 +8,9 @@ import Openable from './Openable.js'
 import TreeSpecies from '../../../org/bukkit/TreeSpecies.js'
 
 export default interface Door extends MaterialData, Directional, Openable {
+	clone(): Door;
 	clone(): any;
 	clone(): MaterialData;
-	clone(): Door;
 	getData(): number;
 	getFacing(): BlockFace;
 	getHinge(): boolean;
@@ -37,13 +37,13 @@ export default class Door {
 
 	constructor();
 	constructor(type: Material);
+	constructor(type: Material, isHingeRight: boolean);
 	constructor(type: Material, face: BlockFace);
-	constructor(type: Material, data: number);
 	constructor(species: TreeSpecies, isHingeRight: boolean);
 	constructor(species: TreeSpecies, face: BlockFace);
-	constructor(type: Material, isHingeRight: boolean);
-	constructor(species: TreeSpecies, face: BlockFace, isOpen: boolean);
+	constructor(type: Material, data: number);
 	constructor(type: Material, face: BlockFace, isOpen: boolean);
+	constructor(species: TreeSpecies, face: BlockFace, isOpen: boolean);
 	constructor(...args: any[]) {
 		return new Door.$javaClass(...args);
 	}

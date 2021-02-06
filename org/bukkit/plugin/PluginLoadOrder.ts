@@ -12,6 +12,9 @@ export default class PluginLoadOrder {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.PluginLoadOrder');
 	}
+	public static $isInstance(obj: any): obj is PluginLoadOrder {
+		return obj instanceof PluginLoadOrder.$javaClass;
+	}
 
 	public static get POSTWORLD(): PluginLoadOrder {
 		return this.$javaClass.POSTWORLD;

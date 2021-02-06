@@ -12,6 +12,9 @@ export default class Action {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.Action');
 	}
+	public static $isInstance(obj: any): obj is Action {
+		return obj instanceof Action.$javaClass;
+	}
 
 	public static get LEFT_CLICK_AIR(): Action {
 		return this.$javaClass.LEFT_CLICK_AIR;

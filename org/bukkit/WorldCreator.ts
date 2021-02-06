@@ -14,8 +14,8 @@ export default interface WorldCreator {
 	generateStructures(): boolean;
 	generateStructures(generate: boolean): WorldCreator;
 	generator(): ChunkGenerator;
-	generator(generator: ChunkGenerator): WorldCreator;
 	generator(generator: string): WorldCreator;
+	generator(generator: ChunkGenerator): WorldCreator;
 	generator(generator: string, output: CommandSender): WorldCreator;
 	generatorSettings(): string;
 	generatorSettings(generatorSettings: string): WorldCreator;

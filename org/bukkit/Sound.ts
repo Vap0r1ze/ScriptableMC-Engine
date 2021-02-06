@@ -15,6 +15,9 @@ export default class Sound {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Sound');
 	}
+	public static $isInstance(obj: any): obj is Sound {
+		return obj instanceof Sound.$javaClass;
+	}
 
 	public static get AMBIENT_BASALT_DELTAS_ADDITIONS(): Sound {
 		return this.$javaClass.AMBIENT_BASALT_DELTAS_ADDITIONS;

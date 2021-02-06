@@ -13,6 +13,9 @@ export default class Panda$Gene {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Panda$Gene');
 	}
+	public static $isInstance(obj: any): obj is Panda$Gene {
+		return obj instanceof Panda$Gene.$javaClass;
+	}
 
 	public static get AGGRESSIVE(): Panda$Gene {
 		return this.$javaClass.AGGRESSIVE;

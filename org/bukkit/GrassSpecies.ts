@@ -13,6 +13,9 @@ export default class GrassSpecies {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.GrassSpecies');
 	}
+	public static $isInstance(obj: any): obj is GrassSpecies {
+		return obj instanceof GrassSpecies.$javaClass;
+	}
 
 	public static get DEAD(): GrassSpecies {
 		return this.$javaClass.DEAD;

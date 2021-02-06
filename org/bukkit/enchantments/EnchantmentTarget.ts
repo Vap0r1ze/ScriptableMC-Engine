@@ -16,6 +16,9 @@ export default class EnchantmentTarget {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.enchantments.EnchantmentTarget');
 	}
+	public static $isInstance(obj: any): obj is EnchantmentTarget {
+		return obj instanceof EnchantmentTarget.$javaClass;
+	}
 
 	public static get ALL(): EnchantmentTarget {
 		return this.$javaClass.ALL;

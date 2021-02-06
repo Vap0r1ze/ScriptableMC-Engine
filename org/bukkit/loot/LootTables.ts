@@ -17,6 +17,9 @@ export default class LootTables {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.loot.LootTables');
 	}
+	public static $isInstance(obj: any): obj is LootTables {
+		return obj instanceof LootTables.$javaClass;
+	}
 
 	public static get ABANDONED_MINESHAFT(): LootTables {
 		return this.$javaClass.ABANDONED_MINESHAFT;

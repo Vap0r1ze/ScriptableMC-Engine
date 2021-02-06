@@ -12,6 +12,9 @@ export default class HeightMap {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.HeightMap');
 	}
+	public static $isInstance(obj: any): obj is HeightMap {
+		return obj instanceof HeightMap.$javaClass;
+	}
 
 	public static get MOTION_BLOCKING(): HeightMap {
 		return this.$javaClass.MOTION_BLOCKING;

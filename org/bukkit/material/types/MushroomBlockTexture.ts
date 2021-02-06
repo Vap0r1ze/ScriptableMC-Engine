@@ -15,6 +15,9 @@ export default class MushroomBlockTexture {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.types.MushroomBlockTexture');
 	}
+	public static $isInstance(obj: any): obj is MushroomBlockTexture {
+		return obj instanceof MushroomBlockTexture.$javaClass;
+	}
 
 	public static get ALL_CAP(): MushroomBlockTexture {
 		return this.$javaClass.ALL_CAP;

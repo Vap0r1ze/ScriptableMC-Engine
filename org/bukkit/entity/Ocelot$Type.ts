@@ -13,6 +13,9 @@ export default class Ocelot$Type {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Ocelot$Type');
 	}
+	public static $isInstance(obj: any): obj is Ocelot$Type {
+		return obj instanceof Ocelot$Type.$javaClass;
+	}
 
 	public static get BLACK_CAT(): Ocelot$Type {
 		return this.$javaClass.BLACK_CAT;

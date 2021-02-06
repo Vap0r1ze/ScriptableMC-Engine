@@ -12,6 +12,9 @@ export default class WeatherType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.WeatherType');
 	}
+	public static $isInstance(obj: any): obj is WeatherType {
+		return obj instanceof WeatherType.$javaClass;
+	}
 
 	public static get CLEAR(): WeatherType {
 		return this.$javaClass.CLEAR;

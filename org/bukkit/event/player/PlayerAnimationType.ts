@@ -12,6 +12,9 @@ export default class PlayerAnimationType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerAnimationType');
 	}
+	public static $isInstance(obj: any): obj is PlayerAnimationType {
+		return obj instanceof PlayerAnimationType.$javaClass;
+	}
 
 	public static get ARM_SWING(): PlayerAnimationType {
 		return this.$javaClass.ARM_SWING;

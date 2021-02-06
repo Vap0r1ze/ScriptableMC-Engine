@@ -12,6 +12,9 @@ export default class BarFlag {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.boss.BarFlag');
 	}
+	public static $isInstance(obj: any): obj is BarFlag {
+		return obj instanceof BarFlag.$javaClass;
+	}
 
 	public static get CREATE_FOG(): BarFlag {
 		return this.$javaClass.CREATE_FOG;

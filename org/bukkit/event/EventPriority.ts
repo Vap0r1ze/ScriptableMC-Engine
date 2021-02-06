@@ -13,6 +13,9 @@ export default class EventPriority {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.EventPriority');
 	}
+	public static $isInstance(obj: any): obj is EventPriority {
+		return obj instanceof EventPriority.$javaClass;
+	}
 
 	public static get HIGH(): EventPriority {
 		return this.$javaClass.HIGH;

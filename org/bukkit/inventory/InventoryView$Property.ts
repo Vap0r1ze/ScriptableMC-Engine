@@ -15,6 +15,9 @@ export default class InventoryView$Property {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.InventoryView$Property');
 	}
+	public static $isInstance(obj: any): obj is InventoryView$Property {
+		return obj instanceof InventoryView$Property.$javaClass;
+	}
 
 	public static get BOOK_PAGE(): InventoryView$Property {
 		return this.$javaClass.BOOK_PAGE;

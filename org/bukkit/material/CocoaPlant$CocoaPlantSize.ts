@@ -12,6 +12,9 @@ export default class CocoaPlant$CocoaPlantSize {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.material.CocoaPlant$CocoaPlantSize');
 	}
+	public static $isInstance(obj: any): obj is CocoaPlant$CocoaPlantSize {
+		return obj instanceof CocoaPlant$CocoaPlantSize.$javaClass;
+	}
 
 	public static get LARGE(): CocoaPlant$CocoaPlantSize {
 		return this.$javaClass.LARGE;

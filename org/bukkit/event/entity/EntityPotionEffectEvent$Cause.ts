@@ -12,6 +12,9 @@ export default class EntityPotionEffectEvent$Cause {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityPotionEffectEvent$Cause');
 	}
+	public static $isInstance(obj: any): obj is EntityPotionEffectEvent$Cause {
+		return obj instanceof EntityPotionEffectEvent$Cause.$javaClass;
+	}
 
 	public static get AREA_EFFECT_CLOUD(): EntityPotionEffectEvent$Cause {
 		return this.$javaClass.AREA_EFFECT_CLOUD;

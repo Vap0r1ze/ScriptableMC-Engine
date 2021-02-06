@@ -12,6 +12,9 @@ export default class PlayerPreLoginEvent$Result {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerPreLoginEvent$Result');
 	}
+	public static $isInstance(obj: any): obj is PlayerPreLoginEvent$Result {
+		return obj instanceof PlayerPreLoginEvent$Result.$javaClass;
+	}
 
 	public static get ALLOWED(): PlayerPreLoginEvent$Result {
 		return this.$javaClass.ALLOWED;

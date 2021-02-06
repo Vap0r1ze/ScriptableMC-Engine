@@ -12,6 +12,9 @@ export default class FishHook$HookState {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.FishHook$HookState');
 	}
+	public static $isInstance(obj: any): obj is FishHook$HookState {
+		return obj instanceof FishHook$HookState.$javaClass;
+	}
 
 	public static get BOBBING(): FishHook$HookState {
 		return this.$javaClass.BOBBING;

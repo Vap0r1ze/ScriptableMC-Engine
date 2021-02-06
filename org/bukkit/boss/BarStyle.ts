@@ -12,6 +12,9 @@ export default class BarStyle {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.boss.BarStyle');
 	}
+	public static $isInstance(obj: any): obj is BarStyle {
+		return obj instanceof BarStyle.$javaClass;
+	}
 
 	public static get SEGMENTED_10(): BarStyle {
 		return this.$javaClass.SEGMENTED_10;

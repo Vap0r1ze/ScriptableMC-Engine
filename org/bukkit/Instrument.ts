@@ -13,6 +13,9 @@ export default class Instrument {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Instrument');
 	}
+	public static $isInstance(obj: any): obj is Instrument {
+		return obj instanceof Instrument.$javaClass;
+	}
 
 	public static get BANJO(): Instrument {
 		return this.$javaClass.BANJO;

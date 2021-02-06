@@ -19,8 +19,8 @@ export default interface PotionMeta extends ItemMeta {
 	addEnchant(arg0: Enchantment, arg1: number, arg2: boolean): boolean;
 	addItemFlags(arg0: Array<ItemFlag>): void;
 	clearCustomEffects(): boolean;
-	clone(): any;
 	clone(): ItemMeta;
+	clone(): any;
 	clone(): PotionMeta;
 	getAttributeModifiers(): Multimap;
 	getAttributeModifiers(arg0: EquipmentSlot): Multimap;

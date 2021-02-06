@@ -12,6 +12,9 @@ export default class DisplaySlot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.DisplaySlot');
 	}
+	public static $isInstance(obj: any): obj is DisplaySlot {
+		return obj instanceof DisplaySlot.$javaClass;
+	}
 
 	public static get BELOW_NAME(): DisplaySlot {
 		return this.$javaClass.BELOW_NAME;

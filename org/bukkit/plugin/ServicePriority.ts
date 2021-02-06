@@ -12,6 +12,9 @@ export default class ServicePriority {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.ServicePriority');
 	}
+	public static $isInstance(obj: any): obj is ServicePriority {
+		return obj instanceof ServicePriority.$javaClass;
+	}
 
 	public static get High(): ServicePriority {
 		return this.$javaClass.High;

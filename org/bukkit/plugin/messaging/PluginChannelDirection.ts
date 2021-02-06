@@ -12,6 +12,9 @@ export default class PluginChannelDirection {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.plugin.messaging.PluginChannelDirection');
 	}
+	public static $isInstance(obj: any): obj is PluginChannelDirection {
+		return obj instanceof PluginChannelDirection.$javaClass;
+	}
 
 	public static get INCOMING(): PluginChannelDirection {
 		return this.$javaClass.INCOMING;

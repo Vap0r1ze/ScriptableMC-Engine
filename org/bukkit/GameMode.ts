@@ -13,6 +13,9 @@ export default class GameMode {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.GameMode');
 	}
+	public static $isInstance(obj: any): obj is GameMode {
+		return obj instanceof GameMode.$javaClass;
+	}
 
 	public static get ADVENTURE(): GameMode {
 		return this.$javaClass.ADVENTURE;

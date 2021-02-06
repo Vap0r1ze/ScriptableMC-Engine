@@ -12,6 +12,9 @@ export default class ComponentBuilder$FormatRetention {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.ComponentBuilder$FormatRetention');
 	}
+	public static $isInstance(obj: any): obj is ComponentBuilder$FormatRetention {
+		return obj instanceof ComponentBuilder$FormatRetention.$javaClass;
+	}
 
 	public static get ALL(): ComponentBuilder$FormatRetention {
 		return this.$javaClass.ALL;

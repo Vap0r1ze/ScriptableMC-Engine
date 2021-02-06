@@ -12,6 +12,9 @@ export default class Horse$Style {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Horse$Style');
 	}
+	public static $isInstance(obj: any): obj is Horse$Style {
+		return obj instanceof Horse$Style.$javaClass;
+	}
 
 	public static get BLACK_DOTS(): Horse$Style {
 		return this.$javaClass.BLACK_DOTS;

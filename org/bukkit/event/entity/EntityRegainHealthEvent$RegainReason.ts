@@ -12,6 +12,9 @@ export default class EntityRegainHealthEvent$RegainReason {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityRegainHealthEvent$RegainReason');
 	}
+	public static $isInstance(obj: any): obj is EntityRegainHealthEvent$RegainReason {
+		return obj instanceof EntityRegainHealthEvent$RegainReason.$javaClass;
+	}
 
 	public static get CUSTOM(): EntityRegainHealthEvent$RegainReason {
 		return this.$javaClass.CUSTOM;

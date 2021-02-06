@@ -12,6 +12,9 @@ export default class Effect$Type {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Effect$Type');
 	}
+	public static $isInstance(obj: any): obj is Effect$Type {
+		return obj instanceof Effect$Type.$javaClass;
+	}
 
 	public static get SOUND(): Effect$Type {
 		return this.$javaClass.SOUND;

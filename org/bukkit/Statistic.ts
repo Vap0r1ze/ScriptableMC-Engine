@@ -19,6 +19,9 @@ export default class Statistic {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Statistic');
 	}
+	public static $isInstance(obj: any): obj is Statistic {
+		return obj instanceof Statistic.$javaClass;
+	}
 
 	public static get ANIMALS_BRED(): Statistic {
 		return this.$javaClass.ANIMALS_BRED;

@@ -12,6 +12,9 @@ export default class Bell$Attachment {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Bell$Attachment');
 	}
+	public static $isInstance(obj: any): obj is Bell$Attachment {
+		return obj instanceof Bell$Attachment.$javaClass;
+	}
 
 	public static get CEILING(): Bell$Attachment {
 		return this.$javaClass.CEILING;

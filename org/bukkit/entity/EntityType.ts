@@ -20,6 +20,9 @@ export default class EntityType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.EntityType');
 	}
+	public static $isInstance(obj: any): obj is EntityType {
+		return obj instanceof EntityType.$javaClass;
+	}
 
 	public static get AREA_EFFECT_CLOUD(): EntityType {
 		return this.$javaClass.AREA_EFFECT_CLOUD;

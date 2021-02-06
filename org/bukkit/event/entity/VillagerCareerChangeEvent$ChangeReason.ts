@@ -12,6 +12,9 @@ export default class VillagerCareerChangeEvent$ChangeReason {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.VillagerCareerChangeEvent$ChangeReason');
 	}
+	public static $isInstance(obj: any): obj is VillagerCareerChangeEvent$ChangeReason {
+		return obj instanceof VillagerCareerChangeEvent$ChangeReason.$javaClass;
+	}
 
 	public static get EMPLOYED(): VillagerCareerChangeEvent$ChangeReason {
 		return this.$javaClass.EMPLOYED;

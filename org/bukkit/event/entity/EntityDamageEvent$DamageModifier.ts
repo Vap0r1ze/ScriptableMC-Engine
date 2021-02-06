@@ -12,6 +12,9 @@ export default class EntityDamageEvent$DamageModifier {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityDamageEvent$DamageModifier');
 	}
+	public static $isInstance(obj: any): obj is EntityDamageEvent$DamageModifier {
+		return obj instanceof EntityDamageEvent$DamageModifier.$javaClass;
+	}
 
 	public static get ABSORPTION(): EntityDamageEvent$DamageModifier {
 		return this.$javaClass.ABSORPTION;

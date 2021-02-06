@@ -12,6 +12,9 @@ export default class Raid$RaidStatus {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Raid$RaidStatus');
 	}
+	public static $isInstance(obj: any): obj is Raid$RaidStatus {
+		return obj instanceof Raid$RaidStatus.$javaClass;
+	}
 
 	public static get LOSS(): Raid$RaidStatus {
 		return this.$javaClass.LOSS;

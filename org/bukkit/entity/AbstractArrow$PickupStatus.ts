@@ -12,6 +12,9 @@ export default class AbstractArrow$PickupStatus {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.AbstractArrow$PickupStatus');
 	}
+	public static $isInstance(obj: any): obj is AbstractArrow$PickupStatus {
+		return obj instanceof AbstractArrow$PickupStatus.$javaClass;
+	}
 
 	public static get ALLOWED(): AbstractArrow$PickupStatus {
 		return this.$javaClass.ALLOWED;

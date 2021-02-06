@@ -10,8 +10,8 @@ export default interface FileConfigurationOptions extends MemoryConfigurationOpt
 	configuration(): FileConfiguration;
 	configuration(): Configuration;
 	copyDefaults(): boolean;
-	copyDefaults(value: boolean): MemoryConfigurationOptions;
 	copyDefaults(value: boolean): ConfigurationOptions;
+	copyDefaults(value: boolean): MemoryConfigurationOptions;
 	copyDefaults(value: boolean): FileConfigurationOptions;
 	copyHeader(): boolean;
 	copyHeader(value: boolean): FileConfigurationOptions;

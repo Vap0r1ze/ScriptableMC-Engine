@@ -10,8 +10,8 @@ import LivingEntity from '../../../../org/bukkit/entity/LivingEntity.js'
 export default interface EntityBreedEvent extends EntityEvent, Cancellable {
 	getBredWith(): ItemStack;
 	getBreeder(): LivingEntity;
-	getEntity(): LivingEntity;
 	getEntity(): Entity;
+	getEntity(): LivingEntity;
 	getEntityType(): EntityType;
 	getEventName(): string;
 	getExperience(): number;

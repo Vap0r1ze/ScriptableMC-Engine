@@ -12,6 +12,9 @@ export default class ServerLoadEvent$LoadType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.server.ServerLoadEvent$LoadType');
 	}
+	public static $isInstance(obj: any): obj is ServerLoadEvent$LoadType {
+		return obj instanceof ServerLoadEvent$LoadType.$javaClass;
+	}
 
 	public static get RELOAD(): ServerLoadEvent$LoadType {
 		return this.$javaClass.RELOAD;

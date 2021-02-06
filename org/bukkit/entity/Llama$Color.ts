@@ -12,6 +12,9 @@ export default class Llama$Color {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Llama$Color');
 	}
+	public static $isInstance(obj: any): obj is Llama$Color {
+		return obj instanceof Llama$Color.$javaClass;
+	}
 
 	public static get BROWN(): Llama$Color {
 		return this.$javaClass.BROWN;

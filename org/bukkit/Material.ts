@@ -42,6 +42,9 @@ export default class Material {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Material');
 	}
+	public static $isInstance(obj: any): obj is Material {
+		return obj instanceof Material.$javaClass;
+	}
 
 	public static get ACACIA_BOAT(): Material {
 		return this.$javaClass.ACACIA_BOAT;

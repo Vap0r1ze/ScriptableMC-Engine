@@ -12,6 +12,9 @@ export default class Stairs$Shape {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Stairs$Shape');
 	}
+	public static $isInstance(obj: any): obj is Stairs$Shape {
+		return obj instanceof Stairs$Shape.$javaClass;
+	}
 
 	public static get INNER_LEFT(): Stairs$Shape {
 		return this.$javaClass.INNER_LEFT;

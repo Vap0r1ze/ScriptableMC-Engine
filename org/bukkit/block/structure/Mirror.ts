@@ -12,6 +12,9 @@ export default class Mirror {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.structure.Mirror');
 	}
+	public static $isInstance(obj: any): obj is Mirror {
+		return obj instanceof Mirror.$javaClass;
+	}
 
 	public static get FRONT_BACK(): Mirror {
 		return this.$javaClass.FRONT_BACK;

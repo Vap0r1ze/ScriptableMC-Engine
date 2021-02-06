@@ -12,6 +12,9 @@ export default class PortalType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.PortalType');
 	}
+	public static $isInstance(obj: any): obj is PortalType {
+		return obj instanceof PortalType.$javaClass;
+	}
 
 	public static get CUSTOM(): PortalType {
 		return this.$javaClass.CUSTOM;

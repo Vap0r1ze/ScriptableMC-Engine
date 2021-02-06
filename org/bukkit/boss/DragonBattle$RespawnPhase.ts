@@ -12,6 +12,9 @@ export default class DragonBattle$RespawnPhase {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.boss.DragonBattle$RespawnPhase');
 	}
+	public static $isInstance(obj: any): obj is DragonBattle$RespawnPhase {
+		return obj instanceof DragonBattle$RespawnPhase.$javaClass;
+	}
 
 	public static get END(): DragonBattle$RespawnPhase {
 		return this.$javaClass.END;

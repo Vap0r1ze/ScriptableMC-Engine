@@ -12,6 +12,9 @@ export default class Door$Hinge {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Door$Hinge');
 	}
+	public static $isInstance(obj: any): obj is Door$Hinge {
+		return obj instanceof Door$Hinge.$javaClass;
+	}
 
 	public static get LEFT(): Door$Hinge {
 		return this.$javaClass.LEFT;

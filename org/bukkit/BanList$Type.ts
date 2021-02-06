@@ -12,6 +12,9 @@ export default class BanList$Type {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.BanList$Type');
 	}
+	public static $isInstance(obj: any): obj is BanList$Type {
+		return obj instanceof BanList$Type.$javaClass;
+	}
 
 	public static get IP(): BanList$Type {
 		return this.$javaClass.IP;

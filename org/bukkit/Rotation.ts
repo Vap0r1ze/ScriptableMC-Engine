@@ -14,6 +14,9 @@ export default class Rotation {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Rotation');
 	}
+	public static $isInstance(obj: any): obj is Rotation {
+		return obj instanceof Rotation.$javaClass;
+	}
 
 	public static get CLOCKWISE(): Rotation {
 		return this.$javaClass.CLOCKWISE;

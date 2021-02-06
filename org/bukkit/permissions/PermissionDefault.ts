@@ -13,6 +13,9 @@ export default class PermissionDefault {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.permissions.PermissionDefault');
 	}
+	public static $isInstance(obj: any): obj is PermissionDefault {
+		return obj instanceof PermissionDefault.$javaClass;
+	}
 
 	public static get FALSE(): PermissionDefault {
 		return this.$javaClass.FALSE;

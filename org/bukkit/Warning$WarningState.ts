@@ -14,6 +14,9 @@ export default class Warning$WarningState {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Warning$WarningState');
 	}
+	public static $isInstance(obj: any): obj is Warning$WarningState {
+		return obj instanceof Warning$WarningState.$javaClass;
+	}
 
 	public static get DEFAULT(): Warning$WarningState {
 		return this.$javaClass.DEFAULT;

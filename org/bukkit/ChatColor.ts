@@ -16,6 +16,9 @@ export default class ChatColor {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.ChatColor');
 	}
+	public static $isInstance(obj: any): obj is ChatColor {
+		return obj instanceof ChatColor.$javaClass;
+	}
 
 	public static get AQUA(): ChatColor {
 		return this.$javaClass.AQUA;

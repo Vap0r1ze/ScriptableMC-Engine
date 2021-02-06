@@ -14,6 +14,9 @@ export default class EntityEffect {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.EntityEffect');
 	}
+	public static $isInstance(obj: any): obj is EntityEffect {
+		return obj instanceof EntityEffect.$javaClass;
+	}
 
 	public static get ARMOR_STAND_HIT(): EntityEffect {
 		return this.$javaClass.ARMOR_STAND_HIT;

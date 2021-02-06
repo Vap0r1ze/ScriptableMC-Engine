@@ -16,8 +16,8 @@ export default interface ScriptablePluginEngine {
 	eval(source: string): any;
 	eval(source: any): any;
 	evalCommandSender(source: string, sender: CommandSender): any;
-	evalFile(filePath: string): any;
 	evalFile(scriptFile: File): any;
+	evalFile(filePath: string): any;
 	getBootstrapPlugin(): ScriptEngineMain;
 	getConfig(): ScriptEngineConfig;
 	getDebugEnabled(): boolean;
@@ -27,8 +27,8 @@ export default interface ScriptablePluginEngine {
 	getInventoryManager(): InventoryManager;
 	getLanguageFileExtension(): string;
 	getLanguageName(): string;
-	getPluginInstance(_name: string): any;
 	getPluginInstance(pluginContext: ScriptablePluginContext): any;
+	getPluginInstance(_name: string): any;
 	getPluginVersion(): Version;
 	getScriptablePlugins(): Array<ScriptablePluginContext>;
 	getStartupErrors(): Array<any>;

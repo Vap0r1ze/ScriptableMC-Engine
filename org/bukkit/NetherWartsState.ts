@@ -12,6 +12,9 @@ export default class NetherWartsState {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.NetherWartsState');
 	}
+	public static $isInstance(obj: any): obj is NetherWartsState {
+		return obj instanceof NetherWartsState.$javaClass;
+	}
 
 	public static get RIPE(): NetherWartsState {
 		return this.$javaClass.RIPE;

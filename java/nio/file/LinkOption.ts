@@ -14,6 +14,9 @@ export default class LinkOption {
 	public static get $javaClass(): any {
 		return Java.type('java.nio.file.LinkOption');
 	}
+	public static $isInstance(obj: any): obj is LinkOption {
+		return obj instanceof LinkOption.$javaClass;
+	}
 
 	public static get NOFOLLOW_LINKS(): LinkOption {
 		return this.$javaClass.NOFOLLOW_LINKS;

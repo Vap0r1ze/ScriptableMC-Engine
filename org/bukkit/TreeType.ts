@@ -12,6 +12,9 @@ export default class TreeType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.TreeType');
 	}
+	public static $isInstance(obj: any): obj is TreeType {
+		return obj instanceof TreeType.$javaClass;
+	}
 
 	public static get ACACIA(): TreeType {
 		return this.$javaClass.ACACIA;

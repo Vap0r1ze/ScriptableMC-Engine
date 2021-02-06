@@ -12,6 +12,9 @@ export default class Conversation$ConversationState {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.conversations.Conversation$ConversationState');
 	}
+	public static $isInstance(obj: any): obj is Conversation$ConversationState {
+		return obj instanceof Conversation$ConversationState.$javaClass;
+	}
 
 	public static get ABANDONED(): Conversation$ConversationState {
 		return this.$javaClass.ABANDONED;

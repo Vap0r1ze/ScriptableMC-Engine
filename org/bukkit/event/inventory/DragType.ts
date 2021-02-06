@@ -12,6 +12,9 @@ export default class DragType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.DragType');
 	}
+	public static $isInstance(obj: any): obj is DragType {
+		return obj instanceof DragType.$javaClass;
+	}
 
 	public static get EVEN(): DragType {
 		return this.$javaClass.EVEN;

@@ -12,6 +12,9 @@ export default class PlayerBedEnterEvent$BedEnterResult {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerBedEnterEvent$BedEnterResult');
 	}
+	public static $isInstance(obj: any): obj is PlayerBedEnterEvent$BedEnterResult {
+		return obj instanceof PlayerBedEnterEvent$BedEnterResult.$javaClass;
+	}
 
 	public static get NOT_POSSIBLE_HERE(): PlayerBedEnterEvent$BedEnterResult {
 		return this.$javaClass.NOT_POSSIBLE_HERE;

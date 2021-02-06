@@ -15,6 +15,9 @@ export default class Villager$Profession {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Villager$Profession');
 	}
+	public static $isInstance(obj: any): obj is Villager$Profession {
+		return obj instanceof Villager$Profession.$javaClass;
+	}
 
 	public static get ARMORER(): Villager$Profession {
 		return this.$javaClass.ARMORER;

@@ -12,6 +12,9 @@ export default class HangingBreakEvent$RemoveCause {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.hanging.HangingBreakEvent$RemoveCause');
 	}
+	public static $isInstance(obj: any): obj is HangingBreakEvent$RemoveCause {
+		return obj instanceof HangingBreakEvent$RemoveCause.$javaClass;
+	}
 
 	public static get DEFAULT(): HangingBreakEvent$RemoveCause {
 		return this.$javaClass.DEFAULT;

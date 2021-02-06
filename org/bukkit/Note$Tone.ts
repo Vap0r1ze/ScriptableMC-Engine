@@ -16,6 +16,9 @@ export default class Note$Tone {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Note$Tone');
 	}
+	public static $isInstance(obj: any): obj is Note$Tone {
+		return obj instanceof Note$Tone.$javaClass;
+	}
 
 	public static get A(): Note$Tone {
 		return this.$javaClass.A;

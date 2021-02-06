@@ -12,6 +12,9 @@ export default class NameTagVisibility {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.NameTagVisibility');
 	}
+	public static $isInstance(obj: any): obj is NameTagVisibility {
+		return obj instanceof NameTagVisibility.$javaClass;
+	}
 
 	public static get ALWAYS(): NameTagVisibility {
 		return this.$javaClass.ALWAYS;

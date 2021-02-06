@@ -12,6 +12,9 @@ export default class StructureBlock$Mode {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.StructureBlock$Mode');
 	}
+	public static $isInstance(obj: any): obj is StructureBlock$Mode {
+		return obj instanceof StructureBlock$Mode.$javaClass;
+	}
 
 	public static get CORNER(): StructureBlock$Mode {
 		return this.$javaClass.CORNER;

@@ -13,6 +13,9 @@ export default class CoalType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.CoalType');
 	}
+	public static $isInstance(obj: any): obj is CoalType {
+		return obj instanceof CoalType.$javaClass;
+	}
 
 	public static get CHARCOAL(): CoalType {
 		return this.$javaClass.CHARCOAL;

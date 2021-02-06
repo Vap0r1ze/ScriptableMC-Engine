@@ -15,6 +15,9 @@ export default class Biome {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.Biome');
 	}
+	public static $isInstance(obj: any): obj is Biome {
+		return obj instanceof Biome.$javaClass;
+	}
 
 	public static get BADLANDS(): Biome {
 		return this.$javaClass.BADLANDS;

@@ -12,6 +12,9 @@ export default class Parrot$Variant {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Parrot$Variant');
 	}
+	public static $isInstance(obj: any): obj is Parrot$Variant {
+		return obj instanceof Parrot$Variant.$javaClass;
+	}
 
 	public static get BLUE(): Parrot$Variant {
 		return this.$javaClass.BLUE;

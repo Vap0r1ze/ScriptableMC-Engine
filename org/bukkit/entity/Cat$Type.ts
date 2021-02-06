@@ -12,6 +12,9 @@ export default class Cat$Type {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Cat$Type');
 	}
+	public static $isInstance(obj: any): obj is Cat$Type {
+		return obj instanceof Cat$Type.$javaClass;
+	}
 
 	public static get ALL_BLACK(): Cat$Type {
 		return this.$javaClass.ALL_BLACK;

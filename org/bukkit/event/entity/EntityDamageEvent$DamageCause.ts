@@ -12,6 +12,9 @@ export default class EntityDamageEvent$DamageCause {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityDamageEvent$DamageCause');
 	}
+	public static $isInstance(obj: any): obj is EntityDamageEvent$DamageCause {
+		return obj instanceof EntityDamageEvent$DamageCause.$javaClass;
+	}
 
 	public static get BLOCK_EXPLOSION(): EntityDamageEvent$DamageCause {
 		return this.$javaClass.BLOCK_EXPLOSION;

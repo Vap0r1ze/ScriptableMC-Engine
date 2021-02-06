@@ -12,6 +12,9 @@ export default class Team$Option {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.scoreboard.Team$Option');
 	}
+	public static $isInstance(obj: any): obj is Team$Option {
+		return obj instanceof Team$Option.$javaClass;
+	}
 
 	public static get COLLISION_RULE(): Team$Option {
 		return this.$javaClass.COLLISION_RULE;

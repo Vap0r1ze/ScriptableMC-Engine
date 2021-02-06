@@ -12,6 +12,9 @@ export default class Horse$Variant {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Horse$Variant');
 	}
+	public static $isInstance(obj: any): obj is Horse$Variant {
+		return obj instanceof Horse$Variant.$javaClass;
+	}
 
 	public static get DONKEY(): Horse$Variant {
 		return this.$javaClass.DONKEY;

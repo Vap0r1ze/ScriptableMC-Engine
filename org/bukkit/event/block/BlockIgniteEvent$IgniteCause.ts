@@ -12,6 +12,9 @@ export default class BlockIgniteEvent$IgniteCause {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.block.BlockIgniteEvent$IgniteCause');
 	}
+	public static $isInstance(obj: any): obj is BlockIgniteEvent$IgniteCause {
+		return obj instanceof BlockIgniteEvent$IgniteCause.$javaClass;
+	}
 
 	public static get ARROW(): BlockIgniteEvent$IgniteCause {
 		return this.$javaClass.ARROW;

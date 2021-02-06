@@ -13,6 +13,9 @@ export default class MapCursor$Type {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.map.MapCursor$Type');
 	}
+	public static $isInstance(obj: any): obj is MapCursor$Type {
+		return obj instanceof MapCursor$Type.$javaClass;
+	}
 
 	public static get BANNER_BLACK(): MapCursor$Type {
 		return this.$javaClass.BANNER_BLACK;

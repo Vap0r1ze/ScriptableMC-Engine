@@ -12,6 +12,9 @@ export default class PortalCreateEvent$CreateReason {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.world.PortalCreateEvent$CreateReason');
 	}
+	public static $isInstance(obj: any): obj is PortalCreateEvent$CreateReason {
+		return obj instanceof PortalCreateEvent$CreateReason.$javaClass;
+	}
 
 	public static get END_PLATFORM(): PortalCreateEvent$CreateReason {
 		return this.$javaClass.END_PLATFORM;

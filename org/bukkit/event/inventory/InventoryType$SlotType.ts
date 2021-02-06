@@ -12,6 +12,9 @@ export default class InventoryType$SlotType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.InventoryType$SlotType');
 	}
+	public static $isInstance(obj: any): obj is InventoryType$SlotType {
+		return obj instanceof InventoryType$SlotType.$javaClass;
+	}
 
 	public static get ARMOR(): InventoryType$SlotType {
 		return this.$javaClass.ARMOR;

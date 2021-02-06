@@ -12,6 +12,9 @@ export default class Switch$Face {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.data.type.Switch$Face');
 	}
+	public static $isInstance(obj: any): obj is Switch$Face {
+		return obj instanceof Switch$Face.$javaClass;
+	}
 
 	public static get CEILING(): Switch$Face {
 		return this.$javaClass.CEILING;

@@ -18,6 +18,9 @@ export default class Art {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.Art');
 	}
+	public static $isInstance(obj: any): obj is Art {
+		return obj instanceof Art.$javaClass;
+	}
 
 	public static get ALBAN(): Art {
 		return this.$javaClass.ALBAN;

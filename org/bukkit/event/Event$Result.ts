@@ -12,6 +12,9 @@ export default class Event$Result {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.Event$Result');
 	}
+	public static $isInstance(obj: any): obj is Event$Result {
+		return obj instanceof Event$Result.$javaClass;
+	}
 
 	public static get ALLOW(): Event$Result {
 		return this.$javaClass.ALLOW;

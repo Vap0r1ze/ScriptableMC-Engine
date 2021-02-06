@@ -10,9 +10,9 @@ import Statistic from './Statistic.js'
 
 export default interface OfflinePlayer extends ServerOperator, AnimalTamer, ConfigurationSerializable {
 	decrementStatistic(arg0: Statistic): void;
-	decrementStatistic(arg0: Statistic, arg1: EntityType): void;
-	decrementStatistic(arg0: Statistic, arg1: Material): void;
 	decrementStatistic(arg0: Statistic, arg1: number): void;
+	decrementStatistic(arg0: Statistic, arg1: Material): void;
+	decrementStatistic(arg0: Statistic, arg1: EntityType): void;
 	decrementStatistic(arg0: Statistic, arg1: EntityType, arg2: number): void;
 	decrementStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
 	getBedSpawnLocation(): Location;
@@ -21,14 +21,14 @@ export default interface OfflinePlayer extends ServerOperator, AnimalTamer, Conf
 	getName(): string;
 	getPlayer(): Player;
 	getStatistic(arg0: Statistic): number;
-	getStatistic(arg0: Statistic, arg1: Material): number;
 	getStatistic(arg0: Statistic, arg1: EntityType): number;
+	getStatistic(arg0: Statistic, arg1: Material): number;
 	getUniqueId(): string;
 	hasPlayedBefore(): boolean;
 	incrementStatistic(arg0: Statistic): void;
 	incrementStatistic(arg0: Statistic, arg1: Material): void;
-	incrementStatistic(arg0: Statistic, arg1: EntityType): void;
 	incrementStatistic(arg0: Statistic, arg1: number): void;
+	incrementStatistic(arg0: Statistic, arg1: EntityType): void;
 	incrementStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
 	incrementStatistic(arg0: Statistic, arg1: EntityType, arg2: number): void;
 	isBanned(): boolean;
@@ -38,8 +38,8 @@ export default interface OfflinePlayer extends ServerOperator, AnimalTamer, Conf
 	serialize(): any;
 	setOp(arg0: boolean): void;
 	setStatistic(arg0: Statistic, arg1: number): void;
-	setStatistic(arg0: Statistic, arg1: EntityType, arg2: number): void;
 	setStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
+	setStatistic(arg0: Statistic, arg1: EntityType, arg2: number): void;
 	setWhitelisted(arg0: boolean): void;
 }
 

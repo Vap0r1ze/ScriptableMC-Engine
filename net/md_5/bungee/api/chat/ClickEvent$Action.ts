@@ -12,6 +12,9 @@ export default class ClickEvent$Action {
 	public static get $javaClass(): any {
 		return Java.type('net.md_5.bungee.api.chat.ClickEvent$Action');
 	}
+	public static $isInstance(obj: any): obj is ClickEvent$Action {
+		return obj instanceof ClickEvent$Action.$javaClass;
+	}
 
 	public static get CHANGE_PAGE(): ClickEvent$Action {
 		return this.$javaClass.CHANGE_PAGE;

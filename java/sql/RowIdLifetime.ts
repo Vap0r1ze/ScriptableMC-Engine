@@ -12,6 +12,9 @@ export default class RowIdLifetime {
 	public static get $javaClass(): any {
 		return Java.type('java.sql.RowIdLifetime');
 	}
+	public static $isInstance(obj: any): obj is RowIdLifetime {
+		return obj instanceof RowIdLifetime.$javaClass;
+	}
 
 	public static get ROWID_UNSUPPORTED(): RowIdLifetime {
 		return this.$javaClass.ROWID_UNSUPPORTED;

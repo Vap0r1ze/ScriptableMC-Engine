@@ -12,6 +12,9 @@ export default class TropicalFish$Pattern {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.TropicalFish$Pattern');
 	}
+	public static $isInstance(obj: any): obj is TropicalFish$Pattern {
+		return obj instanceof TropicalFish$Pattern.$javaClass;
+	}
 
 	public static get BETTY(): TropicalFish$Pattern {
 		return this.$javaClass.BETTY;

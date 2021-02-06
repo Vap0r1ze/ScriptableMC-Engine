@@ -13,6 +13,9 @@ export default class WorldType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.WorldType');
 	}
+	public static $isInstance(obj: any): obj is WorldType {
+		return obj instanceof WorldType.$javaClass;
+	}
 
 	public static get AMPLIFIED(): WorldType {
 		return this.$javaClass.AMPLIFIED;

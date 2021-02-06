@@ -12,6 +12,9 @@ export default class LazyMetadataValue$CacheStrategy {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.metadata.LazyMetadataValue$CacheStrategy');
 	}
+	public static $isInstance(obj: any): obj is LazyMetadataValue$CacheStrategy {
+		return obj instanceof LazyMetadataValue$CacheStrategy.$javaClass;
+	}
 
 	public static get CACHE_AFTER_FIRST_EVAL(): LazyMetadataValue$CacheStrategy {
 		return this.$javaClass.CACHE_AFTER_FIRST_EVAL;

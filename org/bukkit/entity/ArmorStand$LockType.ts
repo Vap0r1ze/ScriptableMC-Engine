@@ -12,6 +12,9 @@ export default class ArmorStand$LockType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.ArmorStand$LockType');
 	}
+	public static $isInstance(obj: any): obj is ArmorStand$LockType {
+		return obj instanceof ArmorStand$LockType.$javaClass;
+	}
 
 	public static get ADDING(): ArmorStand$LockType {
 		return this.$javaClass.ADDING;

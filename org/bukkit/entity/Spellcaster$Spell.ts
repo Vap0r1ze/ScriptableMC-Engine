@@ -12,6 +12,9 @@ export default class Spellcaster$Spell {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Spellcaster$Spell');
 	}
+	public static $isInstance(obj: any): obj is Spellcaster$Spell {
+		return obj instanceof Spellcaster$Spell.$javaClass;
+	}
 
 	public static get BLINDNESS(): Spellcaster$Spell {
 		return this.$javaClass.BLINDNESS;

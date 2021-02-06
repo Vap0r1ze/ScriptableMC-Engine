@@ -17,6 +17,9 @@ export default class ClickType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.inventory.ClickType');
 	}
+	public static $isInstance(obj: any): obj is ClickType {
+		return obj instanceof ClickType.$javaClass;
+	}
 
 	public static get CONTROL_DROP(): ClickType {
 		return this.$javaClass.CONTROL_DROP;

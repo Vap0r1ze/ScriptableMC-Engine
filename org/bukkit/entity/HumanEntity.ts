@@ -246,8 +246,8 @@ export default interface HumanEntity extends LivingEntity, AnimalTamer, Inventor
 	swingOffHand(): void;
 	teleport(arg0: Location): boolean;
 	teleport(arg0: Entity): boolean;
-	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
+	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	undiscoverRecipe(arg0: NamespacedKey): boolean;
 	undiscoverRecipes(arg0: Array<any>): number;
 	wakeup(arg0: boolean): void;

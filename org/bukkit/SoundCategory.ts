@@ -12,6 +12,9 @@ export default class SoundCategory {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.SoundCategory');
 	}
+	public static $isInstance(obj: any): obj is SoundCategory {
+		return obj instanceof SoundCategory.$javaClass;
+	}
 
 	public static get AMBIENT(): SoundCategory {
 		return this.$javaClass.AMBIENT;

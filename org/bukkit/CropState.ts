@@ -13,6 +13,9 @@ export default class CropState {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.CropState');
 	}
+	public static $isInstance(obj: any): obj is CropState {
+		return obj instanceof CropState.$javaClass;
+	}
 
 	public static get GERMINATED(): CropState {
 		return this.$javaClass.GERMINATED;

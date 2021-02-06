@@ -12,6 +12,9 @@ export default class UsageMode {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.structure.UsageMode');
 	}
+	public static $isInstance(obj: any): obj is UsageMode {
+		return obj instanceof UsageMode.$javaClass;
+	}
 
 	public static get CORNER(): UsageMode {
 		return this.$javaClass.CORNER;

@@ -12,6 +12,9 @@ export default class Pose {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.entity.Pose');
 	}
+	public static $isInstance(obj: any): obj is Pose {
+		return obj instanceof Pose.$javaClass;
+	}
 
 	public static get DYING(): Pose {
 		return this.$javaClass.DYING;

@@ -12,6 +12,9 @@ export default class EquipmentSlot {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.EquipmentSlot');
 	}
+	public static $isInstance(obj: any): obj is EquipmentSlot {
+		return obj instanceof EquipmentSlot.$javaClass;
+	}
 
 	public static get CHEST(): EquipmentSlot {
 		return this.$javaClass.CHEST;

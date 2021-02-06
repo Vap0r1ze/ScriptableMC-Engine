@@ -13,6 +13,9 @@ export default class NBTType {
 	public static get $javaClass(): any {
 		return Java.type('de.tr7zw.changeme.nbtapi.NBTType');
 	}
+	public static $isInstance(obj: any): obj is NBTType {
+		return obj instanceof NBTType.$javaClass;
+	}
 
 	public static get NBTTagByte(): NBTType {
 		return this.$javaClass.NBTTagByte;

@@ -12,6 +12,9 @@ export default class PlayerFishEvent$State {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.player.PlayerFishEvent$State');
 	}
+	public static $isInstance(obj: any): obj is PlayerFishEvent$State {
+		return obj instanceof PlayerFishEvent$State.$javaClass;
+	}
 
 	public static get BITE(): PlayerFishEvent$State {
 		return this.$javaClass.BITE;

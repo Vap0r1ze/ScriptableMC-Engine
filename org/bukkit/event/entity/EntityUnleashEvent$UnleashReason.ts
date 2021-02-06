@@ -12,6 +12,9 @@ export default class EntityUnleashEvent$UnleashReason {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.event.entity.EntityUnleashEvent$UnleashReason');
 	}
+	public static $isInstance(obj: any): obj is EntityUnleashEvent$UnleashReason {
+		return obj instanceof EntityUnleashEvent$UnleashReason.$javaClass;
+	}
 
 	public static get DISTANCE(): EntityUnleashEvent$UnleashReason {
 		return this.$javaClass.DISTANCE;

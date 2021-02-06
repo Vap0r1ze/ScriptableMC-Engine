@@ -12,6 +12,9 @@ export default class ItemFlag {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.inventory.ItemFlag');
 	}
+	public static $isInstance(obj: any): obj is ItemFlag {
+		return obj instanceof ItemFlag.$javaClass;
+	}
 
 	public static get HIDE_ATTRIBUTES(): ItemFlag {
 		return this.$javaClass.HIDE_ATTRIBUTES;

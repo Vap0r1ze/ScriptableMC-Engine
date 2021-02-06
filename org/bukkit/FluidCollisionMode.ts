@@ -12,6 +12,9 @@ export default class FluidCollisionMode {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.FluidCollisionMode');
 	}
+	public static $isInstance(obj: any): obj is FluidCollisionMode {
+		return obj instanceof FluidCollisionMode.$javaClass;
+	}
 
 	public static get ALWAYS(): FluidCollisionMode {
 		return this.$javaClass.ALWAYS;

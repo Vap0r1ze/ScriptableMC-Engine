@@ -13,6 +13,9 @@ export default class PatternType {
 	public static get $javaClass(): any {
 		return Java.type('org.bukkit.block.banner.PatternType');
 	}
+	public static $isInstance(obj: any): obj is PatternType {
+		return obj instanceof PatternType.$javaClass;
+	}
 
 	public static get BASE(): PatternType {
 		return this.$javaClass.BASE;
