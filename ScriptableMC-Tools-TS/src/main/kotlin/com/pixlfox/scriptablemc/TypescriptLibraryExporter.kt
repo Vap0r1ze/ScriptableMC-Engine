@@ -28,10 +28,12 @@ class TypescriptLibraryExporter(args: Array<String> = arrayOf()) {
         "java.nio",
         "khttp",
         "org.apache.commons.io",
-        "de.tr7zw"
+        "de.tr7zw",
+        "co.aikar.commands"
     )
     private val packageRedirects: MutableMap<String, String> = mutableMapOf(
-        "de.tr7zw.changeme" to "com.smc"
+        "de.tr7zw.changeme" to "com.smc",
+        "co.aikar.commands" to "com.pixlfox.scriptablemc.acf"
     )
 
     private val allowedPackagesRegex: Regex
