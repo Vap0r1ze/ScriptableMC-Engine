@@ -18,8 +18,8 @@ export default interface EnchantmentStorageMeta extends ItemMeta {
 	clone(): ItemMeta;
 	clone(): EnchantmentStorageMeta;
 	getAttributeModifiers(): Multimap;
-	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
 	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
+	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
 	getCustomModelData(): number;
 	getCustomTagContainer(): CustomItemTagContainer;
 	getDisplayName(): string;

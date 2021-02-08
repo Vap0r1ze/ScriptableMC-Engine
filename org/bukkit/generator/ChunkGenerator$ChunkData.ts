@@ -12,9 +12,9 @@ export default interface ChunkGenerator$ChunkData {
 	setBlock(arg0: number, arg1: number, arg2: number, arg3: BlockData): void;
 	setBlock(arg0: number, arg1: number, arg2: number, arg3: MaterialData): void;
 	setBlock(arg0: number, arg1: number, arg2: number, arg3: Material): void;
+	setRegion(arg0: number, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: MaterialData): void;
 	setRegion(arg0: number, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: BlockData): void;
 	setRegion(arg0: number, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: Material): void;
-	setRegion(arg0: number, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: MaterialData): void;
 }
 
 export default class ChunkGenerator$ChunkData {

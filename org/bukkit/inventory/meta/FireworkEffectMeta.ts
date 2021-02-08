@@ -18,8 +18,8 @@ export default interface FireworkEffectMeta extends ItemMeta {
 	clone(): ItemMeta;
 	clone(): FireworkEffectMeta;
 	getAttributeModifiers(): Multimap;
-	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
 	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
+	getAttributeModifiers(arg0: EquipmentSlot): Multimap;
 	getCustomModelData(): number;
 	getCustomTagContainer(): CustomItemTagContainer;
 	getDisplayName(): string;

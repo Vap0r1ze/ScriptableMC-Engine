@@ -6,6 +6,7 @@ import File from '../../../java/io/File.js'
 import FileConfiguration from '../../../org/bukkit/configuration/file/FileConfiguration.js'
 import InputStream from '../../../java/io/InputStream.js'
 import JavaPlugin from '../../../org/bukkit/plugin/java/JavaPlugin.js'
+import PaperCommandManager from './acf/PaperCommandManager.js'
 import PluginCommand from '../../../org/bukkit/command/PluginCommand.js'
 import PluginDescriptionFile from '../../../org/bukkit/plugin/PluginDescriptionFile.js'
 import PluginLoader from '../../../org/bukkit/plugin/PluginLoader.js'
@@ -16,7 +17,7 @@ import Version from '../../../com/smc/version/Version.js'
 export default interface ScriptEngineMain extends JavaPlugin {
 	getChatMessagePrefix(): string;
 	getCommand(_name: string): PluginCommand;
-	getCommandManager(): any;
+	getCommandManager(): PaperCommandManager;
 	getConfig(): FileConfiguration;
 	getDataFolder(): File;
 	getDefaultWorldGenerator(worldName: string, id: string): ChunkGenerator;
@@ -41,7 +42,7 @@ export default interface ScriptEngineMain extends JavaPlugin {
 	saveConfig(): void;
 	saveDefaultConfig(): void;
 	saveResource(resourcePath: string, replace: boolean): void;
-	setCommandManager(value: any): void;
+	setCommandManager(value: PaperCommandManager): void;
 	setNaggable(canNag: boolean): void;
 	setScriptEngine(value: ScriptablePluginEngine): void;
 	versionCheck(sender: CommandSender): void;

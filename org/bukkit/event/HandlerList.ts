@@ -8,8 +8,8 @@ export default interface HandlerList {
 	getRegisteredListeners(): Array<RegisteredListener>;
 	register(listener: RegisteredListener): void;
 	registerAll(listeners: Array<any>): void;
-	unregister(plugin: Plugin): void;
 	unregister(listener: RegisteredListener): void;
+	unregister(plugin: Plugin): void;
 	unregister(listener: Listener): void;
 }
 

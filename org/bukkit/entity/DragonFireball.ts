@@ -91,8 +91,8 @@ export default interface DragonFireball extends Fireball {
 	removeMetadata(arg0: string, arg1: Plugin): void;
 	removePassenger(arg0: Entity): boolean;
 	removeScoreboardTag(arg0: string): boolean;
-	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string, arg1: Array<string>): void;
 	sendMessage(arg0: string, arg1: string): void;
 	setBounce(arg0: boolean): void;
@@ -121,8 +121,8 @@ export default interface DragonFireball extends Fireball {
 	spigot(): Entity$Spigot;
 	teleport(arg0: Location): boolean;
 	teleport(arg0: Entity): boolean;
-	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
+	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }
 
 export default class DragonFireball {

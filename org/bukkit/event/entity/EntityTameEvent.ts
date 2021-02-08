@@ -8,8 +8,8 @@ import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import LivingEntity from '../../../../org/bukkit/entity/LivingEntity.js'
 
 export default interface EntityTameEvent extends EntityEvent, Cancellable {
-	getEntity(): LivingEntity;
 	getEntity(): Entity;
+	getEntity(): LivingEntity;
 	getEntityType(): EntityType;
 	getEventName(): string;
 	getHandlers(): HandlerList;

@@ -49,6 +49,7 @@ import org_bukkit_boss_BarColor from './org/bukkit/boss/BarColor.js'
 import org_bukkit_boss_BarFlag from './org/bukkit/boss/BarFlag.js'
 import org_bukkit_boss_BarStyle from './org/bukkit/boss/BarStyle.js'
 import org_bukkit_block_Barrel from './org/bukkit/block/Barrel.js'
+import com_pixlfox_scriptablemc_acf_BaseCommand from './com/pixlfox/scriptablemc/acf/BaseCommand.js'
 import net_md_5_bungee_api_chat_BaseComponent from './net/md_5/bungee/api/chat/BaseComponent.js'
 import khttp_structures_authorization_BasicAuthorization from './khttp/structures/authorization/BasicAuthorization.js'
 import java_nio_file_attribute_BasicFileAttributes from './java/nio/file/attribute/BasicFileAttributes.js'
@@ -133,8 +134,15 @@ import org_bukkit_block_data_type_BubbleColumn from './org/bukkit/block/data/typ
 import java_nio_Buffer from './java/nio/Buffer.js'
 import org_bukkit_Bukkit from './org/bukkit/Bukkit.js'
 import org_bukkit_command_defaults_BukkitCommand from './org/bukkit/command/defaults/BukkitCommand.js'
+import com_pixlfox_scriptablemc_acf_BukkitCommandCompletionContext from './com/pixlfox/scriptablemc/acf/BukkitCommandCompletionContext.js'
+import com_pixlfox_scriptablemc_acf_BukkitCommandExecutionContext from './com/pixlfox/scriptablemc/acf/BukkitCommandExecutionContext.js'
+import com_pixlfox_scriptablemc_acf_BukkitCommandIssuer from './com/pixlfox/scriptablemc/acf/BukkitCommandIssuer.js'
+import com_pixlfox_scriptablemc_acf_BukkitCommandManager from './com/pixlfox/scriptablemc/acf/BukkitCommandManager.js'
+import com_pixlfox_scriptablemc_acf_BukkitConditionContext from './com/pixlfox/scriptablemc/acf/BukkitConditionContext.js'
+import com_pixlfox_scriptablemc_acf_BukkitLocales from './com/pixlfox/scriptablemc/acf/BukkitLocales.js'
 import org_bukkit_util_io_BukkitObjectInputStream from './org/bukkit/util/io/BukkitObjectInputStream.js'
 import org_bukkit_util_io_BukkitObjectOutputStream from './org/bukkit/util/io/BukkitObjectOutputStream.js'
+import com_pixlfox_scriptablemc_acf_BukkitRootCommand from './com/pixlfox/scriptablemc/acf/BukkitRootCommand.js'
 import org_bukkit_scheduler_BukkitRunnable from './org/bukkit/scheduler/BukkitRunnable.js'
 import org_bukkit_scheduler_BukkitScheduler from './org/bukkit/scheduler/BukkitScheduler.js'
 import org_bukkit_scheduler_BukkitTask from './org/bukkit/scheduler/BukkitTask.js'
@@ -172,8 +180,8 @@ import java_nio_CharBuffer from './java/nio/CharBuffer.js'
 import java_nio_charset_Charset from './java/nio/charset/Charset.js'
 import java_nio_charset_CharsetDecoder from './java/nio/charset/CharsetDecoder.js'
 import java_nio_charset_CharsetEncoder from './java/nio/charset/CharsetEncoder.js'
-import org_bukkit_ChatColor from './org/bukkit/ChatColor.js'
 import net_md_5_bungee_api_ChatColor from './net/md_5/bungee/api/ChatColor.js'
+import org_bukkit_ChatColor from './org/bukkit/ChatColor.js'
 import net_md_5_bungee_api_ChatMessageType from './net/md_5/bungee/api/ChatMessageType.js'
 import org_bukkit_util_ChatPaginator from './org/bukkit/util/ChatPaginator.js'
 import org_bukkit_util_ChatPaginator$ChatPage from './org/bukkit/util/ChatPaginator$ChatPage.js'
@@ -212,11 +220,27 @@ import org_bukkit_command_Command from './org/bukkit/command/Command.js'
 import org_bukkit_material_Command from './org/bukkit/material/Command.js'
 import org_bukkit_block_CommandBlock from './org/bukkit/block/CommandBlock.js'
 import org_bukkit_block_data_type_CommandBlock from './org/bukkit/block/data/type/CommandBlock.js'
+import com_pixlfox_scriptablemc_acf_CommandCompletionContext from './com/pixlfox/scriptablemc/acf/CommandCompletionContext.js'
+import com_pixlfox_scriptablemc_acf_CommandCompletions from './com/pixlfox/scriptablemc/acf/CommandCompletions.js'
+import com_pixlfox_scriptablemc_acf_CommandCompletions$AsyncCommandCompletionHandler from './com/pixlfox/scriptablemc/acf/CommandCompletions$AsyncCommandCompletionHandler.js'
+import com_pixlfox_scriptablemc_acf_CommandCompletions$CommandCompletionHandler from './com/pixlfox/scriptablemc/acf/CommandCompletions$CommandCompletionHandler.js'
+import com_pixlfox_scriptablemc_acf_CommandConditions from './com/pixlfox/scriptablemc/acf/CommandConditions.js'
+import com_pixlfox_scriptablemc_acf_CommandConditions$Condition from './com/pixlfox/scriptablemc/acf/CommandConditions$Condition.js'
+import com_pixlfox_scriptablemc_acf_CommandConditions$ParameterCondition from './com/pixlfox/scriptablemc/acf/CommandConditions$ParameterCondition.js'
+import com_pixlfox_scriptablemc_acf_CommandContexts from './com/pixlfox/scriptablemc/acf/CommandContexts.js'
 import org_bukkit_command_CommandException from './org/bukkit/command/CommandException.js'
+import com_pixlfox_scriptablemc_acf_CommandExecutionContext from './com/pixlfox/scriptablemc/acf/CommandExecutionContext.js'
 import org_bukkit_command_CommandExecutor from './org/bukkit/command/CommandExecutor.js'
+import com_pixlfox_scriptablemc_acf_CommandHelp from './com/pixlfox/scriptablemc/acf/CommandHelp.js'
+import com_pixlfox_scriptablemc_acf_CommandHelpFormatter from './com/pixlfox/scriptablemc/acf/CommandHelpFormatter.js'
+import com_pixlfox_scriptablemc_acf_CommandIssuer from './com/pixlfox/scriptablemc/acf/CommandIssuer.js'
+import com_pixlfox_scriptablemc_acf_CommandManager from './com/pixlfox/scriptablemc/acf/CommandManager.js'
 import org_bukkit_command_CommandMap from './org/bukkit/command/CommandMap.js'
 import org_bukkit_entity_minecart_CommandMinecart from './org/bukkit/entity/minecart/CommandMinecart.js'
+import com_pixlfox_scriptablemc_acf_CommandOperationContext from './com/pixlfox/scriptablemc/acf/CommandOperationContext.js'
+import com_pixlfox_scriptablemc_acf_CommandParameter from './com/pixlfox/scriptablemc/acf/CommandParameter.js'
 import org_bukkit_util_permissions_CommandPermissions from './org/bukkit/util/permissions/CommandPermissions.js'
+import com_pixlfox_scriptablemc_acf_CommandReplacements from './com/pixlfox/scriptablemc/acf/CommandReplacements.js'
 import org_bukkit_command_CommandSender from './org/bukkit/command/CommandSender.js'
 import org_bukkit_command_CommandSender$Spigot from './org/bukkit/command/CommandSender$Spigot.js'
 import org_bukkit_material_Comparator from './org/bukkit/material/Comparator.js'
@@ -230,6 +254,7 @@ import org_bukkit_inventory_ComplexRecipe from './org/bukkit/inventory/ComplexRe
 import net_md_5_bungee_api_chat_ComponentBuilder from './net/md_5/bungee/api/chat/ComponentBuilder.js'
 import net_md_5_bungee_api_chat_ComponentBuilder$FormatRetention from './net/md_5/bungee/api/chat/ComponentBuilder$FormatRetention.js'
 import net_md_5_bungee_api_chat_ComponentBuilder$Joiner from './net/md_5/bungee/api/chat/ComponentBuilder$Joiner.js'
+import com_pixlfox_scriptablemc_acf_ConditionContext from './com/pixlfox/scriptablemc/acf/ConditionContext.js'
 import org_bukkit_block_Conduit from './org/bukkit/block/Conduit.js'
 import org_bukkit_configuration_Configuration from './org/bukkit/configuration/Configuration.js'
 import org_bukkit_configuration_ConfigurationOptions from './org/bukkit/configuration/ConfigurationOptions.js'
@@ -241,6 +266,7 @@ import org_bukkit_command_ConsoleCommandSender from './org/bukkit/command/Consol
 import org_bukkit_util_Consumer from './org/bukkit/util/Consumer.js'
 import org_bukkit_block_Container from './org/bukkit/block/Container.js'
 import net_md_5_bungee_api_chat_hover_content_Content from './net/md_5/bungee/api/chat/hover/content/Content.js'
+import com_pixlfox_scriptablemc_acf_contexts_ContextResolver from './com/pixlfox/scriptablemc/acf/contexts/ContextResolver.js'
 import org_bukkit_conversations_Conversable from './org/bukkit/conversations/Conversable.js'
 import org_bukkit_conversations_Conversation from './org/bukkit/conversations/Conversation.js'
 import org_bukkit_conversations_Conversation$ConversationState from './org/bukkit/conversations/Conversation$ConversationState.js'
@@ -398,6 +424,7 @@ import org_bukkit_entity_Evoker from './org/bukkit/entity/Evoker.js'
 import org_bukkit_entity_Evoker$Spell from './org/bukkit/entity/Evoker$Spell.js'
 import org_bukkit_entity_EvokerFangs from './org/bukkit/entity/EvokerFangs.js'
 import org_bukkit_conversations_ExactMatchConversationCanceller from './org/bukkit/conversations/ExactMatchConversationCanceller.js'
+import com_pixlfox_scriptablemc_acf_ExceptionHandler from './com/pixlfox/scriptablemc/acf/ExceptionHandler.js'
 import org_bukkit_event_entity_ExpBottleEvent from './org/bukkit/event/entity/ExpBottleEvent.js'
 import org_bukkit_entity_ExperienceOrb from './org/bukkit/entity/ExperienceOrb.js'
 import org_bukkit_event_entity_ExplosionPrimeEvent from './org/bukkit/event/entity/ExplosionPrimeEvent.js'
@@ -489,6 +516,7 @@ import org_bukkit_event_hanging_HangingEvent from './org/bukkit/event/hanging/Ha
 import org_bukkit_event_hanging_HangingPlaceEvent from './org/bukkit/event/hanging/HangingPlaceEvent.js'
 import org_bukkit_HeightMap from './org/bukkit/HeightMap.js'
 import org_bukkit_command_defaults_HelpCommand from './org/bukkit/command/defaults/HelpCommand.js'
+import com_pixlfox_scriptablemc_acf_HelpEntry from './com/pixlfox/scriptablemc/acf/HelpEntry.js'
 import org_bukkit_help_HelpMap from './org/bukkit/help/HelpMap.js'
 import org_bukkit_help_HelpTopic from './org/bukkit/help/HelpTopic.js'
 import org_bukkit_help_HelpTopicComparator from './org/bukkit/help/HelpTopicComparator.js'
@@ -544,6 +572,9 @@ import org_bukkit_event_inventory_InventoryType$SlotType from './org/bukkit/even
 import org_bukkit_inventory_InventoryView from './org/bukkit/inventory/InventoryView.js'
 import org_bukkit_inventory_InventoryView$Property from './org/bukkit/inventory/InventoryView$Property.js'
 import org_bukkit_entity_IronGolem from './org/bukkit/entity/IronGolem.js'
+import com_pixlfox_scriptablemc_acf_contexts_IssuerAwareContextResolver from './com/pixlfox/scriptablemc/acf/contexts/IssuerAwareContextResolver.js'
+import com_pixlfox_scriptablemc_acf_IssuerLocaleChangedCallback from './com/pixlfox/scriptablemc/acf/IssuerLocaleChangedCallback.js'
+import com_pixlfox_scriptablemc_acf_contexts_IssuerOnlyContextResolver from './com/pixlfox/scriptablemc/acf/contexts/IssuerOnlyContextResolver.js'
 import org_bukkit_entity_Item from './org/bukkit/entity/Item.js'
 import com_smc_utils_ItemBuilder from './com/smc/utils/ItemBuilder.js'
 import org_bukkit_event_entity_ItemDespawnEvent from './org/bukkit/event/entity/ItemDespawnEvent.js'
@@ -598,8 +629,10 @@ import org_bukkit_entity_Llama from './org/bukkit/entity/Llama.js'
 import org_bukkit_entity_Llama$Color from './org/bukkit/entity/Llama$Color.js'
 import org_bukkit_inventory_LlamaInventory from './org/bukkit/inventory/LlamaInventory.js'
 import org_bukkit_entity_LlamaSpit from './org/bukkit/entity/LlamaSpit.js'
+import com_pixlfox_scriptablemc_acf_Locales from './com/pixlfox/scriptablemc/acf/Locales.js'
 import org_bukkit_Location from './org/bukkit/Location.js'
 import org_bukkit_block_Lockable from './org/bukkit/block/Lockable.js'
+import com_pixlfox_scriptablemc_acf_LogLevel from './com/pixlfox/scriptablemc/acf/LogLevel.js'
 import java_nio_LongBuffer from './java/nio/LongBuffer.js'
 import org_bukkit_material_LongGrass from './org/bukkit/material/LongGrass.js'
 import org_bukkit_inventory_LoomInventory from './org/bukkit/inventory/LoomInventory.js'
@@ -607,6 +640,7 @@ import org_bukkit_loot_LootContext from './org/bukkit/loot/LootContext.js'
 import org_bukkit_loot_LootTable from './org/bukkit/loot/LootTable.js'
 import org_bukkit_loot_LootTables from './org/bukkit/loot/LootTables.js'
 import org_bukkit_loot_Lootable from './org/bukkit/loot/Lootable.js'
+import com_pixlfox_scriptablemc_acf_lib_timings_MCTiming from './com/pixlfox/scriptablemc/acf/lib/timings/MCTiming.js'
 import org_bukkit_entity_MagmaCube from './org/bukkit/entity/MagmaCube.js'
 import org_bukkit_inventory_MainHand from './org/bukkit/inventory/MainHand.js'
 import org_bukkit_conversations_ManuallyAbandonedConversationCanceller from './org/bukkit/conversations/ManuallyAbandonedConversationCanceller.js'
@@ -632,8 +666,10 @@ import org_bukkit_configuration_MemorySection from './org/bukkit/configuration/M
 import org_bukkit_inventory_Merchant from './org/bukkit/inventory/Merchant.js'
 import org_bukkit_inventory_MerchantInventory from './org/bukkit/inventory/MerchantInventory.js'
 import org_bukkit_inventory_MerchantRecipe from './org/bukkit/inventory/MerchantRecipe.js'
+import com_pixlfox_scriptablemc_acf_MessageFormatter from './com/pixlfox/scriptablemc/acf/MessageFormatter.js'
 import org_bukkit_conversations_MessagePrompt from './org/bukkit/conversations/MessagePrompt.js'
 import org_bukkit_plugin_messaging_MessageTooLargeException from './org/bukkit/plugin/messaging/MessageTooLargeException.js'
+import com_pixlfox_scriptablemc_acf_MessageType from './com/pixlfox/scriptablemc/acf/MessageType.js'
 import org_bukkit_plugin_messaging_Messenger from './org/bukkit/plugin/messaging/Messenger.js'
 import org_bukkit_metadata_MetadataConversionException from './org/bukkit/metadata/MetadataConversionException.js'
 import org_bukkit_metadata_MetadataEvaluationException from './org/bukkit/metadata/MetadataEvaluationException.js'
@@ -704,12 +740,14 @@ import org_bukkit_OfflinePlayer from './org/bukkit/OfflinePlayer.js'
 import java_nio_file_OpenOption from './java/nio/file/OpenOption.js'
 import org_bukkit_material_Openable from './org/bukkit/material/Openable.js'
 import org_bukkit_block_data_Openable from './org/bukkit/block/data/Openable.js'
+import com_pixlfox_scriptablemc_acf_contexts_OptionalContextResolver from './com/pixlfox/scriptablemc/acf/contexts/OptionalContextResolver.js'
 import org_bukkit_block_data_Orientable from './org/bukkit/block/data/Orientable.js'
 import java_io_OutputStream from './java/io/OutputStream.js'
 import fr_minuskube_inv_content_Pagination from './fr/minuskube/inv/content/Pagination.js'
 import org_bukkit_entity_Painting from './org/bukkit/entity/Painting.js'
 import org_bukkit_entity_Panda from './org/bukkit/entity/Panda.js'
 import org_bukkit_entity_Panda$Gene from './org/bukkit/entity/Panda$Gene.js'
+import com_pixlfox_scriptablemc_acf_PaperCommandManager from './com/pixlfox/scriptablemc/acf/PaperCommandManager.js'
 import java_sql_ParameterMetaData from './java/sql/ParameterMetaData.js'
 import khttp_structures_parameters_Parameters from './khttp/structures/parameters/Parameters.js'
 import org_bukkit_entity_Parrot from './org/bukkit/entity/Parrot.js'
@@ -895,6 +933,7 @@ import org_bukkit_block_data_type_RedstoneWire from './org/bukkit/block/data/typ
 import org_bukkit_block_data_type_RedstoneWire$Connection from './org/bukkit/block/data/type/RedstoneWire$Connection.js'
 import java_sql_Ref from './java/sql/Ref.js'
 import org_bukkit_conversations_RegexPrompt from './org/bukkit/conversations/RegexPrompt.js'
+import com_pixlfox_scriptablemc_acf_RegisteredCommand from './com/pixlfox/scriptablemc/acf/RegisteredCommand.js'
 import org_bukkit_plugin_RegisteredListener from './org/bukkit/plugin/RegisteredListener.js'
 import org_bukkit_plugin_RegisteredServiceProvider from './org/bukkit/plugin/RegisteredServiceProvider.js'
 import org_bukkit_Registry from './org/bukkit/Registry.js'
@@ -910,6 +949,7 @@ import khttp_responses_Response from './khttp/responses/Response.js'
 import java_sql_ResultSet from './java/sql/ResultSet.js'
 import java_sql_ResultSetMetaData from './java/sql/ResultSetMetaData.js'
 import org_bukkit_entity_minecart_RideableMinecart from './org/bukkit/entity/minecart/RideableMinecart.js'
+import com_pixlfox_scriptablemc_acf_RootCommand from './com/pixlfox/scriptablemc/acf/RootCommand.js'
 import org_bukkit_block_data_Rotatable from './org/bukkit/block/data/Rotatable.js'
 import org_bukkit_Rotation from './org/bukkit/Rotation.js'
 import java_sql_RowId from './java/sql/RowId.js'
@@ -954,6 +994,7 @@ import org_bukkit_plugin_ServicePriority from './org/bukkit/plugin/ServicePriori
 import org_bukkit_event_server_ServiceRegisterEvent from './org/bukkit/event/server/ServiceRegisterEvent.js'
 import org_bukkit_event_server_ServiceUnregisterEvent from './org/bukkit/event/server/ServiceUnregisterEvent.js'
 import org_bukkit_plugin_ServicesManager from './org/bukkit/plugin/ServicesManager.js'
+import com_google_common_collect_SetMultimap from './com/google/common/collect/SetMultimap.js'
 import org_bukkit_inventory_ShapedRecipe from './org/bukkit/inventory/ShapedRecipe.js'
 import org_bukkit_inventory_ShapelessRecipe from './org/bukkit/inventory/ShapelessRecipe.js'
 import org_bukkit_entity_Sheep from './org/bukkit/entity/Sheep.js'
@@ -1066,6 +1107,7 @@ import org_bukkit_event_world_TimeSkipEvent from './org/bukkit/event/world/TimeS
 import org_bukkit_event_world_TimeSkipEvent$SkipReason from './org/bukkit/event/world/TimeSkipEvent$SkipReason.js'
 import org_bukkit_plugin_TimedRegisteredListener from './org/bukkit/plugin/TimedRegisteredListener.js'
 import java_sql_Timestamp from './java/sql/Timestamp.js'
+import com_pixlfox_scriptablemc_acf_lib_timings_TimingManager from './com/pixlfox/scriptablemc/acf/lib/timings/TimingManager.js'
 import org_bukkit_command_defaults_TimingsCommand from './org/bukkit/command/defaults/TimingsCommand.js'
 import org_bukkit_entity_TippedArrow from './org/bukkit/entity/TippedArrow.js'
 import org_bukkit_material_Torch from './org/bukkit/material/Torch.js'
@@ -1947,6 +1989,43 @@ export namespace org.bukkit.boss {
 	export const DragonBattle$RespawnPhase = org_bukkit_boss_DragonBattle$RespawnPhase;
 	export const KeyedBossBar = org_bukkit_boss_KeyedBossBar;
 }
+export namespace com.pixlfox.scriptablemc.acf {
+	export const BaseCommand = com_pixlfox_scriptablemc_acf_BaseCommand;
+	export const BukkitCommandCompletionContext = com_pixlfox_scriptablemc_acf_BukkitCommandCompletionContext;
+	export const BukkitCommandExecutionContext = com_pixlfox_scriptablemc_acf_BukkitCommandExecutionContext;
+	export const BukkitCommandIssuer = com_pixlfox_scriptablemc_acf_BukkitCommandIssuer;
+	export const BukkitCommandManager = com_pixlfox_scriptablemc_acf_BukkitCommandManager;
+	export const BukkitConditionContext = com_pixlfox_scriptablemc_acf_BukkitConditionContext;
+	export const BukkitLocales = com_pixlfox_scriptablemc_acf_BukkitLocales;
+	export const BukkitRootCommand = com_pixlfox_scriptablemc_acf_BukkitRootCommand;
+	export const CommandCompletionContext = com_pixlfox_scriptablemc_acf_CommandCompletionContext;
+	export const CommandCompletions = com_pixlfox_scriptablemc_acf_CommandCompletions;
+	export const CommandCompletions$AsyncCommandCompletionHandler = com_pixlfox_scriptablemc_acf_CommandCompletions$AsyncCommandCompletionHandler;
+	export const CommandCompletions$CommandCompletionHandler = com_pixlfox_scriptablemc_acf_CommandCompletions$CommandCompletionHandler;
+	export const CommandConditions = com_pixlfox_scriptablemc_acf_CommandConditions;
+	export const CommandConditions$Condition = com_pixlfox_scriptablemc_acf_CommandConditions$Condition;
+	export const CommandConditions$ParameterCondition = com_pixlfox_scriptablemc_acf_CommandConditions$ParameterCondition;
+	export const CommandContexts = com_pixlfox_scriptablemc_acf_CommandContexts;
+	export const CommandExecutionContext = com_pixlfox_scriptablemc_acf_CommandExecutionContext;
+	export const CommandHelp = com_pixlfox_scriptablemc_acf_CommandHelp;
+	export const CommandHelpFormatter = com_pixlfox_scriptablemc_acf_CommandHelpFormatter;
+	export const CommandIssuer = com_pixlfox_scriptablemc_acf_CommandIssuer;
+	export const CommandManager = com_pixlfox_scriptablemc_acf_CommandManager;
+	export const CommandOperationContext = com_pixlfox_scriptablemc_acf_CommandOperationContext;
+	export const CommandParameter = com_pixlfox_scriptablemc_acf_CommandParameter;
+	export const CommandReplacements = com_pixlfox_scriptablemc_acf_CommandReplacements;
+	export const ConditionContext = com_pixlfox_scriptablemc_acf_ConditionContext;
+	export const ExceptionHandler = com_pixlfox_scriptablemc_acf_ExceptionHandler;
+	export const HelpEntry = com_pixlfox_scriptablemc_acf_HelpEntry;
+	export const IssuerLocaleChangedCallback = com_pixlfox_scriptablemc_acf_IssuerLocaleChangedCallback;
+	export const Locales = com_pixlfox_scriptablemc_acf_Locales;
+	export const LogLevel = com_pixlfox_scriptablemc_acf_LogLevel;
+	export const MessageFormatter = com_pixlfox_scriptablemc_acf_MessageFormatter;
+	export const MessageType = com_pixlfox_scriptablemc_acf_MessageType;
+	export const PaperCommandManager = com_pixlfox_scriptablemc_acf_PaperCommandManager;
+	export const RegisteredCommand = com_pixlfox_scriptablemc_acf_RegisteredCommand;
+	export const RootCommand = com_pixlfox_scriptablemc_acf_RootCommand;
+}
 export namespace net.md_5.bungee.api.chat {
 	export const BaseComponent = net_md_5_bungee_api_chat_BaseComponent;
 	export const ClickEvent = net_md_5_bungee_api_chat_ClickEvent;
@@ -2263,6 +2342,12 @@ export namespace org.bukkit.configuration.serialization {
 export namespace net.md_5.bungee.api.chat.hover.content {
 	export const Content = net_md_5_bungee_api_chat_hover_content_Content;
 }
+export namespace com.pixlfox.scriptablemc.acf.contexts {
+	export const ContextResolver = com_pixlfox_scriptablemc_acf_contexts_ContextResolver;
+	export const IssuerAwareContextResolver = com_pixlfox_scriptablemc_acf_contexts_IssuerAwareContextResolver;
+	export const IssuerOnlyContextResolver = com_pixlfox_scriptablemc_acf_contexts_IssuerOnlyContextResolver;
+	export const OptionalContextResolver = com_pixlfox_scriptablemc_acf_contexts_OptionalContextResolver;
+}
 export namespace khttp.structures.cookie {
 	export const Cookie = khttp_structures_cookie_Cookie;
 	export const CookieJar = khttp_structures_cookie_CookieJar;
@@ -2385,6 +2470,10 @@ export namespace org.bukkit.loot {
 	export const LootTables = org_bukkit_loot_LootTables;
 	export const Lootable = org_bukkit_loot_Lootable;
 }
+export namespace com.pixlfox.scriptablemc.acf.lib.timings {
+	export const MCTiming = com_pixlfox_scriptablemc_acf_lib_timings_MCTiming;
+	export const TimingManager = com_pixlfox_scriptablemc_acf_lib_timings_TimingManager;
+}
 export namespace org.bukkit.map {
 	export const MapCanvas = org_bukkit_map_MapCanvas;
 	export const MapCursor = org_bukkit_map_MapCursor;
@@ -2413,6 +2502,7 @@ export namespace org.bukkit.block.structure {
 export namespace com.google.common.collect {
 	export const Multimap = com_google_common_collect_Multimap;
 	export const Multiset = com_google_common_collect_Multiset;
+	export const SetMultimap = com_google_common_collect_SetMultimap;
 }
 export namespace org.bukkit.material.types {
 	export const MushroomBlockTexture = org_bukkit_material_types_MushroomBlockTexture;

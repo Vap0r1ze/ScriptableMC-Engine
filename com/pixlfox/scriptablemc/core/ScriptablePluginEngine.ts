@@ -13,11 +13,11 @@ export default interface ScriptablePluginEngine {
 	disablePlugin(pluginContext: ScriptablePluginContext): void;
 	enableAllPlugins(): void;
 	enablePlugin(pluginContext: ScriptablePluginContext): void;
-	eval(source: string): any;
 	eval(source: any): any;
+	eval(source: string): any;
 	evalCommandSender(source: string, sender: CommandSender): any;
-	evalFile(scriptFile: File): any;
 	evalFile(filePath: string): any;
+	evalFile(scriptFile: File): any;
 	getBootstrapPlugin(): ScriptEngineMain;
 	getConfig(): ScriptEngineConfig;
 	getDebugEnabled(): boolean;

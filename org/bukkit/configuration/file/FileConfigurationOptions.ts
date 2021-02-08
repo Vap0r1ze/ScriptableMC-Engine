@@ -7,8 +7,8 @@ import MemoryConfigurationOptions from '../../../../org/bukkit/configuration/Mem
 
 export default interface FileConfigurationOptions extends MemoryConfigurationOptions {
 	configuration(): MemoryConfiguration;
-	configuration(): FileConfiguration;
 	configuration(): Configuration;
+	configuration(): FileConfiguration;
 	copyDefaults(): boolean;
 	copyDefaults(value: boolean): ConfigurationOptions;
 	copyDefaults(value: boolean): MemoryConfigurationOptions;

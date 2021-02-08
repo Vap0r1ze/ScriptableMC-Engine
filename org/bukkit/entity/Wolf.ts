@@ -169,8 +169,8 @@ export default interface Wolf extends Tameable, Sittable {
 	removePotionEffect(arg0: PotionEffectType): void;
 	removeScoreboardTag(arg0: string): boolean;
 	resetMaxHealth(): void;
-	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string, arg1: Array<string>): void;
 	sendMessage(arg0: string, arg1: string): void;
 	setAI(arg0: boolean): void;
@@ -231,8 +231,8 @@ export default interface Wolf extends Tameable, Sittable {
 	swingOffHand(): void;
 	teleport(arg0: Location): boolean;
 	teleport(arg0: Entity): boolean;
-	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
+	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }
 
 export default class Wolf {

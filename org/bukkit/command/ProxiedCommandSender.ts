@@ -23,8 +23,8 @@ export default interface ProxiedCommandSender extends CommandSender {
 	isPermissionSet(arg0: Permission): boolean;
 	recalculatePermissions(): void;
 	removeAttachment(arg0: PermissionAttachment): void;
-	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string, arg1: Array<string>): void;
 	sendMessage(arg0: string, arg1: string): void;
 	setOp(arg0: boolean): void;

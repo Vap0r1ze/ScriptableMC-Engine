@@ -9,17 +9,17 @@ import YamlConfiguration from './YamlConfiguration.js'
 
 export default interface YamlConfigurationOptions extends FileConfigurationOptions {
 	configuration(): FileConfiguration;
-	configuration(): MemoryConfiguration;
-	configuration(): YamlConfiguration;
 	configuration(): Configuration;
+	configuration(): YamlConfiguration;
+	configuration(): MemoryConfiguration;
 	copyDefaults(): boolean;
-	copyDefaults(value: boolean): MemoryConfigurationOptions;
 	copyDefaults(value: boolean): ConfigurationOptions;
+	copyDefaults(value: boolean): MemoryConfigurationOptions;
 	copyDefaults(value: boolean): FileConfigurationOptions;
 	copyDefaults(value: boolean): YamlConfigurationOptions;
 	copyHeader(): boolean;
-	copyHeader(value: boolean): FileConfigurationOptions;
 	copyHeader(value: boolean): YamlConfigurationOptions;
+	copyHeader(value: boolean): FileConfigurationOptions;
 	header(): string;
 	header(value: string): FileConfigurationOptions;
 	header(value: string): YamlConfigurationOptions;

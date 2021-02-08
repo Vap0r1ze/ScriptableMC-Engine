@@ -26,8 +26,8 @@ export default class MapCursor {
 		return obj instanceof MapCursor.$javaClass;
 	}
 
-	constructor(x: number, y: number, direction: number, type: number, visible: boolean);
 	constructor(x: number, y: number, direction: number, type: MapCursor$Type, visible: boolean);
+	constructor(x: number, y: number, direction: number, type: number, visible: boolean);
 	constructor(x: number, y: number, direction: number, type: number, visible: boolean, caption: string);
 	constructor(x: number, y: number, direction: number, type: MapCursor$Type, visible: boolean, caption: string);
 	constructor(...args: any[]) {

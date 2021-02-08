@@ -9,8 +9,8 @@ import LivingEntity from '../../../../org/bukkit/entity/LivingEntity.js'
 export default interface EntityDeathEvent extends EntityEvent {
 	getDroppedExp(): number;
 	getDrops(): Array<ItemStack>;
-	getEntity(): Entity;
 	getEntity(): LivingEntity;
+	getEntity(): Entity;
 	getEntityType(): EntityType;
 	getEventName(): string;
 	getHandlers(): HandlerList;
