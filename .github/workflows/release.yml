@@ -32,16 +32,6 @@ jobs:
         cp ./ScriptableMC-JavaScript-Lib.zip ../../ScriptableMC-Engine-JS/src/main/resources/libraries.zip
     - name: Export lib-smc with gradle
       run: ./gradlew :ScriptableMC-Tools-TS:generateLibSMCRelease
-    - name: Compile lib-smc, create archive, and publish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: |
-        cd ./ScriptableMC-Tools-TS/lib-smc/
-        npm install
-        npm run compile
-        npm publish ./js --access public
-        zip -r ./Lib-SMC.zip ./*
     - name: Build JS Engine with Gradle
       run: ./gradlew :shadowJarAll
     - name: Upload JavaScript Engine Plugin Jar
