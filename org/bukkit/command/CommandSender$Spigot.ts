@@ -1,7 +1,11 @@
 declare var Java: any;
 import BaseComponent from '../../../net/md_5/bungee/api/chat/BaseComponent.js'
+import Class from '../../../java/lang/Class.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
+import UUID from '../../../java/util/UUID.js'
 
-export default interface CommandSender$Spigot {
+export default interface CommandSender$Spigot extends Object {
 	sendMessage(component: BaseComponent): void;
 	sendMessage(components: Array<BaseComponent>): void;
 	sendMessage(sender: string, component: BaseComponent): void;

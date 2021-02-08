@@ -2,12 +2,14 @@ declare var Java: any;
 import Block from './Block.js'
 import BlockData from './data/BlockData.js'
 import Chunk from '../../../org/bukkit/Chunk.js'
+import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from '../../../org/bukkit/material/MaterialData.js'
 import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
 import Metadatable from '../../../org/bukkit/metadata/Metadatable.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
+import String from '../../../java/lang/String.js'
 import World from '../../../org/bukkit/World.js'
 
 export default interface BlockState extends Metadatable {

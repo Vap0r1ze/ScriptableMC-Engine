@@ -1,11 +1,15 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
+import List from '../../../java/util/List.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from './MaterialData.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
 export default interface TexturedMaterial extends MaterialData {
 	clone(): MaterialData;
-	clone(): any;
+	clone(): Object;
 	clone(): TexturedMaterial;
 	getData(): number;
 	getItemType(): Material;

@@ -1,18 +1,21 @@
 declare var Java: any;
+import Map from '../../java/util/Map.js'
+import Object from '../../java/lang/Object.js'
 import ResultSet from './ResultSet.js'
+import String from '../../java/lang/String.js'
 
 export default interface _Array {
 	free(): void;
-	getArray(): any;
-	getArray(arg0: any): any;
-	getArray(arg0: number, arg1: number): any;
-	getArray(arg0: number, arg1: number, arg2: any): any;
+	getArray(): Object;
+	getArray(arg0: Map): Object;
+	getArray(arg0: number, arg1: number): Object;
+	getArray(arg0: number, arg1: number, arg2: Map): Object;
 	getBaseType(): number;
 	getBaseTypeName(): string;
 	getResultSet(): ResultSet;
-	getResultSet(arg0: any): ResultSet;
+	getResultSet(arg0: Map): ResultSet;
 	getResultSet(arg0: number, arg1: number): ResultSet;
-	getResultSet(arg0: number, arg1: number, arg2: any): ResultSet;
+	getResultSet(arg0: number, arg1: number, arg2: Map): ResultSet;
 }
 
 export default class _Array {

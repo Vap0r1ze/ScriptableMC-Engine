@@ -1,7 +1,8 @@
 declare var Java: any;
+import Object from '../../../../java/lang/Object.js'
 
 export default interface ByteProcessor {
-	getResult(): any;
+	getResult(): Object;
 	processBytes(arg0: Array<number>, arg1: number, arg2: number): boolean;
 }
 

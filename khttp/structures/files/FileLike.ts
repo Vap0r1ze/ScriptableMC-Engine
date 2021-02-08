@@ -1,8 +1,11 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import File from '../../../java/io/File.js'
+import Object from '../../../java/lang/Object.js'
 import Path from '../../../java/nio/file/Path.js'
+import String from '../../../java/lang/String.js'
 
-export default interface FileLike {
+export default interface FileLike extends Object {
 	getContents(): Array<number>;
 	getFieldName(): string;
 	getFileName(): string;

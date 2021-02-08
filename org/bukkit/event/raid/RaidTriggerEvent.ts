@@ -1,9 +1,12 @@
 declare var Java: any;
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
+import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import Raid from '../../../../org/bukkit/Raid.js'
 import RaidEvent from './RaidEvent.js'
+import String from '../../../../java/lang/String.js'
 import World from '../../../../org/bukkit/World.js'
 
 export default interface RaidTriggerEvent extends RaidEvent, Cancellable {

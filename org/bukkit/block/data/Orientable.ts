@@ -2,14 +2,17 @@ declare var Java: any;
 import Axis from '../../../../org/bukkit/Axis.js'
 import BlockData from './BlockData.js'
 import Material from '../../../../org/bukkit/Material.js'
+import Object from '../../../../java/lang/Object.js'
+import Set from '../../../../java/util/Set.js'
 import SoundGroup from '../../../../org/bukkit/SoundGroup.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface Orientable extends BlockData {
 	clone(): BlockData;
-	clone(): any;
+	clone(): Object;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
-	getAxes(): any;
+	getAxes(): Set;
 	getAxis(): Axis;
 	getMaterial(): Material;
 	getSoundGroup(): SoundGroup;

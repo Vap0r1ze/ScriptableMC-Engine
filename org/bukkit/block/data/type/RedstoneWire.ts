@@ -3,13 +3,16 @@ import AnaloguePowerable from '../../../../../org/bukkit/block/data/AnaloguePowe
 import BlockData from '../../../../../org/bukkit/block/data/BlockData.js'
 import BlockFace from '../../../../../org/bukkit/block/BlockFace.js'
 import Material from '../../../../../org/bukkit/Material.js'
+import Object from '../../../../../java/lang/Object.js'
 import RedstoneWire$Connection from './RedstoneWire$Connection.js'
+import Set from '../../../../../java/util/Set.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
+import String from '../../../../../java/lang/String.js'
 
 export default interface RedstoneWire extends AnaloguePowerable {
 	clone(): BlockData;
-	clone(): any;
-	getAllowedFaces(): any;
+	clone(): Object;
+	getAllowedFaces(): Set;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
 	getFace(arg0: BlockFace): RedstoneWire$Connection;

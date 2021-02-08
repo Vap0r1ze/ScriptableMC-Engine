@@ -1,11 +1,13 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Object from '../../../java/lang/Object.js'
 import PersistentDataAdapterContext from './PersistentDataAdapterContext.js'
 
 export default interface PersistentDataType {
-	fromPrimitive(arg0: any, arg1: PersistentDataAdapterContext): any;
-	getComplexType(): any;
-	getPrimitiveType(): any;
-	toPrimitive(arg0: any, arg1: PersistentDataAdapterContext): any;
+	fromPrimitive(arg0: Object, arg1: PersistentDataAdapterContext): Object;
+	getComplexType(): Class;
+	getPrimitiveType(): Class;
+	toPrimitive(arg0: Object, arg1: PersistentDataAdapterContext): Object;
 }
 
 export default class PersistentDataType {

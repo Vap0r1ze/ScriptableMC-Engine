@@ -1,11 +1,15 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import CommandHelp from './CommandHelp.js'
 import CommandIssuer from './CommandIssuer.js'
 import CommandManager from './CommandManager.js'
 import CommandParameter from './CommandParameter.js'
 import HelpEntry from './HelpEntry.js'
+import List from '../../../../java/util/List.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface CommandHelpFormatter {
+export default interface CommandHelpFormatter extends Object {
 	getEntryFormatReplacements(help: CommandHelp, entry: HelpEntry): Array<string>;
 	getHeaderFooterFormatReplacements(help: CommandHelp): Array<string>;
 	getParameterFormatReplacements(help: CommandHelp, param: CommandParameter, entry: HelpEntry): Array<string>;

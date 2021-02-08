@@ -1,6 +1,9 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
-export default interface EulerAngle {
+export default interface EulerAngle extends Object {
 	add(x: number, y: number, z: number): EulerAngle;
 	getX(): number;
 	getY(): number;

@@ -1,8 +1,12 @@
 declare var Java: any;
 import BukkitTask from './BukkitTask.js'
+import Class from '../../../java/lang/Class.js'
+import Object from '../../../java/lang/Object.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
+import Runnable from '../../../java/lang/Runnable.js'
+import String from '../../../java/lang/String.js'
 
-export default interface BukkitRunnable {
+export default interface BukkitRunnable extends Object, Runnable {
 	cancel(): void;
 	getTaskId(): number;
 	isCancelled(): boolean;

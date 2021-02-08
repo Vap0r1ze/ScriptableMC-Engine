@@ -1,11 +1,14 @@
 declare var Java: any;
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import Material from '../../../../org/bukkit/Material.js'
+import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PlayerEvent from './PlayerEvent.js'
 import Statistic from '../../../../org/bukkit/Statistic.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface PlayerStatisticIncrementEvent extends PlayerEvent, Cancellable {
 	getEntityType(): EntityType;

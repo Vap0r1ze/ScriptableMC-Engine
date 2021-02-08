@@ -1,4 +1,5 @@
 declare var Java: any;
+import List from '../../../java/util/List.js'
 import Watchable from './Watchable.js'
 
 export default interface WatchKey {

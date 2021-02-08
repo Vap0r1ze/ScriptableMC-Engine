@@ -1,5 +1,6 @@
 declare var Java: any;
 import AttributeView from './AttributeView.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface FileStoreAttributeView extends AttributeView {
 	name(): string;

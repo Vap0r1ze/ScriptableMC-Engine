@@ -1,14 +1,19 @@
 declare var Java: any;
 import Block from '../../../org/bukkit/block/Block.js'
+import Class from '../../../java/lang/Class.js'
+import Consumer from '../../../java/util/function/Consumer.js'
+import Iterator from '../../../java/util/Iterator.js'
 import LivingEntity from '../../../org/bukkit/entity/LivingEntity.js'
 import Location from '../../../org/bukkit/Location.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 import Vector from './Vector.js'
 import World from '../../../org/bukkit/World.js'
 
-export default interface BlockIterator {
-	forEachRemaining(arg0: any): void;
+export default interface BlockIterator extends Object, Iterator {
+	forEachRemaining(arg0: Consumer): void;
 	hasNext(): boolean;
-	next(): any;
+	next(): Object;
 	next(): Block;
 	remove(): void;
 }

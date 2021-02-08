@@ -1,6 +1,8 @@
 declare var Java: any;
+import List from '../../../java/util/List.js'
 import MetadataValue from './MetadataValue.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
+import String from '../../../java/lang/String.js'
 
 export default interface Metadatable {
 	getMetadata(arg0: string): Array<MetadataValue>;

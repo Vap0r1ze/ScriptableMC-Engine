@@ -1,14 +1,17 @@
 declare var Java: any;
 import AbstractHorse from '../../../../org/bukkit/entity/AbstractHorse.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EntityEvent from './EntityEvent.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface HorseJumpEvent extends EntityEvent, Cancellable {
-	getEntity(): AbstractHorse;
 	getEntity(): Entity;
+	getEntity(): AbstractHorse;
 	getEntityType(): EntityType;
 	getEventName(): string;
 	getHandlers(): HandlerList;

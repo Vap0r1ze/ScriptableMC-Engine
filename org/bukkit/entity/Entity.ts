@@ -7,6 +7,7 @@ import Entity$Spigot from './Entity$Spigot.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityType from './EntityType.js'
+import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
 import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
 import Metadatable from '../../../org/bukkit/metadata/Metadatable.js'
@@ -20,6 +21,9 @@ import PlayerTeleportEvent$TeleportCause from '../../../org/bukkit/event/player/
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
 import Pose from './Pose.js'
 import Server from '../../../org/bukkit/Server.js'
+import Set from '../../../java/util/Set.js'
+import String from '../../../java/lang/String.js'
+import UUID from '../../../java/util/UUID.js'
 import Vector from '../../../org/bukkit/util/Vector.js'
 import World from '../../../org/bukkit/World.js'
 
@@ -33,7 +37,7 @@ export default interface Entity extends Metadatable, CommandSender, Nameable, Pe
 	eject(): boolean;
 	getBoundingBox(): BoundingBox;
 	getCustomName(): string;
-	getEffectivePermissions(): any;
+	getEffectivePermissions(): Set;
 	getEntityId(): number;
 	getFacing(): BlockFace;
 	getFallDistance(): number;
@@ -52,7 +56,7 @@ export default interface Entity extends Metadatable, CommandSender, Nameable, Pe
 	getPistonMoveReaction(): PistonMoveReaction;
 	getPortalCooldown(): number;
 	getPose(): Pose;
-	getScoreboardTags(): any;
+	getScoreboardTags(): Set;
 	getServer(): Server;
 	getTicksLived(): number;
 	getType(): EntityType;
@@ -63,8 +67,8 @@ export default interface Entity extends Metadatable, CommandSender, Nameable, Pe
 	getWorld(): World;
 	hasGravity(): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: string): boolean;
 	hasPermission(arg0: Permission): boolean;
+	hasPermission(arg0: string): boolean;
 	isCustomNameVisible(): boolean;
 	isDead(): boolean;
 	isEmpty(): boolean;
@@ -87,8 +91,8 @@ export default interface Entity extends Metadatable, CommandSender, Nameable, Pe
 	removeMetadata(arg0: string, arg1: Plugin): void;
 	removePassenger(arg0: Entity): boolean;
 	removeScoreboardTag(arg0: string): boolean;
-	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string, arg1: Array<string>): void;
 	sendMessage(arg0: string, arg1: string): void;
 	setCustomName(arg0: string): void;
@@ -110,10 +114,10 @@ export default interface Entity extends Metadatable, CommandSender, Nameable, Pe
 	setVelocity(arg0: Vector): void;
 	spigot(): CommandSender$Spigot;
 	spigot(): Entity$Spigot;
-	teleport(arg0: Location): boolean;
 	teleport(arg0: Entity): boolean;
-	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
+	teleport(arg0: Location): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
+	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }
 
 export default class Entity {

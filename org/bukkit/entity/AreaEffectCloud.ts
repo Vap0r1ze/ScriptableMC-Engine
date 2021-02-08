@@ -8,8 +8,10 @@ import Entity$Spigot from './Entity$Spigot.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityType from './EntityType.js'
+import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
 import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
+import Object from '../../../java/lang/Object.js'
 import Particle from '../../../org/bukkit/Particle.js'
 import Permission from '../../../org/bukkit/permissions/Permission.js'
 import PermissionAttachment from '../../../org/bukkit/permissions/PermissionAttachment.js'
@@ -23,6 +25,9 @@ import PotionEffect from '../../../org/bukkit/potion/PotionEffect.js'
 import PotionEffectType from '../../../org/bukkit/potion/PotionEffectType.js'
 import ProjectileSource from '../../../org/bukkit/projectiles/ProjectileSource.js'
 import Server from '../../../org/bukkit/Server.js'
+import Set from '../../../java/util/Set.js'
+import String from '../../../java/lang/String.js'
+import UUID from '../../../java/util/UUID.js'
 import Vector from '../../../org/bukkit/util/Vector.js'
 import World from '../../../org/bukkit/World.js'
 
@@ -43,7 +48,7 @@ export default interface AreaEffectCloud extends Entity {
 	getCustomName(): string;
 	getDuration(): number;
 	getDurationOnUse(): number;
-	getEffectivePermissions(): any;
+	getEffectivePermissions(): Set;
 	getEntityId(): number;
 	getFacing(): BlockFace;
 	getFallDistance(): number;
@@ -67,7 +72,7 @@ export default interface AreaEffectCloud extends Entity {
 	getRadiusOnUse(): number;
 	getRadiusPerTick(): number;
 	getReapplicationDelay(): number;
-	getScoreboardTags(): any;
+	getScoreboardTags(): Set;
 	getServer(): Server;
 	getSource(): ProjectileSource;
 	getTicksLived(): number;
@@ -82,8 +87,8 @@ export default interface AreaEffectCloud extends Entity {
 	hasCustomEffects(): boolean;
 	hasGravity(): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: string): boolean;
 	hasPermission(arg0: Permission): boolean;
+	hasPermission(arg0: string): boolean;
 	isCustomNameVisible(): boolean;
 	isDead(): boolean;
 	isEmpty(): boolean;
@@ -107,8 +112,8 @@ export default interface AreaEffectCloud extends Entity {
 	removeMetadata(arg0: string, arg1: Plugin): void;
 	removePassenger(arg0: Entity): boolean;
 	removeScoreboardTag(arg0: string): boolean;
-	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string, arg1: Array<string>): void;
 	sendMessage(arg0: string, arg1: string): void;
 	setBasePotionData(arg0: PotionData): void;
@@ -126,7 +131,7 @@ export default interface AreaEffectCloud extends Entity {
 	setMetadata(arg0: string, arg1: MetadataValue): void;
 	setOp(arg0: boolean): void;
 	setParticle(arg0: Particle): void;
-	setParticle(arg0: Particle, arg1: any): void;
+	setParticle(arg0: Particle, arg1: Object): void;
 	setPassenger(arg0: Entity): boolean;
 	setPersistent(arg0: boolean): void;
 	setPortalCooldown(arg0: number): void;
@@ -142,10 +147,10 @@ export default interface AreaEffectCloud extends Entity {
 	setWaitTime(arg0: number): void;
 	spigot(): CommandSender$Spigot;
 	spigot(): Entity$Spigot;
-	teleport(arg0: Location): boolean;
 	teleport(arg0: Entity): boolean;
-	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
+	teleport(arg0: Location): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
+	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }
 
 export default class AreaEffectCloud {

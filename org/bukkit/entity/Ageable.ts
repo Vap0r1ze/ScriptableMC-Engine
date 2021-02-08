@@ -4,6 +4,8 @@ import AttributeInstance from '../../../org/bukkit/attribute/AttributeInstance.j
 import Block from '../../../org/bukkit/block/Block.js'
 import BlockFace from '../../../org/bukkit/block/BlockFace.js'
 import BoundingBox from '../../../org/bukkit/util/BoundingBox.js'
+import Class from '../../../java/lang/Class.js'
+import Collection from '../../../java/util/Collection.js'
 import CommandSender$Spigot from '../../../org/bukkit/command/CommandSender$Spigot.js'
 import Creature from './Creature.js'
 import Entity from './Entity.js'
@@ -14,11 +16,13 @@ import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityEquipment from '../../../org/bukkit/inventory/EntityEquipment.js'
 import EntityType from './EntityType.js'
 import FluidCollisionMode from '../../../org/bukkit/FluidCollisionMode.js'
+import List from '../../../java/util/List.js'
 import LivingEntity from './LivingEntity.js'
 import Location from '../../../org/bukkit/Location.js'
 import LootTable from '../../../org/bukkit/loot/LootTable.js'
 import MemoryKey from './memory/MemoryKey.js'
 import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
+import Object from '../../../java/lang/Object.js'
 import Permission from '../../../org/bukkit/permissions/Permission.js'
 import PermissionAttachment from '../../../org/bukkit/permissions/PermissionAttachment.js'
 import PersistentDataContainer from '../../../org/bukkit/persistence/PersistentDataContainer.js'
@@ -32,6 +36,9 @@ import PotionEffectType from '../../../org/bukkit/potion/PotionEffectType.js'
 import Projectile from './Projectile.js'
 import RayTraceResult from '../../../org/bukkit/util/RayTraceResult.js'
 import Server from '../../../org/bukkit/Server.js'
+import Set from '../../../java/util/Set.js'
+import String from '../../../java/lang/String.js'
+import UUID from '../../../java/util/UUID.js'
 import Vector from '../../../org/bukkit/util/Vector.js'
 import World from '../../../org/bukkit/World.js'
 
@@ -60,9 +67,9 @@ export default interface Ageable extends Creature {
 	getBoundingBox(): BoundingBox;
 	getCanPickupItems(): boolean;
 	getCategory(): EntityCategory;
-	getCollidableExemptions(): any;
+	getCollidableExemptions(): Set;
 	getCustomName(): string;
-	getEffectivePermissions(): any;
+	getEffectivePermissions(): Set;
 	getEntityId(): number;
 	getEquipment(): EntityEquipment;
 	getEyeHeight(): number;
@@ -76,9 +83,9 @@ export default interface Ageable extends Creature {
 	getKiller(): Player;
 	getLastDamage(): number;
 	getLastDamageCause(): EntityDamageEvent;
-	getLastTwoTargetBlocks(arg0: any, arg1: number): Array<Block>;
+	getLastTwoTargetBlocks(arg0: Set, arg1: number): Array<Block>;
 	getLeashHolder(): Entity;
-	getLineOfSight(arg0: any, arg1: number): Array<Block>;
+	getLineOfSight(arg0: Set, arg1: number): Array<Block>;
 	getLocation(): Location;
 	getLocation(arg0: Location): Location;
 	getLootTable(): LootTable;
@@ -86,7 +93,7 @@ export default interface Ageable extends Creature {
 	getMaxHealth(): number;
 	getMaximumAir(): number;
 	getMaximumNoDamageTicks(): number;
-	getMemory(arg0: MemoryKey): any;
+	getMemory(arg0: MemoryKey): Object;
 	getMetadata(arg0: string): Array<MetadataValue>;
 	getName(): string;
 	getNearbyEntities(arg0: number, arg1: number, arg2: number): Array<Entity>;
@@ -100,11 +107,11 @@ export default interface Ageable extends Creature {
 	getPotionEffect(arg0: PotionEffectType): PotionEffect;
 	getRemainingAir(): number;
 	getRemoveWhenFarAway(): boolean;
-	getScoreboardTags(): any;
+	getScoreboardTags(): Set;
 	getSeed(): number;
 	getServer(): Server;
 	getTarget(): LivingEntity;
-	getTargetBlock(arg0: any, arg1: number): Block;
+	getTargetBlock(arg0: Set, arg1: number): Block;
 	getTargetBlockExact(arg0: number): Block;
 	getTargetBlockExact(arg0: number, arg1: FluidCollisionMode): Block;
 	getTicksLived(): number;
@@ -118,8 +125,8 @@ export default interface Ageable extends Creature {
 	hasGravity(): boolean;
 	hasLineOfSight(arg0: Entity): boolean;
 	hasMetadata(arg0: string): boolean;
-	hasPermission(arg0: string): boolean;
 	hasPermission(arg0: Permission): boolean;
+	hasPermission(arg0: string): boolean;
 	hasPotionEffect(arg0: PotionEffectType): boolean;
 	isAdult(): boolean;
 	isAware(): boolean;
@@ -144,8 +151,8 @@ export default interface Ageable extends Creature {
 	isSleeping(): boolean;
 	isSwimming(): boolean;
 	isValid(): boolean;
-	launchProjectile(arg0: any): Projectile;
-	launchProjectile(arg0: any, arg1: Vector): Projectile;
+	launchProjectile(arg0: Class): Projectile;
+	launchProjectile(arg0: Class, arg1: Vector): Projectile;
 	leaveVehicle(): boolean;
 	playEffect(arg0: EntityEffect): void;
 	rayTraceBlocks(arg0: number): RayTraceResult;
@@ -158,8 +165,8 @@ export default interface Ageable extends Creature {
 	removePotionEffect(arg0: PotionEffectType): void;
 	removeScoreboardTag(arg0: string): boolean;
 	resetMaxHealth(): void;
-	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string): void;
+	sendMessage(arg0: Array<string>): void;
 	sendMessage(arg0: string, arg1: Array<string>): void;
 	sendMessage(arg0: string, arg1: string): void;
 	setAI(arg0: boolean): void;
@@ -191,7 +198,7 @@ export default interface Ageable extends Creature {
 	setMaxHealth(arg0: number): void;
 	setMaximumAir(arg0: number): void;
 	setMaximumNoDamageTicks(arg0: number): void;
-	setMemory(arg0: MemoryKey, arg1: any): void;
+	setMemory(arg0: MemoryKey, arg1: Object): void;
 	setMetadata(arg0: string, arg1: MetadataValue): void;
 	setNoDamageTicks(arg0: number): void;
 	setOp(arg0: boolean): void;
@@ -211,10 +218,10 @@ export default interface Ageable extends Creature {
 	spigot(): Entity$Spigot;
 	swingMainHand(): void;
 	swingOffHand(): void;
-	teleport(arg0: Location): boolean;
 	teleport(arg0: Entity): boolean;
-	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
+	teleport(arg0: Location): boolean;
 	teleport(arg0: Location, arg1: PlayerTeleportEvent$TeleportCause): boolean;
+	teleport(arg0: Entity, arg1: PlayerTeleportEvent$TeleportCause): boolean;
 }
 
 export default class Ageable {

@@ -1,16 +1,20 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import ItemStack from './ItemStack.js'
 import Keyed from '../../../org/bukkit/Keyed.js'
+import Map from '../../../java/util/Map.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from '../../../org/bukkit/material/MaterialData.js'
 import NamespacedKey from '../../../org/bukkit/NamespacedKey.js'
+import Object from '../../../java/lang/Object.js'
 import Recipe from './Recipe.js'
 import RecipeChoice from './RecipeChoice.js'
+import String from '../../../java/lang/String.js'
 
-export default interface ShapedRecipe extends Recipe, Keyed {
-	getChoiceMap(): any;
+export default interface ShapedRecipe extends Object, Recipe, Keyed {
+	getChoiceMap(): Map;
 	getGroup(): string;
-	getIngredientMap(): any;
+	getIngredientMap(): Map;
 	getKey(): NamespacedKey;
 	getResult(): ItemStack;
 	getShape(): Array<string>;

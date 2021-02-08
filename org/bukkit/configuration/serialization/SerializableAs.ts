@@ -1,7 +1,11 @@
 declare var Java: any;
+import Annotation from '../../../../java/lang/annotation/Annotation.js'
+import Class from '../../../../java/lang/Class.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface SerializableAs {
-	annotationType(): any;
+export default interface SerializableAs extends Annotation {
+	annotationType(): Class;
 	value(): string;
 }
 

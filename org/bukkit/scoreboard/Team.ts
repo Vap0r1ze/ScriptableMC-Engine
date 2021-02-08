@@ -3,6 +3,8 @@ import ChatColor from '../../../org/bukkit/ChatColor.js'
 import NameTagVisibility from './NameTagVisibility.js'
 import OfflinePlayer from '../../../org/bukkit/OfflinePlayer.js'
 import Scoreboard from './Scoreboard.js'
+import Set from '../../../java/util/Set.js'
+import String from '../../../java/lang/String.js'
 import Team$Option from './Team$Option.js'
 import Team$OptionStatus from './Team$OptionStatus.js'
 
@@ -13,11 +15,11 @@ export default interface Team {
 	canSeeFriendlyInvisibles(): boolean;
 	getColor(): ChatColor;
 	getDisplayName(): string;
-	getEntries(): any;
+	getEntries(): Set;
 	getName(): string;
 	getNameTagVisibility(): NameTagVisibility;
 	getOption(arg0: Team$Option): Team$OptionStatus;
-	getPlayers(): any;
+	getPlayers(): Set;
 	getPrefix(): string;
 	getScoreboard(): Scoreboard;
 	getSize(): number;

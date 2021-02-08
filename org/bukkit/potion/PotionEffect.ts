@@ -1,10 +1,14 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import Color from '../../../org/bukkit/Color.js'
 import ConfigurationSerializable from '../../../org/bukkit/configuration/serialization/ConfigurationSerializable.js'
 import LivingEntity from '../../../org/bukkit/entity/LivingEntity.js'
+import Map from '../../../java/util/Map.js'
+import Object from '../../../java/lang/Object.js'
 import PotionEffectType from './PotionEffectType.js'
+import String from '../../../java/lang/String.js'
 
-export default interface PotionEffect extends ConfigurationSerializable {
+export default interface PotionEffect extends Object, ConfigurationSerializable {
 	apply(entity: LivingEntity): boolean;
 	getAmplifier(): number;
 	getColor(): Color;
@@ -13,7 +17,7 @@ export default interface PotionEffect extends ConfigurationSerializable {
 	hasIcon(): boolean;
 	hasParticles(): boolean;
 	isAmbient(): boolean;
-	serialize(): any;
+	serialize(): Map;
 }
 
 export default class PotionEffect {
@@ -24,7 +28,7 @@ export default class PotionEffect {
 		return obj instanceof PotionEffect.$javaClass;
 	}
 
-	constructor(map: any);
+	constructor(map: Map);
 	constructor(type: PotionEffectType, duration: number, amplifier: number);
 	constructor(type: PotionEffectType, duration: number, amplifier: number, ambient: boolean);
 	constructor(type: PotionEffectType, duration: number, amplifier: number, ambient: boolean, particles: boolean);

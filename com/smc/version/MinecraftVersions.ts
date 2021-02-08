@@ -1,4 +1,8 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Object from '../../../java/lang/Object.js'
+import Pattern from '../../../java/util/regex/Pattern.js'
+import String from '../../../java/lang/String.js'
 import Version from './Version.js'
 
 export default class MinecraftVersions {
@@ -65,7 +69,7 @@ export default class MinecraftVersions {
 		return MinecraftVersions.$javaClass.v1_9;
 	}
 
-	public static access$getVERSION_PATTERN$cp(): any;
+	public static access$getVERSION_PATTERN$cp(): Pattern;
 	public static access$getVERSION_PATTERN$cp(...args: any[]): any {
 		return MinecraftVersions.$javaClass.access$getVERSION_PATTERN$cp(...args);
 	}

@@ -1,10 +1,15 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import CommandIssuer from './CommandIssuer.js'
 import CommandManager from './CommandManager.js'
 import HelpEntry from './HelpEntry.js'
+import List from '../../../../java/util/List.js'
+import Object from '../../../../java/lang/Object.js'
 import RootCommand from './RootCommand.js'
+import Set from '../../../../java/util/Set.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface CommandHelp {
+export default interface CommandHelp extends Object {
 	getCommandName(): string;
 	getCommandPrefix(): string;
 	getHelpEntries(): Array<HelpEntry>;
@@ -13,7 +18,7 @@ export default interface CommandHelp {
 	getPage(): number;
 	getPerPage(): number;
 	getSearch(): Array<string>;
-	getSelectedEntry(): any;
+	getSelectedEntry(): Set;
 	getTotalPages(): number;
 	getTotalResults(): number;
 	isLastPage(): boolean;

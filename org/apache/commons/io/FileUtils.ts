@@ -1,13 +1,23 @@
 declare var Java: any;
+import CharSequence from '../../../../java/lang/CharSequence.js'
 import Charset from '../../../../java/nio/charset/Charset.js'
+import Checksum from '../../../../java/util/zip/Checksum.js'
+import Class from '../../../../java/lang/Class.js'
+import Collection from '../../../../java/util/Collection.js'
+import Date from '../../../../java/util/Date.js'
 import File from '../../../../java/io/File.js'
 import FileFilter from '../../../../java/io/FileFilter.js'
 import FileInputStream from '../../../../java/io/FileInputStream.js'
 import FileOutputStream from '../../../../java/io/FileOutputStream.js'
 import IOFileFilter from './filefilter/IOFileFilter.js'
 import InputStream from '../../../../java/io/InputStream.js'
+import Iterable from '../../../../java/lang/Iterable.js'
+import Iterator from '../../../../java/util/Iterator.js'
 import LineIterator from './LineIterator.js'
+import List from '../../../../java/util/List.js'
+import Object from '../../../../java/lang/Object.js'
 import OutputStream from '../../../../java/io/OutputStream.js'
+import String from '../../../../java/lang/String.js'
 
 export default class FileUtils {
 	public static get $javaClass(): any {
@@ -88,7 +98,7 @@ export default class FileUtils {
 		return FileUtils.$javaClass.byteCountToDisplaySize(...args);
 	}
 
-	public static checksum(file: File, checksum: any): any;
+	public static checksum(file: File, checksum: Checksum): Checksum;
 	public static checksum(...args: any[]): any {
 		return FileUtils.$javaClass.checksum(...args);
 	}
@@ -150,7 +160,7 @@ export default class FileUtils {
 	}
 
 	public static copyToDirectory(src: File, destDir: File): void;
-	public static copyToDirectory(srcs: any, destDir: File): void;
+	public static copyToDirectory(srcs: Iterable, destDir: File): void;
 	public static copyToDirectory(...args: any[]): any {
 		return FileUtils.$javaClass.copyToDirectory(...args);
 	}
@@ -228,14 +238,14 @@ export default class FileUtils {
 	}
 
 	public static isFileNewer(file: File, timeMillis: number): boolean;
-	public static isFileNewer(file: File, date: any): boolean;
+	public static isFileNewer(file: File, date: Date): boolean;
 	public static isFileNewer(file: File, reference: File): boolean;
 	public static isFileNewer(...args: any[]): any {
 		return FileUtils.$javaClass.isFileNewer(...args);
 	}
 
 	public static isFileOlder(file: File, timeMillis: number): boolean;
-	public static isFileOlder(file: File, date: any): boolean;
+	public static isFileOlder(file: File, date: Date): boolean;
 	public static isFileOlder(file: File, reference: File): boolean;
 	public static isFileOlder(...args: any[]): any {
 		return FileUtils.$javaClass.isFileOlder(...args);
@@ -246,13 +256,13 @@ export default class FileUtils {
 		return FileUtils.$javaClass.isSymlink(...args);
 	}
 
-	public static iterateFiles(directory: File, extensions: Array<string>, recursive: boolean): any;
-	public static iterateFiles(directory: File, fileFilter: IOFileFilter, dirFilter: IOFileFilter): any;
+	public static iterateFiles(directory: File, extensions: Array<string>, recursive: boolean): Iterator;
+	public static iterateFiles(directory: File, fileFilter: IOFileFilter, dirFilter: IOFileFilter): Iterator;
 	public static iterateFiles(...args: any[]): any {
 		return FileUtils.$javaClass.iterateFiles(...args);
 	}
 
-	public static iterateFilesAndDirs(directory: File, fileFilter: IOFileFilter, dirFilter: IOFileFilter): any;
+	public static iterateFilesAndDirs(directory: File, fileFilter: IOFileFilter, dirFilter: IOFileFilter): Iterator;
 	public static iterateFilesAndDirs(...args: any[]): any {
 		return FileUtils.$javaClass.iterateFilesAndDirs(...args);
 	}
@@ -374,12 +384,12 @@ export default class FileUtils {
 		return FileUtils.$javaClass.waitFor(...args);
 	}
 
-	public static write(file: File, data: any): void;
-	public static write(file: File, data: any, encoding: string): void;
-	public static write(file: File, data: any, encoding: Charset): void;
-	public static write(file: File, data: any, append: boolean): void;
-	public static write(file: File, data: any, encoding: string, append: boolean): void;
-	public static write(file: File, data: any, encoding: Charset, append: boolean): void;
+	public static write(file: File, data: CharSequence): void;
+	public static write(file: File, data: CharSequence, encoding: string): void;
+	public static write(file: File, data: CharSequence, encoding: Charset): void;
+	public static write(file: File, data: CharSequence, append: boolean): void;
+	public static write(file: File, data: CharSequence, encoding: string, append: boolean): void;
+	public static write(file: File, data: CharSequence, encoding: Charset, append: boolean): void;
 	public static write(...args: any[]): any {
 		return FileUtils.$javaClass.write(...args);
 	}

@@ -1,4 +1,5 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import ClickType from './ClickType.js'
 import CraftingInventory from '../../../../org/bukkit/inventory/CraftingInventory.js'
 import Event$Result from '../../../../org/bukkit/event/Event$Result.js'
@@ -10,7 +11,10 @@ import InventoryClickEvent from './InventoryClickEvent.js'
 import InventoryType$SlotType from './InventoryType$SlotType.js'
 import InventoryView from '../../../../org/bukkit/inventory/InventoryView.js'
 import ItemStack from '../../../../org/bukkit/inventory/ItemStack.js'
+import List from '../../../../java/util/List.js'
+import Object from '../../../../java/lang/Object.js'
 import Recipe from '../../../../org/bukkit/inventory/Recipe.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface CraftItemEvent extends InventoryClickEvent {
 	getAction(): InventoryAction;

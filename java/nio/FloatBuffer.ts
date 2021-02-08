@@ -1,16 +1,20 @@
 declare var Java: any;
 import Buffer from './Buffer.js'
 import ByteOrder from './ByteOrder.js'
+import Class from '../../java/lang/Class.js'
+import Comparable from '../../java/lang/Comparable.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 
-export default interface FloatBuffer extends Buffer {
+export default interface FloatBuffer extends Buffer, Comparable {
 	array(): Array<number>;
-	array(): any;
+	array(): Object;
 	arrayOffset(): number;
 	asReadOnlyBuffer(): FloatBuffer;
 	capacity(): number;
 	clear(): Buffer;
 	compact(): FloatBuffer;
-	compareTo(arg0: any): number;
+	compareTo(arg0: Object): number;
 	compareTo(arg0: FloatBuffer): number;
 	duplicate(): FloatBuffer;
 	flip(): Buffer;

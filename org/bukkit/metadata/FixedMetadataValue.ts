@@ -1,6 +1,9 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import LazyMetadataValue from './LazyMetadataValue.js'
+import Object from '../../../java/lang/Object.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
+import String from '../../../java/lang/String.js'
 
 export default interface FixedMetadataValue extends LazyMetadataValue {
 	asBoolean(): boolean;
@@ -13,7 +16,7 @@ export default interface FixedMetadataValue extends LazyMetadataValue {
 	asString(): string;
 	getOwningPlugin(): Plugin;
 	invalidate(): void;
-	value(): any;
+	value(): Object;
 }
 
 export default class FixedMetadataValue {
@@ -24,7 +27,7 @@ export default class FixedMetadataValue {
 		return obj instanceof FixedMetadataValue.$javaClass;
 	}
 
-	constructor(owningPlugin: Plugin, value: any);
+	constructor(owningPlugin: Plugin, value: Object);
 	constructor(...args: any[]) {
 		return new FixedMetadataValue.$javaClass(...args);
 	}

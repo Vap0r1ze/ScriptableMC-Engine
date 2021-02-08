@@ -1,6 +1,9 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import MapFont from './MapFont.js'
 import MapFont$CharacterSprite from './MapFont$CharacterSprite.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
 export default interface MinecraftFont extends MapFont {
 	getChar(ch: string): MapFont$CharacterSprite;

@@ -1,11 +1,14 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface MessageFormatter {
+export default interface MessageFormatter extends Object {
 	format(message: string): string;
 	format(index: number, message: string): string;
-	getColor(index: number): any;
-	getDefaultColor(): any;
-	setColor(index: number, color: any): any;
+	getColor(index: number): Object;
+	getDefaultColor(): Object;
+	setColor(index: number, color: Object): Object;
 }
 
 export default class MessageFormatter {
@@ -16,7 +19,7 @@ export default class MessageFormatter {
 		return obj instanceof MessageFormatter.$javaClass;
 	}
 
-	constructor(colors: Array<any>);
+	constructor(colors: Array<Object>);
 	constructor(...args: any[]) {
 		return new MessageFormatter.$javaClass(...args);
 	}

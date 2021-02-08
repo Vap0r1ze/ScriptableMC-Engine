@@ -1,7 +1,10 @@
 declare var Java: any;
+import AutoCloseable from '../../java/lang/AutoCloseable.js'
 import DataInput from './DataInput.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 
-export default interface ObjectInput extends DataInput {
+export default interface ObjectInput extends DataInput, AutoCloseable {
 	available(): number;
 	close(): void;
 	read(): number;
@@ -17,7 +20,7 @@ export default interface ObjectInput extends DataInput {
 	readInt(): number;
 	readLine(): string;
 	readLong(): number;
-	readObject(): any;
+	readObject(): Object;
 	readShort(): number;
 	readUTF(): string;
 	readUnsignedByte(): number;

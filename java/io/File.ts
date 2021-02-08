@@ -1,14 +1,18 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
+import Comparable from '../../java/lang/Comparable.js'
 import FileFilter from './FileFilter.js'
 import FilenameFilter from './FilenameFilter.js'
+import Object from '../../java/lang/Object.js'
 import Path from '../../java/nio/file/Path.js'
 import Serializable from './Serializable.js'
+import String from '../../java/lang/String.js'
 
-export default interface File extends Serializable {
+export default interface File extends Object, Serializable, Comparable {
 	canExecute(): boolean;
 	canRead(): boolean;
 	canWrite(): boolean;
-	compareTo(arg0: any): number;
+	compareTo(arg0: Object): number;
 	compareTo(arg0: File): number;
 	createNewFile(): boolean;
 	delete(): boolean;

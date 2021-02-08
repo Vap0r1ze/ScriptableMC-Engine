@@ -1,21 +1,26 @@
 declare var Java: any;
 import ChunkGenerator from '../../../org/bukkit/generator/ChunkGenerator.js'
+import Class from '../../../java/lang/Class.js'
 import Command from '../../../org/bukkit/command/Command.js'
 import CommandSender from '../../../org/bukkit/command/CommandSender.js'
 import File from '../../../java/io/File.js'
 import FileConfiguration from '../../../org/bukkit/configuration/file/FileConfiguration.js'
 import InputStream from '../../../java/io/InputStream.js'
+import List from '../../../java/util/List.js'
+import Logger from '../../../java/util/logging/Logger.js'
+import Object from '../../../java/lang/Object.js'
 import Plugin from './Plugin.js'
 import PluginDescriptionFile from './PluginDescriptionFile.js'
 import PluginLoader from './PluginLoader.js'
 import Server from '../../../org/bukkit/Server.js'
+import String from '../../../java/lang/String.js'
 
-export default interface PluginBase extends Plugin {
+export default interface PluginBase extends Object, Plugin {
 	getConfig(): FileConfiguration;
 	getDataFolder(): File;
 	getDefaultWorldGenerator(arg0: string, arg1: string): ChunkGenerator;
 	getDescription(): PluginDescriptionFile;
-	getLogger(): any;
+	getLogger(): Logger;
 	getName(): string;
 	getPluginLoader(): PluginLoader;
 	getResource(arg0: string): InputStream;

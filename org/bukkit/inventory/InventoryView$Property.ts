@@ -1,10 +1,14 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Enum from '../../../java/lang/Enum.js'
 import InventoryType from '../../../org/bukkit/event/inventory/InventoryType.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
-export default interface InventoryView$Property {
-	compareTo(arg0: any): number;
-	compareTo(arg0: any): number;
-	getDeclaringClass(): any;
+export default interface InventoryView$Property extends Enum {
+	compareTo(arg0: Object): number;
+	compareTo(arg0: Enum): number;
+	getDeclaringClass(): Class;
 	getId(): number;
 	getType(): InventoryType;
 	name(): string;

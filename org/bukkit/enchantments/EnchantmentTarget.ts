@@ -1,11 +1,15 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Enum from '../../../java/lang/Enum.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../org/bukkit/Material.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
-export default interface EnchantmentTarget {
-	compareTo(arg0: any): number;
-	compareTo(arg0: any): number;
-	getDeclaringClass(): any;
+export default interface EnchantmentTarget extends Enum {
+	compareTo(arg0: Object): number;
+	compareTo(arg0: Enum): number;
+	getDeclaringClass(): Class;
 	includes(item: ItemStack): boolean;
 	includes(arg0: Material): boolean;
 	name(): string;

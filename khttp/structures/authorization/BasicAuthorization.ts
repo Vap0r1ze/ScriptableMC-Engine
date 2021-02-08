@@ -1,7 +1,10 @@
 declare var Java: any;
 import Authorization from './Authorization.js'
+import Class from '../../../java/lang/Class.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
-export default interface BasicAuthorization extends Authorization {
+export default interface BasicAuthorization extends Object, Authorization {
 	component1(): string;
 	component2(): string;
 	copy(user: string, password: string): BasicAuthorization;
@@ -23,7 +26,7 @@ export default class BasicAuthorization {
 		return new BasicAuthorization.$javaClass(...args);
 	}
 
-	public static copy$default(arg0: BasicAuthorization, arg1: string, arg2: string, arg3: number, arg4: any): BasicAuthorization;
+	public static copy$default(arg0: BasicAuthorization, arg1: string, arg2: string, arg3: number, arg4: Object): BasicAuthorization;
 	public static copy$default(...args: any[]): any {
 		return BasicAuthorization.$javaClass.copy$default(...args);
 	}

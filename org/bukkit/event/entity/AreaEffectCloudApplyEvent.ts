@@ -1,11 +1,15 @@
 declare var Java: any;
 import AreaEffectCloud from '../../../../org/bukkit/entity/AreaEffectCloud.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EntityEvent from './EntityEvent.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
+import List from '../../../../java/util/List.js'
 import LivingEntity from '../../../../org/bukkit/entity/LivingEntity.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface AreaEffectCloudApplyEvent extends EntityEvent, Cancellable {
 	getAffectedEntities(): Array<LivingEntity>;

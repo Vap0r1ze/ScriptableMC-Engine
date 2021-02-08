@@ -1,4 +1,7 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 import Wrapper from './Wrapper.js'
 
 export default interface ResultSetMetaData extends Wrapper {
@@ -22,9 +25,9 @@ export default interface ResultSetMetaData extends Wrapper {
 	isReadOnly(arg0: number): boolean;
 	isSearchable(arg0: number): boolean;
 	isSigned(arg0: number): boolean;
-	isWrapperFor(arg0: any): boolean;
+	isWrapperFor(arg0: Class): boolean;
 	isWritable(arg0: number): boolean;
-	unwrap(arg0: any): any;
+	unwrap(arg0: Class): Object;
 }
 
 export default class ResultSetMetaData {

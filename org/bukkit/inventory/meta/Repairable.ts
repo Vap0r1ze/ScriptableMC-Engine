@@ -1,8 +1,9 @@
 declare var Java: any;
+import Object from '../../../../java/lang/Object.js'
 
 export default interface Repairable {
 	clone(): Repairable;
-	clone(): any;
+	clone(): Object;
 	getRepairCost(): number;
 	hasRepairCost(): boolean;
 	setRepairCost(arg0: number): void;

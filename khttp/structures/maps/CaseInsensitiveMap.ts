@@ -1,41 +1,50 @@
 declare var Java: any;
+import BiConsumer from '../../../java/util/function/BiConsumer.js'
+import BiFunction from '../../../java/util/function/BiFunction.js'
+import Class from '../../../java/lang/Class.js'
+import Collection from '../../../java/util/Collection.js'
+import Function from '../../../java/util/function/Function.js'
+import Map from '../../../java/util/Map.js'
+import Object from '../../../java/lang/Object.js'
+import Set from '../../../java/util/Set.js'
+import String from '../../../java/lang/String.js'
 
-export default interface CaseInsensitiveMap {
+export default interface CaseInsensitiveMap extends Object, Map {
 	clear(): void;
-	compute(arg0: any, arg1: any): any;
-	compute(arg0: string, arg1: any): any;
-	computeIfAbsent(arg0: string, arg1: any): any;
-	computeIfAbsent(arg0: any, arg1: any): any;
-	computeIfPresent(arg0: any, arg1: any): any;
-	computeIfPresent(arg0: string, arg1: any): any;
-	containsKey(arg0: any): boolean;
+	compute(arg0: Object, arg1: BiFunction): Object;
+	compute(arg0: string, arg1: BiFunction): Object;
+	computeIfAbsent(arg0: string, arg1: Function): Object;
+	computeIfAbsent(arg0: Object, arg1: Function): Object;
+	computeIfPresent(arg0: Object, arg1: BiFunction): Object;
+	computeIfPresent(arg0: string, arg1: BiFunction): Object;
+	containsKey(arg0: Object): boolean;
 	containsKey(key: string): boolean;
-	containsValue(value: any): boolean;
-	entrySet(): any;
-	forEach(arg0: any): void;
-	get(key: string): any;
-	get(arg0: any): any;
-	getEntries(): any;
-	getKeys(): any;
-	getOrDefault(arg0: any, arg1: any): any;
+	containsValue(value: Object): boolean;
+	entrySet(): Set;
+	forEach(arg0: BiConsumer): void;
+	get(key: string): Object;
+	get(arg0: Object): Object;
+	getEntries(): Set;
+	getKeys(): Set;
+	getOrDefault(arg0: Object, arg1: Object): Object;
 	getSize(): number;
 	getValues(): Array<any>;
 	isEmpty(): boolean;
-	keySet(): any;
-	merge(arg0: string, arg1: any, arg2: any): any;
-	merge(arg0: any, arg1: any, arg2: any): any;
-	put(arg0: any, arg1: any): any;
-	put(arg0: string, arg1: any): any;
-	putAll(arg0: any): void;
-	putIfAbsent(arg0: any, arg1: any): any;
-	putIfAbsent(arg0: string, arg1: any): any;
-	remove(arg0: any): any;
-	remove(arg0: any, arg1: any): boolean;
-	replace(arg0: string, arg1: any): any;
-	replace(arg0: any, arg1: any): any;
-	replace(arg0: string, arg1: any, arg2: any): boolean;
-	replace(arg0: any, arg1: any, arg2: any): boolean;
-	replaceAll(arg0: any): void;
+	keySet(): Set;
+	merge(arg0: string, arg1: Object, arg2: BiFunction): Object;
+	merge(arg0: Object, arg1: Object, arg2: BiFunction): Object;
+	put(arg0: Object, arg1: Object): Object;
+	put(arg0: string, arg1: Object): Object;
+	putAll(arg0: Map): void;
+	putIfAbsent(arg0: Object, arg1: Object): Object;
+	putIfAbsent(arg0: string, arg1: Object): Object;
+	remove(arg0: Object): Object;
+	remove(arg0: Object, arg1: Object): boolean;
+	replace(arg0: string, arg1: Object): Object;
+	replace(arg0: Object, arg1: Object): Object;
+	replace(arg0: string, arg1: Object, arg2: Object): boolean;
+	replace(arg0: Object, arg1: Object, arg2: Object): boolean;
+	replaceAll(arg0: BiFunction): void;
 	size(): number;
 	values(): Array<any>;
 }
@@ -48,7 +57,7 @@ export default class CaseInsensitiveMap {
 		return obj instanceof CaseInsensitiveMap.$javaClass;
 	}
 
-	constructor(map: any);
+	constructor(map: Map);
 	constructor(...args: any[]) {
 		return new CaseInsensitiveMap.$javaClass(...args);
 	}

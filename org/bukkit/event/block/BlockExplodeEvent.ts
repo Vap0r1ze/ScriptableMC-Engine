@@ -2,7 +2,11 @@ declare var Java: any;
 import Block from '../../../../org/bukkit/block/Block.js'
 import BlockEvent from './BlockEvent.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
+import List from '../../../../java/util/List.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface BlockExplodeEvent extends BlockEvent, Cancellable {
 	blockList(): Array<Block>;

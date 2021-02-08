@@ -1,15 +1,18 @@
 declare var Java: any;
 import Attachable from './Attachable.js'
 import BlockFace from '../../../org/bukkit/block/BlockFace.js'
+import Class from '../../../java/lang/Class.js'
 import CocoaPlant$CocoaPlantSize from './CocoaPlant$CocoaPlantSize.js'
 import Directional from './Directional.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from './MaterialData.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
 export default interface CocoaPlant extends MaterialData, Directional, Attachable {
 	clone(): MaterialData;
-	clone(): any;
+	clone(): Object;
 	clone(): CocoaPlant;
 	getAttachedFace(): BlockFace;
 	getData(): number;

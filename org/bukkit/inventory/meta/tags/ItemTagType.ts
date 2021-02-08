@@ -1,11 +1,13 @@
 declare var Java: any;
+import Class from '../../../../../java/lang/Class.js'
 import ItemTagAdapterContext from './ItemTagAdapterContext.js'
+import Object from '../../../../../java/lang/Object.js'
 
 export default interface ItemTagType {
-	fromPrimitive(arg0: any, arg1: ItemTagAdapterContext): any;
-	getComplexType(): any;
-	getPrimitiveType(): any;
-	toPrimitive(arg0: any, arg1: ItemTagAdapterContext): any;
+	fromPrimitive(arg0: Object, arg1: ItemTagAdapterContext): Object;
+	getComplexType(): Class;
+	getPrimitiveType(): Class;
+	toPrimitive(arg0: Object, arg1: ItemTagAdapterContext): Object;
 }
 
 export default class ItemTagType {

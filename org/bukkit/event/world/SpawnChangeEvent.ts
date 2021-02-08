@@ -1,6 +1,9 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import Location from '../../../../org/bukkit/Location.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 import World from '../../../../org/bukkit/World.js'
 import WorldEvent from './WorldEvent.js'
 

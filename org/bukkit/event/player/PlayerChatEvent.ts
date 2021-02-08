@@ -1,8 +1,12 @@
 declare var Java: any;
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
+import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PlayerEvent from './PlayerEvent.js'
+import Set from '../../../../java/util/Set.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface PlayerChatEvent extends PlayerEvent, Cancellable {
 	getEventName(): string;
@@ -10,7 +14,7 @@ export default interface PlayerChatEvent extends PlayerEvent, Cancellable {
 	getHandlers(): HandlerList;
 	getMessage(): string;
 	getPlayer(): Player;
-	getRecipients(): any;
+	getRecipients(): Set;
 	isAsynchronous(): boolean;
 	isCancelled(): boolean;
 	setCancelled(cancel: boolean): void;
@@ -28,7 +32,7 @@ export default class PlayerChatEvent {
 	}
 
 	constructor(player: Player, message: string);
-	constructor(player: Player, message: string, format: string, recipients: any);
+	constructor(player: Player, message: string, format: string, recipients: Set);
 	constructor(...args: any[]) {
 		return new PlayerChatEvent.$javaClass(...args);
 	}

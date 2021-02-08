@@ -4,6 +4,7 @@ import OfflinePlayer from '../../../org/bukkit/OfflinePlayer.js'
 import RenderType from './RenderType.js'
 import Score from './Score.js'
 import Scoreboard from './Scoreboard.js'
+import String from '../../../java/lang/String.js'
 
 export default interface Objective {
 	getCriteria(): string;

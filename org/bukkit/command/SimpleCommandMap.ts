@@ -1,11 +1,16 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Collection from '../../../java/util/Collection.js'
 import Command from './Command.js'
 import CommandMap from './CommandMap.js'
 import CommandSender from './CommandSender.js'
+import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
+import Object from '../../../java/lang/Object.js'
 import Server from '../../../org/bukkit/Server.js'
+import String from '../../../java/lang/String.js'
 
-export default interface SimpleCommandMap extends CommandMap {
+export default interface SimpleCommandMap extends Object, CommandMap {
 	clearCommands(): void;
 	dispatch(sender: CommandSender, commandLine: string): boolean;
 	getCommand(_name: string): Command;

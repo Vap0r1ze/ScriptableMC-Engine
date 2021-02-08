@@ -1,12 +1,17 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import Closeable from '../../../../java/io/Closeable.js'
+import Consumer from '../../../../java/util/function/Consumer.js'
+import Iterator from '../../../../java/util/Iterator.js'
+import Object from '../../../../java/lang/Object.js'
 import Reader from '../../../../java/io/Reader.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface LineIterator extends Closeable {
+export default interface LineIterator extends Object, Iterator, Closeable {
 	close(): void;
-	forEachRemaining(arg0: any): void;
+	forEachRemaining(arg0: Consumer): void;
 	hasNext(): boolean;
-	next(): any;
+	next(): Object;
 	next(): string;
 	nextLine(): string;
 	remove(): void;

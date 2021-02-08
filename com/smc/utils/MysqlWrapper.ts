@@ -1,11 +1,14 @@
 declare var Java: any;
 import BukkitTask from '../../../org/bukkit/scheduler/BukkitTask.js'
+import Class from '../../../java/lang/Class.js'
 import Connection from '../../../java/sql/Connection.js'
 import JavaPlugin from '../../../org/bukkit/plugin/java/JavaPlugin.js'
+import Object from '../../../java/lang/Object.js'
 import PreparedStatement from '../../../java/sql/PreparedStatement.js'
 import Statement from '../../../java/sql/Statement.js'
+import String from '../../../java/lang/String.js'
 
-export default interface MysqlWrapper {
+export default interface MysqlWrapper extends Object {
 	close(): any;
 	createStatement(): Statement;
 	createStatement(resultSetType: number, resultSetConcurrency: number): Statement;
@@ -36,7 +39,7 @@ export default class MysqlWrapper {
 		return new MysqlWrapper.$javaClass(...args);
 	}
 
-	public static openConnectionAsync$default(arg0: MysqlWrapper, arg1: JavaPlugin, arg2: any, arg3: number, arg4: any): BukkitTask;
+	public static openConnectionAsync$default(arg0: MysqlWrapper, arg1: JavaPlugin, arg2: any, arg3: number, arg4: Object): BukkitTask;
 	public static openConnectionAsync$default(...args: any[]): any {
 		return MysqlWrapper.$javaClass.openConnectionAsync$default(...args);
 	}

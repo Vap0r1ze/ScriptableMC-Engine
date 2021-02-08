@@ -1,8 +1,11 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
 import Closeable from './Closeable.js'
 import Flushable from './Flushable.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 
-export default interface OutputStream extends Closeable, Flushable {
+export default interface OutputStream extends Object, Closeable, Flushable {
 	close(): void;
 	flush(): void;
 	write(arg0: Array<number>): void;

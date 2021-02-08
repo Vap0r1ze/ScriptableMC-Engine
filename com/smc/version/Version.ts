@@ -1,7 +1,12 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Comparable from '../../../java/lang/Comparable.js'
+import Comparator from '../../../java/util/Comparator.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
-export default interface Version {
-	compareTo(arg0: any): number;
+export default interface Version extends Object, Comparable {
+	compareTo(arg0: Object): number;
 	compareTo(other: Version): number;
 	getBuild(): number;
 	getMajor(): number;
@@ -27,12 +32,12 @@ export default class Version {
 		return new Version.$javaClass(...args);
 	}
 
-	public static access$getCOMPARATOR$cp(): any;
+	public static access$getCOMPARATOR$cp(): Comparator;
 	public static access$getCOMPARATOR$cp(...args: any[]): any {
 		return Version.$javaClass.access$getCOMPARATOR$cp(...args);
 	}
 
-	public static getCOMPARATOR(): any;
+	public static getCOMPARATOR(): Comparator;
 	public static getCOMPARATOR(...args: any[]): any {
 		return Version.$javaClass.getCOMPARATOR(...args);
 	}

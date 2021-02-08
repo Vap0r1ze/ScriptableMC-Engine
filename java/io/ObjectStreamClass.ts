@@ -1,9 +1,12 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
+import Object from '../../java/lang/Object.js'
 import ObjectStreamField from './ObjectStreamField.js'
 import Serializable from './Serializable.js'
+import String from '../../java/lang/String.js'
 
-export default interface ObjectStreamClass extends Serializable {
-	forClass(): any;
+export default interface ObjectStreamClass extends Object, Serializable {
+	forClass(): Class;
 	getField(arg0: string): ObjectStreamField;
 	getFields(): Array<ObjectStreamField>;
 	getName(): string;
@@ -22,12 +25,12 @@ export default class ObjectStreamClass {
 		return ObjectStreamClass.$javaClass.NO_FIELDS;
 	}
 
-	public static lookup(arg0: any): ObjectStreamClass;
+	public static lookup(arg0: Class): ObjectStreamClass;
 	public static lookup(...args: any[]): any {
 		return ObjectStreamClass.$javaClass.lookup(...args);
 	}
 
-	public static lookupAny(arg0: any): ObjectStreamClass;
+	public static lookupAny(arg0: Class): ObjectStreamClass;
 	public static lookupAny(...args: any[]): any {
 		return ObjectStreamClass.$javaClass.lookupAny(...args);
 	}

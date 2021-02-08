@@ -1,8 +1,11 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import MetadataValue from './MetadataValue.js'
+import Object from '../../../java/lang/Object.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
+import String from '../../../java/lang/String.js'
 
-export default interface MetadataValueAdapter extends MetadataValue {
+export default interface MetadataValueAdapter extends Object, MetadataValue {
 	asBoolean(): boolean;
 	asByte(): number;
 	asDouble(): number;
@@ -13,7 +16,7 @@ export default interface MetadataValueAdapter extends MetadataValue {
 	asString(): string;
 	getOwningPlugin(): Plugin;
 	invalidate(): void;
-	value(): any;
+	value(): Object;
 }
 
 export default class MetadataValueAdapter {

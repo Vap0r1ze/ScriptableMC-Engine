@@ -1,24 +1,30 @@
 declare var Java: any;
+import BiConsumer from '../../../../java/util/function/BiConsumer.js'
+import Collection from '../../../../java/util/Collection.js'
+import Iterable from '../../../../java/lang/Iterable.js'
+import Map from '../../../../java/util/Map.js'
 import Multiset from './Multiset.js'
+import Object from '../../../../java/lang/Object.js'
+import Set from '../../../../java/util/Set.js'
 
 export default interface Multimap {
-	asMap(): any;
+	asMap(): Map;
 	clear(): void;
-	containsEntry(arg0: any, arg1: any): boolean;
-	containsKey(arg0: any): boolean;
-	containsValue(arg0: any): boolean;
+	containsEntry(arg0: Object, arg1: Object): boolean;
+	containsKey(arg0: Object): boolean;
+	containsValue(arg0: Object): boolean;
 	entries(): Array<any>;
-	forEach(action: any): void;
-	get(arg0: any): Array<any>;
+	forEach(action: BiConsumer): void;
+	get(arg0: Object): Array<any>;
 	isEmpty(): boolean;
-	keySet(): any;
+	keySet(): Set;
 	keys(): Multiset;
-	put(arg0: any, arg1: any): boolean;
+	put(arg0: Object, arg1: Object): boolean;
 	putAll(arg0: Multimap): boolean;
-	putAll(arg0: any, arg1: any): boolean;
-	remove(arg0: any, arg1: any): boolean;
-	removeAll(arg0: any): Array<any>;
-	replaceValues(arg0: any, arg1: any): Array<any>;
+	putAll(arg0: Object, arg1: Iterable): boolean;
+	remove(arg0: Object, arg1: Object): boolean;
+	removeAll(arg0: Object): Array<any>;
+	replaceValues(arg0: Object, arg1: Iterable): Array<any>;
 	size(): number;
 	values(): Array<any>;
 }

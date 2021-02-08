@@ -1,12 +1,15 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
+import Object from '../../java/lang/Object.js'
 import ObjectOutput from './ObjectOutput.js'
+import String from '../../java/lang/String.js'
 
-export default interface ObjectOutputStream$PutField {
+export default interface ObjectOutputStream$PutField extends Object {
 	put(arg0: string, arg1: number): void;
 	put(arg0: string, arg1: number): void;
 	put(arg0: string, arg1: number): void;
 	put(arg0: string, arg1: number): void;
-	put(arg0: string, arg1: any): void;
+	put(arg0: string, arg1: Object): void;
 	put(arg0: string, arg1: boolean): void;
 	put(arg0: string, arg1: number): void;
 	put(arg0: string, arg1: string): void;

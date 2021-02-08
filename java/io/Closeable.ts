@@ -1,6 +1,7 @@
 declare var Java: any;
+import AutoCloseable from '../../java/lang/AutoCloseable.js'
 
-export default interface Closeable {
+export default interface Closeable extends AutoCloseable {
 	close(): void;
 }
 

@@ -10,8 +10,11 @@ import BossBar from './boss/BossBar.js'
 import BukkitScheduler from './scheduler/BukkitScheduler.js'
 import CachedServerIcon from './util/CachedServerIcon.js'
 import ChunkGenerator$ChunkData from './generator/ChunkGenerator$ChunkData.js'
+import Class from '../../java/lang/Class.js'
+import Collection from '../../java/util/Collection.js'
 import CommandSender from './command/CommandSender.js'
 import ConsoleCommandSender from './command/ConsoleCommandSender.js'
+import Consumer from '../../java/util/function/Consumer.js'
 import Entity from './entity/Entity.js'
 import File from '../../java/io/File.js'
 import GameMode from './GameMode.js'
@@ -21,9 +24,14 @@ import InventoryHolder from './inventory/InventoryHolder.js'
 import InventoryType from './event/inventory/InventoryType.js'
 import ItemFactory from './inventory/ItemFactory.js'
 import ItemStack from './inventory/ItemStack.js'
+import Iterable from '../../java/lang/Iterable.js'
+import Iterator from '../../java/util/Iterator.js'
 import KeyedBossBar from './boss/KeyedBossBar.js'
+import List from '../../java/util/List.js'
 import Location from './Location.js'
+import Logger from '../../java/util/logging/Logger.js'
 import LootTable from './loot/LootTable.js'
+import Map from '../../java/util/Map.js'
 import MapView from './map/MapView.js'
 import Material from './Material.js'
 import Merchant from './inventory/Merchant.js'
@@ -39,8 +47,11 @@ import Recipe from './inventory/Recipe.js'
 import ScoreboardManager from './scoreboard/ScoreboardManager.js'
 import Server$Spigot from './Server$Spigot.js'
 import ServicesManager from './plugin/ServicesManager.js'
+import Set from '../../java/util/Set.js'
+import String from '../../java/lang/String.js'
 import StructureType from './StructureType.js'
 import Tag from './Tag.js'
+import UUID from '../../java/util/UUID.js'
 import UnsafeValues from './UnsafeValues.js'
 import Warning$WarningState from './Warning$WarningState.js'
 import World from './World.js'
@@ -48,24 +59,24 @@ import WorldCreator from './WorldCreator.js'
 
 export default interface Server extends PluginMessageRecipient {
 	addRecipe(arg0: Recipe): boolean;
-	advancementIterator(): any;
+	advancementIterator(): Iterator;
 	banIP(arg0: string): void;
 	broadcast(arg0: string, arg1: string): number;
 	broadcastMessage(arg0: string): number;
 	clearRecipes(): void;
 	createBlockData(arg0: string): BlockData;
 	createBlockData(arg0: Material): BlockData;
+	createBlockData(arg0: Material, arg1: Consumer): BlockData;
 	createBlockData(arg0: Material, arg1: string): BlockData;
-	createBlockData(arg0: Material, arg1: any): BlockData;
 	createBossBar(arg0: string, arg1: BarColor, arg2: BarStyle, arg3: Array<BarFlag>): BossBar;
 	createBossBar(arg0: NamespacedKey, arg1: string, arg2: BarColor, arg3: BarStyle, arg4: Array<BarFlag>): KeyedBossBar;
 	createChunkData(arg0: World): ChunkGenerator$ChunkData;
 	createExplorerMap(arg0: World, arg1: Location, arg2: StructureType): ItemStack;
 	createExplorerMap(arg0: World, arg1: Location, arg2: StructureType, arg3: number, arg4: boolean): ItemStack;
-	createInventory(arg0: InventoryHolder, arg1: number): Inventory;
 	createInventory(arg0: InventoryHolder, arg1: InventoryType): Inventory;
-	createInventory(arg0: InventoryHolder, arg1: InventoryType, arg2: string): Inventory;
+	createInventory(arg0: InventoryHolder, arg1: number): Inventory;
 	createInventory(arg0: InventoryHolder, arg1: number, arg2: string): Inventory;
+	createInventory(arg0: InventoryHolder, arg1: InventoryType, arg2: string): Inventory;
 	createMap(arg0: World): MapView;
 	createMerchant(arg0: string): Merchant;
 	createWorld(arg0: WorldCreator): World;
@@ -77,23 +88,23 @@ export default interface Server extends PluginMessageRecipient {
 	getAmbientSpawnLimit(): number;
 	getAnimalSpawnLimit(): number;
 	getBanList(arg0: BanList$Type): BanList;
-	getBannedPlayers(): any;
+	getBannedPlayers(): Set;
 	getBossBar(arg0: NamespacedKey): KeyedBossBar;
-	getBossBars(): any;
+	getBossBars(): Iterator;
 	getBukkitVersion(): string;
-	getCommandAliases(): any;
+	getCommandAliases(): Map;
 	getConnectionThrottle(): number;
 	getConsoleSender(): ConsoleCommandSender;
 	getDefaultGameMode(): GameMode;
 	getEntity(arg0: string): Entity;
 	getGenerateStructures(): boolean;
 	getHelpMap(): HelpMap;
-	getIPBans(): any;
+	getIPBans(): Set;
 	getIdleTimeout(): number;
 	getIp(): string;
 	getItemFactory(): ItemFactory;
-	getListeningPluginChannels(): any;
-	getLogger(): any;
+	getListeningPluginChannels(): Set;
+	getLogger(): Logger;
 	getLootTable(arg0: NamespacedKey): LootTable;
 	getMap(arg0: number): MapView;
 	getMaxPlayers(): number;
@@ -107,7 +118,7 @@ export default interface Server extends PluginMessageRecipient {
 	getOfflinePlayers(): Array<OfflinePlayer>;
 	getOnlineMode(): boolean;
 	getOnlinePlayers(): Array<Player>;
-	getOperators(): any;
+	getOperators(): Set;
 	getPlayer(arg0: string): Player;
 	getPlayer(arg0: string): Player;
 	getPlayerExact(arg0: string): Player;
@@ -122,8 +133,8 @@ export default interface Server extends PluginMessageRecipient {
 	getServicesManager(): ServicesManager;
 	getShutdownMessage(): string;
 	getSpawnRadius(): number;
-	getTag(arg0: string, arg1: NamespacedKey, arg2: any): Tag;
-	getTags(arg0: string, arg1: any): any;
+	getTag(arg0: string, arg1: NamespacedKey, arg2: Class): Tag;
+	getTags(arg0: string, arg1: Class): Iterable;
 	getTicksPerAmbientSpawns(): number;
 	getTicksPerAnimalSpawns(): number;
 	getTicksPerMonsterSpawns(): number;
@@ -137,7 +148,7 @@ export default interface Server extends PluginMessageRecipient {
 	getWarningState(): Warning$WarningState;
 	getWaterAmbientSpawnLimit(): number;
 	getWaterAnimalSpawnLimit(): number;
-	getWhitelistedPlayers(): any;
+	getWhitelistedPlayers(): Set;
 	getWorld(arg0: string): World;
 	getWorld(arg0: string): World;
 	getWorldContainer(): File;
@@ -149,7 +160,7 @@ export default interface Server extends PluginMessageRecipient {
 	loadServerIcon(arg0: any): CachedServerIcon;
 	loadServerIcon(arg0: File): CachedServerIcon;
 	matchPlayer(arg0: string): Array<Player>;
-	recipeIterator(): any;
+	recipeIterator(): Iterator;
 	reload(): void;
 	reloadData(): void;
 	reloadWhitelist(): void;
@@ -166,8 +177,8 @@ export default interface Server extends PluginMessageRecipient {
 	shutdown(): void;
 	spigot(): Server$Spigot;
 	unbanIP(arg0: string): void;
-	unloadWorld(arg0: World, arg1: boolean): boolean;
 	unloadWorld(arg0: string, arg1: boolean): boolean;
+	unloadWorld(arg0: World, arg1: boolean): boolean;
 }
 
 export default class Server {

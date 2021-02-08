@@ -1,11 +1,15 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Collection from '../../../java/util/Collection.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import LivingEntity from '../../../org/bukkit/entity/LivingEntity.js'
+import Object from '../../../java/lang/Object.js'
 import PotionBrewer from './PotionBrewer.js'
 import PotionEffect from './PotionEffect.js'
 import PotionType from './PotionType.js'
+import String from '../../../java/lang/String.js'
 
-export default interface Potion {
+export default interface Potion extends Object {
 	apply(to: ItemStack): void;
 	apply(to: LivingEntity): void;
 	extend(): Potion;

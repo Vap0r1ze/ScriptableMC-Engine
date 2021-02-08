@@ -1,11 +1,14 @@
 declare var Java: any;
 import Block from '../../../../org/bukkit/block/Block.js'
 import BlockFace from '../../../../org/bukkit/block/BlockFace.js'
+import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import ItemStack from '../../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../../org/bukkit/Material.js'
+import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PlayerBucketEvent from './PlayerBucketEvent.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface PlayerBucketEmptyEvent extends PlayerBucketEvent {
 	getBlock(): Block;

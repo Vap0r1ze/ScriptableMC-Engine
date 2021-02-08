@@ -2,16 +2,19 @@ declare var Java: any;
 import BlockData from '../../../../../org/bukkit/block/data/BlockData.js'
 import BlockFace from '../../../../../org/bukkit/block/BlockFace.js'
 import Material from '../../../../../org/bukkit/Material.js'
+import Object from '../../../../../java/lang/Object.js'
+import Set from '../../../../../java/util/Set.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
+import String from '../../../../../java/lang/String.js'
 import TechnicalPiston from './TechnicalPiston.js'
 import TechnicalPiston$Type from './TechnicalPiston$Type.js'
 
 export default interface PistonHead extends TechnicalPiston {
 	clone(): BlockData;
-	clone(): any;
+	clone(): Object;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
-	getFaces(): any;
+	getFaces(): Set;
 	getFacing(): BlockFace;
 	getMaterial(): Material;
 	getSoundGroup(): SoundGroup;

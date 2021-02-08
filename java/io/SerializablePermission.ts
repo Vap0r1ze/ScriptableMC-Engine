@@ -1,7 +1,10 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 
 export default interface SerializablePermission {
-	checkGuard(arg0: any): void;
+	checkGuard(arg0: Object): void;
 	getActions(): string;
 	getName(): string;
 	implies(arg0: any): boolean;

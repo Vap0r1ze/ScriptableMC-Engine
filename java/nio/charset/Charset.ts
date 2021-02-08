@@ -3,16 +3,23 @@ import ByteBuffer from '../../../java/nio/ByteBuffer.js'
 import CharBuffer from '../../../java/nio/CharBuffer.js'
 import CharsetDecoder from './CharsetDecoder.js'
 import CharsetEncoder from './CharsetEncoder.js'
+import Class from '../../../java/lang/Class.js'
+import Comparable from '../../../java/lang/Comparable.js'
+import Locale from '../../../java/util/Locale.js'
+import Object from '../../../java/lang/Object.js'
+import Set from '../../../java/util/Set.js'
+import SortedMap from '../../../java/util/SortedMap.js'
+import String from '../../../java/lang/String.js'
 
-export default interface Charset {
-	aliases(): any;
+export default interface Charset extends Object, Comparable {
+	aliases(): Set;
 	canEncode(): boolean;
-	compareTo(arg0: any): number;
+	compareTo(arg0: Object): number;
 	compareTo(arg0: Charset): number;
 	contains(arg0: Charset): boolean;
 	decode(arg0: ByteBuffer): CharBuffer;
 	displayName(): string;
-	displayName(arg0: any): string;
+	displayName(arg0: Locale): string;
 	encode(arg0: CharBuffer): ByteBuffer;
 	encode(arg0: string): ByteBuffer;
 	isRegistered(): boolean;
@@ -29,7 +36,7 @@ export default class Charset {
 		return obj instanceof Charset.$javaClass;
 	}
 
-	public static availableCharsets(): any;
+	public static availableCharsets(): SortedMap;
 	public static availableCharsets(...args: any[]): any {
 		return Charset.$javaClass.availableCharsets(...args);
 	}

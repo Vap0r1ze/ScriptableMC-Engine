@@ -1,9 +1,12 @@
 declare var Java: any;
 import CommandManager from './CommandManager.js'
 import MessageType from './MessageType.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
+import UUID from '../../../../java/util/UUID.js'
 
 export default interface CommandIssuer {
-	getIssuer(): any;
+	getIssuer(): Object;
 	getManager(): CommandManager;
 	getUniqueId(): string;
 	hasPermission(permission: string): boolean;

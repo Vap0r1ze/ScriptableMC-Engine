@@ -1,4 +1,6 @@
 declare var Java: any;
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 import UserPrincipal from './UserPrincipal.js'
 
 export default interface GroupPrincipal extends UserPrincipal {

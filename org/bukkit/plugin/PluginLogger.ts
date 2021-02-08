@@ -1,62 +1,73 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Filter from '../../../java/util/logging/Filter.js'
+import Handler from '../../../java/util/logging/Handler.js'
+import Level from '../../../java/util/logging/Level.js'
+import LogRecord from '../../../java/util/logging/LogRecord.js'
+import Logger from '../../../java/util/logging/Logger.js'
+import Object from '../../../java/lang/Object.js'
 import Plugin from './Plugin.js'
+import ResourceBundle from '../../../java/util/ResourceBundle.js'
+import String from '../../../java/lang/String.js'
+import Supplier from '../../../java/util/function/Supplier.js'
+import Throwable from '../../../java/lang/Throwable.js'
 
-export default interface PluginLogger {
-	addHandler(arg0: any): void;
+export default interface PluginLogger extends Logger {
+	addHandler(arg0: Handler): void;
+	config(arg0: Supplier): void;
 	config(arg0: string): void;
-	config(arg0: any): void;
 	entering(arg0: string, arg1: string): void;
-	entering(arg0: string, arg1: string, arg2: Array<any>): void;
-	entering(arg0: string, arg1: string, arg2: any): void;
+	entering(arg0: string, arg1: string, arg2: Object): void;
+	entering(arg0: string, arg1: string, arg2: Array<Object>): void;
 	exiting(arg0: string, arg1: string): void;
-	exiting(arg0: string, arg1: string, arg2: any): void;
+	exiting(arg0: string, arg1: string, arg2: Object): void;
 	fine(arg0: string): void;
-	fine(arg0: any): void;
-	finer(arg0: any): void;
+	fine(arg0: Supplier): void;
 	finer(arg0: string): void;
+	finer(arg0: Supplier): void;
+	finest(arg0: Supplier): void;
 	finest(arg0: string): void;
-	finest(arg0: any): void;
-	getFilter(): any;
-	getHandlers(): Array<any>;
-	getLevel(): any;
+	getFilter(): Filter;
+	getHandlers(): Array<Handler>;
+	getLevel(): Level;
 	getName(): string;
-	getParent(): any;
-	getResourceBundle(): any;
+	getParent(): Logger;
+	getResourceBundle(): ResourceBundle;
 	getResourceBundleName(): string;
 	getUseParentHandlers(): boolean;
-	info(arg0: any): void;
+	info(arg0: Supplier): void;
 	info(arg0: string): void;
-	isLoggable(arg0: any): boolean;
-	log(logRecord: any): void;
-	log(arg0: any, arg1: any): void;
-	log(arg0: any, arg1: string): void;
-	log(arg0: any, arg1: any, arg2: any): void;
-	log(arg0: any, arg1: string, arg2: any): void;
-	log(arg0: any, arg1: string, arg2: Array<any>): void;
-	log(arg0: any, arg1: string, arg2: any): void;
-	logp(arg0: any, arg1: string, arg2: string, arg3: any): void;
-	logp(arg0: any, arg1: string, arg2: string, arg3: string): void;
-	logp(arg0: any, arg1: string, arg2: string, arg3: string, arg4: any): void;
-	logp(arg0: any, arg1: string, arg2: string, arg3: any, arg4: any): void;
-	logp(arg0: any, arg1: string, arg2: string, arg3: string, arg4: any): void;
-	logp(arg0: any, arg1: string, arg2: string, arg3: string, arg4: Array<any>): void;
-	logrb(arg0: any, arg1: string, arg2: string, arg3: string, arg4: string): void;
-	logrb(arg0: any, arg1: string, arg2: string, arg3: any, arg4: string, arg5: any): void;
-	logrb(arg0: any, arg1: string, arg2: string, arg3: string, arg4: string, arg5: any): void;
-	logrb(arg0: any, arg1: string, arg2: string, arg3: any, arg4: string, arg5: Array<any>): void;
-	logrb(arg0: any, arg1: string, arg2: string, arg3: string, arg4: string, arg5: Array<any>): void;
-	logrb(arg0: any, arg1: string, arg2: string, arg3: string, arg4: string, arg5: any): void;
-	removeHandler(arg0: any): void;
-	setFilter(arg0: any): void;
-	setLevel(arg0: any): void;
-	setParent(arg0: any): void;
-	setResourceBundle(arg0: any): void;
+	isLoggable(arg0: Level): boolean;
+	log(logRecord: LogRecord): void;
+	log(arg0: Level, arg1: Supplier): void;
+	log(arg0: Level, arg1: string): void;
+	log(arg0: Level, arg1: Throwable, arg2: Supplier): void;
+	log(arg0: Level, arg1: string, arg2: Object): void;
+	log(arg0: Level, arg1: string, arg2: Array<Object>): void;
+	log(arg0: Level, arg1: string, arg2: Throwable): void;
+	logp(arg0: Level, arg1: string, arg2: string, arg3: string): void;
+	logp(arg0: Level, arg1: string, arg2: string, arg3: Supplier): void;
+	logp(arg0: Level, arg1: string, arg2: string, arg3: string, arg4: Array<Object>): void;
+	logp(arg0: Level, arg1: string, arg2: string, arg3: string, arg4: Object): void;
+	logp(arg0: Level, arg1: string, arg2: string, arg3: Throwable, arg4: Supplier): void;
+	logp(arg0: Level, arg1: string, arg2: string, arg3: string, arg4: Throwable): void;
+	logrb(arg0: Level, arg1: string, arg2: string, arg3: string, arg4: string): void;
+	logrb(arg0: Level, arg1: string, arg2: string, arg3: ResourceBundle, arg4: string, arg5: Array<Object>): void;
+	logrb(arg0: Level, arg1: string, arg2: string, arg3: ResourceBundle, arg4: string, arg5: Throwable): void;
+	logrb(arg0: Level, arg1: string, arg2: string, arg3: string, arg4: string, arg5: Throwable): void;
+	logrb(arg0: Level, arg1: string, arg2: string, arg3: string, arg4: string, arg5: Array<Object>): void;
+	logrb(arg0: Level, arg1: string, arg2: string, arg3: string, arg4: string, arg5: Object): void;
+	removeHandler(arg0: Handler): void;
+	setFilter(arg0: Filter): void;
+	setLevel(arg0: Level): void;
+	setParent(arg0: Logger): void;
+	setResourceBundle(arg0: ResourceBundle): void;
 	setUseParentHandlers(arg0: boolean): void;
 	severe(arg0: string): void;
-	severe(arg0: any): void;
-	throwing(arg0: string, arg1: string, arg2: any): void;
-	warning(arg0: any): void;
+	severe(arg0: Supplier): void;
+	throwing(arg0: string, arg1: string, arg2: Throwable): void;
 	warning(arg0: string): void;
+	warning(arg0: Supplier): void;
 }
 
 export default class PluginLogger {
@@ -76,23 +87,23 @@ export default class PluginLogger {
 		return PluginLogger.$javaClass.GLOBAL_LOGGER_NAME;
 	}
 
-	public static get global(): any {
+	public static get global(): Logger {
 		return PluginLogger.$javaClass.global;
 	}
 
-	public static getAnonymousLogger(): any;
-	public static getAnonymousLogger(arg0: string): any;
+	public static getAnonymousLogger(): Logger;
+	public static getAnonymousLogger(arg0: string): Logger;
 	public static getAnonymousLogger(...args: any[]): any {
 		return PluginLogger.$javaClass.getAnonymousLogger(...args);
 	}
 
-	public static getGlobal(): any;
+	public static getGlobal(): Logger;
 	public static getGlobal(...args: any[]): any {
 		return PluginLogger.$javaClass.getGlobal(...args);
 	}
 
-	public static getLogger(arg0: string): any;
-	public static getLogger(arg0: string, arg1: string): any;
+	public static getLogger(arg0: string): Logger;
+	public static getLogger(arg0: string, arg1: string): Logger;
 	public static getLogger(...args: any[]): any {
 		return PluginLogger.$javaClass.getLogger(...args);
 	}

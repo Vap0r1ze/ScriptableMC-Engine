@@ -1,9 +1,13 @@
 declare var Java: any;
 import BaseComponent from './BaseComponent.js'
+import Class from '../../../../../java/lang/Class.js'
 import Content from './hover/content/Content.js'
 import HoverEvent$Action from './HoverEvent$Action.js'
+import List from '../../../../../java/util/List.js'
+import Object from '../../../../../java/lang/Object.js'
+import String from '../../../../../java/lang/String.js'
 
-export default interface HoverEvent {
+export default interface HoverEvent extends Object {
 	addContent(content: Content): void;
 	getAction(): HoverEvent$Action;
 	getContents(): Array<Content>;

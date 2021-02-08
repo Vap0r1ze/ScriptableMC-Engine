@@ -1,5 +1,6 @@
 declare var Java: any;
 import DataInput from '../../../../java/io/DataInput.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface ByteArrayDataInput extends DataInput {
 	readBoolean(): boolean;

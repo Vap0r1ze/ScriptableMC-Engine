@@ -1,10 +1,11 @@
 declare var Java: any;
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
+import Thread from '../../../java/lang/Thread.js'
 
 export default interface BukkitWorker {
 	getOwner(): Plugin;
 	getTaskId(): number;
-	getThread(): any;
+	getThread(): Thread;
 }
 
 export default class BukkitWorker {

@@ -1,8 +1,10 @@
 declare var Java: any;
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface FileAttribute {
 	name(): string;
-	value(): any;
+	value(): Object;
 }
 
 export default class FileAttribute {

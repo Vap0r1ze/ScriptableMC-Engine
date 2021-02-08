@@ -6,16 +6,19 @@ import BlockFace from '../../../../../org/bukkit/block/BlockFace.js'
 import Directional from '../../../../../org/bukkit/block/data/Directional.js'
 import Door$Hinge from './Door$Hinge.js'
 import Material from '../../../../../org/bukkit/Material.js'
+import Object from '../../../../../java/lang/Object.js'
 import Openable from '../../../../../org/bukkit/block/data/Openable.js'
 import Powerable from '../../../../../org/bukkit/block/data/Powerable.js'
+import Set from '../../../../../java/util/Set.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
+import String from '../../../../../java/lang/String.js'
 
 export default interface Door extends Bisected, Directional, Openable, Powerable {
 	clone(): BlockData;
-	clone(): any;
+	clone(): Object;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
-	getFaces(): any;
+	getFaces(): Set;
 	getFacing(): BlockFace;
 	getHalf(): Bisected$Half;
 	getHinge(): Door$Hinge;

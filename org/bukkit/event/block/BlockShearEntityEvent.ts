@@ -2,9 +2,12 @@ declare var Java: any;
 import Block from '../../../../org/bukkit/block/Block.js'
 import BlockEvent from './BlockEvent.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import ItemStack from '../../../../org/bukkit/inventory/ItemStack.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface BlockShearEntityEvent extends BlockEvent, Cancellable {
 	getBlock(): Block;

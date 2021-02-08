@@ -1,11 +1,13 @@
 declare var Java: any;
 import BlockData from '../../../../../org/bukkit/block/data/BlockData.js'
 import Material from '../../../../../org/bukkit/Material.js'
+import Object from '../../../../../java/lang/Object.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
+import String from '../../../../../java/lang/String.js'
 
 export default interface Cake extends BlockData {
 	clone(): BlockData;
-	clone(): any;
+	clone(): Object;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
 	getBites(): number;

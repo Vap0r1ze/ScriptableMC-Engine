@@ -10,6 +10,8 @@ import BoundingBox from './util/BoundingBox.js'
 import Chunk from './Chunk.js'
 import ChunkGenerator from './generator/ChunkGenerator.js'
 import ChunkSnapshot from './ChunkSnapshot.js'
+import Class from '../../java/lang/Class.js'
+import Collection from '../../java/util/Collection.js'
 import Consumer from './util/Consumer.js'
 import Difficulty from './Difficulty.js'
 import DragonBattle from './boss/DragonBattle.js'
@@ -24,22 +26,29 @@ import HeightMap from './HeightMap.js'
 import Item from './entity/Item.js'
 import ItemStack from './inventory/ItemStack.js'
 import LightningStrike from './entity/LightningStrike.js'
+import List from '../../java/util/List.js'
 import LivingEntity from './entity/LivingEntity.js'
 import Location from './Location.js'
+import Map from '../../java/util/Map.js'
 import Material from './Material.js'
 import MaterialData from './material/MaterialData.js'
 import MetadataValue from './metadata/MetadataValue.js'
 import Metadatable from './metadata/Metadatable.js'
+import Object from '../../java/lang/Object.js'
 import Particle from './Particle.js'
 import Player from './entity/Player.js'
 import Plugin from './plugin/Plugin.js'
 import PluginMessageRecipient from './plugin/messaging/PluginMessageRecipient.js'
+import Predicate from '../../java/util/function/Predicate.js'
 import Raid from './Raid.js'
 import RayTraceResult from './util/RayTraceResult.js'
+import Set from '../../java/util/Set.js'
 import Sound from './Sound.js'
 import SoundCategory from './SoundCategory.js'
+import String from '../../java/lang/String.js'
 import StructureType from './StructureType.js'
 import TreeType from './TreeType.js'
+import UUID from '../../java/util/UUID.js'
 import Vector from './util/Vector.js'
 import World$Environment from './World$Environment.js'
 import World$Spigot from './World$Spigot.js'
@@ -53,8 +62,8 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	createExplosion(arg0: Location, arg1: number, arg2: boolean): boolean;
 	createExplosion(arg0: Location, arg1: number, arg2: boolean, arg3: boolean): boolean;
 	createExplosion(arg0: number, arg1: number, arg2: number, arg3: number): boolean;
-	createExplosion(arg0: Location, arg1: number, arg2: boolean, arg3: boolean, arg4: Entity): boolean;
 	createExplosion(arg0: number, arg1: number, arg2: number, arg3: number, arg4: boolean): boolean;
+	createExplosion(arg0: Location, arg1: number, arg2: boolean, arg3: boolean, arg4: Entity): boolean;
 	createExplosion(arg0: number, arg1: number, arg2: number, arg3: number, arg4: boolean, arg5: boolean): boolean;
 	createExplosion(arg0: number, arg1: number, arg2: number, arg3: number, arg4: boolean, arg5: boolean, arg6: Entity): boolean;
 	dropItem(arg0: Location, arg1: ItemStack): Item;
@@ -77,15 +86,15 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	getEmptyChunkSnapshot(arg0: number, arg1: number, arg2: boolean, arg3: boolean): ChunkSnapshot;
 	getEnderDragonBattle(): DragonBattle;
 	getEntities(): Array<Entity>;
-	getEntitiesByClass(arg0: any): Array<any>;
-	getEntitiesByClass(arg0: Array<any>): Array<any>;
-	getEntitiesByClasses(arg0: Array<any>): Array<Entity>;
+	getEntitiesByClass(arg0: Class): Array<any>;
+	getEntitiesByClass(arg0: Array<Class>): Array<any>;
+	getEntitiesByClasses(arg0: Array<Class>): Array<Entity>;
 	getEnvironment(): World$Environment;
 	getForceLoadedChunks(): Array<Chunk>;
 	getFullTime(): number;
-	getGameRuleDefault(arg0: GameRule): any;
+	getGameRuleDefault(arg0: GameRule): Object;
 	getGameRuleValue(arg0: string): string;
-	getGameRuleValue(arg0: GameRule): any;
+	getGameRuleValue(arg0: GameRule): Object;
 	getGameRules(): Array<string>;
 	getGenerator(): ChunkGenerator;
 	getHighestBlockAt(arg0: Location): Block;
@@ -99,7 +108,7 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	getHumidity(arg0: number, arg1: number): number;
 	getHumidity(arg0: number, arg1: number, arg2: number): number;
 	getKeepSpawnInMemory(): boolean;
-	getListeningPluginChannels(): any;
+	getListeningPluginChannels(): Set;
 	getLivingEntities(): Array<LivingEntity>;
 	getLoadedChunks(): Array<Chunk>;
 	getMaxHeight(): number;
@@ -107,12 +116,12 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	getMonsterSpawnLimit(): number;
 	getName(): string;
 	getNearbyEntities(arg0: BoundingBox): Array<Entity>;
-	getNearbyEntities(arg0: BoundingBox, arg1: any): Array<Entity>;
+	getNearbyEntities(arg0: BoundingBox, arg1: Predicate): Array<Entity>;
 	getNearbyEntities(arg0: Location, arg1: number, arg2: number, arg3: number): Array<Entity>;
-	getNearbyEntities(arg0: Location, arg1: number, arg2: number, arg3: number, arg4: any): Array<Entity>;
+	getNearbyEntities(arg0: Location, arg1: number, arg2: number, arg3: number, arg4: Predicate): Array<Entity>;
 	getPVP(): boolean;
 	getPlayers(): Array<Player>;
-	getPluginChunkTickets(): any;
+	getPluginChunkTickets(): Map;
 	getPluginChunkTickets(arg0: number, arg1: number): Array<Plugin>;
 	getPopulators(): Array<BlockPopulator>;
 	getRaids(): Array<Raid>;
@@ -154,21 +163,21 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	locateNearestRaid(arg0: Location, arg1: number): Raid;
 	locateNearestStructure(arg0: Location, arg1: StructureType, arg2: number, arg3: boolean): Location;
 	playEffect(arg0: Location, arg1: Effect, arg2: number): void;
-	playEffect(arg0: Location, arg1: Effect, arg2: any): void;
-	playEffect(arg0: Location, arg1: Effect, arg2: any, arg3: number): void;
+	playEffect(arg0: Location, arg1: Effect, arg2: Object): void;
 	playEffect(arg0: Location, arg1: Effect, arg2: number, arg3: number): void;
+	playEffect(arg0: Location, arg1: Effect, arg2: Object, arg3: number): void;
 	playSound(arg0: Location, arg1: string, arg2: number, arg3: number): void;
 	playSound(arg0: Location, arg1: Sound, arg2: number, arg3: number): void;
 	playSound(arg0: Location, arg1: Sound, arg2: SoundCategory, arg3: number, arg4: number): void;
 	playSound(arg0: Location, arg1: string, arg2: SoundCategory, arg3: number, arg4: number): void;
-	rayTrace(arg0: Location, arg1: Vector, arg2: number, arg3: FluidCollisionMode, arg4: boolean, arg5: number, arg6: any): RayTraceResult;
+	rayTrace(arg0: Location, arg1: Vector, arg2: number, arg3: FluidCollisionMode, arg4: boolean, arg5: number, arg6: Predicate): RayTraceResult;
 	rayTraceBlocks(arg0: Location, arg1: Vector, arg2: number): RayTraceResult;
 	rayTraceBlocks(arg0: Location, arg1: Vector, arg2: number, arg3: FluidCollisionMode): RayTraceResult;
 	rayTraceBlocks(arg0: Location, arg1: Vector, arg2: number, arg3: FluidCollisionMode, arg4: boolean): RayTraceResult;
 	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number): RayTraceResult;
+	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number, arg3: Predicate): RayTraceResult;
 	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number, arg3: number): RayTraceResult;
-	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number, arg3: any): RayTraceResult;
-	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number, arg3: number, arg4: any): RayTraceResult;
+	rayTraceEntities(arg0: Location, arg1: Vector, arg2: number, arg3: number, arg4: Predicate): RayTraceResult;
 	refreshChunk(arg0: number, arg1: number): boolean;
 	regenerateChunk(arg0: number, arg1: number): boolean;
 	removeMetadata(arg0: string, arg1: Plugin): void;
@@ -185,7 +194,7 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	setClearWeatherDuration(arg0: number): void;
 	setDifficulty(arg0: Difficulty): void;
 	setFullTime(arg0: number): void;
-	setGameRule(arg0: GameRule, arg1: any): boolean;
+	setGameRule(arg0: GameRule, arg1: Object): boolean;
 	setGameRuleValue(arg0: string, arg1: string): boolean;
 	setHardcore(arg0: boolean): void;
 	setKeepSpawnInMemory(arg0: boolean): void;
@@ -208,28 +217,28 @@ export default interface World extends PluginMessageRecipient, Metadatable {
 	setWaterAmbientSpawnLimit(arg0: number): void;
 	setWaterAnimalSpawnLimit(arg0: number): void;
 	setWeatherDuration(arg0: number): void;
-	spawn(arg0: Location, arg1: any): Entity;
-	spawn(arg0: Location, arg1: any, arg2: Consumer): Entity;
+	spawn(arg0: Location, arg1: Class): Entity;
+	spawn(arg0: Location, arg1: Class, arg2: Consumer): Entity;
 	spawnArrow(arg0: Location, arg1: Vector, arg2: number, arg3: number): Arrow;
-	spawnArrow(arg0: Location, arg1: Vector, arg2: number, arg3: number, arg4: any): AbstractArrow;
+	spawnArrow(arg0: Location, arg1: Vector, arg2: number, arg3: number, arg4: Class): AbstractArrow;
 	spawnEntity(arg0: Location, arg1: EntityType): Entity;
 	spawnFallingBlock(arg0: Location, arg1: BlockData): FallingBlock;
 	spawnFallingBlock(arg0: Location, arg1: MaterialData): FallingBlock;
 	spawnFallingBlock(arg0: Location, arg1: Material, arg2: number): FallingBlock;
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number): void;
-	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: any): void;
+	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: Object): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number): void;
-	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: any): void;
+	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: Object): void;
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number): void;
 	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number): void;
-	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: any): void;
-	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: any): void;
+	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: Object): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
-	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: any): void;
+	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: Object): void;
+	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: Object): void;
 	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number): void;
-	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: any, arg8: boolean): void;
-	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: any): void;
-	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: any, arg10: boolean): void;
+	spawnParticle(arg0: Particle, arg1: Location, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: Object, arg8: boolean): void;
+	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: Object): void;
+	spawnParticle(arg0: Particle, arg1: number, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: Object, arg10: boolean): void;
 	spigot(): World$Spigot;
 	strikeLightning(arg0: Location): LightningStrike;
 	strikeLightningEffect(arg0: Location): LightningStrike;

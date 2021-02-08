@@ -6,13 +6,14 @@ import Material from './Material.js'
 import MaterialData from './material/MaterialData.js'
 import NamespacedKey from './NamespacedKey.js'
 import PluginDescriptionFile from './plugin/PluginDescriptionFile.js'
+import String from '../../java/lang/String.js'
 
 export default interface UnsafeValues {
 	checkSupported(arg0: PluginDescriptionFile): void;
-	fromLegacy(arg0: Material): Material;
 	fromLegacy(arg0: MaterialData): Material;
-	fromLegacy(arg0: MaterialData, arg1: boolean): Material;
+	fromLegacy(arg0: Material): Material;
 	fromLegacy(arg0: Material, arg1: number): BlockData;
+	fromLegacy(arg0: MaterialData, arg1: boolean): Material;
 	getDataVersion(): number;
 	getMaterial(arg0: string, arg1: number): Material;
 	loadAdvancement(arg0: NamespacedKey, arg1: string): Advancement;

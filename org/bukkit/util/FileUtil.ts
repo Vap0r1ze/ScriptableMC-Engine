@@ -1,5 +1,8 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import File from '../../../java/io/File.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
 export default class FileUtil {
 	public static get $javaClass(): any {

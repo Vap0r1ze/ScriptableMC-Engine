@@ -1,9 +1,10 @@
 declare var Java: any;
 import CommandExecutionContext from '../../../../../com/pixlfox/scriptablemc/acf/CommandExecutionContext.js'
 import ContextResolver from './ContextResolver.js'
+import Object from '../../../../../java/lang/Object.js'
 
 export default interface IssuerAwareContextResolver extends ContextResolver {
-	getContext(c: CommandExecutionContext): any;
+	getContext(c: CommandExecutionContext): Object;
 }
 
 export default class IssuerAwareContextResolver {

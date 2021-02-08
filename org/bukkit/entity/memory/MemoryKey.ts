@@ -1,10 +1,14 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import Keyed from '../../../../org/bukkit/Keyed.js'
 import NamespacedKey from '../../../../org/bukkit/NamespacedKey.js'
+import Object from '../../../../java/lang/Object.js'
+import Set from '../../../../java/util/Set.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface MemoryKey extends Keyed {
+export default interface MemoryKey extends Object, Keyed {
 	getKey(): NamespacedKey;
-	getMemoryClass(): any;
+	getMemoryClass(): Class;
 }
 
 export default class MemoryKey {
@@ -72,7 +76,7 @@ export default class MemoryKey {
 		return MemoryKey.$javaClass.getByKey(...args);
 	}
 
-	public static values(): any;
+	public static values(): Set;
 	public static values(...args: any[]): any {
 		return MemoryKey.$javaClass.values(...args);
 	}

@@ -1,10 +1,11 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import Projectile from '../../../org/bukkit/entity/Projectile.js'
 import Vector from '../../../org/bukkit/util/Vector.js'
 
 export default interface ProjectileSource {
-	launchProjectile(arg0: any): Projectile;
-	launchProjectile(arg0: any, arg1: Vector): Projectile;
+	launchProjectile(arg0: Class): Projectile;
+	launchProjectile(arg0: Class, arg1: Vector): Projectile;
 }
 
 export default class ProjectileSource {

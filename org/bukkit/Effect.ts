@@ -1,11 +1,15 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
 import Effect$Type from './Effect$Type.js'
+import Enum from '../../java/lang/Enum.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 
-export default interface Effect {
-	compareTo(arg0: any): number;
-	compareTo(arg0: any): number;
-	getData(): any;
-	getDeclaringClass(): any;
+export default interface Effect extends Enum {
+	compareTo(arg0: Object): number;
+	compareTo(arg0: Enum): number;
+	getData(): Class;
+	getDeclaringClass(): Class;
 	getId(): number;
 	getType(): Effect$Type;
 	name(): string;

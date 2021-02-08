@@ -1,10 +1,13 @@
 declare var Java: any;
 import ChatColor from '../../../org/bukkit/ChatColor.js'
+import Class from '../../../java/lang/Class.js'
 import ConversationContext from './ConversationContext.js'
 import ConversationPrefix from './ConversationPrefix.js'
+import Object from '../../../java/lang/Object.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
+import String from '../../../java/lang/String.js'
 
-export default interface PluginNameConversationPrefix extends ConversationPrefix {
+export default interface PluginNameConversationPrefix extends Object, ConversationPrefix {
 	getPrefix(context: ConversationContext): string;
 }
 

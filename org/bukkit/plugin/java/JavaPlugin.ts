@@ -1,15 +1,20 @@
 declare var Java: any;
 import ChunkGenerator from '../../../../org/bukkit/generator/ChunkGenerator.js'
+import Class from '../../../../java/lang/Class.js'
 import Command from '../../../../org/bukkit/command/Command.js'
 import CommandSender from '../../../../org/bukkit/command/CommandSender.js'
 import File from '../../../../java/io/File.js'
 import FileConfiguration from '../../../../org/bukkit/configuration/file/FileConfiguration.js'
 import InputStream from '../../../../java/io/InputStream.js'
+import List from '../../../../java/util/List.js'
+import Logger from '../../../../java/util/logging/Logger.js'
+import Object from '../../../../java/lang/Object.js'
 import PluginBase from '../../../../org/bukkit/plugin/PluginBase.js'
 import PluginCommand from '../../../../org/bukkit/command/PluginCommand.js'
 import PluginDescriptionFile from '../../../../org/bukkit/plugin/PluginDescriptionFile.js'
 import PluginLoader from '../../../../org/bukkit/plugin/PluginLoader.js'
 import Server from '../../../../org/bukkit/Server.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface JavaPlugin extends PluginBase {
 	getCommand(_name: string): PluginCommand;
@@ -17,7 +22,7 @@ export default interface JavaPlugin extends PluginBase {
 	getDataFolder(): File;
 	getDefaultWorldGenerator(worldName: string, id: string): ChunkGenerator;
 	getDescription(): PluginDescriptionFile;
-	getLogger(): any;
+	getLogger(): Logger;
 	getName(): string;
 	getPluginLoader(): PluginLoader;
 	getResource(filename: string): InputStream;
@@ -49,12 +54,12 @@ export default class JavaPlugin {
 		return new JavaPlugin.$javaClass(...args);
 	}
 
-	public static getPlugin(clazz: any): JavaPlugin;
+	public static getPlugin(clazz: Class): JavaPlugin;
 	public static getPlugin(...args: any[]): any {
 		return JavaPlugin.$javaClass.getPlugin(...args);
 	}
 
-	public static getProvidingPlugin(clazz: any): JavaPlugin;
+	public static getProvidingPlugin(clazz: Class): JavaPlugin;
 	public static getProvidingPlugin(...args: any[]): any {
 		return JavaPlugin.$javaClass.getProvidingPlugin(...args);
 	}

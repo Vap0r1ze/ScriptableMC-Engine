@@ -1,19 +1,23 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Object from '../../../java/lang/Object.js'
 import Permissible from './Permissible.js'
 import Permission from './Permission.js'
 import PermissionAttachment from './PermissionAttachment.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
 import ServerOperator from './ServerOperator.js'
+import Set from '../../../java/util/Set.js'
+import String from '../../../java/lang/String.js'
 
-export default interface PermissibleBase extends Permissible {
+export default interface PermissibleBase extends Object, Permissible {
 	addAttachment(plugin: Plugin): PermissionAttachment;
 	addAttachment(plugin: Plugin, ticks: number): PermissionAttachment;
 	addAttachment(plugin: Plugin, _name: string, value: boolean): PermissionAttachment;
 	addAttachment(plugin: Plugin, _name: string, value: boolean, ticks: number): PermissionAttachment;
 	clearPermissions(): void;
-	getEffectivePermissions(): any;
-	hasPermission(inName: string): boolean;
+	getEffectivePermissions(): Set;
 	hasPermission(perm: Permission): boolean;
+	hasPermission(inName: string): boolean;
 	isOp(): boolean;
 	isPermissionSet(_name: string): boolean;
 	isPermissionSet(perm: Permission): boolean;

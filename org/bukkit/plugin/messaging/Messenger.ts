@@ -3,16 +3,18 @@ import Player from '../../../../org/bukkit/entity/Player.js'
 import Plugin from '../../../../org/bukkit/plugin/Plugin.js'
 import PluginMessageListener from './PluginMessageListener.js'
 import PluginMessageListenerRegistration from './PluginMessageListenerRegistration.js'
+import Set from '../../../../java/util/Set.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface Messenger {
 	dispatchIncomingMessage(arg0: Player, arg1: string, arg2: Array<number>): void;
-	getIncomingChannelRegistrations(arg0: string): any;
-	getIncomingChannelRegistrations(arg0: Plugin): any;
-	getIncomingChannelRegistrations(arg0: Plugin, arg1: string): any;
-	getIncomingChannels(): any;
-	getIncomingChannels(arg0: Plugin): any;
-	getOutgoingChannels(): any;
-	getOutgoingChannels(arg0: Plugin): any;
+	getIncomingChannelRegistrations(arg0: Plugin): Set;
+	getIncomingChannelRegistrations(arg0: string): Set;
+	getIncomingChannelRegistrations(arg0: Plugin, arg1: string): Set;
+	getIncomingChannels(): Set;
+	getIncomingChannels(arg0: Plugin): Set;
+	getOutgoingChannels(): Set;
+	getOutgoingChannels(arg0: Plugin): Set;
 	isIncomingChannelRegistered(arg0: Plugin, arg1: string): boolean;
 	isOutgoingChannelRegistered(arg0: Plugin, arg1: string): boolean;
 	isRegistrationValid(arg0: PluginMessageListenerRegistration): boolean;

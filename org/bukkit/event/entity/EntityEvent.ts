@@ -1,8 +1,11 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import Event from '../../../../org/bukkit/event/Event.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface EntityEvent extends Event {
 	getEntity(): Entity;

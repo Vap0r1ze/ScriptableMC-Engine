@@ -1,10 +1,13 @@
 declare var Java: any;
+import Map from '../../java/util/Map.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 
 export default interface Ref {
 	getBaseTypeName(): string;
-	getObject(): any;
-	getObject(arg0: any): any;
-	setObject(arg0: any): void;
+	getObject(): Object;
+	getObject(arg0: Map): Object;
+	setObject(arg0: Object): void;
 }
 
 export default class Ref {

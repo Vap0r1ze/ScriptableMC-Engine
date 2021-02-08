@@ -5,6 +5,7 @@ import BlockProjectileSource from '../../../org/bukkit/projectiles/BlockProjecti
 import Chunk from '../../../org/bukkit/Chunk.js'
 import Container from './Container.js'
 import Inventory from '../../../org/bukkit/inventory/Inventory.js'
+import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
 import LootTable from '../../../org/bukkit/loot/LootTable.js'
 import Lootable from '../../../org/bukkit/loot/Lootable.js'
@@ -14,6 +15,7 @@ import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
 import Nameable from '../../../org/bukkit/Nameable.js'
 import PersistentDataContainer from '../../../org/bukkit/persistence/PersistentDataContainer.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
+import String from '../../../java/lang/String.js'
 import World from '../../../org/bukkit/World.js'
 
 export default interface Dispenser extends Container, Nameable, Lootable {

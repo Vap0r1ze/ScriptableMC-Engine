@@ -2,6 +2,7 @@ declare var Java: any;
 import MapCursorCollection from './MapCursorCollection.js'
 import MapFont from './MapFont.js'
 import MapView from './MapView.js'
+import String from '../../../java/lang/String.js'
 
 export default interface MapCanvas {
 	drawImage(arg0: number, arg1: number, arg2: any): void;

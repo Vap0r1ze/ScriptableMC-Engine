@@ -1,18 +1,22 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
+import TimeZone from '../../../../java/util/TimeZone.js'
 
 export default interface YamlRepresenter {
-	addClassTag(arg0: any, arg1: any): any;
+	addClassTag(arg0: Class, arg1: any): any;
 	addTypeDescription(td: any): any;
 	getDefaultFlowStyle(): any;
 	getDefaultScalarStyle(): any;
 	getPropertyUtils(): any;
-	getTimeZone(): any;
+	getTimeZone(): TimeZone;
 	isExplicitPropertyUtils(): boolean;
-	represent(data: any): any;
+	represent(data: Object): any;
 	setDefaultFlowStyle(defaultFlowStyle: any): void;
 	setDefaultScalarStyle(defaultStyle: any): void;
 	setPropertyUtils(propertyUtils: any): void;
-	setTimeZone(arg0: any): void;
+	setTimeZone(arg0: TimeZone): void;
 }
 
 export default class YamlRepresenter {

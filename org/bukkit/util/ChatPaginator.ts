@@ -1,5 +1,8 @@
 declare var Java: any;
 import ChatPaginator$ChatPage from './ChatPaginator$ChatPage.js'
+import Class from '../../../java/lang/Class.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
 export default class ChatPaginator {
 	public static get $javaClass(): any {

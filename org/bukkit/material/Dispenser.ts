@@ -1,16 +1,19 @@
 declare var Java: any;
 import BlockFace from '../../../org/bukkit/block/BlockFace.js'
+import Class from '../../../java/lang/Class.js'
 import DirectionalContainer from './DirectionalContainer.js'
 import FurnaceAndDispenser from './FurnaceAndDispenser.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from './MaterialData.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
 export default interface Dispenser extends FurnaceAndDispenser {
 	clone(): MaterialData;
 	clone(): DirectionalContainer;
 	clone(): Dispenser;
-	clone(): any;
+	clone(): Object;
 	clone(): FurnaceAndDispenser;
 	getData(): number;
 	getFacing(): BlockFace;

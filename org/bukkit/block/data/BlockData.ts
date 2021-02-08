@@ -1,10 +1,13 @@
 declare var Java: any;
+import Cloneable from '../../../../java/lang/Cloneable.js'
 import Material from '../../../../org/bukkit/Material.js'
+import Object from '../../../../java/lang/Object.js'
 import SoundGroup from '../../../../org/bukkit/SoundGroup.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface BlockData {
+export default interface BlockData extends Cloneable {
 	clone(): BlockData;
-	clone(): any;
+	clone(): Object;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
 	getMaterial(): Material;

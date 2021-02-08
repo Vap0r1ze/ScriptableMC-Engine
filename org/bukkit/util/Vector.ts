@@ -1,14 +1,19 @@
 declare var Java: any;
 import BlockVector from './BlockVector.js'
+import Class from '../../../java/lang/Class.js'
+import Cloneable from '../../../java/lang/Cloneable.js'
 import ConfigurationSerializable from '../../../org/bukkit/configuration/serialization/ConfigurationSerializable.js'
 import Location from '../../../org/bukkit/Location.js'
+import Map from '../../../java/util/Map.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 import World from '../../../org/bukkit/World.js'
 
-export default interface Vector extends ConfigurationSerializable {
+export default interface Vector extends Object, Cloneable, ConfigurationSerializable {
 	add(vec: Vector): Vector;
 	angle(other: Vector): number;
 	checkFinite(): void;
-	clone(): any;
+	clone(): Object;
 	clone(): Vector;
 	copy(vec: Vector): Vector;
 	crossProduct(o: Vector): Vector;
@@ -40,7 +45,7 @@ export default interface Vector extends ConfigurationSerializable {
 	rotateAroundX(angle: number): Vector;
 	rotateAroundY(angle: number): Vector;
 	rotateAroundZ(angle: number): Vector;
-	serialize(): any;
+	serialize(): Map;
 	setX(x: number): Vector;
 	setX(x: number): Vector;
 	setX(x: number): Vector;
@@ -73,7 +78,7 @@ export default class Vector {
 		return new Vector.$javaClass(...args);
 	}
 
-	public static deserialize(args: any): Vector;
+	public static deserialize(args: Map): Vector;
 	public static deserialize(...args: any[]): any {
 		return Vector.$javaClass.deserialize(...args);
 	}

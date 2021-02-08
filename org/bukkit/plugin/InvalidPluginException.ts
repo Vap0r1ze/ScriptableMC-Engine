@@ -1,20 +1,26 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Exception from '../../../java/lang/Exception.js'
+import Object from '../../../java/lang/Object.js'
 import PrintStream from '../../../java/io/PrintStream.js'
 import PrintWriter from '../../../java/io/PrintWriter.js'
+import StackTraceElement from '../../../java/lang/StackTraceElement.js'
+import String from '../../../java/lang/String.js'
+import Throwable from '../../../java/lang/Throwable.js'
 
-export default interface InvalidPluginException {
-	addSuppressed(arg0: any): void;
-	fillInStackTrace(): any;
-	getCause(): any;
+export default interface InvalidPluginException extends Exception {
+	addSuppressed(arg0: Throwable): void;
+	fillInStackTrace(): Throwable;
+	getCause(): Throwable;
 	getLocalizedMessage(): string;
 	getMessage(): string;
-	getStackTrace(): Array<any>;
-	getSuppressed(): Array<any>;
-	initCause(arg0: any): any;
+	getStackTrace(): Array<StackTraceElement>;
+	getSuppressed(): Array<Throwable>;
+	initCause(arg0: Throwable): Throwable;
 	printStackTrace(): void;
 	printStackTrace(arg0: PrintStream): void;
 	printStackTrace(arg0: PrintWriter): void;
-	setStackTrace(arg0: Array<any>): void;
+	setStackTrace(arg0: Array<StackTraceElement>): void;
 }
 
 export default class InvalidPluginException {
@@ -27,8 +33,8 @@ export default class InvalidPluginException {
 
 	constructor();
 	constructor(message: string);
-	constructor(cause: any);
-	constructor(message: string, cause: any);
+	constructor(cause: Throwable);
+	constructor(message: string, cause: Throwable);
 	constructor(...args: any[]) {
 		return new InvalidPluginException.$javaClass(...args);
 	}

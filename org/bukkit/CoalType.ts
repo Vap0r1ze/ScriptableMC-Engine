@@ -1,10 +1,14 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
+import Enum from '../../java/lang/Enum.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 
-export default interface CoalType {
-	compareTo(arg0: any): number;
-	compareTo(arg0: any): number;
+export default interface CoalType extends Enum {
+	compareTo(arg0: Object): number;
+	compareTo(arg0: Enum): number;
 	getData(): number;
-	getDeclaringClass(): any;
+	getDeclaringClass(): Class;
 	name(): string;
 	ordinal(): number;
 }

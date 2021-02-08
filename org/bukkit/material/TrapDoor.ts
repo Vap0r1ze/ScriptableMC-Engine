@@ -1,13 +1,16 @@
 declare var Java: any;
 import BlockFace from '../../../org/bukkit/block/BlockFace.js'
+import Class from '../../../java/lang/Class.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from './MaterialData.js'
+import Object from '../../../java/lang/Object.js'
 import Openable from './Openable.js'
 import SimpleAttachableMaterialData from './SimpleAttachableMaterialData.js'
+import String from '../../../java/lang/String.js'
 
 export default interface TrapDoor extends SimpleAttachableMaterialData, Openable {
-	clone(): any;
+	clone(): Object;
 	clone(): MaterialData;
 	clone(): SimpleAttachableMaterialData;
 	clone(): TrapDoor;

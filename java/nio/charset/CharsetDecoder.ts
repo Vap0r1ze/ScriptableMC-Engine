@@ -2,10 +2,13 @@ declare var Java: any;
 import ByteBuffer from '../../../java/nio/ByteBuffer.js'
 import CharBuffer from '../../../java/nio/CharBuffer.js'
 import Charset from './Charset.js'
+import Class from '../../../java/lang/Class.js'
 import CoderResult from './CoderResult.js'
 import CodingErrorAction from './CodingErrorAction.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
-export default interface CharsetDecoder {
+export default interface CharsetDecoder extends Object {
 	averageCharsPerByte(): number;
 	charset(): Charset;
 	decode(arg0: ByteBuffer): CharBuffer;

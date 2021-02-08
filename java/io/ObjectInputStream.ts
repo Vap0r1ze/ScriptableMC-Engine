@@ -1,10 +1,13 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
 import InputStream from './InputStream.js'
+import Object from '../../java/lang/Object.js'
 import ObjectInput from './ObjectInput.js'
 import ObjectInputStream$GetField from './ObjectInputStream$GetField.js'
 import ObjectInputValidation from './ObjectInputValidation.js'
 import ObjectStreamConstants from './ObjectStreamConstants.js'
 import SerializablePermission from './SerializablePermission.js'
+import String from '../../java/lang/String.js'
 
 export default interface ObjectInputStream extends InputStream, ObjectInput, ObjectStreamConstants {
 	available(): number;
@@ -26,10 +29,10 @@ export default interface ObjectInputStream extends InputStream, ObjectInput, Obj
 	readInt(): number;
 	readLine(): string;
 	readLong(): number;
-	readObject(): any;
+	readObject(): Object;
 	readShort(): number;
 	readUTF(): string;
-	readUnshared(): any;
+	readUnshared(): Object;
 	readUnsignedByte(): number;
 	readUnsignedShort(): number;
 	registerValidation(arg0: ObjectInputValidation, arg1: number): void;

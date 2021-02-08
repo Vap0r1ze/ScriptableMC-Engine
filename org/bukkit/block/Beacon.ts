@@ -2,6 +2,8 @@ declare var Java: any;
 import Block from './Block.js'
 import BlockData from './data/BlockData.js'
 import Chunk from '../../../org/bukkit/Chunk.js'
+import Collection from '../../../java/util/Collection.js'
+import List from '../../../java/util/List.js'
 import LivingEntity from '../../../org/bukkit/entity/LivingEntity.js'
 import Location from '../../../org/bukkit/Location.js'
 import Lockable from './Lockable.js'
@@ -13,6 +15,7 @@ import PersistentDataContainer from '../../../org/bukkit/persistence/PersistentD
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
 import PotionEffect from '../../../org/bukkit/potion/PotionEffect.js'
 import PotionEffectType from '../../../org/bukkit/potion/PotionEffectType.js'
+import String from '../../../java/lang/String.js'
 import TileState from './TileState.js'
 import World from '../../../org/bukkit/World.js'
 

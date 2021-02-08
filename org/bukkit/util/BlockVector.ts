@@ -1,5 +1,9 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import Location from '../../../org/bukkit/Location.js'
+import Map from '../../../java/util/Map.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 import Vector from './Vector.js'
 import World from '../../../org/bukkit/World.js'
 
@@ -9,7 +13,7 @@ export default interface BlockVector extends Vector {
 	checkFinite(): void;
 	clone(): BlockVector;
 	clone(): Vector;
-	clone(): any;
+	clone(): Object;
 	copy(vec: Vector): Vector;
 	crossProduct(o: Vector): Vector;
 	distance(o: Vector): number;
@@ -40,7 +44,7 @@ export default interface BlockVector extends Vector {
 	rotateAroundX(angle: number): Vector;
 	rotateAroundY(angle: number): Vector;
 	rotateAroundZ(angle: number): Vector;
-	serialize(): any;
+	serialize(): Map;
 	setX(x: number): Vector;
 	setX(x: number): Vector;
 	setX(x: number): Vector;
@@ -74,8 +78,8 @@ export default class BlockVector {
 		return new BlockVector.$javaClass(...args);
 	}
 
-	public static deserialize(args: any): BlockVector;
-	public static deserialize(args: any): Vector;
+	public static deserialize(args: Map): BlockVector;
+	public static deserialize(args: Map): Vector;
 	public static deserialize(...args: any[]): any {
 		return BlockVector.$javaClass.deserialize(...args);
 	}

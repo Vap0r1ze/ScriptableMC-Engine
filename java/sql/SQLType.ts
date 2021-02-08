@@ -1,9 +1,11 @@
 declare var Java: any;
+import Integer from '../../java/lang/Integer.js'
+import String from '../../java/lang/String.js'
 
 export default interface SQLType {
 	getName(): string;
 	getVendor(): string;
-	getVendorTypeNumber(): any;
+	getVendorTypeNumber(): Integer;
 }
 
 export default class SQLType {

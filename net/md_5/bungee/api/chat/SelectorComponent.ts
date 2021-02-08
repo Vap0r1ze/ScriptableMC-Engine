@@ -1,9 +1,14 @@
 declare var Java: any;
 import BaseComponent from './BaseComponent.js'
+import Boolean from '../../../../../java/lang/Boolean.js'
 import ChatColor from '../../../../../net/md_5/bungee/api/ChatColor.js'
+import Class from '../../../../../java/lang/Class.js'
 import ClickEvent from './ClickEvent.js'
 import ComponentBuilder$FormatRetention from './ComponentBuilder$FormatRetention.js'
 import HoverEvent from './HoverEvent.js'
+import List from '../../../../../java/util/List.js'
+import Object from '../../../../../java/lang/Object.js'
+import String from '../../../../../java/lang/String.js'
 
 export default interface SelectorComponent extends BaseComponent {
 	addExtra(text: string): void;

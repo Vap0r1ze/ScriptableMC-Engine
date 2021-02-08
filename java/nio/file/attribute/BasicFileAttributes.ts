@@ -1,9 +1,10 @@
 declare var Java: any;
 import FileTime from './FileTime.js'
+import Object from '../../../../java/lang/Object.js'
 
 export default interface BasicFileAttributes {
 	creationTime(): FileTime;
-	fileKey(): any;
+	fileKey(): Object;
 	isDirectory(): boolean;
 	isOther(): boolean;
 	isRegularFile(): boolean;

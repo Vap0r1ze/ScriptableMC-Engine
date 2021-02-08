@@ -1,5 +1,9 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
+import Object from '../../../../java/lang/Object.js'
 import PerlinNoiseGenerator from './PerlinNoiseGenerator.js'
+import Random from '../../../../java/util/Random.js'
+import String from '../../../../java/lang/String.js'
 import World from '../../../../org/bukkit/World.js'
 
 export default interface SimplexNoiseGenerator extends PerlinNoiseGenerator {
@@ -23,7 +27,7 @@ export default class SimplexNoiseGenerator {
 		return obj instanceof SimplexNoiseGenerator.$javaClass;
 	}
 
-	constructor(rand: any);
+	constructor(rand: Random);
 	constructor(world: World);
 	constructor(seed: number);
 	constructor(...args: any[]) {

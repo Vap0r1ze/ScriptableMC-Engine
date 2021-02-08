@@ -1,19 +1,24 @@
 declare var Java: any;
 import BlockData from './block/data/BlockData.js'
+import Class from '../../java/lang/Class.js'
+import Consumer from '../../java/util/function/Consumer.js'
+import Enum from '../../java/lang/Enum.js'
 import Keyed from './Keyed.js'
 import MaterialData from './material/MaterialData.js'
 import NamespacedKey from './NamespacedKey.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 
-export default interface Material extends Keyed {
-	compareTo(arg0: any): number;
-	compareTo(arg0: any): number;
+export default interface Material extends Enum, Keyed {
+	compareTo(arg0: Object): number;
+	compareTo(arg0: Enum): number;
 	createBlockData(): BlockData;
-	createBlockData(consumer: any): BlockData;
+	createBlockData(consumer: Consumer): BlockData;
 	createBlockData(data: string): BlockData;
 	getBlastResistance(): number;
 	getCraftingRemainingItem(): Material;
-	getData(): any;
-	getDeclaringClass(): any;
+	getData(): Class;
+	getDeclaringClass(): Class;
 	getHardness(): number;
 	getId(): number;
 	getKey(): NamespacedKey;

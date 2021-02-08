@@ -1,20 +1,24 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import Conversable from './Conversable.js'
 import Conversation from './Conversation.js'
 import ConversationAbandonedListener from './ConversationAbandonedListener.js'
 import ConversationCanceller from './ConversationCanceller.js'
 import ConversationPrefix from './ConversationPrefix.js'
+import Map from '../../../java/util/Map.js'
+import Object from '../../../java/lang/Object.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
 import Prompt from './Prompt.js'
+import String from '../../../java/lang/String.js'
 
-export default interface ConversationFactory {
+export default interface ConversationFactory extends Object {
 	addConversationAbandonedListener(listener: ConversationAbandonedListener): ConversationFactory;
 	buildConversation(forWhom: Conversable): Conversation;
 	thatExcludesNonPlayersWithMessage(playerOnlyMessage: string): ConversationFactory;
 	withConversationCanceller(canceller: ConversationCanceller): ConversationFactory;
 	withEscapeSequence(escapeSequence: string): ConversationFactory;
 	withFirstPrompt(firstPrompt: Prompt): ConversationFactory;
-	withInitialSessionData(initialSessionData: any): ConversationFactory;
+	withInitialSessionData(initialSessionData: Map): ConversationFactory;
 	withLocalEcho(localEchoEnabled: boolean): ConversationFactory;
 	withModality(modal: boolean): ConversationFactory;
 	withPrefix(prefix: ConversationPrefix): ConversationFactory;

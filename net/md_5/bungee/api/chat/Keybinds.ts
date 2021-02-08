@@ -1,4 +1,5 @@
 declare var Java: any;
+import String from '../../../../../java/lang/String.js'
 
 export default class Keybinds {
 	public static get $javaClass(): any {

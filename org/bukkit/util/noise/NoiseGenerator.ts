@@ -1,6 +1,9 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface NoiseGenerator {
+export default interface NoiseGenerator extends Object {
 	noise(x: number): number;
 	noise(x: number, y: number): number;
 	noise(arg0: number, arg1: number, arg2: number): number;

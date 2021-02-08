@@ -1,17 +1,23 @@
 declare var Java: any;
 import Charset from '../../java/nio/charset/Charset.js'
+import Class from '../../java/lang/Class.js'
 import CookieJar from '../../khttp/structures/cookie/CookieJar.js'
 import InputStream from '../../java/io/InputStream.js'
+import Iterator from '../../java/util/Iterator.js'
+import List from '../../java/util/List.js'
+import Map from '../../java/util/Map.js'
+import Object from '../../java/lang/Object.js'
 import Request from '../../khttp/requests/Request.js'
 import Response from './Response.js'
+import String from '../../java/lang/String.js'
 
-export default interface GenericResponse extends Response {
-	contentIterator(chunkSize: number): any;
+export default interface GenericResponse extends Object, Response {
+	contentIterator(chunkSize: number): Iterator;
 	getConnection(): any;
 	getContent(): Array<number>;
 	getCookies(): CookieJar;
 	getEncoding(): Charset;
-	getHeaders(): any;
+	getHeaders(): Map;
 	getHistory(): Array<Response>;
 	getInitializers(): Array<any>;
 	getJsonArray(): any;
@@ -21,7 +27,7 @@ export default interface GenericResponse extends Response {
 	getStatusCode(): number;
 	getText(): string;
 	getUrl(): string;
-	lineIterator(chunkSize: number, delimiter: Array<number>): any;
+	lineIterator(chunkSize: number, delimiter: Array<number>): Iterator;
 	setEncoding(value: Charset): void;
 }
 

@@ -1,12 +1,16 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import CommandIssuer from './CommandIssuer.js'
 import CommandManager from './CommandManager.js'
 import CommandSender from '../../../../org/bukkit/command/CommandSender.js'
 import MessageType from './MessageType.js'
+import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
+import String from '../../../../java/lang/String.js'
+import UUID from '../../../../java/util/UUID.js'
 
-export default interface BukkitCommandIssuer extends CommandIssuer {
-	getIssuer(): any;
+export default interface BukkitCommandIssuer extends Object, CommandIssuer {
+	getIssuer(): Object;
 	getIssuer(): CommandSender;
 	getManager(): CommandManager;
 	getPlayer(): Player;

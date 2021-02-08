@@ -1,7 +1,8 @@
 declare var Java: any;
 import ConversationAbandonedEvent from './ConversationAbandonedEvent.js'
+import EventListener from '../../../java/util/EventListener.js'
 
-export default interface ConversationAbandonedListener {
+export default interface ConversationAbandonedListener extends EventListener {
 	conversationAbandoned(arg0: ConversationAbandonedEvent): void;
 }
 

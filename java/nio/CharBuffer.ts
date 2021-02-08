@@ -1,26 +1,34 @@
 declare var Java: any;
+import Appendable from '../../java/lang/Appendable.js'
 import Buffer from './Buffer.js'
 import ByteOrder from './ByteOrder.js'
+import CharSequence from '../../java/lang/CharSequence.js'
+import Class from '../../java/lang/Class.js'
+import Comparable from '../../java/lang/Comparable.js'
+import IntStream from '../../java/util/stream/IntStream.js'
+import Object from '../../java/lang/Object.js'
+import Readable from '../../java/lang/Readable.js'
+import String from '../../java/lang/String.js'
 
-export default interface CharBuffer extends Buffer {
+export default interface CharBuffer extends Buffer, Comparable, Appendable, CharSequence, Readable {
 	append(arg0: string): CharBuffer;
-	append(arg0: any): any;
-	append(arg0: string): any;
-	append(arg0: any): CharBuffer;
-	append(arg0: any, arg1: number, arg2: number): CharBuffer;
-	append(arg0: any, arg1: number, arg2: number): any;
+	append(arg0: CharSequence): Appendable;
+	append(arg0: string): Appendable;
+	append(arg0: CharSequence): CharBuffer;
+	append(arg0: CharSequence, arg1: number, arg2: number): CharBuffer;
+	append(arg0: CharSequence, arg1: number, arg2: number): Appendable;
 	array(): Array<string>;
-	array(): any;
+	array(): Object;
 	arrayOffset(): number;
 	asReadOnlyBuffer(): CharBuffer;
 	capacity(): number;
 	charAt(arg0: number): string;
-	chars(): any;
+	chars(): IntStream;
 	clear(): Buffer;
-	codePoints(): any;
+	codePoints(): IntStream;
 	compact(): CharBuffer;
 	compareTo(arg0: CharBuffer): number;
-	compareTo(arg0: any): number;
+	compareTo(arg0: Object): number;
 	duplicate(): CharBuffer;
 	flip(): Buffer;
 	get(): string;
@@ -50,7 +58,7 @@ export default interface CharBuffer extends Buffer {
 	reset(): Buffer;
 	rewind(): Buffer;
 	slice(): CharBuffer;
-	subSequence(arg0: number, arg1: number): any;
+	subSequence(arg0: number, arg1: number): CharSequence;
 	subSequence(arg0: number, arg1: number): CharBuffer;
 }
 
@@ -67,10 +75,10 @@ export default class CharBuffer {
 		return CharBuffer.$javaClass.allocate(...args);
 	}
 
-	public static wrap(arg0: any): CharBuffer;
+	public static wrap(arg0: CharSequence): CharBuffer;
 	public static wrap(arg0: Array<string>): CharBuffer;
 	public static wrap(arg0: Array<string>, arg1: number, arg2: number): CharBuffer;
-	public static wrap(arg0: any, arg1: number, arg2: number): CharBuffer;
+	public static wrap(arg0: CharSequence, arg1: number, arg2: number): CharBuffer;
 	public static wrap(...args: any[]): any {
 		return CharBuffer.$javaClass.wrap(...args);
 	}

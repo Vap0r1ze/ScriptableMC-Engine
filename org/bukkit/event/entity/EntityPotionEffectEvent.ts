@@ -1,5 +1,6 @@
 declare var Java: any;
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EntityEvent from './EntityEvent.js'
 import EntityPotionEffectEvent$Action from './EntityPotionEffectEvent$Action.js'
@@ -7,8 +8,10 @@ import EntityPotionEffectEvent$Cause from './EntityPotionEffectEvent$Cause.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import LivingEntity from '../../../../org/bukkit/entity/LivingEntity.js'
+import Object from '../../../../java/lang/Object.js'
 import PotionEffect from '../../../../org/bukkit/potion/PotionEffect.js'
 import PotionEffectType from '../../../../org/bukkit/potion/PotionEffectType.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface EntityPotionEffectEvent extends EntityEvent, Cancellable {
 	getAction(): EntityPotionEffectEvent$Action;

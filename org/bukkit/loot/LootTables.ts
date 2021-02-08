@@ -1,12 +1,16 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Enum from '../../../java/lang/Enum.js'
 import Keyed from '../../../org/bukkit/Keyed.js'
 import LootTable from './LootTable.js'
 import NamespacedKey from '../../../org/bukkit/NamespacedKey.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
-export default interface LootTables extends Keyed {
-	compareTo(arg0: any): number;
-	compareTo(arg0: any): number;
-	getDeclaringClass(): any;
+export default interface LootTables extends Enum, Keyed {
+	compareTo(arg0: Object): number;
+	compareTo(arg0: Enum): number;
+	getDeclaringClass(): Class;
 	getKey(): NamespacedKey;
 	getLootTable(): LootTable;
 	name(): string;

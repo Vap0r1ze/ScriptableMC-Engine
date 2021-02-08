@@ -1,4 +1,7 @@
 declare var Java: any;
+import Class from '../../java/lang/Class.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 import Wrapper from './Wrapper.js'
 
 export default interface ParameterMetaData extends Wrapper {
@@ -11,8 +14,8 @@ export default interface ParameterMetaData extends Wrapper {
 	getScale(arg0: number): number;
 	isNullable(arg0: number): number;
 	isSigned(arg0: number): boolean;
-	isWrapperFor(arg0: any): boolean;
-	unwrap(arg0: any): any;
+	isWrapperFor(arg0: Class): boolean;
+	unwrap(arg0: Class): Object;
 }
 
 export default class ParameterMetaData {

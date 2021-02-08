@@ -1,15 +1,18 @@
 declare var Java: any;
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EntityEvent from './EntityEvent.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import HumanEntity from '../../../../org/bukkit/entity/HumanEntity.js'
 import ItemStack from '../../../../org/bukkit/inventory/ItemStack.js'
+import Object from '../../../../java/lang/Object.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface FoodLevelChangeEvent extends EntityEvent, Cancellable {
-	getEntity(): Entity;
 	getEntity(): HumanEntity;
+	getEntity(): Entity;
 	getEntityType(): EntityType;
 	getEventName(): string;
 	getFoodLevel(): number;

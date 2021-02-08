@@ -1,12 +1,15 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import HumanEntity from '../../../org/bukkit/entity/HumanEntity.js'
 import Inventory from './Inventory.js'
 import InventoryType from '../../../org/bukkit/event/inventory/InventoryType.js'
 import InventoryType$SlotType from '../../../org/bukkit/event/inventory/InventoryType$SlotType.js'
 import InventoryView$Property from './InventoryView$Property.js'
 import ItemStack from './ItemStack.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
-export default interface InventoryView {
+export default interface InventoryView extends Object {
 	close(): void;
 	convertSlot(rawSlot: number): number;
 	countSlots(): number;

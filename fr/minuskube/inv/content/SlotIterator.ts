@@ -1,5 +1,6 @@
 declare var Java: any;
 import ClickableItem from '../../../../fr/minuskube/inv/ClickableItem.js'
+import Optional from '../../../../java/util/Optional.js'
 import SlotPos from './SlotPos.js'
 
 export default interface SlotIterator {
@@ -10,7 +11,7 @@ export default interface SlotIterator {
 	column(arg0: number): SlotIterator;
 	doesAllowOverride(): boolean;
 	ended(): boolean;
-	get(): any;
+	get(): Optional;
 	next(): SlotIterator;
 	previous(): SlotIterator;
 	row(): number;

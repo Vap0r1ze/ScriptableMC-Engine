@@ -1,18 +1,22 @@
 declare var Java: any;
 import BlockFace from '../../../org/bukkit/block/BlockFace.js'
+import Class from '../../../java/lang/Class.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from './MaterialData.js'
 import MushroomBlockTexture from './types/MushroomBlockTexture.js'
+import Object from '../../../java/lang/Object.js'
+import Set from '../../../java/util/Set.js'
+import String from '../../../java/lang/String.js'
 
 export default interface Mushroom extends MaterialData {
 	clone(): MaterialData;
-	clone(): any;
+	clone(): Object;
 	clone(): Mushroom;
 	getBlockTexture(): MushroomBlockTexture;
 	getData(): number;
 	getItemType(): Material;
-	getPaintedFaces(): any;
+	getPaintedFaces(): Set;
 	isFacePainted(face: BlockFace): boolean;
 	isStem(): boolean;
 	setBlockTexture(texture: MushroomBlockTexture): void;

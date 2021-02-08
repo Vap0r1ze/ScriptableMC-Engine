@@ -9,8 +9,8 @@ export default interface ItemFactory {
 	asMetaFor(arg0: ItemMeta, arg1: ItemStack): ItemMeta;
 	getDefaultLeatherColor(): Color;
 	getItemMeta(arg0: Material): ItemMeta;
-	isApplicable(arg0: ItemMeta, arg1: Material): boolean;
 	isApplicable(arg0: ItemMeta, arg1: ItemStack): boolean;
+	isApplicable(arg0: ItemMeta, arg1: Material): boolean;
 	updateMaterial(arg0: ItemMeta, arg1: Material): Material;
 }
 

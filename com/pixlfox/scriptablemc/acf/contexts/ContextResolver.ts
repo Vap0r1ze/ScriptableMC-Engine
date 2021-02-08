@@ -1,8 +1,9 @@
 declare var Java: any;
 import CommandExecutionContext from '../../../../../com/pixlfox/scriptablemc/acf/CommandExecutionContext.js'
+import Object from '../../../../../java/lang/Object.js'
 
 export default interface ContextResolver {
-	getContext(c: CommandExecutionContext): any;
+	getContext(c: CommandExecutionContext): Object;
 }
 
 export default class ContextResolver {

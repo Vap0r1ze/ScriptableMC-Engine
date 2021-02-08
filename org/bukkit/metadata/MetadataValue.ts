@@ -1,5 +1,7 @@
 declare var Java: any;
+import Object from '../../../java/lang/Object.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
+import String from '../../../java/lang/String.js'
 
 export default interface MetadataValue {
 	asBoolean(): boolean;
@@ -12,7 +14,7 @@ export default interface MetadataValue {
 	asString(): string;
 	getOwningPlugin(): Plugin;
 	invalidate(): void;
-	value(): any;
+	value(): Object;
 }
 
 export default class MetadataValue {

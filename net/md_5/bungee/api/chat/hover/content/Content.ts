@@ -1,7 +1,10 @@
 declare var Java: any;
+import Class from '../../../../../../../java/lang/Class.js'
 import HoverEvent$Action from '../../../../../../../net/md_5/bungee/api/chat/HoverEvent$Action.js'
+import Object from '../../../../../../../java/lang/Object.js'
+import String from '../../../../../../../java/lang/String.js'
 
-export default interface Content {
+export default interface Content extends Object {
 	assertAction(input: HoverEvent$Action): void;
 	requiredAction(): HoverEvent$Action;
 }

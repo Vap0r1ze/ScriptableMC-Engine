@@ -1,32 +1,42 @@
 declare var Java: any;
+import Collection from '../../../../java/util/Collection.js'
+import Consumer from '../../../../java/util/function/Consumer.js'
+import Iterator from '../../../../java/util/Iterator.js'
+import ObjIntConsumer from '../../../../java/util/function/ObjIntConsumer.js'
+import Object from '../../../../java/lang/Object.js'
+import Predicate from '../../../../java/util/function/Predicate.js'
+import Set from '../../../../java/util/Set.js'
+import Spliterator from '../../../../java/util/Spliterator.js'
+import Stream from '../../../../java/util/stream/Stream.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface Multiset {
-	add(arg0: any): boolean;
-	add(arg0: any, arg1: number): number;
+export default interface Multiset extends Collection {
+	add(arg0: Object): boolean;
+	add(arg0: Object, arg1: number): number;
 	addAll(arg0: Array<any>): boolean;
 	clear(): void;
-	contains(arg0: any): boolean;
+	contains(arg0: Object): boolean;
 	containsAll(arg0: Array<any>): boolean;
-	count(arg0: any): number;
-	elementSet(): any;
-	entrySet(): any;
-	forEach(action: any): void;
-	forEachEntry(action: any): void;
+	count(arg0: Object): number;
+	elementSet(): Set;
+	entrySet(): Set;
+	forEach(action: Consumer): void;
+	forEachEntry(action: ObjIntConsumer): void;
 	isEmpty(): boolean;
-	iterator(): any;
-	parallelStream(): any;
-	remove(arg0: any): boolean;
-	remove(arg0: any, arg1: number): number;
+	iterator(): Iterator;
+	parallelStream(): Stream;
+	remove(arg0: Object): boolean;
+	remove(arg0: Object, arg1: number): number;
 	removeAll(arg0: Array<any>): boolean;
-	removeIf(arg0: any): boolean;
+	removeIf(arg0: Predicate): boolean;
 	retainAll(arg0: Array<any>): boolean;
-	setCount(arg0: any, arg1: number): number;
-	setCount(arg0: any, arg1: number, arg2: number): boolean;
+	setCount(arg0: Object, arg1: number): number;
+	setCount(arg0: Object, arg1: number, arg2: number): boolean;
 	size(): number;
-	spliterator(): any;
-	stream(): any;
-	toArray(): Array<any>;
-	toArray(arg0: Array<any>): Array<any>;
+	spliterator(): Spliterator;
+	stream(): Stream;
+	toArray(): Array<Object>;
+	toArray(arg0: Array<Object>): Array<Object>;
 }
 
 export default class Multiset {

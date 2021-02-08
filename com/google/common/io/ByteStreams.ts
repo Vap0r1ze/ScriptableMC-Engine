@@ -4,9 +4,12 @@ import ByteArrayDataOutput from './ByteArrayDataOutput.js'
 import ByteArrayInputStream from '../../../../java/io/ByteArrayInputStream.js'
 import ByteArrayOutputStream from '../../../../java/io/ByteArrayOutputStream.js'
 import ByteProcessor from './ByteProcessor.js'
+import Class from '../../../../java/lang/Class.js'
 import InputStream from '../../../../java/io/InputStream.js'
+import Object from '../../../../java/lang/Object.js'
 import OutputStream from '../../../../java/io/OutputStream.js'
 import ReadableByteChannel from '../../../../java/nio/channels/ReadableByteChannel.js'
+import String from '../../../../java/lang/String.js'
 import WritableByteChannel from '../../../../java/nio/channels/WritableByteChannel.js'
 
 export default class ByteStreams {
@@ -57,7 +60,7 @@ export default class ByteStreams {
 		return ByteStreams.$javaClass.read(...args);
 	}
 
-	public static readBytes(input: InputStream, processor: ByteProcessor): any;
+	public static readBytes(input: InputStream, processor: ByteProcessor): Object;
 	public static readBytes(...args: any[]): any {
 		return ByteStreams.$javaClass.readBytes(...args);
 	}

@@ -1,12 +1,14 @@
 declare var Java: any;
+import List from '../../java/util/List.js'
 import Location from './Location.js'
 import Raid$RaidStatus from './Raid$RaidStatus.js'
 import Raider from './entity/Raider.js'
+import Set from '../../java/util/Set.js'
 
 export default interface Raid {
 	getActiveTicks(): number;
 	getBadOmenLevel(): number;
-	getHeroes(): any;
+	getHeroes(): Set;
 	getLocation(): Location;
 	getRaiders(): Array<Raider>;
 	getSpawnedGroups(): number;

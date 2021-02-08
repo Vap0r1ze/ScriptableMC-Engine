@@ -1,7 +1,10 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
+import Object from '../../../java/lang/Object.js'
 import PotionType from './PotionType.js'
+import String from '../../../java/lang/String.js'
 
-export default interface PotionData {
+export default interface PotionData extends Object {
 	getType(): PotionType;
 	isExtended(): boolean;
 	isUpgraded(): boolean;

@@ -1,16 +1,20 @@
 declare var Java: any;
 import BaseCommand from './BaseCommand.js'
+import Class from '../../../../java/lang/Class.js'
 import Command from '../../../../org/bukkit/command/Command.js'
 import CommandIssuer from './CommandIssuer.js'
 import CommandManager from './CommandManager.js'
 import CommandMap from '../../../../org/bukkit/command/CommandMap.js'
 import CommandSender from '../../../../org/bukkit/command/CommandSender.js'
+import List from '../../../../java/util/List.js'
 import Location from '../../../../org/bukkit/Location.js'
+import Object from '../../../../java/lang/Object.js'
 import Plugin from '../../../../org/bukkit/plugin/Plugin.js'
 import PluginIdentifiableCommand from '../../../../org/bukkit/command/PluginIdentifiableCommand.js'
 import RegisteredCommand from './RegisteredCommand.js'
 import RootCommand from './RootCommand.js'
 import SetMultimap from '../../../../com/google/common/collect/SetMultimap.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface BukkitRootCommand extends Command, RootCommand, PluginIdentifiableCommand {
 	addChild(command: BaseCommand): void;

@@ -1,6 +1,10 @@
 declare var Java: any;
 import BaseComponent from '../../../net/md_5/bungee/api/chat/BaseComponent.js'
+import Class from '../../../java/lang/Class.js'
 import Entity$Spigot from './Entity$Spigot.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
+import UUID from '../../../java/util/UUID.js'
 
 export default interface LightningStrike$Spigot extends Entity$Spigot {
 	isSilent(): boolean;

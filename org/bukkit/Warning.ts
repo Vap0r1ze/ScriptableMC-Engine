@@ -1,7 +1,11 @@
 declare var Java: any;
+import Annotation from '../../java/lang/annotation/Annotation.js'
+import Class from '../../java/lang/Class.js'
+import Object from '../../java/lang/Object.js'
+import String from '../../java/lang/String.js'
 
-export default interface Warning {
-	annotationType(): any;
+export default interface Warning extends Annotation {
+	annotationType(): Class;
 	reason(): string;
 	value(): boolean;
 }

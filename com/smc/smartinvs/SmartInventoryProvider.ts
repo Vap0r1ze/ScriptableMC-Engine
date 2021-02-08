@@ -1,9 +1,12 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import InventoryContents from '../../../fr/minuskube/inv/content/InventoryContents.js'
 import InventoryProvider from '../../../fr/minuskube/inv/content/InventoryProvider.js'
+import Object from '../../../java/lang/Object.js'
 import Player from '../../../org/bukkit/entity/Player.js'
+import String from '../../../java/lang/String.js'
 
-export default interface SmartInventoryProvider extends InventoryProvider {
+export default interface SmartInventoryProvider extends Object, InventoryProvider {
 	init(player: Player, contents: InventoryContents): void;
 	update(player: Player, contents: InventoryContents): void;
 }

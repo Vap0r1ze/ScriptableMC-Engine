@@ -1,19 +1,23 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import Messenger from './Messenger.js'
+import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import Plugin from '../../../../org/bukkit/plugin/Plugin.js'
 import PluginMessageListener from './PluginMessageListener.js'
 import PluginMessageListenerRegistration from './PluginMessageListenerRegistration.js'
+import Set from '../../../../java/util/Set.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface StandardMessenger extends Messenger {
+export default interface StandardMessenger extends Object, Messenger {
 	dispatchIncomingMessage(source: Player, channel: string, message: Array<number>): void;
-	getIncomingChannelRegistrations(channel: string): any;
-	getIncomingChannelRegistrations(plugin: Plugin): any;
-	getIncomingChannelRegistrations(plugin: Plugin, channel: string): any;
-	getIncomingChannels(): any;
-	getIncomingChannels(plugin: Plugin): any;
-	getOutgoingChannels(): any;
-	getOutgoingChannels(plugin: Plugin): any;
+	getIncomingChannelRegistrations(plugin: Plugin): Set;
+	getIncomingChannelRegistrations(channel: string): Set;
+	getIncomingChannelRegistrations(plugin: Plugin, channel: string): Set;
+	getIncomingChannels(): Set;
+	getIncomingChannels(plugin: Plugin): Set;
+	getOutgoingChannels(): Set;
+	getOutgoingChannels(plugin: Plugin): Set;
 	isIncomingChannelRegistered(plugin: Plugin, channel: string): boolean;
 	isOutgoingChannelRegistered(plugin: Plugin, channel: string): boolean;
 	isRegistrationValid(registration: PluginMessageListenerRegistration): boolean;

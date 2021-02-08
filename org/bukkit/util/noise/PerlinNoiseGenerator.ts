@@ -1,5 +1,9 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import NoiseGenerator from './NoiseGenerator.js'
+import Object from '../../../../java/lang/Object.js'
+import Random from '../../../../java/util/Random.js'
+import String from '../../../../java/lang/String.js'
 import World from '../../../../org/bukkit/World.js'
 
 export default interface PerlinNoiseGenerator extends NoiseGenerator {
@@ -23,7 +27,7 @@ export default class PerlinNoiseGenerator {
 	}
 
 	constructor(world: World);
-	constructor(rand: any);
+	constructor(rand: Random);
 	constructor(seed: number);
 	constructor(...args: any[]) {
 		return new PerlinNoiseGenerator.$javaClass(...args);

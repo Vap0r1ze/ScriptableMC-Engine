@@ -2,15 +2,18 @@ declare var Java: any;
 import BlockData from './BlockData.js'
 import BlockFace from '../../../../org/bukkit/block/BlockFace.js'
 import Material from '../../../../org/bukkit/Material.js'
+import Object from '../../../../java/lang/Object.js'
+import Set from '../../../../java/util/Set.js'
 import SoundGroup from '../../../../org/bukkit/SoundGroup.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface MultipleFacing extends BlockData {
 	clone(): BlockData;
-	clone(): any;
-	getAllowedFaces(): any;
+	clone(): Object;
+	getAllowedFaces(): Set;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
-	getFaces(): any;
+	getFaces(): Set;
 	getMaterial(): Material;
 	getSoundGroup(): SoundGroup;
 	hasFace(arg0: BlockFace): boolean;

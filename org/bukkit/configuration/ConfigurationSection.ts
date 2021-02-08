@@ -1,25 +1,39 @@
 declare var Java: any;
+import Boolean from '../../../java/lang/Boolean.js'
+import Byte from '../../../java/lang/Byte.js'
+import Character from '../../../java/lang/Character.js'
+import Class from '../../../java/lang/Class.js'
 import Color from '../../../org/bukkit/Color.js'
 import Configuration from './Configuration.js'
 import ConfigurationSerializable from './serialization/ConfigurationSerializable.js'
+import Double from '../../../java/lang/Double.js'
+import Float from '../../../java/lang/Float.js'
+import Integer from '../../../java/lang/Integer.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
+import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
+import Long from '../../../java/lang/Long.js'
+import Map from '../../../java/util/Map.js'
+import Object from '../../../java/lang/Object.js'
 import OfflinePlayer from '../../../org/bukkit/OfflinePlayer.js'
+import Set from '../../../java/util/Set.js'
+import Short from '../../../java/lang/Short.js'
+import String from '../../../java/lang/String.js'
 import Vector from '../../../org/bukkit/util/Vector.js'
 
 export default interface ConfigurationSection {
-	addDefault(arg0: string, arg1: any): void;
+	addDefault(arg0: string, arg1: Object): void;
 	contains(arg0: string): boolean;
 	contains(arg0: string, arg1: boolean): boolean;
 	createSection(arg0: string): ConfigurationSection;
-	createSection(arg0: string, arg1: any): ConfigurationSection;
-	get(arg0: string): any;
-	get(arg0: string, arg1: any): any;
+	createSection(arg0: string, arg1: Map): ConfigurationSection;
+	get(arg0: string): Object;
+	get(arg0: string, arg1: Object): Object;
 	getBoolean(arg0: string): boolean;
 	getBoolean(arg0: string, arg1: boolean): boolean;
 	getBooleanList(arg0: string): Array<boolean>;
 	getByteList(arg0: string): Array<number>;
-	getCharacterList(arg0: string): Array<any>;
+	getCharacterList(arg0: string): Array<Character>;
 	getColor(arg0: string): Color;
 	getColor(arg0: string, arg1: Color): Color;
 	getConfigurationSection(arg0: string): ConfigurationSection;
@@ -31,10 +45,10 @@ export default interface ConfigurationSection {
 	getFloatList(arg0: string): Array<number>;
 	getInt(arg0: string): number;
 	getInt(arg0: string, arg1: number): number;
-	getIntegerList(arg0: string): Array<any>;
+	getIntegerList(arg0: string): Array<Integer>;
 	getItemStack(arg0: string): ItemStack;
 	getItemStack(arg0: string, arg1: ItemStack): ItemStack;
-	getKeys(arg0: boolean): any;
+	getKeys(arg0: boolean): Set;
 	getList(arg0: string): Array<any>;
 	getList(arg0: string, arg1: Array<any>): Array<any>;
 	getLocation(arg0: string): Location;
@@ -44,19 +58,19 @@ export default interface ConfigurationSection {
 	getLongList(arg0: string): Array<number>;
 	getMapList(arg0: string): Array<any>;
 	getName(): string;
-	getObject(arg0: string, arg1: any): any;
-	getObject(arg0: string, arg1: any, arg2: any): any;
+	getObject(arg0: string, arg1: Class): Object;
+	getObject(arg0: string, arg1: Class, arg2: Object): Object;
 	getOfflinePlayer(arg0: string): OfflinePlayer;
 	getOfflinePlayer(arg0: string, arg1: OfflinePlayer): OfflinePlayer;
 	getParent(): ConfigurationSection;
 	getRoot(): Configuration;
-	getSerializable(arg0: string, arg1: any): ConfigurationSerializable;
-	getSerializable(arg0: string, arg1: any, arg2: ConfigurationSerializable): ConfigurationSerializable;
+	getSerializable(arg0: string, arg1: Class): ConfigurationSerializable;
+	getSerializable(arg0: string, arg1: Class, arg2: ConfigurationSerializable): ConfigurationSerializable;
 	getShortList(arg0: string): Array<number>;
 	getString(arg0: string): string;
 	getString(arg0: string, arg1: string): string;
 	getStringList(arg0: string): Array<string>;
-	getValues(arg0: boolean): any;
+	getValues(arg0: boolean): Map;
 	getVector(arg0: string): Vector;
 	getVector(arg0: string, arg1: Vector): Vector;
 	isBoolean(arg0: string): boolean;
@@ -72,7 +86,7 @@ export default interface ConfigurationSection {
 	isSet(arg0: string): boolean;
 	isString(arg0: string): boolean;
 	isVector(arg0: string): boolean;
-	set(arg0: string, arg1: any): void;
+	set(arg0: string, arg1: Object): void;
 }
 
 export default class ConfigurationSection {

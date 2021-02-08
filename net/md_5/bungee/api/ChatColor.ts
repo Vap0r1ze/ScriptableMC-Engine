@@ -1,6 +1,10 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
+import Object from '../../../../java/lang/Object.js'
+import Pattern from '../../../../java/util/regex/Pattern.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface ChatColor {
+export default interface ChatColor extends Object {
 	getColor(): any;
 	getName(): string;
 	name(): string;
@@ -99,7 +103,7 @@ export default class ChatColor {
 		return ChatColor.$javaClass.STRIKETHROUGH;
 	}
 
-	public static get STRIP_COLOR_PATTERN(): any {
+	public static get STRIP_COLOR_PATTERN(): Pattern {
 		return ChatColor.$javaClass.STRIP_COLOR_PATTERN;
 	}
 

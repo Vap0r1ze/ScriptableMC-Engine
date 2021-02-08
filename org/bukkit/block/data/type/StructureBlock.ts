@@ -1,12 +1,14 @@
 declare var Java: any;
 import BlockData from '../../../../../org/bukkit/block/data/BlockData.js'
 import Material from '../../../../../org/bukkit/Material.js'
+import Object from '../../../../../java/lang/Object.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
+import String from '../../../../../java/lang/String.js'
 import StructureBlock$Mode from './StructureBlock$Mode.js'
 
 export default interface StructureBlock extends BlockData {
 	clone(): BlockData;
-	clone(): any;
+	clone(): Object;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
 	getMaterial(): Material;

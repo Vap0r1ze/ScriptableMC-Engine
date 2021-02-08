@@ -1,7 +1,8 @@
 declare var Java: any;
+import Map from '../../../../java/util/Map.js'
 
 export default interface ConfigurationSerializable {
-	serialize(): any;
+	serialize(): Map;
 }
 
 export default class ConfigurationSerializable {

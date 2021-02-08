@@ -1,11 +1,14 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from './MaterialData.js'
+import Object from '../../../java/lang/Object.js'
 import SandstoneType from '../../../org/bukkit/SandstoneType.js'
+import String from '../../../java/lang/String.js'
 
 export default interface Sandstone extends MaterialData {
-	clone(): any;
+	clone(): Object;
 	clone(): Sandstone;
 	clone(): MaterialData;
 	getData(): number;

@@ -1,12 +1,16 @@
 declare var Java: any;
+import Consumer from '../../java/util/function/Consumer.js'
+import Iterable from '../../java/lang/Iterable.js'
+import Iterator from '../../java/util/Iterator.js'
 import Keyed from './Keyed.js'
 import NamespacedKey from './NamespacedKey.js'
+import Spliterator from '../../java/util/Spliterator.js'
 
-export default interface Registry {
-	forEach(arg0: any): void;
+export default interface Registry extends Iterable {
+	forEach(arg0: Consumer): void;
 	get(arg0: NamespacedKey): Keyed;
-	iterator(): any;
-	spliterator(): any;
+	iterator(): Iterator;
+	spliterator(): Spliterator;
 }
 
 export default class Registry {

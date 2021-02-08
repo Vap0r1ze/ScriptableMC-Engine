@@ -1,27 +1,33 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import CommandIssuer from './CommandIssuer.js'
 import CommandManager from './CommandManager.js'
 import ContextResolver from './contexts/ContextResolver.js'
+import Map from '../../../../java/util/Map.js'
+import Object from '../../../../java/lang/Object.js'
+import Parameter from '../../../../java/lang/reflect/Parameter.js'
 import RegisteredCommand from './RegisteredCommand.js'
+import Set from '../../../../java/util/Set.js'
+import String from '../../../../java/lang/String.js'
 
-export default interface CommandParameter {
+export default interface CommandParameter extends Object {
 	canConsumeInput(): boolean;
 	canExecuteWithoutInput(): boolean;
 	getConditions(): string;
 	getDefaultValue(): string;
 	getDescription(): string;
 	getDisplayName(issuer: CommandIssuer): string;
-	getFlags(): any;
+	getFlags(): Map;
 	getManager(): CommandManager;
 	getName(): string;
 	getNextParam(): CommandParameter;
 	getParamIndex(): number;
-	getParameter(): any;
-	getRequiredPermissions(): any;
+	getParameter(): Parameter;
+	getRequiredPermissions(): Set;
 	getResolver(): ContextResolver;
 	getSyntax(): string;
 	getSyntax(issuer: CommandIssuer): string;
-	getType(): any;
+	getType(): Class;
 	getValues(): Array<string>;
 	isCommandIssuer(): boolean;
 	isLast(): boolean;
@@ -34,7 +40,7 @@ export default interface CommandParameter {
 	setConditions(conditions: string): void;
 	setDefaultValue(defaultValue: string): void;
 	setDescription(description: string): void;
-	setFlags(flags: any): void;
+	setFlags(flags: Map): void;
 	setNextParam(nextParam: CommandParameter): void;
 	setOptional(optional: boolean): void;
 	setOptionalResolver(optionalResolver: boolean): void;
@@ -52,7 +58,7 @@ export default class CommandParameter {
 		return obj instanceof CommandParameter.$javaClass;
 	}
 
-	constructor(command: RegisteredCommand, param: any, paramIndex: number, isLast: boolean);
+	constructor(command: RegisteredCommand, param: Parameter, paramIndex: number, isLast: boolean);
 	constructor(...args: any[]) {
 		return new CommandParameter.$javaClass(...args);
 	}

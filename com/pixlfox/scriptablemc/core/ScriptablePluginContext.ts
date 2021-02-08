@@ -1,9 +1,12 @@
 declare var Java: any;
+import Class from '../../../../java/lang/Class.js'
 import EventExecutor from '../../../../org/bukkit/plugin/EventExecutor.js'
 import InventoryManager from '../../../../fr/minuskube/inv/InventoryManager.js'
 import JavaPlugin from '../../../../org/bukkit/plugin/java/JavaPlugin.js'
+import List from '../../../../java/util/List.js'
 import Listener from '../../../../org/bukkit/event/Listener.js'
 import Material from '../../../../org/bukkit/Material.js'
+import Object from '../../../../java/lang/Object.js'
 import OfflinePlayer from '../../../../org/bukkit/OfflinePlayer.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PluginCommand from '../../../../org/bukkit/command/PluginCommand.js'
@@ -12,13 +15,14 @@ import PluginMessageListenerRegistration from '../../../../org/bukkit/plugin/mes
 import ScriptablePluginEngine from './ScriptablePluginEngine.js'
 import Server from '../../../../org/bukkit/Server.js'
 import ServicesManager from '../../../../org/bukkit/plugin/ServicesManager.js'
+import String from '../../../../java/lang/String.js'
 import Version from '../../../../com/smc/version/Version.js'
 
-export default interface ScriptablePluginContext extends Listener {
+export default interface ScriptablePluginContext extends Object, Listener {
 	disable(): void;
 	enable(): void;
-	getBukkitServiceRegistration(_class: any): any;
-	getBukkitServiceRegistration(className: string): any;
+	getBukkitServiceRegistration(_class: Class): Object;
+	getBukkitServiceRegistration(className: string): Object;
 	getCommands(): Array<PluginCommand>;
 	getEngine(): ScriptablePluginEngine;
 	getInventoryManager(): InventoryManager;
@@ -33,11 +37,11 @@ export default interface ScriptablePluginContext extends Listener {
 	load(): void;
 	newCommand(_name: string): PluginCommand;
 	registerCommand(command: PluginCommand): void;
-	registerEvent(eventClass: any, executor: EventExecutor): void;
+	registerEvent(eventClass: Class, executor: EventExecutor): void;
 	registerIncomingPluginChannel(channelName: string, listener: PluginMessageListener): PluginMessageListenerRegistration;
 	registerOutgoingPluginChannel(channel: string): void;
-	setPlaceholders(player: Player, placeholderText: string): string;
 	setPlaceholders(player: OfflinePlayer, placeholderText: string): string;
+	setPlaceholders(player: Player, placeholderText: string): string;
 	unregisterCommand(command: PluginCommand): void;
 	unregisterIncomingPluginChannel(channel: string): void;
 	unregisterOutgoingPluginChannel(channel: string): void;

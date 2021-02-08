@@ -1,18 +1,23 @@
 declare var Java: any;
 import Block from '../../../../org/bukkit/block/Block.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
+import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import HumanEntity from '../../../../org/bukkit/entity/HumanEntity.js'
 import Inventory from '../../../../org/bukkit/inventory/Inventory.js'
 import InventoryEvent from '../../../../org/bukkit/event/inventory/InventoryEvent.js'
 import InventoryView from '../../../../org/bukkit/inventory/InventoryView.js'
 import ItemStack from '../../../../org/bukkit/inventory/ItemStack.js'
+import List from '../../../../java/util/List.js'
+import Map from '../../../../java/util/Map.js'
+import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
+import String from '../../../../java/lang/String.js'
 
 export default interface EnchantItemEvent extends InventoryEvent, Cancellable {
 	getEnchantBlock(): Block;
 	getEnchanter(): Player;
-	getEnchantsToAdd(): any;
+	getEnchantsToAdd(): Map;
 	getEventName(): string;
 	getExpLevelCost(): number;
 	getHandlers(): HandlerList;
@@ -35,7 +40,7 @@ export default class EnchantItemEvent {
 		return obj instanceof EnchantItemEvent.$javaClass;
 	}
 
-	constructor(enchanter: Player, view: InventoryView, table: Block, item: ItemStack, level: number, enchants: any, i: number);
+	constructor(enchanter: Player, view: InventoryView, table: Block, item: ItemStack, level: number, enchants: Map, i: number);
 	constructor(...args: any[]) {
 		return new EnchantItemEvent.$javaClass(...args);
 	}

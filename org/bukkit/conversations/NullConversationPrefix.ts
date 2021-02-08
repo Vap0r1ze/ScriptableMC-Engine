@@ -1,8 +1,11 @@
 declare var Java: any;
+import Class from '../../../java/lang/Class.js'
 import ConversationContext from './ConversationContext.js'
 import ConversationPrefix from './ConversationPrefix.js'
+import Object from '../../../java/lang/Object.js'
+import String from '../../../java/lang/String.js'
 
-export default interface NullConversationPrefix extends ConversationPrefix {
+export default interface NullConversationPrefix extends Object, ConversationPrefix {
 	getPrefix(context: ConversationContext): string;
 }
 
