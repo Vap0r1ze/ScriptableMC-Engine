@@ -16,12 +16,12 @@ export default interface BukkitCommandExecutionContext extends CommandExecutionC
 	getCmd(): RegisteredCommand;
 	getDoubleFlagValue(flag: string, def: any): number;
 	getFirstArg(): string;
+	getFlagValue(flag: string, def: any): number;
+	getFlagValue(flag: string, def: string): string;
+	getFlagValue(flag: string, def: number): number;
 	getFlagValue(flag: string, def: number): number;
 	getFlagValue(flag: string, def: number): number;
 	getFlagValue(flag: string, def: any): any;
-	getFlagValue(flag: string, def: string): string;
-	getFlagValue(flag: string, def: number): number;
-	getFlagValue(flag: string, def: any): number;
 	getFlags(): any;
 	getFloatFlagValue(flag: string, def: any): number;
 	getIndex(): number;

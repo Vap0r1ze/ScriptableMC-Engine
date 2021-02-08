@@ -6,16 +6,16 @@ import World$Environment from './World$Environment.js'
 import WorldType from './WorldType.js'
 
 export default interface WorldCreator {
-	copy(world: World): WorldCreator;
 	copy(creator: WorldCreator): WorldCreator;
+	copy(world: World): WorldCreator;
 	createWorld(): World;
 	environment(): World$Environment;
 	environment(env: World$Environment): WorldCreator;
 	generateStructures(): boolean;
 	generateStructures(generate: boolean): WorldCreator;
 	generator(): ChunkGenerator;
-	generator(generator: ChunkGenerator): WorldCreator;
 	generator(generator: string): WorldCreator;
+	generator(generator: ChunkGenerator): WorldCreator;
 	generator(generator: string, output: CommandSender): WorldCreator;
 	generatorSettings(): string;
 	generatorSettings(generatorSettings: string): WorldCreator;

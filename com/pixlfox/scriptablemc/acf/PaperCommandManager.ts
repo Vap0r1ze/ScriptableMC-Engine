@@ -94,8 +94,8 @@ export default interface PaperCommandManager extends BukkitCommandManager {
 	setHelpFormatter(helpFormatter: CommandHelpFormatter): void;
 	setIssuerLocale(issuer: any, locale: any): any;
 	setPlayerLocale(player: Player, locale: any): any;
-	unregisterCommand(command: BukkitRootCommand): void;
 	unregisterCommand(command: BaseCommand): void;
+	unregisterCommand(command: BukkitRootCommand): void;
 	unregisterCommands(): void;
 	usePerIssuerLocale(setting: boolean): boolean;
 	usePerIssuerLocale(usePerIssuerLocale: boolean, autoDetectFromClient: boolean): boolean;

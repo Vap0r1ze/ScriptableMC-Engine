@@ -85,8 +85,8 @@ export default class Bukkit {
 
 	public static createBlockData(material: Material): BlockData;
 	public static createBlockData(data: string): BlockData;
-	public static createBlockData(material: Material, consumer: any): BlockData;
 	public static createBlockData(material: Material, data: string): BlockData;
+	public static createBlockData(material: Material, consumer: any): BlockData;
 	public static createBlockData(...args: any[]): any {
 		return Bukkit.$javaClass.createBlockData(...args);
 	}
@@ -108,8 +108,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.createExplorerMap(...args);
 	}
 
-	public static createInventory(owner: InventoryHolder, size: number): Inventory;
 	public static createInventory(owner: InventoryHolder, type: InventoryType): Inventory;
+	public static createInventory(owner: InventoryHolder, size: number): Inventory;
 	public static createInventory(owner: InventoryHolder, size: number, title: string): Inventory;
 	public static createInventory(owner: InventoryHolder, type: InventoryType, title: string): Inventory;
 	public static createInventory(...args: any[]): any {
@@ -317,8 +317,8 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getOperators(...args);
 	}
 
-	public static getPlayer(id: string): Player;
 	public static getPlayer(_name: string): Player;
+	public static getPlayer(id: string): Player;
 	public static getPlayer(...args: any[]): any {
 		return Bukkit.$javaClass.getPlayer(...args);
 	}

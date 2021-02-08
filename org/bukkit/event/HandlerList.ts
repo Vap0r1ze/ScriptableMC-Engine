@@ -42,8 +42,8 @@ export default class HandlerList {
 	}
 
 	public static unregisterAll(): void;
-	public static unregisterAll(listener: Listener): void;
 	public static unregisterAll(plugin: Plugin): void;
+	public static unregisterAll(listener: Listener): void;
 	public static unregisterAll(...args: any[]): any {
 		return HandlerList.$javaClass.unregisterAll(...args);
 	}

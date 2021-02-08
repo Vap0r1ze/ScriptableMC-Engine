@@ -86,8 +86,8 @@ export default interface EvokerFangs extends Entity {
 	removeMetadata(arg0: string, arg1: Plugin): void;
 	removePassenger(arg0: Entity): boolean;
 	removeScoreboardTag(arg0: string): boolean;
-	sendMessage(arg0: string): void;
 	sendMessage(arg0: Array<string>): void;
+	sendMessage(arg0: string): void;
 	sendMessage(arg0: string, arg1: Array<string>): void;
 	sendMessage(arg0: string, arg1: string): void;
 	setCustomName(arg0: string): void;

@@ -28,8 +28,8 @@ export default interface SimplePluginManager extends PluginManager {
 	getPermissions(): any;
 	getPlugin(_name: string): Plugin;
 	getPlugins(): Array<Plugin>;
-	isPluginEnabled(_name: string): boolean;
 	isPluginEnabled(plugin: Plugin): boolean;
+	isPluginEnabled(_name: string): boolean;
 	isTransitiveDepend(plugin: PluginDescriptionFile, depend: PluginDescriptionFile): boolean;
 	loadPlugin(file: File): Plugin;
 	loadPlugins(directory: File): Array<Plugin>;
@@ -38,8 +38,8 @@ export default interface SimplePluginManager extends PluginManager {
 	registerEvent(event: any, listener: Listener, priority: EventPriority, executor: EventExecutor, plugin: Plugin, ignoreCancelled: boolean): void;
 	registerEvents(listener: Listener, plugin: Plugin): void;
 	registerInterface(loader: any): void;
-	removePermission(_name: string): void;
 	removePermission(perm: Permission): void;
+	removePermission(_name: string): void;
 	subscribeToDefaultPerms(op: boolean, permissible: Permissible): void;
 	subscribeToPermission(permission: string, permissible: Permissible): void;
 	unsubscribeFromDefaultPerms(op: boolean, permissible: Permissible): void;

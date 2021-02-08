@@ -192,8 +192,8 @@ export default interface HumanEntity extends LivingEntity, AnimalTamer, Inventor
 	removePotionEffect(arg0: PotionEffectType): void;
 	removeScoreboardTag(arg0: string): boolean;
 	resetMaxHealth(): void;
-	sendMessage(arg0: string): void;
 	sendMessage(arg0: Array<string>): void;
+	sendMessage(arg0: string): void;
 	sendMessage(arg0: string, arg1: Array<string>): void;
 	sendMessage(arg0: string, arg1: string): void;
 	setAI(arg0: boolean): void;

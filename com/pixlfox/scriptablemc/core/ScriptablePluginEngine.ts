@@ -16,8 +16,8 @@ export default interface ScriptablePluginEngine {
 	eval(source: any): any;
 	eval(source: string): any;
 	evalCommandSender(source: string, sender: CommandSender): any;
-	evalFile(filePath: string): any;
 	evalFile(scriptFile: File): any;
+	evalFile(filePath: string): any;
 	getBootstrapPlugin(): ScriptEngineMain;
 	getConfig(): ScriptEngineConfig;
 	getDebugEnabled(): boolean;

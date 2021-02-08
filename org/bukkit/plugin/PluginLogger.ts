@@ -3,19 +3,19 @@ import Plugin from './Plugin.js'
 
 export default interface PluginLogger {
 	addHandler(arg0: any): void;
-	config(arg0: any): void;
 	config(arg0: string): void;
+	config(arg0: any): void;
 	entering(arg0: string, arg1: string): void;
-	entering(arg0: string, arg1: string, arg2: any): void;
 	entering(arg0: string, arg1: string, arg2: Array<any>): void;
+	entering(arg0: string, arg1: string, arg2: any): void;
 	exiting(arg0: string, arg1: string): void;
 	exiting(arg0: string, arg1: string, arg2: any): void;
 	fine(arg0: string): void;
 	fine(arg0: any): void;
 	finer(arg0: any): void;
 	finer(arg0: string): void;
-	finest(arg0: any): void;
 	finest(arg0: string): void;
+	finest(arg0: any): void;
 	getFilter(): any;
 	getHandlers(): Array<any>;
 	getLevel(): any;
@@ -34,16 +34,16 @@ export default interface PluginLogger {
 	log(arg0: any, arg1: string, arg2: any): void;
 	log(arg0: any, arg1: string, arg2: Array<any>): void;
 	log(arg0: any, arg1: string, arg2: any): void;
-	logp(arg0: any, arg1: string, arg2: string, arg3: string): void;
 	logp(arg0: any, arg1: string, arg2: string, arg3: any): void;
-	logp(arg0: any, arg1: string, arg2: string, arg3: string, arg4: Array<any>): void;
+	logp(arg0: any, arg1: string, arg2: string, arg3: string): void;
 	logp(arg0: any, arg1: string, arg2: string, arg3: string, arg4: any): void;
 	logp(arg0: any, arg1: string, arg2: string, arg3: any, arg4: any): void;
 	logp(arg0: any, arg1: string, arg2: string, arg3: string, arg4: any): void;
+	logp(arg0: any, arg1: string, arg2: string, arg3: string, arg4: Array<any>): void;
 	logrb(arg0: any, arg1: string, arg2: string, arg3: string, arg4: string): void;
-	logrb(arg0: any, arg1: string, arg2: string, arg3: any, arg4: string, arg5: Array<any>): void;
 	logrb(arg0: any, arg1: string, arg2: string, arg3: any, arg4: string, arg5: any): void;
 	logrb(arg0: any, arg1: string, arg2: string, arg3: string, arg4: string, arg5: any): void;
+	logrb(arg0: any, arg1: string, arg2: string, arg3: any, arg4: string, arg5: Array<any>): void;
 	logrb(arg0: any, arg1: string, arg2: string, arg3: string, arg4: string, arg5: Array<any>): void;
 	logrb(arg0: any, arg1: string, arg2: string, arg3: string, arg4: string, arg5: any): void;
 	removeHandler(arg0: any): void;

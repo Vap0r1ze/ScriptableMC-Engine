@@ -96,8 +96,8 @@ export default interface EnderDragonPart extends ComplexEntityPart, Damageable {
 	removePassenger(arg0: Entity): boolean;
 	removeScoreboardTag(arg0: string): boolean;
 	resetMaxHealth(): void;
-	sendMessage(arg0: string): void;
 	sendMessage(arg0: Array<string>): void;
+	sendMessage(arg0: string): void;
 	sendMessage(arg0: string, arg1: Array<string>): void;
 	sendMessage(arg0: string, arg1: string): void;
 	setAbsorptionAmount(arg0: number): void;

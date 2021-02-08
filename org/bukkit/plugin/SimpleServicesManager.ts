@@ -8,9 +8,9 @@ export default interface SimpleServicesManager extends ServicesManager {
 	getKnownServices(): Array<any>;
 	getKnownServices(): any;
 	getRegistration(service: any): RegisteredServiceProvider;
-	getRegistrations(service: any): Array<any>;
-	getRegistrations(service: any): Array<any>;
 	getRegistrations(plugin: Plugin): Array<any>;
+	getRegistrations(service: any): Array<any>;
+	getRegistrations(service: any): Array<any>;
 	isProvidedFor(service: any): boolean;
 	load(service: any): any;
 	register(service: any, provider: any, plugin: Plugin, priority: ServicePriority): void;

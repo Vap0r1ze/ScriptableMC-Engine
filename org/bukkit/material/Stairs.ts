@@ -6,8 +6,8 @@ import Material from '../../../org/bukkit/Material.js'
 import MaterialData from './MaterialData.js'
 
 export default interface Stairs extends MaterialData, Directional {
-	clone(): Stairs;
 	clone(): any;
+	clone(): Stairs;
 	clone(): MaterialData;
 	getAscendingDirection(): BlockFace;
 	getData(): number;
