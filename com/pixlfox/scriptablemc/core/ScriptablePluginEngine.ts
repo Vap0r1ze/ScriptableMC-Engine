@@ -1,18 +1,13 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import CommandSender from '../../../../org/bukkit/command/CommandSender.js'
-import Exception from '../../../../java/lang/Exception.js'
 import File from '../../../../java/io/File.js'
 import InventoryManager from '../../../../fr/minuskube/inv/InventoryManager.js'
-import List from '../../../../java/util/List.js'
-import Object from '../../../../java/lang/Object.js'
 import ScriptEngineConfig from '../../../../com/pixlfox/scriptablemc/ScriptEngineConfig.js'
 import ScriptEngineMain from '../../../../com/pixlfox/scriptablemc/ScriptEngineMain.js'
 import ScriptablePluginContext from './ScriptablePluginContext.js'
-import String from '../../../../java/lang/String.js'
 import Version from '../../../../com/smc/version/Version.js'
 
-export default interface ScriptablePluginEngine extends Object {
+export default interface ScriptablePluginEngine {
 	close(): void;
 	disableAllPlugins(): void;
 	disablePlugin(pluginContext: ScriptablePluginContext): void;
@@ -21,8 +16,8 @@ export default interface ScriptablePluginEngine extends Object {
 	eval(source: string): any;
 	eval(source: any): any;
 	evalCommandSender(source: string, sender: CommandSender): any;
-	evalFile(scriptFile: File): any;
 	evalFile(filePath: string): any;
+	evalFile(scriptFile: File): any;
 	getBootstrapPlugin(): ScriptEngineMain;
 	getConfig(): ScriptEngineConfig;
 	getDebugEnabled(): boolean;
@@ -36,7 +31,7 @@ export default interface ScriptablePluginEngine extends Object {
 	getPluginInstance(pluginContext: ScriptablePluginContext): any;
 	getPluginVersion(): Version;
 	getScriptablePlugins(): Array<ScriptablePluginContext>;
-	getStartupErrors(): Array<Exception>;
+	getStartupErrors(): Array<any>;
 	loadAllHelperClasses(): void;
 	loadMainScript(path: string): void;
 	loadPlugin(scriptableClass: any): ScriptablePluginContext;

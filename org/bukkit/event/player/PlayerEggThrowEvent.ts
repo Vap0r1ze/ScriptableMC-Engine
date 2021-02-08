@@ -1,12 +1,9 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import Egg from '../../../../org/bukkit/entity/Egg.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PlayerEvent from './PlayerEvent.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface PlayerEggThrowEvent extends PlayerEvent {
 	getEgg(): Egg;

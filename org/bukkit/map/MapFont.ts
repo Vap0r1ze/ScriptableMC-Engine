@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import MapFont$CharacterSprite from './MapFont$CharacterSprite.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface MapFont extends Object {
+export default interface MapFont {
 	getChar(ch: string): MapFont$CharacterSprite;
 	getHeight(): number;
 	getWidth(text: string): number;

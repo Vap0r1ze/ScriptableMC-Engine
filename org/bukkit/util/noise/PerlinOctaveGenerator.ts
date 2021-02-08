@@ -1,10 +1,6 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import NoiseGenerator from './NoiseGenerator.js'
-import Object from '../../../../java/lang/Object.js'
 import OctaveGenerator from './OctaveGenerator.js'
-import Random from '../../../../java/util/Random.js'
-import String from '../../../../java/lang/String.js'
 import World from '../../../../org/bukkit/World.js'
 
 export default interface PerlinOctaveGenerator extends OctaveGenerator {
@@ -33,7 +29,7 @@ export default class PerlinOctaveGenerator {
 	}
 
 	constructor(world: World, octaves: number);
-	constructor(rand: Random, octaves: number);
+	constructor(rand: any, octaves: number);
 	constructor(seed: number, octaves: number);
 	constructor(...args: any[]) {
 		return new PerlinOctaveGenerator.$javaClass(...args);

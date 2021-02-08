@@ -1,13 +1,10 @@
 declare var Java: any;
 import Blob from './Blob.js'
-import Calendar from '../../java/util/Calendar.js'
-import Class from '../../java/lang/Class.js'
 import Clob from './Clob.js'
 import Connection from './Connection.js'
 import Date from './Date.js'
 import InputStream from '../../java/io/InputStream.js'
 import NClob from './NClob.js'
-import Object from '../../java/lang/Object.js'
 import ParameterMetaData from './ParameterMetaData.js'
 import Reader from '../../java/io/Reader.js'
 import Ref from './Ref.js'
@@ -18,7 +15,6 @@ import SQLType from './SQLType.js'
 import SQLWarning from './SQLWarning.js'
 import SQLXML from './SQLXML.js'
 import Statement from './Statement.js'
-import String from '../../java/lang/String.js'
 import Time from './Time.js'
 import Timestamp from './Timestamp.js'
 import _Array from './Array.js'
@@ -34,9 +30,9 @@ export default interface PreparedStatement extends Statement {
 	closeOnCompletion(): void;
 	execute(): boolean;
 	execute(arg0: string): boolean;
-	execute(arg0: string, arg1: Array<string>): boolean;
 	execute(arg0: string, arg1: number): boolean;
 	execute(arg0: string, arg1: Array<number>): boolean;
+	execute(arg0: string, arg1: Array<string>): boolean;
 	executeBatch(): Array<number>;
 	executeLargeBatch(): Array<number>;
 	executeLargeUpdate(): number;
@@ -48,8 +44,8 @@ export default interface PreparedStatement extends Statement {
 	executeQuery(arg0: string): ResultSet;
 	executeUpdate(): number;
 	executeUpdate(arg0: string): number;
-	executeUpdate(arg0: string, arg1: Array<number>): number;
 	executeUpdate(arg0: string, arg1: number): number;
+	executeUpdate(arg0: string, arg1: Array<number>): number;
 	executeUpdate(arg0: string, arg1: Array<string>): number;
 	getConnection(): Connection;
 	getFetchDirection(): number;
@@ -73,7 +69,7 @@ export default interface PreparedStatement extends Statement {
 	isCloseOnCompletion(): boolean;
 	isClosed(): boolean;
 	isPoolable(): boolean;
-	isWrapperFor(arg0: Class): boolean;
+	isWrapperFor(arg0: any): boolean;
 	setArray(arg0: number, arg1: _Array): void;
 	setAsciiStream(arg0: number, arg1: InputStream): void;
 	setAsciiStream(arg0: number, arg1: InputStream, arg2: number): void;
@@ -96,7 +92,7 @@ export default interface PreparedStatement extends Statement {
 	setClob(arg0: number, arg1: Reader, arg2: number): void;
 	setCursorName(arg0: string): void;
 	setDate(arg0: number, arg1: Date): void;
-	setDate(arg0: number, arg1: Date, arg2: Calendar): void;
+	setDate(arg0: number, arg1: Date, arg2: any): void;
 	setDouble(arg0: number, arg1: number): void;
 	setEscapeProcessing(arg0: boolean): void;
 	setFetchDirection(arg0: number): void;
@@ -115,11 +111,11 @@ export default interface PreparedStatement extends Statement {
 	setNString(arg0: number, arg1: string): void;
 	setNull(arg0: number, arg1: number): void;
 	setNull(arg0: number, arg1: number, arg2: string): void;
-	setObject(arg0: number, arg1: Object): void;
-	setObject(arg0: number, arg1: Object, arg2: SQLType): void;
-	setObject(arg0: number, arg1: Object, arg2: number): void;
-	setObject(arg0: number, arg1: Object, arg2: number, arg3: number): void;
-	setObject(arg0: number, arg1: Object, arg2: SQLType, arg3: number): void;
+	setObject(arg0: number, arg1: any): void;
+	setObject(arg0: number, arg1: any, arg2: SQLType): void;
+	setObject(arg0: number, arg1: any, arg2: number): void;
+	setObject(arg0: number, arg1: any, arg2: number, arg3: number): void;
+	setObject(arg0: number, arg1: any, arg2: SQLType, arg3: number): void;
 	setPoolable(arg0: boolean): void;
 	setQueryTimeout(arg0: number): void;
 	setRef(arg0: number, arg1: Ref): void;
@@ -128,12 +124,12 @@ export default interface PreparedStatement extends Statement {
 	setShort(arg0: number, arg1: number): void;
 	setString(arg0: number, arg1: string): void;
 	setTime(arg0: number, arg1: Time): void;
-	setTime(arg0: number, arg1: Time, arg2: Calendar): void;
+	setTime(arg0: number, arg1: Time, arg2: any): void;
 	setTimestamp(arg0: number, arg1: Timestamp): void;
-	setTimestamp(arg0: number, arg1: Timestamp, arg2: Calendar): void;
+	setTimestamp(arg0: number, arg1: Timestamp, arg2: any): void;
 	setURL(arg0: number, arg1: any): void;
 	setUnicodeStream(arg0: number, arg1: InputStream, arg2: number): void;
-	unwrap(arg0: Class): Object;
+	unwrap(arg0: any): any;
 }
 
 export default class PreparedStatement {

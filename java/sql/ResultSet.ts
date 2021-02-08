@@ -1,14 +1,9 @@
 declare var Java: any;
-import AutoCloseable from '../../java/lang/AutoCloseable.js'
 import Blob from './Blob.js'
-import Calendar from '../../java/util/Calendar.js'
-import Class from '../../java/lang/Class.js'
 import Clob from './Clob.js'
 import Date from './Date.js'
 import InputStream from '../../java/io/InputStream.js'
-import Map from '../../java/util/Map.js'
 import NClob from './NClob.js'
-import Object from '../../java/lang/Object.js'
 import Reader from '../../java/io/Reader.js'
 import Ref from './Ref.js'
 import ResultSetMetaData from './ResultSetMetaData.js'
@@ -17,13 +12,12 @@ import SQLType from './SQLType.js'
 import SQLWarning from './SQLWarning.js'
 import SQLXML from './SQLXML.js'
 import Statement from './Statement.js'
-import String from '../../java/lang/String.js'
 import Time from './Time.js'
 import Timestamp from './Timestamp.js'
 import Wrapper from './Wrapper.js'
 import _Array from './Array.js'
 
-export default interface ResultSet extends Wrapper, AutoCloseable {
+export default interface ResultSet extends Wrapper {
 	absolute(arg0: number): boolean;
 	afterLast(): void;
 	beforeFirst(): void;
@@ -59,8 +53,8 @@ export default interface ResultSet extends Wrapper, AutoCloseable {
 	getCursorName(): string;
 	getDate(arg0: number): Date;
 	getDate(arg0: string): Date;
-	getDate(arg0: string, arg1: Calendar): Date;
-	getDate(arg0: number, arg1: Calendar): Date;
+	getDate(arg0: string, arg1: any): Date;
+	getDate(arg0: number, arg1: any): Date;
 	getDouble(arg0: number): number;
 	getDouble(arg0: string): number;
 	getFetchDirection(): number;
@@ -79,12 +73,12 @@ export default interface ResultSet extends Wrapper, AutoCloseable {
 	getNClob(arg0: number): NClob;
 	getNString(arg0: number): string;
 	getNString(arg0: string): string;
-	getObject(arg0: number): Object;
-	getObject(arg0: string): Object;
-	getObject(arg0: string, arg1: Map): Object;
-	getObject(arg0: number, arg1: Class): Object;
-	getObject(arg0: number, arg1: Map): Object;
-	getObject(arg0: string, arg1: Class): Object;
+	getObject(arg0: number): any;
+	getObject(arg0: string): any;
+	getObject(arg0: string, arg1: any): any;
+	getObject(arg0: number, arg1: any): any;
+	getObject(arg0: number, arg1: any): any;
+	getObject(arg0: string, arg1: any): any;
 	getRef(arg0: string): Ref;
 	getRef(arg0: number): Ref;
 	getRow(): number;
@@ -99,12 +93,12 @@ export default interface ResultSet extends Wrapper, AutoCloseable {
 	getString(arg0: number): string;
 	getTime(arg0: string): Time;
 	getTime(arg0: number): Time;
-	getTime(arg0: string, arg1: Calendar): Time;
-	getTime(arg0: number, arg1: Calendar): Time;
+	getTime(arg0: string, arg1: any): Time;
+	getTime(arg0: number, arg1: any): Time;
 	getTimestamp(arg0: number): Timestamp;
 	getTimestamp(arg0: string): Timestamp;
-	getTimestamp(arg0: number, arg1: Calendar): Timestamp;
-	getTimestamp(arg0: string, arg1: Calendar): Timestamp;
+	getTimestamp(arg0: number, arg1: any): Timestamp;
+	getTimestamp(arg0: string, arg1: any): Timestamp;
 	getType(): number;
 	getURL(arg0: string): any;
 	getURL(arg0: number): any;
@@ -117,7 +111,7 @@ export default interface ResultSet extends Wrapper, AutoCloseable {
 	isClosed(): boolean;
 	isFirst(): boolean;
 	isLast(): boolean;
-	isWrapperFor(arg0: Class): boolean;
+	isWrapperFor(arg0: any): boolean;
 	last(): boolean;
 	moveToCurrentRow(): void;
 	moveToInsertRow(): void;
@@ -130,7 +124,7 @@ export default interface ResultSet extends Wrapper, AutoCloseable {
 	rowUpdated(): boolean;
 	setFetchDirection(arg0: number): void;
 	setFetchSize(arg0: number): void;
-	unwrap(arg0: Class): Object;
+	unwrap(arg0: any): any;
 	updateArray(arg0: number, arg1: _Array): void;
 	updateArray(arg0: string, arg1: _Array): void;
 	updateAsciiStream(arg0: string, arg1: InputStream): void;
@@ -195,14 +189,14 @@ export default interface ResultSet extends Wrapper, AutoCloseable {
 	updateNString(arg0: string, arg1: string): void;
 	updateNull(arg0: number): void;
 	updateNull(arg0: string): void;
-	updateObject(arg0: string, arg1: Object): void;
-	updateObject(arg0: number, arg1: Object): void;
-	updateObject(arg0: number, arg1: Object, arg2: SQLType): void;
-	updateObject(arg0: string, arg1: Object, arg2: number): void;
-	updateObject(arg0: number, arg1: Object, arg2: number): void;
-	updateObject(arg0: string, arg1: Object, arg2: SQLType): void;
-	updateObject(arg0: string, arg1: Object, arg2: SQLType, arg3: number): void;
-	updateObject(arg0: number, arg1: Object, arg2: SQLType, arg3: number): void;
+	updateObject(arg0: string, arg1: any): void;
+	updateObject(arg0: number, arg1: any): void;
+	updateObject(arg0: number, arg1: any, arg2: SQLType): void;
+	updateObject(arg0: string, arg1: any, arg2: number): void;
+	updateObject(arg0: number, arg1: any, arg2: number): void;
+	updateObject(arg0: string, arg1: any, arg2: SQLType): void;
+	updateObject(arg0: string, arg1: any, arg2: SQLType, arg3: number): void;
+	updateObject(arg0: number, arg1: any, arg2: SQLType, arg3: number): void;
 	updateRef(arg0: number, arg1: Ref): void;
 	updateRef(arg0: string, arg1: Ref): void;
 	updateRow(): void;

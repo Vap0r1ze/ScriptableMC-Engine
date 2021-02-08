@@ -1,34 +1,28 @@
 declare var Java: any;
 import BukkitCommandManager from './BukkitCommandManager.js'
-import Class from '../../../../java/lang/Class.js'
-import ClassLoader from '../../../../java/lang/ClassLoader.js'
 import CommandIssuer from './CommandIssuer.js'
 import File from '../../../../java/io/File.js'
 import FileConfiguration from '../../../../org/bukkit/configuration/file/FileConfiguration.js'
-import Locale from '../../../../java/util/Locale.js'
 import Locales from './Locales.js'
-import Map from '../../../../java/util/Map.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface BukkitLocales extends Locales {
-	addBundleClassLoader(classLoader: ClassLoader): boolean;
-	addMessage(locale: Locale, key: any, message: string): string;
-	addMessageBundle(bundleName: string, locale: Locale): boolean;
-	addMessageBundle(classLoader: ClassLoader, bundleName: string, locale: Locale): boolean;
+	addBundleClassLoader(classLoader: any): boolean;
+	addMessage(locale: any, key: any, message: string): string;
+	addMessageBundle(bundleName: string, locale: any): boolean;
+	addMessageBundle(classLoader: any, bundleName: string, locale: any): boolean;
 	addMessageBundles(bundleNames: Array<string>): void;
-	addMessageStrings(locale: Locale, messages: Map): void;
-	addMessages(locale: Locale, messages: Map): void;
-	getDefaultLocale(): Locale;
+	addMessageStrings(locale: any, messages: any): void;
+	addMessages(locale: any, messages: any): void;
+	getDefaultLocale(): any;
 	getMessage(issuer: CommandIssuer, key: any): string;
 	getOptionalMessage(issuer: CommandIssuer, key: any): string;
-	loadLanguage(config: FileConfiguration, locale: Locale): boolean;
+	loadLanguage(config: FileConfiguration, locale: any): boolean;
 	loadLanguages(): void;
 	loadMissingBundles(): void;
-	loadYamlLanguageFile(file: string, locale: Locale): boolean;
-	loadYamlLanguageFile(file: File, locale: Locale): boolean;
+	loadYamlLanguageFile(file: string, locale: any): boolean;
+	loadYamlLanguageFile(file: File, locale: any): boolean;
 	replaceI18NStrings(message: string): string;
-	setDefaultLocale(locale: Locale): Locale;
+	setDefaultLocale(locale: any): any;
 }
 
 export default class BukkitLocales {
@@ -44,139 +38,139 @@ export default class BukkitLocales {
 		return new BukkitLocales.$javaClass(...args);
 	}
 
-	public static get AFRIKAANS(): Locale {
+	public static get AFRIKAANS(): any {
 		return BukkitLocales.$javaClass.AFRIKAANS;
 	}
 
-	public static get ARABIC(): Locale {
+	public static get ARABIC(): any {
 		return BukkitLocales.$javaClass.ARABIC;
 	}
 
-	public static get BULGARIAN(): Locale {
+	public static get BULGARIAN(): any {
 		return BukkitLocales.$javaClass.BULGARIAN;
 	}
 
-	public static get CHINESE(): Locale {
+	public static get CHINESE(): any {
 		return BukkitLocales.$javaClass.CHINESE;
 	}
 
-	public static get CZECH(): Locale {
+	public static get CZECH(): any {
 		return BukkitLocales.$javaClass.CZECH;
 	}
 
-	public static get DANISH(): Locale {
+	public static get DANISH(): any {
 		return BukkitLocales.$javaClass.DANISH;
 	}
 
-	public static get DUTCH(): Locale {
+	public static get DUTCH(): any {
 		return BukkitLocales.$javaClass.DUTCH;
 	}
 
-	public static get ENGLISH(): Locale {
+	public static get ENGLISH(): any {
 		return BukkitLocales.$javaClass.ENGLISH;
 	}
 
-	public static get FINNISH(): Locale {
+	public static get FINNISH(): any {
 		return BukkitLocales.$javaClass.FINNISH;
 	}
 
-	public static get FRENCH(): Locale {
+	public static get FRENCH(): any {
 		return BukkitLocales.$javaClass.FRENCH;
 	}
 
-	public static get GERMAN(): Locale {
+	public static get GERMAN(): any {
 		return BukkitLocales.$javaClass.GERMAN;
 	}
 
-	public static get GREEK(): Locale {
+	public static get GREEK(): any {
 		return BukkitLocales.$javaClass.GREEK;
 	}
 
-	public static get HEBREW(): Locale {
+	public static get HEBREW(): any {
 		return BukkitLocales.$javaClass.HEBREW;
 	}
 
-	public static get HINDI(): Locale {
+	public static get HINDI(): any {
 		return BukkitLocales.$javaClass.HINDI;
 	}
 
-	public static get HUNGARIAN(): Locale {
+	public static get HUNGARIAN(): any {
 		return BukkitLocales.$javaClass.HUNGARIAN;
 	}
 
-	public static get ITALIAN(): Locale {
+	public static get ITALIAN(): any {
 		return BukkitLocales.$javaClass.ITALIAN;
 	}
 
-	public static get JAPANESE(): Locale {
+	public static get JAPANESE(): any {
 		return BukkitLocales.$javaClass.JAPANESE;
 	}
 
-	public static get KOREAN(): Locale {
+	public static get KOREAN(): any {
 		return BukkitLocales.$javaClass.KOREAN;
 	}
 
-	public static get LATIN(): Locale {
+	public static get LATIN(): any {
 		return BukkitLocales.$javaClass.LATIN;
 	}
 
-	public static get NORWEGIAN_BOKMAAL(): Locale {
+	public static get NORWEGIAN_BOKMAAL(): any {
 		return BukkitLocales.$javaClass.NORWEGIAN_BOKMAAL;
 	}
 
-	public static get NORWEGIAN_NYNORSK(): Locale {
+	public static get NORWEGIAN_NYNORSK(): any {
 		return BukkitLocales.$javaClass.NORWEGIAN_NYNORSK;
 	}
 
-	public static get POLISH(): Locale {
+	public static get POLISH(): any {
 		return BukkitLocales.$javaClass.POLISH;
 	}
 
-	public static get PORTUGUESE(): Locale {
+	public static get PORTUGUESE(): any {
 		return BukkitLocales.$javaClass.PORTUGUESE;
 	}
 
-	public static get ROMANIAN(): Locale {
+	public static get ROMANIAN(): any {
 		return BukkitLocales.$javaClass.ROMANIAN;
 	}
 
-	public static get RUSSIAN(): Locale {
+	public static get RUSSIAN(): any {
 		return BukkitLocales.$javaClass.RUSSIAN;
 	}
 
-	public static get SIMPLIFIED_CHINESE(): Locale {
+	public static get SIMPLIFIED_CHINESE(): any {
 		return BukkitLocales.$javaClass.SIMPLIFIED_CHINESE;
 	}
 
-	public static get SPANISH(): Locale {
+	public static get SPANISH(): any {
 		return BukkitLocales.$javaClass.SPANISH;
 	}
 
-	public static get SWEDISH(): Locale {
+	public static get SWEDISH(): any {
 		return BukkitLocales.$javaClass.SWEDISH;
 	}
 
-	public static get THAI(): Locale {
+	public static get THAI(): any {
 		return BukkitLocales.$javaClass.THAI;
 	}
 
-	public static get TRADITIONAL_CHINESE(): Locale {
+	public static get TRADITIONAL_CHINESE(): any {
 		return BukkitLocales.$javaClass.TRADITIONAL_CHINESE;
 	}
 
-	public static get TURKISH(): Locale {
+	public static get TURKISH(): any {
 		return BukkitLocales.$javaClass.TURKISH;
 	}
 
-	public static get UKRANIAN(): Locale {
+	public static get UKRANIAN(): any {
 		return BukkitLocales.$javaClass.UKRANIAN;
 	}
 
-	public static get VIETNAMESE(): Locale {
+	public static get VIETNAMESE(): any {
 		return BukkitLocales.$javaClass.VIETNAMESE;
 	}
 
-	public static get WELSH(): Locale {
+	public static get WELSH(): any {
 		return BukkitLocales.$javaClass.WELSH;
 	}
 

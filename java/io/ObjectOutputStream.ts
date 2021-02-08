@@ -1,12 +1,9 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Object from '../../java/lang/Object.js'
 import ObjectOutput from './ObjectOutput.js'
 import ObjectOutputStream$PutField from './ObjectOutputStream$PutField.js'
 import ObjectStreamConstants from './ObjectStreamConstants.js'
 import OutputStream from './OutputStream.js'
 import SerializablePermission from './SerializablePermission.js'
-import String from '../../java/lang/String.js'
 
 export default interface ObjectOutputStream extends OutputStream, ObjectOutput, ObjectStreamConstants {
 	close(): void;
@@ -28,10 +25,10 @@ export default interface ObjectOutputStream extends OutputStream, ObjectOutput, 
 	writeFloat(arg0: number): void;
 	writeInt(arg0: number): void;
 	writeLong(arg0: number): void;
-	writeObject(arg0: Object): void;
+	writeObject(arg0: any): void;
 	writeShort(arg0: number): void;
 	writeUTF(arg0: string): void;
-	writeUnshared(arg0: Object): void;
+	writeUnshared(arg0: any): void;
 }
 
 export default class ObjectOutputStream {

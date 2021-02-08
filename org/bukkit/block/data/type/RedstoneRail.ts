@@ -1,22 +1,19 @@
 declare var Java: any;
 import BlockData from '../../../../../org/bukkit/block/data/BlockData.js'
 import Material from '../../../../../org/bukkit/Material.js'
-import Object from '../../../../../java/lang/Object.js'
 import Powerable from '../../../../../org/bukkit/block/data/Powerable.js'
 import Rail from '../../../../../org/bukkit/block/data/Rail.js'
 import Rail$Shape from '../../../../../org/bukkit/block/data/Rail$Shape.js'
-import Set from '../../../../../java/util/Set.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
-import String from '../../../../../java/lang/String.js'
 
 export default interface RedstoneRail extends Powerable, Rail {
 	clone(): BlockData;
-	clone(): Object;
+	clone(): any;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
 	getMaterial(): Material;
 	getShape(): Rail$Shape;
-	getShapes(): Set;
+	getShapes(): any;
 	getSoundGroup(): SoundGroup;
 	isPowered(): boolean;
 	matches(arg0: BlockData): boolean;

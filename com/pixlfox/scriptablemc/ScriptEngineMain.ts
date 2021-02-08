@@ -1,23 +1,17 @@
 declare var Java: any;
 import ChunkGenerator from '../../../org/bukkit/generator/ChunkGenerator.js'
-import Class from '../../../java/lang/Class.js'
 import Command from '../../../org/bukkit/command/Command.js'
 import CommandSender from '../../../org/bukkit/command/CommandSender.js'
 import File from '../../../java/io/File.js'
 import FileConfiguration from '../../../org/bukkit/configuration/file/FileConfiguration.js'
 import InputStream from '../../../java/io/InputStream.js'
 import JavaPlugin from '../../../org/bukkit/plugin/java/JavaPlugin.js'
-import List from '../../../java/util/List.js'
-import Logger from '../../../java/util/logging/Logger.js'
-import Map from '../../../java/util/Map.js'
-import Object from '../../../java/lang/Object.js'
 import PaperCommandManager from './acf/PaperCommandManager.js'
 import PluginCommand from '../../../org/bukkit/command/PluginCommand.js'
 import PluginDescriptionFile from '../../../org/bukkit/plugin/PluginDescriptionFile.js'
 import PluginLoader from '../../../org/bukkit/plugin/PluginLoader.js'
 import ScriptablePluginEngine from './core/ScriptablePluginEngine.js'
 import Server from '../../../org/bukkit/Server.js'
-import String from '../../../java/lang/String.js'
 import Version from '../../../com/smc/version/Version.js'
 
 export default interface ScriptEngineMain extends JavaPlugin {
@@ -28,7 +22,7 @@ export default interface ScriptEngineMain extends JavaPlugin {
 	getDataFolder(): File;
 	getDefaultWorldGenerator(worldName: string, id: string): ChunkGenerator;
 	getDescription(): PluginDescriptionFile;
-	getLogger(): Logger;
+	getLogger(): any;
 	getName(): string;
 	getPluginLoader(): PluginLoader;
 	getPluginVersion(): Version;
@@ -67,7 +61,7 @@ export default class ScriptEngineMain {
 		return new ScriptEngineMain.$javaClass(...args);
 	}
 
-	public static access$getScriptEngines$cp(): Map;
+	public static access$getScriptEngines$cp(): any;
 	public static access$getScriptEngines$cp(...args: any[]): any {
 		return ScriptEngineMain.$javaClass.access$getScriptEngines$cp(...args);
 	}
@@ -77,12 +71,12 @@ export default class ScriptEngineMain {
 		return ScriptEngineMain.$javaClass.getAllScriptEngines(...args);
 	}
 
-	public static getPlugin(clazz: Class): JavaPlugin;
+	public static getPlugin(clazz: any): JavaPlugin;
 	public static getPlugin(...args: any[]): any {
 		return ScriptEngineMain.$javaClass.getPlugin(...args);
 	}
 
-	public static getProvidingPlugin(clazz: Class): JavaPlugin;
+	public static getProvidingPlugin(clazz: any): JavaPlugin;
 	public static getProvidingPlugin(...args: any[]): any {
 		return ScriptEngineMain.$javaClass.getProvidingPlugin(...args);
 	}
@@ -103,7 +97,7 @@ export default class ScriptEngineMain {
 		return ScriptEngineMain.$javaClass.reloadAllScriptEngines(...args);
 	}
 
-	public static reloadScriptEngine$default(arg0: ScriptEngineMain, arg1: CommandSender, arg2: number, arg3: Object): void;
+	public static reloadScriptEngine$default(arg0: ScriptEngineMain, arg1: CommandSender, arg2: number, arg3: any): void;
 	public static reloadScriptEngine$default(...args: any[]): any {
 		return ScriptEngineMain.$javaClass.reloadScriptEngine$default(...args);
 	}
@@ -113,7 +107,7 @@ export default class ScriptEngineMain {
 		return ScriptEngineMain.$javaClass.resolveScriptEngine(...args);
 	}
 
-	public static versionCheck$default(arg0: ScriptEngineMain, arg1: CommandSender, arg2: number, arg3: Object): void;
+	public static versionCheck$default(arg0: ScriptEngineMain, arg1: CommandSender, arg2: number, arg3: any): void;
 	public static versionCheck$default(...args: any[]): any {
 		return ScriptEngineMain.$javaClass.versionCheck$default(...args);
 	}

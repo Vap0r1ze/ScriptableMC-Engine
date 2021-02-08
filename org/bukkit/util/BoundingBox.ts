@@ -1,19 +1,14 @@
 declare var Java: any;
 import Block from '../../../org/bukkit/block/Block.js'
 import BlockFace from '../../../org/bukkit/block/BlockFace.js'
-import Class from '../../../java/lang/Class.js'
-import Cloneable from '../../../java/lang/Cloneable.js'
 import ConfigurationSerializable from '../../../org/bukkit/configuration/serialization/ConfigurationSerializable.js'
 import Location from '../../../org/bukkit/Location.js'
-import Map from '../../../java/util/Map.js'
-import Object from '../../../java/lang/Object.js'
 import RayTraceResult from './RayTraceResult.js'
-import String from '../../../java/lang/String.js'
 import Vector from './Vector.js'
 
-export default interface BoundingBox extends Object, Cloneable, ConfigurationSerializable {
+export default interface BoundingBox extends ConfigurationSerializable {
 	clone(): BoundingBox;
-	clone(): Object;
+	clone(): any;
 	contains(other: BoundingBox): boolean;
 	contains(position: Vector): boolean;
 	contains(min: Vector, max: Vector): boolean;
@@ -49,7 +44,7 @@ export default interface BoundingBox extends Object, Cloneable, ConfigurationSer
 	overlaps(min: Vector, max: Vector): boolean;
 	rayTrace(start: Vector, direction: Vector, maxDistance: number): RayTraceResult;
 	resize(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number): BoundingBox;
-	serialize(): Map;
+	serialize(): any;
 	shift(shift: Vector): BoundingBox;
 	shift(shift: Location): BoundingBox;
 	shift(shiftX: number, shiftY: number, shiftZ: number): BoundingBox;
@@ -73,7 +68,7 @@ export default class BoundingBox {
 		return new BoundingBox.$javaClass(...args);
 	}
 
-	public static deserialize(args: Map): BoundingBox;
+	public static deserialize(args: any): BoundingBox;
 	public static deserialize(...args: any[]): any {
 		return BoundingBox.$javaClass.deserialize(...args);
 	}

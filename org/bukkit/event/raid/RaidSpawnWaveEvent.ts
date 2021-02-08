@@ -1,12 +1,8 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import List from '../../../../java/util/List.js'
-import Object from '../../../../java/lang/Object.js'
 import Raid from '../../../../org/bukkit/Raid.js'
 import RaidEvent from './RaidEvent.js'
 import Raider from '../../../../org/bukkit/entity/Raider.js'
-import String from '../../../../java/lang/String.js'
 import World from '../../../../org/bukkit/World.js'
 
 export default interface RaidSpawnWaveEvent extends RaidEvent {

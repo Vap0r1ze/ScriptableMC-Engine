@@ -2,19 +2,14 @@ declare var Java: any;
 import BlockPopulator from './BlockPopulator.js'
 import ChunkGenerator$BiomeGrid from './ChunkGenerator$BiomeGrid.js'
 import ChunkGenerator$ChunkData from './ChunkGenerator$ChunkData.js'
-import Class from '../../../java/lang/Class.js'
-import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
-import Object from '../../../java/lang/Object.js'
-import Random from '../../../java/util/Random.js'
-import String from '../../../java/lang/String.js'
 import World from '../../../org/bukkit/World.js'
 
-export default interface ChunkGenerator extends Object {
+export default interface ChunkGenerator {
 	canSpawn(world: World, x: number, z: number): boolean;
-	generateChunkData(world: World, random: Random, x: number, z: number, biome: ChunkGenerator$BiomeGrid): ChunkGenerator$ChunkData;
+	generateChunkData(world: World, random: any, x: number, z: number, biome: ChunkGenerator$BiomeGrid): ChunkGenerator$ChunkData;
 	getDefaultPopulators(world: World): Array<BlockPopulator>;
-	getFixedSpawnLocation(world: World, random: Random): Location;
+	getFixedSpawnLocation(world: World, random: any): Location;
 	isParallelCapable(): boolean;
 	shouldGenerateCaves(): boolean;
 	shouldGenerateDecorations(): boolean;

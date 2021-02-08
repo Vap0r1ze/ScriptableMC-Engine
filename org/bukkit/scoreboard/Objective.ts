@@ -4,7 +4,6 @@ import OfflinePlayer from '../../../org/bukkit/OfflinePlayer.js'
 import RenderType from './RenderType.js'
 import Score from './Score.js'
 import Scoreboard from './Scoreboard.js'
-import String from '../../../java/lang/String.js'
 
 export default interface Objective {
 	getCriteria(): string;
@@ -12,8 +11,8 @@ export default interface Objective {
 	getDisplaySlot(): DisplaySlot;
 	getName(): string;
 	getRenderType(): RenderType;
-	getScore(arg0: OfflinePlayer): Score;
 	getScore(arg0: string): Score;
+	getScore(arg0: OfflinePlayer): Score;
 	getScoreboard(): Scoreboard;
 	isModifiable(): boolean;
 	setDisplayName(arg0: string): void;

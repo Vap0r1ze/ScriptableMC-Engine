@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import ConversationContext from './ConversationContext.js'
-import Object from '../../../java/lang/Object.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
 import Prompt from './Prompt.js'
-import String from '../../../java/lang/String.js'
 import ValidatingPrompt from './ValidatingPrompt.js'
 
 export default interface PlayerNamePrompt extends ValidatingPrompt {

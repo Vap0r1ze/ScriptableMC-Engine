@@ -1,13 +1,10 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import EnchantmentTarget from './EnchantmentTarget.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Keyed from '../../../org/bukkit/Keyed.js'
 import NamespacedKey from '../../../org/bukkit/NamespacedKey.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface Enchantment extends Object, Keyed {
+export default interface Enchantment extends Keyed {
 	canEnchantItem(arg0: ItemStack): boolean;
 	conflictsWith(arg0: Enchantment): boolean;
 	getItemTarget(): EnchantmentTarget;

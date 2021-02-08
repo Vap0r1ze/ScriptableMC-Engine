@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import NoiseGenerator from './NoiseGenerator.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface OctaveGenerator extends Object {
+export default interface OctaveGenerator {
 	getOctaves(): Array<NoiseGenerator>;
 	getXScale(): number;
 	getYScale(): number;

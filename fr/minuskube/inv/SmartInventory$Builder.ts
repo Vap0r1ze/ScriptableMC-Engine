@@ -1,14 +1,11 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import InventoryListener from './InventoryListener.js'
 import InventoryManager from './InventoryManager.js'
 import InventoryProvider from './content/InventoryProvider.js'
 import InventoryType from '../../../org/bukkit/event/inventory/InventoryType.js'
-import Object from '../../../java/lang/Object.js'
 import SmartInventory from './SmartInventory.js'
-import String from '../../../java/lang/String.js'
 
-export default interface SmartInventory$Builder extends Object {
+export default interface SmartInventory$Builder {
 	build(): SmartInventory;
 	closeable(closeable: boolean): SmartInventory$Builder;
 	id(id: string): SmartInventory$Builder;

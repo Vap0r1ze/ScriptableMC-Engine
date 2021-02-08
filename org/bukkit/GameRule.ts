@@ -1,11 +1,8 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface GameRule extends Object {
+export default interface GameRule {
 	getName(): string;
-	getType(): Class;
+	getType(): any;
 }
 
 export default class GameRule {

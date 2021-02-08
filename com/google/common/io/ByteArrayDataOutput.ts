@@ -1,11 +1,10 @@
 declare var Java: any;
 import DataOutput from '../../../../java/io/DataOutput.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface ByteArrayDataOutput extends DataOutput {
 	toByteArray(): Array<number>;
-	write(arg0: number): void;
 	write(arg0: Array<number>): void;
+	write(arg0: number): void;
 	write(arg0: Array<number>, arg1: number, arg2: number): void;
 	writeBoolean(arg0: boolean): void;
 	writeByte(arg0: number): void;

@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../../../../java/lang/Class.js'
 import ClickEvent$Action from './ClickEvent$Action.js'
-import Object from '../../../../../java/lang/Object.js'
-import String from '../../../../../java/lang/String.js'
 
-export default interface ClickEvent extends Object {
+export default interface ClickEvent {
 	getAction(): ClickEvent$Action;
 	getValue(): string;
 }

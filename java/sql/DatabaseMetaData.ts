@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
 import Connection from './Connection.js'
-import Object from '../../java/lang/Object.js'
 import ResultSet from './ResultSet.js'
 import RowIdLifetime from './RowIdLifetime.js'
-import String from '../../java/lang/String.js'
 import Wrapper from './Wrapper.js'
 
 export default interface DatabaseMetaData extends Wrapper {
@@ -95,7 +92,7 @@ export default interface DatabaseMetaData extends Wrapper {
 	insertsAreDetected(arg0: number): boolean;
 	isCatalogAtStart(): boolean;
 	isReadOnly(): boolean;
-	isWrapperFor(arg0: Class): boolean;
+	isWrapperFor(arg0: any): boolean;
 	locatorsUpdateCopy(): boolean;
 	nullPlusNonNullIsNull(): boolean;
 	nullsAreSortedAtEnd(): boolean;
@@ -182,7 +179,7 @@ export default interface DatabaseMetaData extends Wrapper {
 	supportsTransactions(): boolean;
 	supportsUnion(): boolean;
 	supportsUnionAll(): boolean;
-	unwrap(arg0: Class): Object;
+	unwrap(arg0: any): any;
 	updatesAreDetected(arg0: number): boolean;
 	usesLocalFilePerTable(): boolean;
 	usesLocalFiles(): boolean;

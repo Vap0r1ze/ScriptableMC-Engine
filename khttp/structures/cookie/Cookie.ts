@@ -1,17 +1,13 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Map from '../../../java/util/Map.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface Cookie extends Object {
+export default interface Cookie {
 	component1(): string;
-	component2(): Object;
-	component3(): Map;
-	copy(key: string, value: Object, attributes: Map): Cookie;
-	getAttributes(): Map;
+	component2(): any;
+	component3(): any;
+	copy(key: string, value: any, attributes: any): Cookie;
+	getAttributes(): any;
 	getKey(): string;
-	getValue(): Object;
+	getValue(): any;
 	getValueWithAttributes(): string;
 }
 
@@ -25,13 +21,13 @@ export default class Cookie {
 
 	constructor(cookie: Cookie);
 	constructor(string: string);
-	constructor(key: string, value: Object, attributes: Map);
-	constructor(arg0: string, arg1: Object, arg2: Map, arg3: number, arg4: any);
+	constructor(key: string, value: any, attributes: any);
+	constructor(arg0: string, arg1: any, arg2: any, arg3: number, arg4: any);
 	constructor(...args: any[]) {
 		return new Cookie.$javaClass(...args);
 	}
 
-	public static copy$default(arg0: Cookie, arg1: string, arg2: Object, arg3: Map, arg4: number, arg5: Object): Cookie;
+	public static copy$default(arg0: Cookie, arg1: string, arg2: any, arg3: any, arg4: number, arg5: any): Cookie;
 	public static copy$default(...args: any[]): any {
 		return Cookie.$javaClass.copy$default(...args);
 	}

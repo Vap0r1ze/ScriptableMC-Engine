@@ -1,26 +1,20 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Exception from '../../../java/lang/Exception.js'
-import Object from '../../../java/lang/Object.js'
 import PrintStream from '../../../java/io/PrintStream.js'
 import PrintWriter from '../../../java/io/PrintWriter.js'
-import StackTraceElement from '../../../java/lang/StackTraceElement.js'
-import String from '../../../java/lang/String.js'
-import Throwable from '../../../java/lang/Throwable.js'
 
-export default interface InvalidDescriptionException extends Exception {
-	addSuppressed(arg0: Throwable): void;
-	fillInStackTrace(): Throwable;
-	getCause(): Throwable;
+export default interface InvalidDescriptionException {
+	addSuppressed(arg0: any): void;
+	fillInStackTrace(): any;
+	getCause(): any;
 	getLocalizedMessage(): string;
 	getMessage(): string;
-	getStackTrace(): Array<StackTraceElement>;
-	getSuppressed(): Array<Throwable>;
-	initCause(arg0: Throwable): Throwable;
+	getStackTrace(): Array<any>;
+	getSuppressed(): Array<any>;
+	initCause(arg0: any): any;
 	printStackTrace(): void;
 	printStackTrace(arg0: PrintStream): void;
 	printStackTrace(arg0: PrintWriter): void;
-	setStackTrace(arg0: Array<StackTraceElement>): void;
+	setStackTrace(arg0: Array<any>): void;
 }
 
 export default class InvalidDescriptionException {
@@ -33,8 +27,8 @@ export default class InvalidDescriptionException {
 
 	constructor();
 	constructor(message: string);
-	constructor(cause: Throwable);
-	constructor(cause: Throwable, message: string);
+	constructor(cause: any);
+	constructor(cause: any, message: string);
 	constructor(...args: any[]) {
 		return new InvalidDescriptionException.$javaClass(...args);
 	}

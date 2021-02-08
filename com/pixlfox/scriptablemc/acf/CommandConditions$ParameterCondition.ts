@@ -1,10 +1,9 @@
 declare var Java: any;
 import CommandExecutionContext from './CommandExecutionContext.js'
 import ConditionContext from './ConditionContext.js'
-import Object from '../../../../java/lang/Object.js'
 
 export default interface CommandConditions$ParameterCondition {
-	validateCondition(context: ConditionContext, execContext: CommandExecutionContext, value: Object): void;
+	validateCondition(context: ConditionContext, execContext: CommandExecutionContext, value: any): void;
 }
 
 export default class CommandConditions$ParameterCondition {

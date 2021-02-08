@@ -1,24 +1,20 @@
 declare var Java: any;
-import Annotation from '../../../../java/lang/annotation/Annotation.js'
 import BaseCommand from './BaseCommand.js'
-import Class from '../../../../java/lang/Class.js'
 import CommandIssuer from './CommandIssuer.js'
 import CommandManager from './CommandManager.js'
-import Object from '../../../../java/lang/Object.js'
 import RegisteredCommand from './RegisteredCommand.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface CommandOperationContext extends Object {
-	getAnnotation(anno: Class): Annotation;
-	getAnnotationValue(cls: Class): string;
-	getAnnotationValue(cls: Class, options: number): string;
+export default interface CommandOperationContext {
+	getAnnotation(anno: any): any;
+	getAnnotationValue(cls: any): string;
+	getAnnotationValue(cls: any, options: number): string;
 	getArgs(): Array<string>;
 	getCommand(): BaseCommand;
 	getCommandIssuer(): CommandIssuer;
 	getCommandLabel(): string;
 	getCommandManager(): CommandManager;
 	getRegisteredCommand(): RegisteredCommand;
-	hasAnnotation(anno: Class): boolean;
+	hasAnnotation(anno: any): boolean;
 	isAsync(): boolean;
 	setRegisteredCommand(registeredCommand: RegisteredCommand): void;
 }

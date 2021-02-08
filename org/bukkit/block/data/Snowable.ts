@@ -1,13 +1,11 @@
 declare var Java: any;
 import BlockData from './BlockData.js'
 import Material from '../../../../org/bukkit/Material.js'
-import Object from '../../../../java/lang/Object.js'
 import SoundGroup from '../../../../org/bukkit/SoundGroup.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface Snowable extends BlockData {
 	clone(): BlockData;
-	clone(): Object;
+	clone(): any;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
 	getMaterial(): Material;

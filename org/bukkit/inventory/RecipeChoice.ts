@@ -1,17 +1,14 @@
 declare var Java: any;
-import Cloneable from '../../../java/lang/Cloneable.js'
 import ItemStack from './ItemStack.js'
-import Object from '../../../java/lang/Object.js'
-import Predicate from '../../../java/util/function/Predicate.js'
 
-export default interface RecipeChoice extends Predicate, Cloneable {
-	and(arg0: Predicate): Predicate;
-	clone(): Object;
+export default interface RecipeChoice {
+	and(arg0: any): any;
+	clone(): any;
 	clone(): RecipeChoice;
 	getItemStack(): ItemStack;
-	negate(): Predicate;
-	or(arg0: Predicate): Predicate;
-	test(arg0: Object): boolean;
+	negate(): any;
+	or(arg0: any): any;
+	test(arg0: any): boolean;
 	test(arg0: ItemStack): boolean;
 }
 

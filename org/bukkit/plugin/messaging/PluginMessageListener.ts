@@ -1,6 +1,5 @@
 declare var Java: any;
 import Player from '../../../../org/bukkit/entity/Player.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface PluginMessageListener {
 	onPluginMessageReceived(arg0: string, arg1: Player, arg2: Array<number>): void;

@@ -1,5 +1,4 @@
 declare var Java: any;
-import String from '../../../java/lang/String.js'
 
 export default interface Lockable {
 	getLock(): string;

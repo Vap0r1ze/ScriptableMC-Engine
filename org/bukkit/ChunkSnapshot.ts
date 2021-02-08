@@ -2,7 +2,6 @@ declare var Java: any;
 import Biome from './block/Biome.js'
 import BlockData from './block/data/BlockData.js'
 import Material from './Material.js'
-import String from '../../java/lang/String.js'
 
 export default interface ChunkSnapshot {
 	contains(arg0: BlockData): boolean;

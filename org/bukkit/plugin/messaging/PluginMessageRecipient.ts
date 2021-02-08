@@ -1,10 +1,8 @@
 declare var Java: any;
 import Plugin from '../../../../org/bukkit/plugin/Plugin.js'
-import Set from '../../../../java/util/Set.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface PluginMessageRecipient {
-	getListeningPluginChannels(): Set;
+	getListeningPluginChannels(): any;
 	sendPluginMessage(arg0: Plugin, arg1: string, arg2: Array<number>): void;
 }
 

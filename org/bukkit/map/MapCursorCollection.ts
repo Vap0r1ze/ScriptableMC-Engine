@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import MapCursor from './MapCursor.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface MapCursorCollection extends Object {
+export default interface MapCursorCollection {
 	addCursor(cursor: MapCursor): MapCursor;
 	addCursor(x: number, y: number, direction: number): MapCursor;
 	addCursor(x: number, y: number, direction: number, type: number): MapCursor;

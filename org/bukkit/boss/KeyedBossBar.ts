@@ -4,10 +4,8 @@ import BarFlag from './BarFlag.js'
 import BarStyle from './BarStyle.js'
 import BossBar from './BossBar.js'
 import Keyed from '../../../org/bukkit/Keyed.js'
-import List from '../../../java/util/List.js'
 import NamespacedKey from '../../../org/bukkit/NamespacedKey.js'
 import Player from '../../../org/bukkit/entity/Player.js'
-import String from '../../../java/lang/String.js'
 
 export default interface KeyedBossBar extends BossBar, Keyed {
 	addFlag(arg0: BarFlag): void;

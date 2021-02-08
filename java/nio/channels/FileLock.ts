@@ -1,12 +1,8 @@
 declare var Java: any;
-import AutoCloseable from '../../../java/lang/AutoCloseable.js'
 import Channel from './Channel.js'
-import Class from '../../../java/lang/Class.js'
 import FileChannel from './FileChannel.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface FileLock extends Object, AutoCloseable {
+export default interface FileLock {
 	acquiredBy(): Channel;
 	channel(): FileChannel;
 	close(): void;

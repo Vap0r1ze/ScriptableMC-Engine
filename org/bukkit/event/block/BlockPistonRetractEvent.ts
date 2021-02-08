@@ -2,12 +2,8 @@ declare var Java: any;
 import Block from '../../../../org/bukkit/block/Block.js'
 import BlockFace from '../../../../org/bukkit/block/BlockFace.js'
 import BlockPistonEvent from './BlockPistonEvent.js'
-import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import List from '../../../../java/util/List.js'
 import Location from '../../../../org/bukkit/Location.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface BlockPistonRetractEvent extends BlockPistonEvent {
 	getBlock(): Block;

@@ -1,16 +1,14 @@
 declare var Java: any;
-import Date from '../../java/util/Date.js'
-import String from '../../java/lang/String.js'
 
 export default interface BanEntry {
-	getCreated(): Date;
-	getExpiration(): Date;
+	getCreated(): any;
+	getExpiration(): any;
 	getReason(): string;
 	getSource(): string;
 	getTarget(): string;
 	save(): void;
-	setCreated(arg0: Date): void;
-	setExpiration(arg0: Date): void;
+	setCreated(arg0: any): void;
+	setExpiration(arg0: any): void;
 	setReason(arg0: string): void;
 	setSource(arg0: string): void;
 }

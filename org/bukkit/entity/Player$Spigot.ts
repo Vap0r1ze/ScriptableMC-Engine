@@ -1,26 +1,21 @@
 declare var Java: any;
 import BaseComponent from '../../../net/md_5/bungee/api/chat/BaseComponent.js'
 import ChatMessageType from '../../../net/md_5/bungee/api/ChatMessageType.js'
-import Class from '../../../java/lang/Class.js'
 import Entity$Spigot from './Entity$Spigot.js'
-import Object from '../../../java/lang/Object.js'
-import Set from '../../../java/util/Set.js'
-import String from '../../../java/lang/String.js'
-import UUID from '../../../java/util/UUID.js'
 
 export default interface Player$Spigot extends Entity$Spigot {
 	getCollidesWithEntities(): boolean;
-	getHiddenPlayers(): Set;
+	getHiddenPlayers(): any;
 	getRawAddress(): any;
 	respawn(): void;
-	sendMessage(component: BaseComponent): void;
 	sendMessage(components: Array<BaseComponent>): void;
-	sendMessage(position: ChatMessageType, components: Array<BaseComponent>): void;
+	sendMessage(component: BaseComponent): void;
 	sendMessage(position: ChatMessageType, component: BaseComponent): void;
+	sendMessage(position: ChatMessageType, components: Array<BaseComponent>): void;
 	sendMessage(sender: string, component: BaseComponent): void;
 	sendMessage(sender: string, components: Array<BaseComponent>): void;
-	sendMessage(position: ChatMessageType, sender: string, component: BaseComponent): void;
 	sendMessage(position: ChatMessageType, sender: string, components: Array<BaseComponent>): void;
+	sendMessage(position: ChatMessageType, sender: string, component: BaseComponent): void;
 	setCollidesWithEntities(collides: boolean): void;
 }
 

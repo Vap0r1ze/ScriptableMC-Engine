@@ -2,10 +2,8 @@ declare var Java: any;
 import BaseCommand from './BaseCommand.js'
 import CommandIssuer from './CommandIssuer.js'
 import CommandManager from './CommandManager.js'
-import List from '../../../../java/util/List.js'
 import RegisteredCommand from './RegisteredCommand.js'
 import SetMultimap from '../../../../com/google/common/collect/SetMultimap.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface RootCommand {
 	addChild(command: BaseCommand): void;

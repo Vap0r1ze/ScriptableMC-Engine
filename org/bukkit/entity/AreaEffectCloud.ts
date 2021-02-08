@@ -8,10 +8,8 @@ import Entity$Spigot from './Entity$Spigot.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityType from './EntityType.js'
-import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
 import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
-import Object from '../../../java/lang/Object.js'
 import Particle from '../../../org/bukkit/Particle.js'
 import Permission from '../../../org/bukkit/permissions/Permission.js'
 import PermissionAttachment from '../../../org/bukkit/permissions/PermissionAttachment.js'
@@ -25,9 +23,6 @@ import PotionEffect from '../../../org/bukkit/potion/PotionEffect.js'
 import PotionEffectType from '../../../org/bukkit/potion/PotionEffectType.js'
 import ProjectileSource from '../../../org/bukkit/projectiles/ProjectileSource.js'
 import Server from '../../../org/bukkit/Server.js'
-import Set from '../../../java/util/Set.js'
-import String from '../../../java/lang/String.js'
-import UUID from '../../../java/util/UUID.js'
 import Vector from '../../../org/bukkit/util/Vector.js'
 import World from '../../../org/bukkit/World.js'
 
@@ -48,7 +43,7 @@ export default interface AreaEffectCloud extends Entity {
 	getCustomName(): string;
 	getDuration(): number;
 	getDurationOnUse(): number;
-	getEffectivePermissions(): Set;
+	getEffectivePermissions(): any;
 	getEntityId(): number;
 	getFacing(): BlockFace;
 	getFallDistance(): number;
@@ -72,7 +67,7 @@ export default interface AreaEffectCloud extends Entity {
 	getRadiusOnUse(): number;
 	getRadiusPerTick(): number;
 	getReapplicationDelay(): number;
-	getScoreboardTags(): Set;
+	getScoreboardTags(): any;
 	getServer(): Server;
 	getSource(): ProjectileSource;
 	getTicksLived(): number;
@@ -131,7 +126,7 @@ export default interface AreaEffectCloud extends Entity {
 	setMetadata(arg0: string, arg1: MetadataValue): void;
 	setOp(arg0: boolean): void;
 	setParticle(arg0: Particle): void;
-	setParticle(arg0: Particle, arg1: Object): void;
+	setParticle(arg0: Particle, arg1: any): void;
 	setPassenger(arg0: Entity): boolean;
 	setPersistent(arg0: boolean): void;
 	setPortalCooldown(arg0: number): void;

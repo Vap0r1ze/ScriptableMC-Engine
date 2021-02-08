@@ -1,11 +1,8 @@
 declare var Java: any;
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
-import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import LightningStrike from '../../../../org/bukkit/entity/LightningStrike.js'
 import LightningStrikeEvent$Cause from './LightningStrikeEvent$Cause.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 import WeatherEvent from './WeatherEvent.js'
 import World from '../../../../org/bukkit/World.js'
 

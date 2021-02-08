@@ -1,7 +1,4 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
 export default class NumberConversions {
 	public static get $javaClass(): any {
@@ -43,32 +40,32 @@ export default class NumberConversions {
 		return NumberConversions.$javaClass.square(...args);
 	}
 
-	public static toByte(object: Object): number;
+	public static toByte(object: any): number;
 	public static toByte(...args: any[]): any {
 		return NumberConversions.$javaClass.toByte(...args);
 	}
 
-	public static toDouble(object: Object): number;
+	public static toDouble(object: any): number;
 	public static toDouble(...args: any[]): any {
 		return NumberConversions.$javaClass.toDouble(...args);
 	}
 
-	public static toFloat(object: Object): number;
+	public static toFloat(object: any): number;
 	public static toFloat(...args: any[]): any {
 		return NumberConversions.$javaClass.toFloat(...args);
 	}
 
-	public static toInt(object: Object): number;
+	public static toInt(object: any): number;
 	public static toInt(...args: any[]): any {
 		return NumberConversions.$javaClass.toInt(...args);
 	}
 
-	public static toLong(object: Object): number;
+	public static toLong(object: any): number;
 	public static toLong(...args: any[]): any {
 		return NumberConversions.$javaClass.toLong(...args);
 	}
 
-	public static toShort(object: Object): number;
+	public static toShort(object: any): number;
 	public static toShort(...args: any[]): any {
 		return NumberConversions.$javaClass.toShort(...args);
 	}

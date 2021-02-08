@@ -1,6 +1,4 @@
 declare var Java: any;
-import String from '../../../java/lang/String.js'
-import UUID from '../../../java/util/UUID.js'
 
 export default interface AnimalTamer {
 	getName(): string;

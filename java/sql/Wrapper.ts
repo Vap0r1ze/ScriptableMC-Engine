@@ -1,10 +1,8 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Object from '../../java/lang/Object.js'
 
 export default interface Wrapper {
-	isWrapperFor(arg0: Class): boolean;
-	unwrap(arg0: Class): Object;
+	isWrapperFor(arg0: any): boolean;
+	unwrap(arg0: any): any;
 }
 
 export default class Wrapper {

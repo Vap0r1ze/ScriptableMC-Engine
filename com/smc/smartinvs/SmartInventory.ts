@@ -1,13 +1,9 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import ClickableItem from '../../../fr/minuskube/inv/ClickableItem.js'
-import Consumer from '../../../java/util/function/Consumer.js'
 import InventoryManager from '../../../fr/minuskube/inv/InventoryManager.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
-import Object from '../../../java/lang/Object.js'
 import SmartInventory$Builder from '../../../fr/minuskube/inv/SmartInventory$Builder.js'
 import SmartInventoryProvider from './SmartInventoryProvider.js'
-import String from '../../../java/lang/String.js'
 
 export default class SmartInventory {
 	public static get $javaClass(): any {
@@ -28,7 +24,7 @@ export default class SmartInventory {
 	}
 
 	public static clickableItem(item: ItemStack): ClickableItem;
-	public static clickableItem(item: ItemStack, consumer: Consumer): ClickableItem;
+	public static clickableItem(item: ItemStack, consumer: any): ClickableItem;
 	public static clickableItem(...args: any[]): any {
 		return SmartInventory.$javaClass.clickableItem(...args);
 	}

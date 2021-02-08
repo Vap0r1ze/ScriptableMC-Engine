@@ -1,9 +1,8 @@
 declare var Java: any;
-import String from '../../java/lang/String.js'
 
 export default interface DataOutput {
-	write(arg0: number): void;
 	write(arg0: Array<number>): void;
+	write(arg0: number): void;
 	write(arg0: Array<number>, arg1: number, arg2: number): void;
 	writeBoolean(arg0: boolean): void;
 	writeByte(arg0: number): void;

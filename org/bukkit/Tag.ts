@@ -1,12 +1,10 @@
 declare var Java: any;
 import Keyed from './Keyed.js'
 import NamespacedKey from './NamespacedKey.js'
-import Set from '../../java/util/Set.js'
-import String from '../../java/lang/String.js'
 
 export default interface Tag extends Keyed {
 	getKey(): NamespacedKey;
-	getValues(): Set;
+	getValues(): any;
 	isTagged(arg0: Keyed): boolean;
 }
 

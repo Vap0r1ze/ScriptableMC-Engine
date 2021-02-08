@@ -1,11 +1,7 @@
 declare var Java: any;
 import BaseComponent from '../../../../net/md_5/bungee/api/chat/BaseComponent.js'
-import Class from '../../../../java/lang/Class.js'
-import List from '../../../../java/util/List.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface BookMeta$Spigot extends Object {
+export default interface BookMeta$Spigot {
 	addPage(pages: Array<Array<BaseComponent>>): void;
 	getPage(page: number): Array<BaseComponent>;
 	getPages(): Array<Array<BaseComponent>>;

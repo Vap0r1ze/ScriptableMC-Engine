@@ -1,12 +1,9 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import MapCanvas from './MapCanvas.js'
 import MapView from './MapView.js'
-import Object from '../../../java/lang/Object.js'
 import Player from '../../../org/bukkit/entity/Player.js'
-import String from '../../../java/lang/String.js'
 
-export default interface MapRenderer extends Object {
+export default interface MapRenderer {
 	initialize(map: MapView): void;
 	isContextual(): boolean;
 	render(arg0: MapView, arg1: MapCanvas, arg2: Player): void;

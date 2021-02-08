@@ -1,9 +1,7 @@
 declare var Java: any;
 import Command from './Command.js'
 import CommandSender from './CommandSender.js'
-import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
-import String from '../../../java/lang/String.js'
 
 export default interface CommandMap {
 	clearCommands(): void;

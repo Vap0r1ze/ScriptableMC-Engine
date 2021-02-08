@@ -1,14 +1,10 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Comparable from '../../java/lang/Comparable.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface ObjectStreamField extends Object, Comparable {
-	compareTo(arg0: Object): number;
+export default interface ObjectStreamField {
+	compareTo(arg0: any): number;
 	getName(): string;
 	getOffset(): number;
-	getType(): Class;
+	getType(): any;
 	getTypeCode(): string;
 	getTypeString(): string;
 	isPrimitive(): boolean;
@@ -23,8 +19,8 @@ export default class ObjectStreamField {
 		return obj instanceof ObjectStreamField.$javaClass;
 	}
 
-	constructor(arg0: string, arg1: Class);
-	constructor(arg0: string, arg1: Class, arg2: boolean);
+	constructor(arg0: string, arg1: any);
+	constructor(arg0: string, arg1: any, arg2: boolean);
 	constructor(...args: any[]) {
 		return new ObjectStreamField.$javaClass(...args);
 	}

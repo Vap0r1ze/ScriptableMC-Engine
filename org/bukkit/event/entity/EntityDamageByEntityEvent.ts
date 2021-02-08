@@ -1,14 +1,10 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EntityDamageEvent from './EntityDamageEvent.js'
 import EntityDamageEvent$DamageCause from './EntityDamageEvent$DamageCause.js'
 import EntityDamageEvent$DamageModifier from './EntityDamageEvent$DamageModifier.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import Map from '../../../../java/util/Map.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface EntityDamageByEntityEvent extends EntityDamageEvent {
 	getCause(): EntityDamageEvent$DamageCause;
@@ -38,7 +34,7 @@ export default class EntityDamageByEntityEvent {
 	}
 
 	constructor(damager: Entity, damagee: Entity, cause: EntityDamageEvent$DamageCause, damage: number);
-	constructor(damager: Entity, damagee: Entity, cause: EntityDamageEvent$DamageCause, modifiers: Map, modifierFunctions: Map);
+	constructor(damager: Entity, damagee: Entity, cause: EntityDamageEvent$DamageCause, modifiers: any, modifierFunctions: any);
 	constructor(...args: any[]) {
 		return new EntityDamageByEntityEvent.$javaClass(...args);
 	}

@@ -1,23 +1,19 @@
 declare var Java: any;
 import Authorization from '../../khttp/structures/authorization/Authorization.js'
 import FileLike from '../../khttp/structures/files/FileLike.js'
-import List from '../../java/util/List.js'
-import Map from '../../java/util/Map.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
 export default interface Request {
 	getAllowRedirects(): boolean;
 	getAuth(): Authorization;
 	getBody(): Array<number>;
-	getCookies(): Map;
-	getData(): Object;
+	getCookies(): any;
+	getData(): any;
 	getFiles(): Array<FileLike>;
-	getHeaders(): Map;
+	getHeaders(): any;
 	getHostnameVerifier(): any;
-	getJson(): Object;
+	getJson(): any;
 	getMethod(): string;
-	getParams(): Map;
+	getParams(): any;
 	getSslContext(): any;
 	getStream(): boolean;
 	getTimeout(): number;

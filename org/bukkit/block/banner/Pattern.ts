@@ -1,16 +1,12 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import ConfigurationSerializable from '../../../../org/bukkit/configuration/serialization/ConfigurationSerializable.js'
 import DyeColor from '../../../../org/bukkit/DyeColor.js'
-import Map from '../../../../java/util/Map.js'
-import Object from '../../../../java/lang/Object.js'
 import PatternType from './PatternType.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface Pattern extends Object, ConfigurationSerializable {
+export default interface Pattern extends ConfigurationSerializable {
 	getColor(): DyeColor;
 	getPattern(): PatternType;
-	serialize(): Map;
+	serialize(): any;
 }
 
 export default class Pattern {
@@ -21,7 +17,7 @@ export default class Pattern {
 		return obj instanceof Pattern.$javaClass;
 	}
 
-	constructor(map: Map);
+	constructor(map: any);
 	constructor(color: DyeColor, pattern: PatternType);
 	constructor(...args: any[]) {
 		return new Pattern.$javaClass(...args);

@@ -1,6 +1,4 @@
 declare var Java: any;
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
 export default interface RowId {
 	getBytes(): Array<number>;

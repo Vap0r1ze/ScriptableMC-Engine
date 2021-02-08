@@ -1,15 +1,11 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
 import Color from './Color.js'
-import Enum from '../../java/lang/Enum.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface DyeColor extends Enum {
-	compareTo(arg0: Object): number;
-	compareTo(arg0: Enum): number;
+export default interface DyeColor {
+	compareTo(arg0: any): number;
+	compareTo(arg0: any): number;
 	getColor(): Color;
-	getDeclaringClass(): Class;
+	getDeclaringClass(): any;
 	getDyeData(): number;
 	getFireworkColor(): Color;
 	getWoolData(): number;

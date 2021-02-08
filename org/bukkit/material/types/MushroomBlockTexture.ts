@@ -1,16 +1,12 @@
 declare var Java: any;
 import BlockFace from '../../../../org/bukkit/block/BlockFace.js'
-import Class from '../../../../java/lang/Class.js'
-import Enum from '../../../../java/lang/Enum.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface MushroomBlockTexture extends Enum {
-	compareTo(arg0: Object): number;
-	compareTo(arg0: Enum): number;
+export default interface MushroomBlockTexture {
+	compareTo(arg0: any): number;
+	compareTo(arg0: any): number;
 	getCapFace(): BlockFace;
 	getData(): number;
-	getDeclaringClass(): Class;
+	getDeclaringClass(): any;
 	name(): string;
 	ordinal(): number;
 }

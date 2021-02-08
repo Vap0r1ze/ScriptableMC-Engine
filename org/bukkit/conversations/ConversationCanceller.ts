@@ -1,13 +1,10 @@
 declare var Java: any;
-import Cloneable from '../../../java/lang/Cloneable.js'
 import Conversation from './Conversation.js'
 import ConversationContext from './ConversationContext.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface ConversationCanceller extends Cloneable {
+export default interface ConversationCanceller {
 	cancelBasedOnInput(arg0: ConversationContext, arg1: string): boolean;
-	clone(): Object;
+	clone(): any;
 	clone(): ConversationCanceller;
 	setConversation(arg0: Conversation): void;
 }

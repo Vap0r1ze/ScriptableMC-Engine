@@ -1,21 +1,16 @@
 declare var Java: any;
-import ArrayList from '../../../java/util/ArrayList.js'
-import Class from '../../../java/lang/Class.js'
-import Collection from '../../../java/util/Collection.js'
 import Listener from './Listener.js'
-import Object from '../../../java/lang/Object.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
 import RegisteredListener from '../../../org/bukkit/plugin/RegisteredListener.js'
-import String from '../../../java/lang/String.js'
 
-export default interface HandlerList extends Object {
+export default interface HandlerList {
 	bake(): void;
 	getRegisteredListeners(): Array<RegisteredListener>;
 	register(listener: RegisteredListener): void;
 	registerAll(listeners: Array<any>): void;
 	unregister(listener: Listener): void;
-	unregister(plugin: Plugin): void;
 	unregister(listener: RegisteredListener): void;
+	unregister(plugin: Plugin): void;
 }
 
 export default class HandlerList {
@@ -36,12 +31,12 @@ export default class HandlerList {
 		return HandlerList.$javaClass.bakeAll(...args);
 	}
 
-	public static getHandlerLists(): ArrayList;
+	public static getHandlerLists(): any;
 	public static getHandlerLists(...args: any[]): any {
 		return HandlerList.$javaClass.getHandlerLists(...args);
 	}
 
-	public static getRegisteredListeners(plugin: Plugin): ArrayList;
+	public static getRegisteredListeners(plugin: Plugin): any;
 	public static getRegisteredListeners(...args: any[]): any {
 		return HandlerList.$javaClass.getRegisteredListeners(...args);
 	}

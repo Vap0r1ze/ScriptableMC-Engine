@@ -2,9 +2,7 @@ declare var Java: any;
 import BarColor from './BarColor.js'
 import BarFlag from './BarFlag.js'
 import BarStyle from './BarStyle.js'
-import List from '../../../java/util/List.js'
 import Player from '../../../org/bukkit/entity/Player.js'
-import String from '../../../java/lang/String.js'
 
 export default interface BossBar {
 	addFlag(arg0: BarFlag): void;

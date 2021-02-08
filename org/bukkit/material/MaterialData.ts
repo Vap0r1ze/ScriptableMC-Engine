@@ -1,13 +1,9 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Cloneable from '../../../java/lang/Cloneable.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../org/bukkit/Material.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface MaterialData extends Object, Cloneable {
-	clone(): Object;
+export default interface MaterialData {
+	clone(): any;
 	clone(): MaterialData;
 	getData(): number;
 	getItemType(): Material;

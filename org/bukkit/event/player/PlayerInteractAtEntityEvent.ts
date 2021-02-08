@@ -1,12 +1,9 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EquipmentSlot from '../../../../org/bukkit/inventory/EquipmentSlot.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PlayerInteractEntityEvent from './PlayerInteractEntityEvent.js'
-import String from '../../../../java/lang/String.js'
 import Vector from '../../../../org/bukkit/util/Vector.js'
 
 export default interface PlayerInteractAtEntityEvent extends PlayerInteractEntityEvent {

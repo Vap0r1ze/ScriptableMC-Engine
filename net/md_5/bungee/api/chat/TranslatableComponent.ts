@@ -1,15 +1,9 @@
 declare var Java: any;
 import BaseComponent from './BaseComponent.js'
-import Boolean from '../../../../../java/lang/Boolean.js'
 import ChatColor from '../../../../../net/md_5/bungee/api/ChatColor.js'
-import Class from '../../../../../java/lang/Class.js'
 import ClickEvent from './ClickEvent.js'
 import ComponentBuilder$FormatRetention from './ComponentBuilder$FormatRetention.js'
 import HoverEvent from './HoverEvent.js'
-import List from '../../../../../java/util/List.js'
-import Object from '../../../../../java/lang/Object.js'
-import Pattern from '../../../../../java/util/regex/Pattern.js'
-import String from '../../../../../java/lang/String.js'
 
 export default interface TranslatableComponent extends BaseComponent {
 	addExtra(text: string): void;
@@ -28,7 +22,7 @@ export default interface TranslatableComponent extends BaseComponent {
 	getExtra(): Array<BaseComponent>;
 	getFont(): string;
 	getFontRaw(): string;
-	getFormat(): Pattern;
+	getFormat(): any;
 	getHoverEvent(): HoverEvent;
 	getInsertion(): string;
 	getTranslate(): string;
@@ -72,7 +66,7 @@ export default class TranslatableComponent {
 
 	constructor();
 	constructor(original: TranslatableComponent);
-	constructor(translate: string, _with: Array<Object>);
+	constructor(translate: string, _with: Array<any>);
 	constructor(...args: any[]) {
 		return new TranslatableComponent.$javaClass(...args);
 	}

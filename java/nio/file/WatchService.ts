@@ -1,12 +1,11 @@
 declare var Java: any;
 import Closeable from '../../../java/io/Closeable.js'
-import TimeUnit from '../../../java/util/concurrent/TimeUnit.js'
 import WatchKey from './WatchKey.js'
 
 export default interface WatchService extends Closeable {
 	close(): void;
 	poll(): WatchKey;
-	poll(arg0: number, arg1: TimeUnit): WatchKey;
+	poll(arg0: number, arg1: any): WatchKey;
 	take(): WatchKey;
 }
 

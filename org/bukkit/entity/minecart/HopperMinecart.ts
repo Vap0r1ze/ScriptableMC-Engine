@@ -10,7 +10,6 @@ import EntityEffect from '../../../../org/bukkit/EntityEffect.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import Inventory from '../../../../org/bukkit/inventory/Inventory.js'
 import InventoryHolder from '../../../../org/bukkit/inventory/InventoryHolder.js'
-import List from '../../../../java/util/List.js'
 import Location from '../../../../org/bukkit/Location.js'
 import LootTable from '../../../../org/bukkit/loot/LootTable.js'
 import Lootable from '../../../../org/bukkit/loot/Lootable.js'
@@ -25,9 +24,6 @@ import PlayerTeleportEvent$TeleportCause from '../../../../org/bukkit/event/play
 import Plugin from '../../../../org/bukkit/plugin/Plugin.js'
 import Pose from '../../../../org/bukkit/entity/Pose.js'
 import Server from '../../../../org/bukkit/Server.js'
-import Set from '../../../../java/util/Set.js'
-import String from '../../../../java/lang/String.js'
-import UUID from '../../../../java/util/UUID.js'
 import Vector from '../../../../org/bukkit/util/Vector.js'
 import World from '../../../../org/bukkit/World.js'
 
@@ -46,7 +42,7 @@ export default interface HopperMinecart extends Minecart, InventoryHolder, Loota
 	getDisplayBlock(): MaterialData;
 	getDisplayBlockData(): BlockData;
 	getDisplayBlockOffset(): number;
-	getEffectivePermissions(): Set;
+	getEffectivePermissions(): any;
 	getEntityId(): number;
 	getFacing(): BlockFace;
 	getFallDistance(): number;
@@ -69,7 +65,7 @@ export default interface HopperMinecart extends Minecart, InventoryHolder, Loota
 	getPistonMoveReaction(): PistonMoveReaction;
 	getPortalCooldown(): number;
 	getPose(): Pose;
-	getScoreboardTags(): Set;
+	getScoreboardTags(): any;
 	getSeed(): number;
 	getServer(): Server;
 	getTicksLived(): number;

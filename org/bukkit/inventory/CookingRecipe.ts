@@ -1,15 +1,12 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import ItemStack from './ItemStack.js'
 import Keyed from '../../../org/bukkit/Keyed.js'
 import Material from '../../../org/bukkit/Material.js'
 import NamespacedKey from '../../../org/bukkit/NamespacedKey.js'
-import Object from '../../../java/lang/Object.js'
 import Recipe from './Recipe.js'
 import RecipeChoice from './RecipeChoice.js'
-import String from '../../../java/lang/String.js'
 
-export default interface CookingRecipe extends Object, Recipe, Keyed {
+export default interface CookingRecipe extends Recipe, Keyed {
 	getCookingTime(): number;
 	getExperience(): number;
 	getGroup(): string;

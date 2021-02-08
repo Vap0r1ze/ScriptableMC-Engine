@@ -1,13 +1,10 @@
 declare var Java: any;
 import ClickableItem from '../../../../fr/minuskube/inv/ClickableItem.js'
-import Object from '../../../../java/lang/Object.js'
-import Optional from '../../../../java/util/Optional.js'
 import Pagination from './Pagination.js'
 import SlotIterator from './SlotIterator.js'
 import SlotIterator$Type from './SlotIterator$Type.js'
 import SlotPos from './SlotPos.js'
 import SmartInventory from '../../../../fr/minuskube/inv/SmartInventory.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface InventoryContents {
 	add(arg0: ClickableItem): InventoryContents;
@@ -18,21 +15,21 @@ export default interface InventoryContents {
 	fillRect(arg0: SlotPos, arg1: SlotPos, arg2: ClickableItem): InventoryContents;
 	fillRect(arg0: number, arg1: number, arg2: number, arg3: number, arg4: ClickableItem): InventoryContents;
 	fillRow(arg0: number, arg1: ClickableItem): InventoryContents;
-	firstEmpty(): Optional;
-	get(arg0: SlotPos): Optional;
-	get(arg0: number, arg1: number): Optional;
+	firstEmpty(): any;
+	get(arg0: SlotPos): any;
+	get(arg0: number, arg1: number): any;
 	inventory(): SmartInventory;
-	iterator(arg0: string): Optional;
+	iterator(arg0: string): any;
 	newIterator(arg0: SlotIterator$Type, arg1: SlotPos): SlotIterator;
 	newIterator(arg0: string, arg1: SlotIterator$Type, arg2: SlotPos): SlotIterator;
 	newIterator(arg0: SlotIterator$Type, arg1: number, arg2: number): SlotIterator;
 	newIterator(arg0: string, arg1: SlotIterator$Type, arg2: number, arg3: number): SlotIterator;
 	pagination(): Pagination;
-	property(arg0: string): Object;
-	property(arg0: string, arg1: Object): Object;
+	property(arg0: string): any;
+	property(arg0: string, arg1: any): any;
 	set(arg0: SlotPos, arg1: ClickableItem): InventoryContents;
 	set(arg0: number, arg1: number, arg2: ClickableItem): InventoryContents;
-	setProperty(arg0: string, arg1: Object): InventoryContents;
+	setProperty(arg0: string, arg1: any): InventoryContents;
 }
 
 export default class InventoryContents {

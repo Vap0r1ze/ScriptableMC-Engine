@@ -1,9 +1,6 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface CoderResult extends Object {
+export default interface CoderResult {
 	isError(): boolean;
 	isMalformed(): boolean;
 	isOverflow(): boolean;

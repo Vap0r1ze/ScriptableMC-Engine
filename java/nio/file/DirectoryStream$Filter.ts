@@ -1,8 +1,7 @@
 declare var Java: any;
-import Object from '../../../java/lang/Object.js'
 
 export default interface DirectoryStream$Filter {
-	accept(arg0: Object): boolean;
+	accept(arg0: any): boolean;
 }
 
 export default class DirectoryStream$Filter {

@@ -1,11 +1,8 @@
 declare var Java: any;
 import BaseComponent from '../../net/md_5/bungee/api/chat/BaseComponent.js'
-import Class from '../../java/lang/Class.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 import YamlConfiguration from './configuration/file/YamlConfiguration.js'
 
-export default interface Server$Spigot extends Object {
+export default interface Server$Spigot {
 	broadcast(component: BaseComponent): void;
 	broadcast(components: Array<BaseComponent>): void;
 	getConfig(): YamlConfiguration;

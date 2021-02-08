@@ -1,17 +1,13 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import Conversable from './Conversable.js'
-import Map from '../../../java/util/Map.js'
-import Object from '../../../java/lang/Object.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
-import String from '../../../java/lang/String.js'
 
-export default interface ConversationContext extends Object {
-	getAllSessionData(): Map;
+export default interface ConversationContext {
+	getAllSessionData(): any;
 	getForWhom(): Conversable;
 	getPlugin(): Plugin;
-	getSessionData(key: Object): Object;
-	setSessionData(key: Object, value: Object): void;
+	getSessionData(key: any): any;
+	setSessionData(key: any, value: any): void;
 }
 
 export default class ConversationContext {
@@ -22,7 +18,7 @@ export default class ConversationContext {
 		return obj instanceof ConversationContext.$javaClass;
 	}
 
-	constructor(plugin: Plugin, forWhom: Conversable, initialSessionData: Map);
+	constructor(plugin: Plugin, forWhom: Conversable, initialSessionData: any);
 	constructor(...args: any[]) {
 		return new ConversationContext.$javaClass(...args);
 	}

@@ -1,11 +1,8 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
 import LightningStrike from './entity/LightningStrike.js'
 import Location from './Location.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface World$Spigot extends Object {
+export default interface World$Spigot {
 	strikeLightning(loc: Location, isSilent: boolean): LightningStrike;
 	strikeLightningEffect(loc: Location, isSilent: boolean): LightningStrike;
 }

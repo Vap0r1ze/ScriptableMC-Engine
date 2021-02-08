@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import Configuration from './Configuration.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface ConfigurationOptions extends Object {
+export default interface ConfigurationOptions {
 	configuration(): Configuration;
 	copyDefaults(): boolean;
 	copyDefaults(value: boolean): ConfigurationOptions;

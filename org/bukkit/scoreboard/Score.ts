@@ -2,7 +2,6 @@ declare var Java: any;
 import Objective from './Objective.js'
 import OfflinePlayer from '../../../org/bukkit/OfflinePlayer.js'
 import Scoreboard from './Scoreboard.js'
-import String from '../../../java/lang/String.js'
 
 export default interface Score {
 	getEntry(): string;

@@ -1,6 +1,5 @@
 declare var Java: any;
 import HumanEntity from '../../../org/bukkit/entity/HumanEntity.js'
-import List from '../../../java/util/List.js'
 import MerchantRecipe from './MerchantRecipe.js'
 
 export default interface Merchant {

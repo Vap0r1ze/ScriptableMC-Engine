@@ -5,12 +5,9 @@ import CommandSender from '../../../org/bukkit/command/CommandSender.js'
 import File from '../../../java/io/File.js'
 import FileConfiguration from '../../../org/bukkit/configuration/file/FileConfiguration.js'
 import InputStream from '../../../java/io/InputStream.js'
-import List from '../../../java/util/List.js'
-import Logger from '../../../java/util/logging/Logger.js'
 import PluginDescriptionFile from './PluginDescriptionFile.js'
 import PluginLoader from './PluginLoader.js'
 import Server from '../../../org/bukkit/Server.js'
-import String from '../../../java/lang/String.js'
 import TabExecutor from '../../../org/bukkit/command/TabExecutor.js'
 
 export default interface Plugin extends TabExecutor {
@@ -18,7 +15,7 @@ export default interface Plugin extends TabExecutor {
 	getDataFolder(): File;
 	getDefaultWorldGenerator(arg0: string, arg1: string): ChunkGenerator;
 	getDescription(): PluginDescriptionFile;
-	getLogger(): Logger;
+	getLogger(): any;
 	getName(): string;
 	getPluginLoader(): PluginLoader;
 	getResource(arg0: string): InputStream;

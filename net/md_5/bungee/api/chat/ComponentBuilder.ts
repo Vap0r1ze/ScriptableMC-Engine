@@ -1,24 +1,20 @@
 declare var Java: any;
 import BaseComponent from './BaseComponent.js'
 import ChatColor from '../../../../../net/md_5/bungee/api/ChatColor.js'
-import Class from '../../../../../java/lang/Class.js'
 import ClickEvent from './ClickEvent.js'
 import ComponentBuilder$FormatRetention from './ComponentBuilder$FormatRetention.js'
 import ComponentBuilder$Joiner from './ComponentBuilder$Joiner.js'
 import HoverEvent from './HoverEvent.js'
-import List from '../../../../../java/util/List.js'
-import Object from '../../../../../java/lang/Object.js'
-import String from '../../../../../java/lang/String.js'
 
-export default interface ComponentBuilder extends Object {
-	append(text: string): ComponentBuilder;
+export default interface ComponentBuilder {
 	append(joiner: ComponentBuilder$Joiner): ComponentBuilder;
 	append(component: BaseComponent): ComponentBuilder;
 	append(components: Array<BaseComponent>): ComponentBuilder;
+	append(text: string): ComponentBuilder;
 	append(text: string, retention: ComponentBuilder$FormatRetention): ComponentBuilder;
-	append(components: Array<BaseComponent>, retention: ComponentBuilder$FormatRetention): ComponentBuilder;
-	append(component: BaseComponent, retention: ComponentBuilder$FormatRetention): ComponentBuilder;
 	append(joiner: ComponentBuilder$Joiner, retention: ComponentBuilder$FormatRetention): ComponentBuilder;
+	append(component: BaseComponent, retention: ComponentBuilder$FormatRetention): ComponentBuilder;
+	append(components: Array<BaseComponent>, retention: ComponentBuilder$FormatRetention): ComponentBuilder;
 	appendLegacy(text: string): ComponentBuilder;
 	bold(bold: boolean): ComponentBuilder;
 	color(color: ChatColor): ComponentBuilder;
@@ -51,9 +47,9 @@ export default class ComponentBuilder {
 	}
 
 	constructor();
+	constructor(text: string);
 	constructor(component: BaseComponent);
 	constructor(original: ComponentBuilder);
-	constructor(text: string);
 	constructor(...args: any[]) {
 		return new ComponentBuilder.$javaClass(...args);
 	}

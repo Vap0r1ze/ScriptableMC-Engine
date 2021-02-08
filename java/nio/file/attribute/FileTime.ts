@@ -1,14 +1,9 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
-import Comparable from '../../../../java/lang/Comparable.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
-import TimeUnit from '../../../../java/util/concurrent/TimeUnit.js'
 
-export default interface FileTime extends Object, Comparable {
-	compareTo(arg0: Object): number;
+export default interface FileTime {
+	compareTo(arg0: any): number;
 	compareTo(arg0: FileTime): number;
-	to(arg0: TimeUnit): number;
+	to(arg0: any): number;
 	toInstant(): any;
 	toMillis(): number;
 }
@@ -22,7 +17,7 @@ export default class FileTime {
 	}
 
 	public static from(arg0: any): FileTime;
-	public static from(arg0: number, arg1: TimeUnit): FileTime;
+	public static from(arg0: number, arg1: any): FileTime;
 	public static from(...args: any[]): any {
 		return FileTime.$javaClass.from(...args);
 	}

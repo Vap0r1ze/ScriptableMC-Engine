@@ -1,8 +1,6 @@
 declare var Java: any;
 import Conversation from './Conversation.js'
 import ConversationAbandonedEvent from './ConversationAbandonedEvent.js'
-import String from '../../../java/lang/String.js'
-import UUID from '../../../java/util/UUID.js'
 
 export default interface Conversable {
 	abandonConversation(arg0: Conversation): void;

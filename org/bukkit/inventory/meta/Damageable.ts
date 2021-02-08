@@ -1,9 +1,8 @@
 declare var Java: any;
-import Object from '../../../../java/lang/Object.js'
 
 export default interface Damageable {
 	clone(): Damageable;
-	clone(): Object;
+	clone(): any;
 	getDamage(): number;
 	hasDamage(): boolean;
 	setDamage(arg0: number): void;

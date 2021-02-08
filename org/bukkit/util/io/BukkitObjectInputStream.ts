@@ -1,12 +1,9 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import InputStream from '../../../../java/io/InputStream.js'
-import Object from '../../../../java/lang/Object.js'
 import ObjectInputStream from '../../../../java/io/ObjectInputStream.js'
 import ObjectInputStream$GetField from '../../../../java/io/ObjectInputStream$GetField.js'
 import ObjectInputValidation from '../../../../java/io/ObjectInputValidation.js'
 import SerializablePermission from '../../../../java/io/SerializablePermission.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface BukkitObjectInputStream extends ObjectInputStream {
 	available(): number;
@@ -28,10 +25,10 @@ export default interface BukkitObjectInputStream extends ObjectInputStream {
 	readInt(): number;
 	readLine(): string;
 	readLong(): number;
-	readObject(): Object;
+	readObject(): any;
 	readShort(): number;
 	readUTF(): string;
-	readUnshared(): Object;
+	readUnshared(): any;
 	readUnsignedByte(): number;
 	readUnsignedShort(): number;
 	registerValidation(arg0: ObjectInputValidation, arg1: number): void;

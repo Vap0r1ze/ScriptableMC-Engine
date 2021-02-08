@@ -10,11 +10,8 @@ import BossBar from './boss/BossBar.js'
 import BukkitScheduler from './scheduler/BukkitScheduler.js'
 import CachedServerIcon from './util/CachedServerIcon.js'
 import ChunkGenerator$ChunkData from './generator/ChunkGenerator$ChunkData.js'
-import Class from '../../java/lang/Class.js'
-import Collection from '../../java/util/Collection.js'
 import CommandSender from './command/CommandSender.js'
 import ConsoleCommandSender from './command/ConsoleCommandSender.js'
-import Consumer from '../../java/util/function/Consumer.js'
 import Entity from './entity/Entity.js'
 import File from '../../java/io/File.js'
 import GameMode from './GameMode.js'
@@ -24,20 +21,14 @@ import InventoryHolder from './inventory/InventoryHolder.js'
 import InventoryType from './event/inventory/InventoryType.js'
 import ItemFactory from './inventory/ItemFactory.js'
 import ItemStack from './inventory/ItemStack.js'
-import Iterable from '../../java/lang/Iterable.js'
-import Iterator from '../../java/util/Iterator.js'
 import KeyedBossBar from './boss/KeyedBossBar.js'
-import List from '../../java/util/List.js'
 import Location from './Location.js'
-import Logger from '../../java/util/logging/Logger.js'
 import LootTable from './loot/LootTable.js'
-import Map from '../../java/util/Map.js'
 import MapView from './map/MapView.js'
 import Material from './Material.js'
 import Merchant from './inventory/Merchant.js'
 import Messenger from './plugin/messaging/Messenger.js'
 import NamespacedKey from './NamespacedKey.js'
-import Object from '../../java/lang/Object.js'
 import OfflinePlayer from './OfflinePlayer.js'
 import Player from './entity/Player.js'
 import PluginCommand from './command/PluginCommand.js'
@@ -47,11 +38,8 @@ import ScoreboardManager from './scoreboard/ScoreboardManager.js'
 import Server from './Server.js'
 import Server$Spigot from './Server$Spigot.js'
 import ServicesManager from './plugin/ServicesManager.js'
-import Set from '../../java/util/Set.js'
-import String from '../../java/lang/String.js'
 import StructureType from './StructureType.js'
 import Tag from './Tag.js'
-import UUID from '../../java/util/UUID.js'
 import UnsafeValues from './UnsafeValues.js'
 import Warning$WarningState from './Warning$WarningState.js'
 import World from './World.js'
@@ -70,7 +58,7 @@ export default class Bukkit {
 		return Bukkit.$javaClass.addRecipe(...args);
 	}
 
-	public static advancementIterator(): Iterator;
+	public static advancementIterator(): any;
 	public static advancementIterator(...args: any[]): any {
 		return Bukkit.$javaClass.advancementIterator(...args);
 	}
@@ -95,10 +83,10 @@ export default class Bukkit {
 		return Bukkit.$javaClass.clearRecipes(...args);
 	}
 
-	public static createBlockData(data: string): BlockData;
 	public static createBlockData(material: Material): BlockData;
+	public static createBlockData(data: string): BlockData;
+	public static createBlockData(material: Material, consumer: any): BlockData;
 	public static createBlockData(material: Material, data: string): BlockData;
-	public static createBlockData(material: Material, consumer: Consumer): BlockData;
 	public static createBlockData(...args: any[]): any {
 		return Bukkit.$javaClass.createBlockData(...args);
 	}
@@ -122,8 +110,8 @@ export default class Bukkit {
 
 	public static createInventory(owner: InventoryHolder, type: InventoryType): Inventory;
 	public static createInventory(owner: InventoryHolder, size: number): Inventory;
-	public static createInventory(owner: InventoryHolder, size: number, title: string): Inventory;
 	public static createInventory(owner: InventoryHolder, type: InventoryType, title: string): Inventory;
+	public static createInventory(owner: InventoryHolder, size: number, title: string): Inventory;
 	public static createInventory(...args: any[]): any {
 		return Bukkit.$javaClass.createInventory(...args);
 	}
@@ -183,7 +171,7 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getBanList(...args);
 	}
 
-	public static getBannedPlayers(): Set;
+	public static getBannedPlayers(): any;
 	public static getBannedPlayers(...args: any[]): any {
 		return Bukkit.$javaClass.getBannedPlayers(...args);
 	}
@@ -193,7 +181,7 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getBossBar(...args);
 	}
 
-	public static getBossBars(): Iterator;
+	public static getBossBars(): any;
 	public static getBossBars(...args: any[]): any {
 		return Bukkit.$javaClass.getBossBars(...args);
 	}
@@ -203,7 +191,7 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getBukkitVersion(...args);
 	}
 
-	public static getCommandAliases(): Map;
+	public static getCommandAliases(): any;
 	public static getCommandAliases(...args: any[]): any {
 		return Bukkit.$javaClass.getCommandAliases(...args);
 	}
@@ -238,7 +226,7 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getHelpMap(...args);
 	}
 
-	public static getIPBans(): Set;
+	public static getIPBans(): any;
 	public static getIPBans(...args: any[]): any {
 		return Bukkit.$javaClass.getIPBans(...args);
 	}
@@ -258,7 +246,7 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getItemFactory(...args);
 	}
 
-	public static getLogger(): Logger;
+	public static getLogger(): any;
 	public static getLogger(...args: any[]): any {
 		return Bukkit.$javaClass.getLogger(...args);
 	}
@@ -324,7 +312,7 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getOnlinePlayers(...args);
 	}
 
-	public static getOperators(): Set;
+	public static getOperators(): any;
 	public static getOperators(...args: any[]): any {
 		return Bukkit.$javaClass.getOperators(...args);
 	}
@@ -400,12 +388,12 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getSpawnRadius(...args);
 	}
 
-	public static getTag(registry: string, tag: NamespacedKey, clazz: Class): Tag;
+	public static getTag(registry: string, tag: NamespacedKey, clazz: any): Tag;
 	public static getTag(...args: any[]): any {
 		return Bukkit.$javaClass.getTag(...args);
 	}
 
-	public static getTags(registry: string, clazz: Class): Iterable;
+	public static getTags(registry: string, clazz: any): any;
 	public static getTags(...args: any[]): any {
 		return Bukkit.$javaClass.getTags(...args);
 	}
@@ -475,13 +463,13 @@ export default class Bukkit {
 		return Bukkit.$javaClass.getWaterAnimalSpawnLimit(...args);
 	}
 
-	public static getWhitelistedPlayers(): Set;
+	public static getWhitelistedPlayers(): any;
 	public static getWhitelistedPlayers(...args: any[]): any {
 		return Bukkit.$javaClass.getWhitelistedPlayers(...args);
 	}
 
-	public static getWorld(_name: string): World;
 	public static getWorld(uid: string): World;
+	public static getWorld(_name: string): World;
 	public static getWorld(...args: any[]): any {
 		return Bukkit.$javaClass.getWorld(...args);
 	}
@@ -527,7 +515,7 @@ export default class Bukkit {
 		return Bukkit.$javaClass.matchPlayer(...args);
 	}
 
-	public static recipeIterator(): Iterator;
+	public static recipeIterator(): any;
 	public static recipeIterator(...args: any[]): any {
 		return Bukkit.$javaClass.recipeIterator(...args);
 	}

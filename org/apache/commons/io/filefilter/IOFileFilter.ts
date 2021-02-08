@@ -2,7 +2,6 @@ declare var Java: any;
 import File from '../../../../../java/io/File.js'
 import FileFilter from '../../../../../java/io/FileFilter.js'
 import FilenameFilter from '../../../../../java/io/FilenameFilter.js'
-import String from '../../../../../java/lang/String.js'
 
 export default interface IOFileFilter extends FileFilter, FilenameFilter {
 	accept(arg0: File): boolean;

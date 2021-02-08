@@ -3,11 +3,8 @@ import Block from '../../../../org/bukkit/block/Block.js'
 import BlockData from '../../../../org/bukkit/block/data/BlockData.js'
 import BlockEvent from './BlockEvent.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
-import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import Material from '../../../../org/bukkit/Material.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface BlockPhysicsEvent extends BlockEvent, Cancellable {
 	getBlock(): Block;

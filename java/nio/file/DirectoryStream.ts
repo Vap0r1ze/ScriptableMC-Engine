@@ -1,15 +1,11 @@
 declare var Java: any;
 import Closeable from '../../../java/io/Closeable.js'
-import Consumer from '../../../java/util/function/Consumer.js'
-import Iterable from '../../../java/lang/Iterable.js'
-import Iterator from '../../../java/util/Iterator.js'
-import Spliterator from '../../../java/util/Spliterator.js'
 
-export default interface DirectoryStream extends Closeable, Iterable {
+export default interface DirectoryStream extends Closeable {
 	close(): void;
-	forEach(arg0: Consumer): void;
-	iterator(): Iterator;
-	spliterator(): Spliterator;
+	forEach(arg0: any): void;
+	iterator(): any;
+	spliterator(): any;
 }
 
 export default class DirectoryStream {

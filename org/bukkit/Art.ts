@@ -1,17 +1,13 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Enum from '../../java/lang/Enum.js'
 import Keyed from './Keyed.js'
 import NamespacedKey from './NamespacedKey.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface Art extends Enum, Keyed {
-	compareTo(arg0: Object): number;
-	compareTo(arg0: Enum): number;
+export default interface Art extends Keyed {
+	compareTo(arg0: any): number;
+	compareTo(arg0: any): number;
 	getBlockHeight(): number;
 	getBlockWidth(): number;
-	getDeclaringClass(): Class;
+	getDeclaringClass(): any;
 	getId(): number;
 	getKey(): NamespacedKey;
 	name(): string;

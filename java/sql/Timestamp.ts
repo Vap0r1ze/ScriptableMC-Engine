@@ -1,17 +1,13 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Date from '../../java/util/Date.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface Timestamp extends Date {
+export default interface Timestamp {
 	after(arg0: Timestamp): boolean;
-	after(arg0: Date): boolean;
+	after(arg0: any): boolean;
 	before(arg0: Timestamp): boolean;
-	before(arg0: Date): boolean;
-	clone(): Object;
-	compareTo(arg0: Date): number;
-	compareTo(arg0: Object): number;
+	before(arg0: any): boolean;
+	clone(): any;
+	compareTo(arg0: any): number;
+	compareTo(arg0: any): number;
 	compareTo(arg0: Timestamp): number;
 	getDate(): number;
 	getDay(): number;
@@ -57,7 +53,7 @@ export default class Timestamp {
 	}
 
 	public static from(arg0: any): Timestamp;
-	public static from(arg0: any): Date;
+	public static from(arg0: any): any;
 	public static from(...args: any[]): any {
 		return Timestamp.$javaClass.from(...args);
 	}

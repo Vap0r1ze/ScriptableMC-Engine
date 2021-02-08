@@ -1,14 +1,11 @@
 declare var Java: any;
 import ArmorStand from '../../../../org/bukkit/entity/ArmorStand.js'
-import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EquipmentSlot from '../../../../org/bukkit/inventory/EquipmentSlot.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import ItemStack from '../../../../org/bukkit/inventory/ItemStack.js'
-import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PlayerInteractEntityEvent from './PlayerInteractEntityEvent.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
 	getArmorStandItem(): ItemStack;

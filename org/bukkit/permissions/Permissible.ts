@@ -3,15 +3,13 @@ import Permission from './Permission.js'
 import PermissionAttachment from './PermissionAttachment.js'
 import Plugin from '../../../org/bukkit/plugin/Plugin.js'
 import ServerOperator from './ServerOperator.js'
-import Set from '../../../java/util/Set.js'
-import String from '../../../java/lang/String.js'
 
 export default interface Permissible extends ServerOperator {
 	addAttachment(arg0: Plugin): PermissionAttachment;
 	addAttachment(arg0: Plugin, arg1: number): PermissionAttachment;
 	addAttachment(arg0: Plugin, arg1: string, arg2: boolean): PermissionAttachment;
 	addAttachment(arg0: Plugin, arg1: string, arg2: boolean, arg3: number): PermissionAttachment;
-	getEffectivePermissions(): Set;
+	getEffectivePermissions(): any;
 	hasPermission(arg0: Permission): boolean;
 	hasPermission(arg0: string): boolean;
 	isOp(): boolean;

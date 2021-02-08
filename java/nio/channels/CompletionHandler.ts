@@ -1,10 +1,8 @@
 declare var Java: any;
-import Object from '../../../java/lang/Object.js'
-import Throwable from '../../../java/lang/Throwable.js'
 
 export default interface CompletionHandler {
-	completed(arg0: Object, arg1: Object): void;
-	failed(arg0: Throwable, arg1: Object): void;
+	completed(arg0: any, arg1: any): void;
+	failed(arg0: any, arg1: any): void;
 }
 
 export default class CompletionHandler {

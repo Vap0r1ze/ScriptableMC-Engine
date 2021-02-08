@@ -1,6 +1,5 @@
 declare var Java: any;
 import ConversationContext from './ConversationContext.js'
-import String from '../../../java/lang/String.js'
 
 export default interface ConversationPrefix {
 	getPrefix(arg0: ConversationContext): string;

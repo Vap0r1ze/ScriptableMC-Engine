@@ -1,5 +1,4 @@
 declare var Java: any;
-import List from '../../../java/util/List.js'
 import MapRenderer from './MapRenderer.js'
 import MapView$Scale from './MapView$Scale.js'
 import World from '../../../org/bukkit/World.js'

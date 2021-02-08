@@ -1,19 +1,14 @@
 declare var Java: any;
-import Appendable from '../../java/lang/Appendable.js'
-import CharSequence from '../../java/lang/CharSequence.js'
-import Class from '../../java/lang/Class.js'
 import Closeable from './Closeable.js'
 import Flushable from './Flushable.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface Writer extends Object, Appendable, Closeable, Flushable {
+export default interface Writer extends Closeable, Flushable {
 	append(arg0: string): Writer;
-	append(arg0: CharSequence): Writer;
-	append(arg0: string): Appendable;
-	append(arg0: CharSequence): Appendable;
-	append(arg0: CharSequence, arg1: number, arg2: number): Writer;
-	append(arg0: CharSequence, arg1: number, arg2: number): Appendable;
+	append(arg0: any): Writer;
+	append(arg0: string): any;
+	append(arg0: any): any;
+	append(arg0: any, arg1: number, arg2: number): Writer;
+	append(arg0: any, arg1: number, arg2: number): any;
 	close(): void;
 	flush(): void;
 	write(arg0: Array<string>): void;

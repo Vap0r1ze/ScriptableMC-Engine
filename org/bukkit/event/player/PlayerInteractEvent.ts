@@ -3,16 +3,13 @@ import Action from '../../../../org/bukkit/event/block/Action.js'
 import Block from '../../../../org/bukkit/block/Block.js'
 import BlockFace from '../../../../org/bukkit/block/BlockFace.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
-import Class from '../../../../java/lang/Class.js'
 import EquipmentSlot from '../../../../org/bukkit/inventory/EquipmentSlot.js'
 import Event$Result from '../../../../org/bukkit/event/Event$Result.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import ItemStack from '../../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../../org/bukkit/Material.js'
-import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PlayerEvent from './PlayerEvent.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface PlayerInteractEvent extends PlayerEvent, Cancellable {
 	getAction(): Action;

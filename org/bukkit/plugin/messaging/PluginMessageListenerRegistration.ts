@@ -1,12 +1,9 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import Messenger from './Messenger.js'
-import Object from '../../../../java/lang/Object.js'
 import Plugin from '../../../../org/bukkit/plugin/Plugin.js'
 import PluginMessageListener from './PluginMessageListener.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface PluginMessageListenerRegistration extends Object {
+export default interface PluginMessageListenerRegistration {
 	getChannel(): string;
 	getListener(): PluginMessageListener;
 	getPlugin(): Plugin;

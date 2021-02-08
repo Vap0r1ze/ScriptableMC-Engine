@@ -1,9 +1,4 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Collection from '../../../java/util/Collection.js'
-import Iterable from '../../../java/lang/Iterable.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
 export default class StringUtil {
 	public static get $javaClass(): any {
@@ -18,7 +13,7 @@ export default class StringUtil {
 		return new StringUtil.$javaClass(...args);
 	}
 
-	public static copyPartialMatches(token: string, originals: Iterable, collection: Array<any>): Array<any>;
+	public static copyPartialMatches(token: string, originals: any, collection: Array<any>): Array<any>;
 	public static copyPartialMatches(...args: any[]): any {
 		return StringUtil.$javaClass.copyPartialMatches(...args);
 	}

@@ -1,14 +1,11 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import EntityType from '../../../org/bukkit/entity/EntityType.js'
 import ItemStack from '../../../org/bukkit/inventory/ItemStack.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from './MaterialData.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
 export default interface SpawnEgg extends MaterialData {
-	clone(): Object;
+	clone(): any;
 	clone(): MaterialData;
 	clone(): SpawnEgg;
 	getData(): number;

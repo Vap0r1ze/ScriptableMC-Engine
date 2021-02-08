@@ -1,8 +1,6 @@
 declare var Java: any;
-import Collection from '../../../../java/util/Collection.js'
 import CommandCompletionContext from './CommandCompletionContext.js'
 import CommandCompletions$CommandCompletionHandler from './CommandCompletions$CommandCompletionHandler.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface CommandCompletions$AsyncCommandCompletionHandler extends CommandCompletions$CommandCompletionHandler {
 	getCompletions(context: CommandCompletionContext): Array<string>;

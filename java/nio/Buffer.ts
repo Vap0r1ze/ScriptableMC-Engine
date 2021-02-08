@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface Buffer extends Object {
-	array(): Object;
+export default interface Buffer {
+	array(): any;
 	arrayOffset(): number;
 	capacity(): number;
 	clear(): Buffer;

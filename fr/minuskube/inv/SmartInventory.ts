@@ -1,21 +1,17 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import Inventory from '../../../org/bukkit/inventory/Inventory.js'
 import InventoryManager from './InventoryManager.js'
 import InventoryProvider from './content/InventoryProvider.js'
 import InventoryType from '../../../org/bukkit/event/inventory/InventoryType.js'
-import Object from '../../../java/lang/Object.js'
-import Optional from '../../../java/util/Optional.js'
 import Player from '../../../org/bukkit/entity/Player.js'
 import SmartInventory$Builder from './SmartInventory$Builder.js'
-import String from '../../../java/lang/String.js'
 
-export default interface SmartInventory extends Object {
+export default interface SmartInventory {
 	close(player: Player): void;
 	getColumns(): number;
 	getId(): string;
 	getManager(): InventoryManager;
-	getParent(): Optional;
+	getParent(): any;
 	getProvider(): InventoryProvider;
 	getRows(): number;
 	getTitle(): string;

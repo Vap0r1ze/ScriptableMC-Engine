@@ -3,14 +3,12 @@ import BlockData from '../../../../../org/bukkit/block/data/BlockData.js'
 import Instrument from '../../../../../org/bukkit/Instrument.js'
 import Material from '../../../../../org/bukkit/Material.js'
 import Note from '../../../../../org/bukkit/Note.js'
-import Object from '../../../../../java/lang/Object.js'
 import Powerable from '../../../../../org/bukkit/block/data/Powerable.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
-import String from '../../../../../java/lang/String.js'
 
 export default interface NoteBlock extends Powerable {
 	clone(): BlockData;
-	clone(): Object;
+	clone(): any;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
 	getInstrument(): Instrument;

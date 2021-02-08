@@ -1,16 +1,13 @@
 declare var Java: any;
 import ChunkGenerator from './generator/ChunkGenerator.js'
-import Class from '../../java/lang/Class.js'
 import CommandSender from './command/CommandSender.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 import World from './World.js'
 import World$Environment from './World$Environment.js'
 import WorldType from './WorldType.js'
 
-export default interface WorldCreator extends Object {
-	copy(creator: WorldCreator): WorldCreator;
+export default interface WorldCreator {
 	copy(world: World): WorldCreator;
+	copy(creator: WorldCreator): WorldCreator;
 	createWorld(): World;
 	environment(): World$Environment;
 	environment(env: World$Environment): WorldCreator;

@@ -1,14 +1,10 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Enum from '../../../java/lang/Enum.js'
-import Object from '../../../java/lang/Object.js'
 import PotionEffectType from './PotionEffectType.js'
-import String from '../../../java/lang/String.js'
 
-export default interface PotionType extends Enum {
-	compareTo(arg0: Object): number;
-	compareTo(arg0: Enum): number;
-	getDeclaringClass(): Class;
+export default interface PotionType {
+	compareTo(arg0: any): number;
+	compareTo(arg0: any): number;
+	getDeclaringClass(): any;
 	getEffectType(): PotionEffectType;
 	getMaxLevel(): number;
 	isExtendable(): boolean;

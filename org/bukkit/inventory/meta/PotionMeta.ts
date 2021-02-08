@@ -1,24 +1,17 @@
 declare var Java: any;
 import Attribute from '../../../../org/bukkit/attribute/Attribute.js'
 import AttributeModifier from '../../../../org/bukkit/attribute/AttributeModifier.js'
-import Collection from '../../../../java/util/Collection.js'
 import Color from '../../../../org/bukkit/Color.js'
 import CustomItemTagContainer from './tags/CustomItemTagContainer.js'
 import Enchantment from '../../../../org/bukkit/enchantments/Enchantment.js'
 import EquipmentSlot from '../../../../org/bukkit/inventory/EquipmentSlot.js'
-import Integer from '../../../../java/lang/Integer.js'
 import ItemFlag from '../../../../org/bukkit/inventory/ItemFlag.js'
 import ItemMeta from './ItemMeta.js'
-import List from '../../../../java/util/List.js'
-import Map from '../../../../java/util/Map.js'
 import Multimap from '../../../../com/google/common/collect/Multimap.js'
-import Object from '../../../../java/lang/Object.js'
 import PersistentDataContainer from '../../../../org/bukkit/persistence/PersistentDataContainer.js'
 import PotionData from '../../../../org/bukkit/potion/PotionData.js'
 import PotionEffect from '../../../../org/bukkit/potion/PotionEffect.js'
 import PotionEffectType from '../../../../org/bukkit/potion/PotionEffectType.js'
-import Set from '../../../../java/util/Set.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface PotionMeta extends ItemMeta {
 	addAttributeModifier(arg0: Attribute, arg1: AttributeModifier): boolean;
@@ -26,7 +19,7 @@ export default interface PotionMeta extends ItemMeta {
 	addEnchant(arg0: Enchantment, arg1: number, arg2: boolean): boolean;
 	addItemFlags(arg0: Array<ItemFlag>): void;
 	clearCustomEffects(): boolean;
-	clone(): Object;
+	clone(): any;
 	clone(): ItemMeta;
 	clone(): PotionMeta;
 	getAttributeModifiers(): Multimap;
@@ -39,8 +32,8 @@ export default interface PotionMeta extends ItemMeta {
 	getCustomTagContainer(): CustomItemTagContainer;
 	getDisplayName(): string;
 	getEnchantLevel(arg0: Enchantment): number;
-	getEnchants(): Map;
-	getItemFlags(): Set;
+	getEnchants(): any;
+	getItemFlags(): any;
 	getLocalizedName(): string;
 	getLore(): Array<string>;
 	getPersistentDataContainer(): PersistentDataContainer;
@@ -63,11 +56,11 @@ export default interface PotionMeta extends ItemMeta {
 	removeCustomEffect(arg0: PotionEffectType): boolean;
 	removeEnchant(arg0: Enchantment): boolean;
 	removeItemFlags(arg0: Array<ItemFlag>): void;
-	serialize(): Map;
+	serialize(): any;
 	setAttributeModifiers(arg0: Multimap): void;
 	setBasePotionData(arg0: PotionData): void;
 	setColor(arg0: Color): void;
-	setCustomModelData(arg0: Integer): void;
+	setCustomModelData(arg0: any): void;
 	setDisplayName(arg0: string): void;
 	setLocalizedName(arg0: string): void;
 	setLore(arg0: Array<any>): void;

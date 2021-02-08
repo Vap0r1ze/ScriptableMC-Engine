@@ -1,12 +1,8 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
 import ConfigurationSerializable from './ConfigurationSerializable.js'
-import Map from '../../../../java/util/Map.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface ConfigurationSerialization extends Object {
-	deserialize(args: Map): ConfigurationSerializable;
+export default interface ConfigurationSerialization {
+	deserialize(args: any): ConfigurationSerializable;
 }
 
 export default class ConfigurationSerialization {
@@ -21,29 +17,29 @@ export default class ConfigurationSerialization {
 		return ConfigurationSerialization.$javaClass.SERIALIZED_TYPE_KEY;
 	}
 
-	public static deserializeObject(args: Map): ConfigurationSerializable;
-	public static deserializeObject(args: Map, clazz: Class): ConfigurationSerializable;
+	public static deserializeObject(args: any): ConfigurationSerializable;
+	public static deserializeObject(args: any, clazz: any): ConfigurationSerializable;
 	public static deserializeObject(...args: any[]): any {
 		return ConfigurationSerialization.$javaClass.deserializeObject(...args);
 	}
 
-	public static getAlias(clazz: Class): string;
+	public static getAlias(clazz: any): string;
 	public static getAlias(...args: any[]): any {
 		return ConfigurationSerialization.$javaClass.getAlias(...args);
 	}
 
-	public static getClassByAlias(alias: string): Class;
+	public static getClassByAlias(alias: string): any;
 	public static getClassByAlias(...args: any[]): any {
 		return ConfigurationSerialization.$javaClass.getClassByAlias(...args);
 	}
 
-	public static registerClass(clazz: Class): void;
-	public static registerClass(clazz: Class, alias: string): void;
+	public static registerClass(clazz: any): void;
+	public static registerClass(clazz: any, alias: string): void;
 	public static registerClass(...args: any[]): any {
 		return ConfigurationSerialization.$javaClass.registerClass(...args);
 	}
 
-	public static unregisterClass(clazz: Class): void;
+	public static unregisterClass(clazz: any): void;
 	public static unregisterClass(alias: string): void;
 	public static unregisterClass(...args: any[]): any {
 		return ConfigurationSerialization.$javaClass.unregisterClass(...args);

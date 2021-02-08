@@ -2,8 +2,6 @@ declare var Java: any;
 import Command from './Command.js'
 import CommandExecutor from './CommandExecutor.js'
 import CommandSender from './CommandSender.js'
-import List from '../../../java/util/List.js'
-import String from '../../../java/lang/String.js'
 import TabCompleter from './TabCompleter.js'
 
 export default interface TabExecutor extends TabCompleter, CommandExecutor {

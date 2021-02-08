@@ -1,15 +1,11 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import CopyOption from './CopyOption.js'
-import Enum from '../../../java/lang/Enum.js'
-import Object from '../../../java/lang/Object.js'
 import OpenOption from './OpenOption.js'
-import String from '../../../java/lang/String.js'
 
-export default interface LinkOption extends Enum, OpenOption, CopyOption {
-	compareTo(arg0: Object): number;
-	compareTo(arg0: Enum): number;
-	getDeclaringClass(): Class;
+export default interface LinkOption extends OpenOption, CopyOption {
+	compareTo(arg0: any): number;
+	compareTo(arg0: any): number;
+	getDeclaringClass(): any;
 	name(): string;
 	ordinal(): number;
 }

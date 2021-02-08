@@ -1,10 +1,6 @@
 declare var Java: any;
-import AutoCloseable from '../../../../../../java/lang/AutoCloseable.js'
-import Class from '../../../../../../java/lang/Class.js'
-import Object from '../../../../../../java/lang/Object.js'
-import String from '../../../../../../java/lang/String.js'
 
-export default interface MCTiming extends Object, AutoCloseable {
+export default interface MCTiming {
 	close(): void;
 	startTiming(): MCTiming;
 	stopTiming(): void;

@@ -3,18 +3,15 @@ import AnimalTamer from './entity/AnimalTamer.js'
 import ConfigurationSerializable from './configuration/serialization/ConfigurationSerializable.js'
 import EntityType from './entity/EntityType.js'
 import Location from './Location.js'
-import Map from '../../java/util/Map.js'
 import Material from './Material.js'
 import Player from './entity/Player.js'
 import ServerOperator from './permissions/ServerOperator.js'
 import Statistic from './Statistic.js'
-import String from '../../java/lang/String.js'
-import UUID from '../../java/util/UUID.js'
 
 export default interface OfflinePlayer extends ServerOperator, AnimalTamer, ConfigurationSerializable {
 	decrementStatistic(arg0: Statistic): void;
-	decrementStatistic(arg0: Statistic, arg1: number): void;
 	decrementStatistic(arg0: Statistic, arg1: Material): void;
+	decrementStatistic(arg0: Statistic, arg1: number): void;
 	decrementStatistic(arg0: Statistic, arg1: EntityType): void;
 	decrementStatistic(arg0: Statistic, arg1: EntityType, arg2: number): void;
 	decrementStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
@@ -24,13 +21,13 @@ export default interface OfflinePlayer extends ServerOperator, AnimalTamer, Conf
 	getName(): string;
 	getPlayer(): Player;
 	getStatistic(arg0: Statistic): number;
-	getStatistic(arg0: Statistic, arg1: EntityType): number;
 	getStatistic(arg0: Statistic, arg1: Material): number;
+	getStatistic(arg0: Statistic, arg1: EntityType): number;
 	getUniqueId(): string;
 	hasPlayedBefore(): boolean;
 	incrementStatistic(arg0: Statistic): void;
-	incrementStatistic(arg0: Statistic, arg1: number): void;
 	incrementStatistic(arg0: Statistic, arg1: Material): void;
+	incrementStatistic(arg0: Statistic, arg1: number): void;
 	incrementStatistic(arg0: Statistic, arg1: EntityType): void;
 	incrementStatistic(arg0: Statistic, arg1: Material, arg2: number): void;
 	incrementStatistic(arg0: Statistic, arg1: EntityType, arg2: number): void;
@@ -38,7 +35,7 @@ export default interface OfflinePlayer extends ServerOperator, AnimalTamer, Conf
 	isOnline(): boolean;
 	isOp(): boolean;
 	isWhitelisted(): boolean;
-	serialize(): Map;
+	serialize(): any;
 	setOp(arg0: boolean): void;
 	setStatistic(arg0: Statistic, arg1: number): void;
 	setStatistic(arg0: Statistic, arg1: Material, arg2: number): void;

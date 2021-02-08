@@ -2,13 +2,10 @@ declare var Java: any;
 import Block from '../../../../org/bukkit/block/Block.js'
 import BlockFace from '../../../../org/bukkit/block/BlockFace.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
-import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import Hanging from '../../../../org/bukkit/entity/Hanging.js'
 import HangingEvent from './HangingEvent.js'
-import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface HangingPlaceEvent extends HangingEvent, Cancellable {
 	getBlock(): Block;

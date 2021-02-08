@@ -2,24 +2,19 @@ declare var Java: any;
 import Block from '../../../../org/bukkit/block/Block.js'
 import BlockFace from '../../../../org/bukkit/block/BlockFace.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
-import Class from '../../../../java/lang/Class.js'
-import Collection from '../../../../java/util/Collection.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
 import LivingEntity from '../../../../org/bukkit/entity/LivingEntity.js'
-import Map from '../../../../java/util/Map.js'
-import Object from '../../../../java/lang/Object.js'
 import Projectile from '../../../../org/bukkit/entity/Projectile.js'
 import ProjectileHitEvent from './ProjectileHitEvent.js'
-import String from '../../../../java/lang/String.js'
 import ThrownPotion from '../../../../org/bukkit/entity/ThrownPotion.js'
 
 export default interface PotionSplashEvent extends ProjectileHitEvent, Cancellable {
 	getAffectedEntities(): Array<LivingEntity>;
+	getEntity(): Entity;
 	getEntity(): ThrownPotion;
 	getEntity(): Projectile;
-	getEntity(): Entity;
 	getEntityType(): EntityType;
 	getEventName(): string;
 	getHandlers(): HandlerList;
@@ -42,7 +37,7 @@ export default class PotionSplashEvent {
 		return obj instanceof PotionSplashEvent.$javaClass;
 	}
 
-	constructor(potion: ThrownPotion, affectedEntities: Map);
+	constructor(potion: ThrownPotion, affectedEntities: any);
 	constructor(...args: any[]) {
 		return new PotionSplashEvent.$javaClass(...args);
 	}

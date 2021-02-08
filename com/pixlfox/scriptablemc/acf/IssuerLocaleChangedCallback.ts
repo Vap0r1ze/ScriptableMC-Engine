@@ -1,9 +1,8 @@
 declare var Java: any;
 import CommandIssuer from './CommandIssuer.js'
-import Locale from '../../../../java/util/Locale.js'
 
 export default interface IssuerLocaleChangedCallback {
-	onIssuerLocaleChange(issuer: CommandIssuer, oldLocale: Locale, newLocale: Locale): void;
+	onIssuerLocaleChange(issuer: CommandIssuer, oldLocale: any, newLocale: any): void;
 }
 
 export default class IssuerLocaleChangedCallback {

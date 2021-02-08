@@ -7,8 +7,6 @@ import Block from '../../../org/bukkit/block/Block.js'
 import BlockFace from '../../../org/bukkit/block/BlockFace.js'
 import BoundingBox from '../../../org/bukkit/util/BoundingBox.js'
 import ChestedHorse from './ChestedHorse.js'
-import Class from '../../../java/lang/Class.js'
-import Collection from '../../../java/util/Collection.js'
 import CommandSender$Spigot from '../../../org/bukkit/command/CommandSender$Spigot.js'
 import Entity from './Entity.js'
 import Entity$Spigot from './Entity$Spigot.js'
@@ -20,13 +18,11 @@ import EntityType from './EntityType.js'
 import FluidCollisionMode from '../../../org/bukkit/FluidCollisionMode.js'
 import Horse$Variant from './Horse$Variant.js'
 import Inventory from '../../../org/bukkit/inventory/Inventory.js'
-import List from '../../../java/util/List.js'
 import LivingEntity from './LivingEntity.js'
 import Location from '../../../org/bukkit/Location.js'
 import LootTable from '../../../org/bukkit/loot/LootTable.js'
 import MemoryKey from './memory/MemoryKey.js'
 import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
-import Object from '../../../java/lang/Object.js'
 import Permission from '../../../org/bukkit/permissions/Permission.js'
 import PermissionAttachment from '../../../org/bukkit/permissions/PermissionAttachment.js'
 import PersistentDataContainer from '../../../org/bukkit/persistence/PersistentDataContainer.js'
@@ -40,9 +36,6 @@ import PotionEffectType from '../../../org/bukkit/potion/PotionEffectType.js'
 import Projectile from './Projectile.js'
 import RayTraceResult from '../../../org/bukkit/util/RayTraceResult.js'
 import Server from '../../../org/bukkit/Server.js'
-import Set from '../../../java/util/Set.js'
-import String from '../../../java/lang/String.js'
-import UUID from '../../../java/util/UUID.js'
 import Vector from '../../../org/bukkit/util/Vector.js'
 import World from '../../../org/bukkit/World.js'
 
@@ -72,10 +65,10 @@ export default interface Mule extends ChestedHorse {
 	getBreedCause(): string;
 	getCanPickupItems(): boolean;
 	getCategory(): EntityCategory;
-	getCollidableExemptions(): Set;
+	getCollidableExemptions(): any;
 	getCustomName(): string;
 	getDomestication(): number;
-	getEffectivePermissions(): Set;
+	getEffectivePermissions(): any;
 	getEntityId(): number;
 	getEquipment(): EntityEquipment;
 	getEyeHeight(): number;
@@ -92,9 +85,9 @@ export default interface Mule extends ChestedHorse {
 	getKiller(): Player;
 	getLastDamage(): number;
 	getLastDamageCause(): EntityDamageEvent;
-	getLastTwoTargetBlocks(arg0: Set, arg1: number): Array<Block>;
+	getLastTwoTargetBlocks(arg0: any, arg1: number): Array<Block>;
 	getLeashHolder(): Entity;
-	getLineOfSight(arg0: Set, arg1: number): Array<Block>;
+	getLineOfSight(arg0: any, arg1: number): Array<Block>;
 	getLocation(): Location;
 	getLocation(arg0: Location): Location;
 	getLootTable(): LootTable;
@@ -104,7 +97,7 @@ export default interface Mule extends ChestedHorse {
 	getMaxHealth(): number;
 	getMaximumAir(): number;
 	getMaximumNoDamageTicks(): number;
-	getMemory(arg0: MemoryKey): Object;
+	getMemory(arg0: MemoryKey): any;
 	getMetadata(arg0: string): Array<MetadataValue>;
 	getName(): string;
 	getNearbyEntities(arg0: number, arg1: number, arg2: number): Array<Entity>;
@@ -119,11 +112,11 @@ export default interface Mule extends ChestedHorse {
 	getPotionEffect(arg0: PotionEffectType): PotionEffect;
 	getRemainingAir(): number;
 	getRemoveWhenFarAway(): boolean;
-	getScoreboardTags(): Set;
+	getScoreboardTags(): any;
 	getSeed(): number;
 	getServer(): Server;
 	getTarget(): LivingEntity;
-	getTargetBlock(arg0: Set, arg1: number): Block;
+	getTargetBlock(arg0: any, arg1: number): Block;
 	getTargetBlockExact(arg0: number): Block;
 	getTargetBlockExact(arg0: number, arg1: FluidCollisionMode): Block;
 	getTicksLived(): number;
@@ -168,8 +161,8 @@ export default interface Mule extends ChestedHorse {
 	isSwimming(): boolean;
 	isTamed(): boolean;
 	isValid(): boolean;
-	launchProjectile(arg0: Class): Projectile;
-	launchProjectile(arg0: Class, arg1: Vector): Projectile;
+	launchProjectile(arg0: any): Projectile;
+	launchProjectile(arg0: any, arg1: Vector): Projectile;
 	leaveVehicle(): boolean;
 	playEffect(arg0: EntityEffect): void;
 	rayTraceBlocks(arg0: number): RayTraceResult;
@@ -221,7 +214,7 @@ export default interface Mule extends ChestedHorse {
 	setMaxHealth(arg0: number): void;
 	setMaximumAir(arg0: number): void;
 	setMaximumNoDamageTicks(arg0: number): void;
-	setMemory(arg0: MemoryKey, arg1: Object): void;
+	setMemory(arg0: MemoryKey, arg1: any): void;
 	setMetadata(arg0: string, arg1: MetadataValue): void;
 	setNoDamageTicks(arg0: number): void;
 	setOp(arg0: boolean): void;

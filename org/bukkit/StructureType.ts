@@ -1,11 +1,7 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Map from '../../java/util/Map.js'
 import MapCursor$Type from './map/MapCursor$Type.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface StructureType extends Object {
+export default interface StructureType {
 	getMapIcon(): MapCursor$Type;
 	getName(): string;
 }
@@ -90,7 +86,7 @@ export default class StructureType {
 		return StructureType.$javaClass.WOODLAND_MANSION;
 	}
 
-	public static getStructureTypes(): Map;
+	public static getStructureTypes(): any;
 	public static getStructureTypes(...args: any[]): any {
 		return StructureType.$javaClass.getStructureTypes(...args);
 	}

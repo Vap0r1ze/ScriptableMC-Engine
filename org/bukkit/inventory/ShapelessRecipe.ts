@@ -1,17 +1,13 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import ItemStack from './ItemStack.js'
 import Keyed from '../../../org/bukkit/Keyed.js'
-import List from '../../../java/util/List.js'
 import Material from '../../../org/bukkit/Material.js'
 import MaterialData from '../../../org/bukkit/material/MaterialData.js'
 import NamespacedKey from '../../../org/bukkit/NamespacedKey.js'
-import Object from '../../../java/lang/Object.js'
 import Recipe from './Recipe.js'
 import RecipeChoice from './RecipeChoice.js'
-import String from '../../../java/lang/String.js'
 
-export default interface ShapelessRecipe extends Object, Recipe, Keyed {
+export default interface ShapelessRecipe extends Recipe, Keyed {
 	addIngredient(ingredient: RecipeChoice): ShapelessRecipe;
 	addIngredient(ingredient: MaterialData): ShapelessRecipe;
 	addIngredient(ingredient: Material): ShapelessRecipe;

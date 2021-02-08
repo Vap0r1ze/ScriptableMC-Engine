@@ -1,21 +1,15 @@
 declare var Java: any;
-import Annotation from '../../../../java/lang/annotation/Annotation.js'
-import Class from '../../../../java/lang/Class.js'
-import Collection from '../../../../java/util/Collection.js'
 import CommandIssuer from './CommandIssuer.js'
-import Object from '../../../../java/lang/Object.js'
-import Set from '../../../../java/util/Set.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface RegisteredCommand extends Object {
+export default interface RegisteredCommand {
 	addSubcommand(cmd: string): void;
 	addSubcommands(cmd: Array<any>): void;
-	getAnnotation(annotation: Class): Annotation;
+	getAnnotation(annotation: any): any;
 	getCommand(): string;
 	getHelpText(): string;
 	getPermission(): string;
 	getPrefSubCommand(): string;
-	getRequiredPermissions(): Set;
+	getRequiredPermissions(): any;
 	getSyntaxText(): string;
 	getSyntaxText(issuer: CommandIssuer): string;
 	isPrivate(): boolean;

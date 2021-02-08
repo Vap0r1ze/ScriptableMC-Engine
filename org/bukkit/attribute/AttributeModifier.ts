@@ -1,20 +1,15 @@
 declare var Java: any;
 import AttributeModifier$Operation from './AttributeModifier$Operation.js'
-import Class from '../../../java/lang/Class.js'
 import ConfigurationSerializable from '../../../org/bukkit/configuration/serialization/ConfigurationSerializable.js'
 import EquipmentSlot from '../../../org/bukkit/inventory/EquipmentSlot.js'
-import Map from '../../../java/util/Map.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
-import UUID from '../../../java/util/UUID.js'
 
-export default interface AttributeModifier extends Object, ConfigurationSerializable {
+export default interface AttributeModifier extends ConfigurationSerializable {
 	getAmount(): number;
 	getName(): string;
 	getOperation(): AttributeModifier$Operation;
 	getSlot(): EquipmentSlot;
 	getUniqueId(): string;
-	serialize(): Map;
+	serialize(): any;
 }
 
 export default class AttributeModifier {
@@ -32,7 +27,7 @@ export default class AttributeModifier {
 		return new AttributeModifier.$javaClass(...args);
 	}
 
-	public static deserialize(args: Map): AttributeModifier;
+	public static deserialize(args: any): AttributeModifier;
 	public static deserialize(...args: any[]): any {
 		return AttributeModifier.$javaClass.deserialize(...args);
 	}

@@ -1,12 +1,9 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import CookingRecipe from './CookingRecipe.js'
 import ItemStack from './ItemStack.js'
 import Material from '../../../org/bukkit/Material.js'
 import NamespacedKey from '../../../org/bukkit/NamespacedKey.js'
-import Object from '../../../java/lang/Object.js'
 import RecipeChoice from './RecipeChoice.js'
-import String from '../../../java/lang/String.js'
 
 export default interface CampfireRecipe extends CookingRecipe {
 	getCookingTime(): number;

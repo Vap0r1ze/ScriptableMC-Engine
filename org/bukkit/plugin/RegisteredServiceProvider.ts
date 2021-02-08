@@ -1,18 +1,14 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Comparable from '../../../java/lang/Comparable.js'
-import Object from '../../../java/lang/Object.js'
 import Plugin from './Plugin.js'
 import ServicePriority from './ServicePriority.js'
-import String from '../../../java/lang/String.js'
 
-export default interface RegisteredServiceProvider extends Object, Comparable {
+export default interface RegisteredServiceProvider {
 	compareTo(other: RegisteredServiceProvider): number;
-	compareTo(arg0: Object): number;
+	compareTo(arg0: any): number;
 	getPlugin(): Plugin;
 	getPriority(): ServicePriority;
-	getProvider(): Object;
-	getService(): Class;
+	getProvider(): any;
+	getService(): any;
 }
 
 export default class RegisteredServiceProvider {
@@ -23,7 +19,7 @@ export default class RegisteredServiceProvider {
 		return obj instanceof RegisteredServiceProvider.$javaClass;
 	}
 
-	constructor(service: Class, provider: Object, priority: ServicePriority, plugin: Plugin);
+	constructor(service: any, provider: any, priority: ServicePriority, plugin: Plugin);
 	constructor(...args: any[]) {
 		return new RegisteredServiceProvider.$javaClass(...args);
 	}

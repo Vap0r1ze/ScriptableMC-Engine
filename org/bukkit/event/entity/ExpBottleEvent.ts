@@ -1,14 +1,11 @@
 declare var Java: any;
 import Block from '../../../../org/bukkit/block/Block.js'
 import BlockFace from '../../../../org/bukkit/block/BlockFace.js'
-import Class from '../../../../java/lang/Class.js'
 import Entity from '../../../../org/bukkit/entity/Entity.js'
 import EntityType from '../../../../org/bukkit/entity/EntityType.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import Object from '../../../../java/lang/Object.js'
 import Projectile from '../../../../org/bukkit/entity/Projectile.js'
 import ProjectileHitEvent from './ProjectileHitEvent.js'
-import String from '../../../../java/lang/String.js'
 import ThrownExpBottle from '../../../../org/bukkit/entity/ThrownExpBottle.js'
 
 export default interface ExpBottleEvent extends ProjectileHitEvent {

@@ -1,14 +1,11 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface Date extends Date {
-	after(arg0: Date): boolean;
-	before(arg0: Date): boolean;
-	clone(): Object;
-	compareTo(arg0: Date): number;
-	compareTo(arg0: Object): number;
+export default interface Date {
+	after(arg0: any): boolean;
+	before(arg0: any): boolean;
+	clone(): any;
+	compareTo(arg0: any): number;
+	compareTo(arg0: any): number;
 	getDate(): number;
 	getDay(): number;
 	getHours(): number;
@@ -50,7 +47,7 @@ export default class Date {
 		return Date.$javaClass.UTC(...args);
 	}
 
-	public static from(arg0: any): Date;
+	public static from(arg0: any): any;
 	public static from(...args: any[]): any {
 		return Date.$javaClass.from(...args);
 	}

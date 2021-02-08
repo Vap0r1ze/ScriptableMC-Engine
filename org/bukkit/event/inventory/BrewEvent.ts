@@ -3,10 +3,7 @@ import Block from '../../../../org/bukkit/block/Block.js'
 import BlockEvent from '../../../../org/bukkit/event/block/BlockEvent.js'
 import BrewerInventory from '../../../../org/bukkit/inventory/BrewerInventory.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
-import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface BrewEvent extends BlockEvent, Cancellable {
 	getBlock(): Block;

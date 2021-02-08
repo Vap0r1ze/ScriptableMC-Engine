@@ -1,5 +1,4 @@
 declare var Java: any;
-import Collection from '../../../java/util/Collection.js'
 import PotionEffect from './PotionEffect.js'
 import PotionEffectType from './PotionEffectType.js'
 import PotionType from './PotionType.js'

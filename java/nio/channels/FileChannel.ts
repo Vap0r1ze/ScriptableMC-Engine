@@ -1,20 +1,16 @@
 declare var Java: any;
 import AbstractInterruptibleChannel from './spi/AbstractInterruptibleChannel.js'
 import ByteBuffer from '../../../java/nio/ByteBuffer.js'
-import Class from '../../../java/lang/Class.js'
 import FileAttribute from '../../../java/nio/file/attribute/FileAttribute.js'
 import FileChannel$MapMode from './FileChannel$MapMode.js'
 import FileLock from './FileLock.js'
 import GatheringByteChannel from './GatheringByteChannel.js'
 import MappedByteBuffer from '../../../java/nio/MappedByteBuffer.js'
-import Object from '../../../java/lang/Object.js'
 import OpenOption from '../../../java/nio/file/OpenOption.js'
 import Path from '../../../java/nio/file/Path.js'
 import ReadableByteChannel from './ReadableByteChannel.js'
 import ScatteringByteChannel from './ScatteringByteChannel.js'
 import SeekableByteChannel from './SeekableByteChannel.js'
-import Set from '../../../java/util/Set.js'
-import String from '../../../java/lang/String.js'
 import WritableByteChannel from './WritableByteChannel.js'
 
 export default interface FileChannel extends AbstractInterruptibleChannel, SeekableByteChannel, GatheringByteChannel, ScatteringByteChannel {
@@ -53,7 +49,7 @@ export default class FileChannel {
 	}
 
 	public static open(arg0: Path, arg1: Array<OpenOption>): FileChannel;
-	public static open(arg0: Path, arg1: Set, arg2: Array<FileAttribute>): FileChannel;
+	public static open(arg0: Path, arg1: any, arg2: Array<FileAttribute>): FileChannel;
 	public static open(...args: any[]): any {
 		return FileChannel.$javaClass.open(...args);
 	}

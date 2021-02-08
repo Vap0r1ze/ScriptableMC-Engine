@@ -1,22 +1,17 @@
 declare var Java: any;
 import Block from './block/Block.js'
 import Chunk from './Chunk.js'
-import Class from '../../java/lang/Class.js'
-import Cloneable from '../../java/lang/Cloneable.js'
 import ConfigurationSerializable from './configuration/serialization/ConfigurationSerializable.js'
-import Map from '../../java/util/Map.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 import Vector from './util/Vector.js'
 import World from './World.js'
 
-export default interface Location extends Object, Cloneable, ConfigurationSerializable {
+export default interface Location extends ConfigurationSerializable {
 	add(vec: Location): Location;
 	add(vec: Vector): Location;
 	add(x: number, y: number, z: number): Location;
 	checkFinite(): void;
 	clone(): Location;
-	clone(): Object;
+	clone(): any;
 	distance(o: Location): number;
 	distanceSquared(o: Location): number;
 	getBlock(): Block;
@@ -35,7 +30,7 @@ export default interface Location extends Object, Cloneable, ConfigurationSerial
 	length(): number;
 	lengthSquared(): number;
 	multiply(m: number): Location;
-	serialize(): Map;
+	serialize(): any;
 	setDirection(vector: Vector): Location;
 	setPitch(pitch: number): void;
 	setWorld(world: World): void;
@@ -43,8 +38,8 @@ export default interface Location extends Object, Cloneable, ConfigurationSerial
 	setY(y: number): void;
 	setYaw(yaw: number): void;
 	setZ(z: number): void;
-	subtract(vec: Location): Location;
 	subtract(vec: Vector): Location;
+	subtract(vec: Location): Location;
 	subtract(x: number, y: number, z: number): Location;
 	toVector(): Vector;
 	zero(): Location;
@@ -64,7 +59,7 @@ export default class Location {
 		return new Location.$javaClass(...args);
 	}
 
-	public static deserialize(args: Map): Location;
+	public static deserialize(args: any): Location;
 	public static deserialize(...args: any[]): any {
 		return Location.$javaClass.deserialize(...args);
 	}

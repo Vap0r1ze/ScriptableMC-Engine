@@ -1,11 +1,8 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
-import Object from '../../../../java/lang/Object.js'
 import ObjectOutputStream from '../../../../java/io/ObjectOutputStream.js'
 import ObjectOutputStream$PutField from '../../../../java/io/ObjectOutputStream$PutField.js'
 import OutputStream from '../../../../java/io/OutputStream.js'
 import SerializablePermission from '../../../../java/io/SerializablePermission.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface BukkitObjectOutputStream extends ObjectOutputStream {
 	close(): void;
@@ -27,10 +24,10 @@ export default interface BukkitObjectOutputStream extends ObjectOutputStream {
 	writeFloat(arg0: number): void;
 	writeInt(arg0: number): void;
 	writeLong(arg0: number): void;
-	writeObject(arg0: Object): void;
+	writeObject(arg0: any): void;
 	writeShort(arg0: number): void;
 	writeUTF(arg0: string): void;
-	writeUnshared(arg0: Object): void;
+	writeUnshared(arg0: any): void;
 }
 
 export default class BukkitObjectOutputStream {

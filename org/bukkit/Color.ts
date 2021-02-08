@@ -1,12 +1,8 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
 import ConfigurationSerializable from './configuration/serialization/ConfigurationSerializable.js'
 import DyeColor from './DyeColor.js'
-import Map from '../../java/util/Map.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface Color extends Object, ConfigurationSerializable {
+export default interface Color extends ConfigurationSerializable {
 	asBGR(): number;
 	asRGB(): number;
 	getBlue(): number;
@@ -14,7 +10,7 @@ export default interface Color extends Object, ConfigurationSerializable {
 	getRed(): number;
 	mixColors(colors: Array<Color>): Color;
 	mixDyes(colors: Array<DyeColor>): Color;
-	serialize(): Map;
+	serialize(): any;
 	setBlue(blue: number): Color;
 	setGreen(green: number): Color;
 	setRed(red: number): Color;
@@ -96,7 +92,7 @@ export default class Color {
 		return Color.$javaClass.YELLOW;
 	}
 
-	public static deserialize(map: Map): Color;
+	public static deserialize(map: any): Color;
 	public static deserialize(...args: any[]): any {
 		return Color.$javaClass.deserialize(...args);
 	}

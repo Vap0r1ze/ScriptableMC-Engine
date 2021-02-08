@@ -1,14 +1,10 @@
 declare var Java: any;
 import Blob from './Blob.js'
-import Calendar from '../../java/util/Calendar.js'
-import Class from '../../java/lang/Class.js'
 import Clob from './Clob.js'
 import Connection from './Connection.js'
 import Date from './Date.js'
 import InputStream from '../../java/io/InputStream.js'
-import Map from '../../java/util/Map.js'
 import NClob from './NClob.js'
-import Object from '../../java/lang/Object.js'
 import ParameterMetaData from './ParameterMetaData.js'
 import PreparedStatement from './PreparedStatement.js'
 import Reader from '../../java/io/Reader.js'
@@ -19,7 +15,6 @@ import RowId from './RowId.js'
 import SQLType from './SQLType.js'
 import SQLWarning from './SQLWarning.js'
 import SQLXML from './SQLXML.js'
-import String from '../../java/lang/String.js'
 import Time from './Time.js'
 import Timestamp from './Timestamp.js'
 import _Array from './Array.js'
@@ -35,9 +30,9 @@ export default interface CallableStatement extends PreparedStatement {
 	closeOnCompletion(): void;
 	execute(): boolean;
 	execute(arg0: string): boolean;
-	execute(arg0: string, arg1: Array<string>): boolean;
 	execute(arg0: string, arg1: number): boolean;
 	execute(arg0: string, arg1: Array<number>): boolean;
+	execute(arg0: string, arg1: Array<string>): boolean;
 	executeBatch(): Array<number>;
 	executeLargeBatch(): Array<number>;
 	executeLargeUpdate(): number;
@@ -49,8 +44,8 @@ export default interface CallableStatement extends PreparedStatement {
 	executeQuery(arg0: string): ResultSet;
 	executeUpdate(): number;
 	executeUpdate(arg0: string): number;
-	executeUpdate(arg0: string, arg1: Array<number>): number;
 	executeUpdate(arg0: string, arg1: number): number;
+	executeUpdate(arg0: string, arg1: Array<number>): number;
 	executeUpdate(arg0: string, arg1: Array<string>): number;
 	getArray(arg0: number): _Array;
 	getArray(arg0: string): _Array;
@@ -72,8 +67,8 @@ export default interface CallableStatement extends PreparedStatement {
 	getConnection(): Connection;
 	getDate(arg0: string): Date;
 	getDate(arg0: number): Date;
-	getDate(arg0: string, arg1: Calendar): Date;
-	getDate(arg0: number, arg1: Calendar): Date;
+	getDate(arg0: string, arg1: any): Date;
+	getDate(arg0: number, arg1: any): Date;
 	getDouble(arg0: number): number;
 	getDouble(arg0: string): number;
 	getFetchDirection(): number;
@@ -98,12 +93,12 @@ export default interface CallableStatement extends PreparedStatement {
 	getNClob(arg0: number): NClob;
 	getNString(arg0: number): string;
 	getNString(arg0: string): string;
-	getObject(arg0: string): Object;
-	getObject(arg0: number): Object;
-	getObject(arg0: number, arg1: Class): Object;
-	getObject(arg0: string, arg1: Map): Object;
-	getObject(arg0: string, arg1: Class): Object;
-	getObject(arg0: number, arg1: Map): Object;
+	getObject(arg0: string): any;
+	getObject(arg0: number): any;
+	getObject(arg0: number, arg1: any): any;
+	getObject(arg0: string, arg1: any): any;
+	getObject(arg0: string, arg1: any): any;
+	getObject(arg0: number, arg1: any): any;
 	getParameterMetaData(): ParameterMetaData;
 	getQueryTimeout(): number;
 	getRef(arg0: number): Ref;
@@ -122,12 +117,12 @@ export default interface CallableStatement extends PreparedStatement {
 	getString(arg0: string): string;
 	getTime(arg0: string): Time;
 	getTime(arg0: number): Time;
-	getTime(arg0: string, arg1: Calendar): Time;
-	getTime(arg0: number, arg1: Calendar): Time;
+	getTime(arg0: string, arg1: any): Time;
+	getTime(arg0: number, arg1: any): Time;
 	getTimestamp(arg0: string): Timestamp;
 	getTimestamp(arg0: number): Timestamp;
-	getTimestamp(arg0: number, arg1: Calendar): Timestamp;
-	getTimestamp(arg0: string, arg1: Calendar): Timestamp;
+	getTimestamp(arg0: number, arg1: any): Timestamp;
+	getTimestamp(arg0: string, arg1: any): Timestamp;
 	getURL(arg0: string): any;
 	getURL(arg0: number): any;
 	getUpdateCount(): number;
@@ -135,7 +130,7 @@ export default interface CallableStatement extends PreparedStatement {
 	isCloseOnCompletion(): boolean;
 	isClosed(): boolean;
 	isPoolable(): boolean;
-	isWrapperFor(arg0: Class): boolean;
+	isWrapperFor(arg0: any): boolean;
 	registerOutParameter(arg0: string, arg1: SQLType): void;
 	registerOutParameter(arg0: number, arg1: SQLType): void;
 	registerOutParameter(arg0: number, arg1: number): void;
@@ -190,8 +185,8 @@ export default interface CallableStatement extends PreparedStatement {
 	setCursorName(arg0: string): void;
 	setDate(arg0: string, arg1: Date): void;
 	setDate(arg0: number, arg1: Date): void;
-	setDate(arg0: string, arg1: Date, arg2: Calendar): void;
-	setDate(arg0: number, arg1: Date, arg2: Calendar): void;
+	setDate(arg0: string, arg1: Date, arg2: any): void;
+	setDate(arg0: number, arg1: Date, arg2: any): void;
 	setDouble(arg0: string, arg1: number): void;
 	setDouble(arg0: number, arg1: number): void;
 	setEscapeProcessing(arg0: boolean): void;
@@ -222,16 +217,16 @@ export default interface CallableStatement extends PreparedStatement {
 	setNull(arg0: number, arg1: number): void;
 	setNull(arg0: string, arg1: number, arg2: string): void;
 	setNull(arg0: number, arg1: number, arg2: string): void;
-	setObject(arg0: string, arg1: Object): void;
-	setObject(arg0: number, arg1: Object): void;
-	setObject(arg0: string, arg1: Object, arg2: SQLType): void;
-	setObject(arg0: string, arg1: Object, arg2: number): void;
-	setObject(arg0: number, arg1: Object, arg2: SQLType): void;
-	setObject(arg0: number, arg1: Object, arg2: number): void;
-	setObject(arg0: string, arg1: Object, arg2: number, arg3: number): void;
-	setObject(arg0: string, arg1: Object, arg2: SQLType, arg3: number): void;
-	setObject(arg0: number, arg1: Object, arg2: number, arg3: number): void;
-	setObject(arg0: number, arg1: Object, arg2: SQLType, arg3: number): void;
+	setObject(arg0: string, arg1: any): void;
+	setObject(arg0: number, arg1: any): void;
+	setObject(arg0: string, arg1: any, arg2: SQLType): void;
+	setObject(arg0: string, arg1: any, arg2: number): void;
+	setObject(arg0: number, arg1: any, arg2: SQLType): void;
+	setObject(arg0: number, arg1: any, arg2: number): void;
+	setObject(arg0: string, arg1: any, arg2: number, arg3: number): void;
+	setObject(arg0: string, arg1: any, arg2: SQLType, arg3: number): void;
+	setObject(arg0: number, arg1: any, arg2: number, arg3: number): void;
+	setObject(arg0: number, arg1: any, arg2: SQLType, arg3: number): void;
 	setPoolable(arg0: boolean): void;
 	setQueryTimeout(arg0: number): void;
 	setRef(arg0: number, arg1: Ref): void;
@@ -245,16 +240,16 @@ export default interface CallableStatement extends PreparedStatement {
 	setString(arg0: number, arg1: string): void;
 	setTime(arg0: string, arg1: Time): void;
 	setTime(arg0: number, arg1: Time): void;
-	setTime(arg0: string, arg1: Time, arg2: Calendar): void;
-	setTime(arg0: number, arg1: Time, arg2: Calendar): void;
+	setTime(arg0: string, arg1: Time, arg2: any): void;
+	setTime(arg0: number, arg1: Time, arg2: any): void;
 	setTimestamp(arg0: string, arg1: Timestamp): void;
 	setTimestamp(arg0: number, arg1: Timestamp): void;
-	setTimestamp(arg0: string, arg1: Timestamp, arg2: Calendar): void;
-	setTimestamp(arg0: number, arg1: Timestamp, arg2: Calendar): void;
+	setTimestamp(arg0: string, arg1: Timestamp, arg2: any): void;
+	setTimestamp(arg0: number, arg1: Timestamp, arg2: any): void;
 	setURL(arg0: string, arg1: any): void;
 	setURL(arg0: number, arg1: any): void;
 	setUnicodeStream(arg0: number, arg1: InputStream, arg2: number): void;
-	unwrap(arg0: Class): Object;
+	unwrap(arg0: any): any;
 	wasNull(): boolean;
 }
 

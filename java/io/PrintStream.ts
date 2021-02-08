@@ -1,43 +1,37 @@
 declare var Java: any;
-import Appendable from '../../java/lang/Appendable.js'
-import CharSequence from '../../java/lang/CharSequence.js'
-import Class from '../../java/lang/Class.js'
 import Closeable from './Closeable.js'
 import File from './File.js'
 import FilterOutputStream from './FilterOutputStream.js'
-import Locale from '../../java/util/Locale.js'
-import Object from '../../java/lang/Object.js'
 import OutputStream from './OutputStream.js'
-import String from '../../java/lang/String.js'
 
-export default interface PrintStream extends FilterOutputStream, Appendable, Closeable {
-	append(arg0: CharSequence): Appendable;
-	append(arg0: string): Appendable;
+export default interface PrintStream extends FilterOutputStream, Closeable {
+	append(arg0: any): any;
+	append(arg0: string): any;
 	append(arg0: string): PrintStream;
-	append(arg0: CharSequence): PrintStream;
-	append(arg0: CharSequence, arg1: number, arg2: number): Appendable;
-	append(arg0: CharSequence, arg1: number, arg2: number): PrintStream;
+	append(arg0: any): PrintStream;
+	append(arg0: any, arg1: number, arg2: number): any;
+	append(arg0: any, arg1: number, arg2: number): PrintStream;
 	checkError(): boolean;
 	close(): void;
 	flush(): void;
-	format(arg0: string, arg1: Array<Object>): PrintStream;
-	format(arg0: Locale, arg1: string, arg2: Array<Object>): PrintStream;
+	format(arg0: string, arg1: Array<any>): PrintStream;
+	format(arg0: any, arg1: string, arg2: Array<any>): PrintStream;
 	print(arg0: boolean): void;
 	print(arg0: number): void;
 	print(arg0: number): void;
 	print(arg0: number): void;
-	print(arg0: Object): void;
+	print(arg0: any): void;
 	print(arg0: string): void;
 	print(arg0: Array<string>): void;
 	print(arg0: string): void;
 	print(arg0: number): void;
-	printf(arg0: string, arg1: Array<Object>): PrintStream;
-	printf(arg0: Locale, arg1: string, arg2: Array<Object>): PrintStream;
+	printf(arg0: string, arg1: Array<any>): PrintStream;
+	printf(arg0: any, arg1: string, arg2: Array<any>): PrintStream;
 	println(): void;
 	println(arg0: number): void;
 	println(arg0: number): void;
 	println(arg0: number): void;
-	println(arg0: Object): void;
+	println(arg0: any): void;
 	println(arg0: string): void;
 	println(arg0: Array<string>): void;
 	println(arg0: boolean): void;

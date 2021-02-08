@@ -6,7 +6,6 @@ import Material from './Material.js'
 import MaterialData from './material/MaterialData.js'
 import NamespacedKey from './NamespacedKey.js'
 import PluginDescriptionFile from './plugin/PluginDescriptionFile.js'
-import String from '../../java/lang/String.js'
 
 export default interface UnsafeValues {
 	checkSupported(arg0: PluginDescriptionFile): void;

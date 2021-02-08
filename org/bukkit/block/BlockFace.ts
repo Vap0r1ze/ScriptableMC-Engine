@@ -1,14 +1,10 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Enum from '../../../java/lang/Enum.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 import Vector from '../../../org/bukkit/util/Vector.js'
 
-export default interface BlockFace extends Enum {
-	compareTo(arg0: Object): number;
-	compareTo(arg0: Enum): number;
-	getDeclaringClass(): Class;
+export default interface BlockFace {
+	compareTo(arg0: any): number;
+	compareTo(arg0: any): number;
+	getDeclaringClass(): any;
 	getDirection(): Vector;
 	getModX(): number;
 	getModY(): number;

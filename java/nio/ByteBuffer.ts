@@ -2,18 +2,14 @@ declare var Java: any;
 import Buffer from './Buffer.js'
 import ByteOrder from './ByteOrder.js'
 import CharBuffer from './CharBuffer.js'
-import Class from '../../java/lang/Class.js'
-import Comparable from '../../java/lang/Comparable.js'
 import DoubleBuffer from './DoubleBuffer.js'
 import FloatBuffer from './FloatBuffer.js'
 import IntBuffer from './IntBuffer.js'
 import LongBuffer from './LongBuffer.js'
-import Object from '../../java/lang/Object.js'
 import ShortBuffer from './ShortBuffer.js'
-import String from '../../java/lang/String.js'
 
-export default interface ByteBuffer extends Buffer, Comparable {
-	array(): Object;
+export default interface ByteBuffer extends Buffer {
+	array(): any;
 	array(): Array<number>;
 	arrayOffset(): number;
 	asCharBuffer(): CharBuffer;
@@ -26,7 +22,7 @@ export default interface ByteBuffer extends Buffer, Comparable {
 	capacity(): number;
 	clear(): Buffer;
 	compact(): ByteBuffer;
-	compareTo(arg0: Object): number;
+	compareTo(arg0: any): number;
 	compareTo(arg0: ByteBuffer): number;
 	duplicate(): ByteBuffer;
 	flip(): Buffer;

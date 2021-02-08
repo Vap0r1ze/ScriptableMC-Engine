@@ -1,12 +1,9 @@
 declare var Java: any;
 import BookMeta from '../../../../org/bukkit/inventory/meta/BookMeta.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
-import Class from '../../../../java/lang/Class.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PlayerEvent from './PlayerEvent.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface PlayerEditBookEvent extends PlayerEvent, Cancellable {
 	getEventName(): string;

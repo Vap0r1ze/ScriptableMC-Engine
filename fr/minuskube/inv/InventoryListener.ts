@@ -1,12 +1,8 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Consumer from '../../../java/util/function/Consumer.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface InventoryListener extends Object {
-	accept(t: Object): void;
-	getType(): Class;
+export default interface InventoryListener {
+	accept(t: any): void;
+	getType(): any;
 }
 
 export default class InventoryListener {
@@ -17,7 +13,7 @@ export default class InventoryListener {
 		return obj instanceof InventoryListener.$javaClass;
 	}
 
-	constructor(type: Class, consumer: Consumer);
+	constructor(type: any, consumer: any);
 	constructor(...args: any[]) {
 		return new InventoryListener.$javaClass(...args);
 	}

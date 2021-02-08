@@ -1,11 +1,8 @@
 declare var Java: any;
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
-import Class from '../../../../java/lang/Class.js'
 import CommandSender from '../../../../org/bukkit/command/CommandSender.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import Object from '../../../../java/lang/Object.js'
 import ServerEvent from './ServerEvent.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface ServerCommandEvent extends ServerEvent, Cancellable {
 	getCommand(): string;

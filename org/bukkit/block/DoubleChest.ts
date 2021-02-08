@@ -1,14 +1,11 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import DoubleChestInventory from '../../../org/bukkit/inventory/DoubleChestInventory.js'
 import Inventory from '../../../org/bukkit/inventory/Inventory.js'
 import InventoryHolder from '../../../org/bukkit/inventory/InventoryHolder.js'
 import Location from '../../../org/bukkit/Location.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 import World from '../../../org/bukkit/World.js'
 
-export default interface DoubleChest extends Object, InventoryHolder {
+export default interface DoubleChest extends InventoryHolder {
 	getInventory(): Inventory;
 	getLeftSide(): InventoryHolder;
 	getLocation(): Location;

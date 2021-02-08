@@ -1,14 +1,11 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface YamlConstructor {
 	addTypeDescription(definition: any): any;
 	checkData(): boolean;
-	getData(): Object;
+	getData(): any;
 	getPropertyUtils(): any;
-	getSingleData(type: Class): Object;
+	getSingleData(type: any): any;
 	isAllowDuplicateKeys(): boolean;
 	isExplicitPropertyUtils(): boolean;
 	isWrappedToRootException(): boolean;

@@ -1,7 +1,6 @@
 declare var Java: any;
 import Attribute from './Attribute.js'
 import AttributeModifier from './AttributeModifier.js'
-import Collection from '../../../java/util/Collection.js'
 
 export default interface AttributeInstance {
 	addModifier(arg0: AttributeModifier): void;

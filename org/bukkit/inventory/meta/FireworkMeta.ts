@@ -1,33 +1,25 @@
 declare var Java: any;
 import Attribute from '../../../../org/bukkit/attribute/Attribute.js'
 import AttributeModifier from '../../../../org/bukkit/attribute/AttributeModifier.js'
-import Collection from '../../../../java/util/Collection.js'
 import CustomItemTagContainer from './tags/CustomItemTagContainer.js'
 import Enchantment from '../../../../org/bukkit/enchantments/Enchantment.js'
 import EquipmentSlot from '../../../../org/bukkit/inventory/EquipmentSlot.js'
 import FireworkEffect from '../../../../org/bukkit/FireworkEffect.js'
-import Integer from '../../../../java/lang/Integer.js'
 import ItemFlag from '../../../../org/bukkit/inventory/ItemFlag.js'
 import ItemMeta from './ItemMeta.js'
-import Iterable from '../../../../java/lang/Iterable.js'
-import List from '../../../../java/util/List.js'
-import Map from '../../../../java/util/Map.js'
 import Multimap from '../../../../com/google/common/collect/Multimap.js'
-import Object from '../../../../java/lang/Object.js'
 import PersistentDataContainer from '../../../../org/bukkit/persistence/PersistentDataContainer.js'
-import Set from '../../../../java/util/Set.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface FireworkMeta extends ItemMeta {
 	addAttributeModifier(arg0: Attribute, arg1: AttributeModifier): boolean;
 	addEffect(arg0: FireworkEffect): void;
-	addEffects(arg0: Iterable): void;
+	addEffects(arg0: any): void;
 	addEffects(arg0: Array<FireworkEffect>): void;
 	addEnchant(arg0: Enchantment, arg1: number, arg2: boolean): boolean;
 	addItemFlags(arg0: Array<ItemFlag>): void;
 	clearEffects(): void;
 	clone(): ItemMeta;
-	clone(): Object;
+	clone(): any;
 	clone(): FireworkMeta;
 	getAttributeModifiers(): Multimap;
 	getAttributeModifiers(arg0: Attribute): Array<AttributeModifier>;
@@ -38,8 +30,8 @@ export default interface FireworkMeta extends ItemMeta {
 	getEffects(): Array<FireworkEffect>;
 	getEffectsSize(): number;
 	getEnchantLevel(arg0: Enchantment): number;
-	getEnchants(): Map;
-	getItemFlags(): Set;
+	getEnchants(): any;
+	getItemFlags(): any;
 	getLocalizedName(): string;
 	getLore(): Array<string>;
 	getPersistentDataContainer(): PersistentDataContainer;
@@ -61,9 +53,9 @@ export default interface FireworkMeta extends ItemMeta {
 	removeEffect(arg0: number): void;
 	removeEnchant(arg0: Enchantment): boolean;
 	removeItemFlags(arg0: Array<ItemFlag>): void;
-	serialize(): Map;
+	serialize(): any;
 	setAttributeModifiers(arg0: Multimap): void;
-	setCustomModelData(arg0: Integer): void;
+	setCustomModelData(arg0: any): void;
 	setDisplayName(arg0: string): void;
 	setLocalizedName(arg0: string): void;
 	setLore(arg0: Array<any>): void;

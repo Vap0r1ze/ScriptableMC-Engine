@@ -1,9 +1,7 @@
 declare var Java: any;
-import Cloneable from '../../../java/lang/Cloneable.js'
 import ConversationContext from './ConversationContext.js'
-import String from '../../../java/lang/String.js'
 
-export default interface Prompt extends Cloneable {
+export default interface Prompt {
 	acceptInput(arg0: ConversationContext, arg1: string): Prompt;
 	blocksForInput(arg0: ConversationContext): boolean;
 	getPromptText(arg0: ConversationContext): string;

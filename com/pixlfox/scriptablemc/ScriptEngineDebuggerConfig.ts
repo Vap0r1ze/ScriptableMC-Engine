@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
-import Object from '../../../java/lang/Object.js'
 import ScriptEngineConfig from './ScriptEngineConfig.js'
-import String from '../../../java/lang/String.js'
 
-export default interface ScriptEngineDebuggerConfig extends Object {
+export default interface ScriptEngineDebuggerConfig {
 	getAddress(): string;
 	getEnabled(): boolean;
 	getWaitAttached(): boolean;

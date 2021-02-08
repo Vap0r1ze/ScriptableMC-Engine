@@ -7,7 +7,6 @@ import Entity$Spigot from './Entity$Spigot.js'
 import EntityDamageEvent from '../../../org/bukkit/event/entity/EntityDamageEvent.js'
 import EntityEffect from '../../../org/bukkit/EntityEffect.js'
 import EntityType from './EntityType.js'
-import List from '../../../java/util/List.js'
 import Location from '../../../org/bukkit/Location.js'
 import MetadataValue from '../../../org/bukkit/metadata/MetadataValue.js'
 import Permission from '../../../org/bukkit/permissions/Permission.js'
@@ -20,9 +19,6 @@ import Pose from './Pose.js'
 import Projectile from './Projectile.js'
 import ProjectileSource from '../../../org/bukkit/projectiles/ProjectileSource.js'
 import Server from '../../../org/bukkit/Server.js'
-import Set from '../../../java/util/Set.js'
-import String from '../../../java/lang/String.js'
-import UUID from '../../../java/util/UUID.js'
 import Vector from '../../../org/bukkit/util/Vector.js'
 import World from '../../../org/bukkit/World.js'
 
@@ -37,7 +33,7 @@ export default interface LlamaSpit extends Projectile {
 	eject(): boolean;
 	getBoundingBox(): BoundingBox;
 	getCustomName(): string;
-	getEffectivePermissions(): Set;
+	getEffectivePermissions(): any;
 	getEntityId(): number;
 	getFacing(): BlockFace;
 	getFallDistance(): number;
@@ -56,7 +52,7 @@ export default interface LlamaSpit extends Projectile {
 	getPistonMoveReaction(): PistonMoveReaction;
 	getPortalCooldown(): number;
 	getPose(): Pose;
-	getScoreboardTags(): Set;
+	getScoreboardTags(): any;
 	getServer(): Server;
 	getShooter(): ProjectileSource;
 	getTicksLived(): number;

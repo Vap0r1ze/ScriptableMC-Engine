@@ -1,16 +1,12 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import Conversation from './Conversation.js'
 import ConversationCanceller from './ConversationCanceller.js'
 import ConversationContext from './ConversationContext.js'
-import EventObject from '../../../java/util/EventObject.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface ConversationAbandonedEvent extends EventObject {
+export default interface ConversationAbandonedEvent {
 	getCanceller(): ConversationCanceller;
 	getContext(): ConversationContext;
-	getSource(): Object;
+	getSource(): any;
 	gracefulExit(): boolean;
 }
 

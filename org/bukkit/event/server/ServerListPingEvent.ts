@@ -1,17 +1,10 @@
 declare var Java: any;
 import CachedServerIcon from '../../../../org/bukkit/util/CachedServerIcon.js'
-import Class from '../../../../java/lang/Class.js'
-import Consumer from '../../../../java/util/function/Consumer.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import Iterable from '../../../../java/lang/Iterable.js'
-import Iterator from '../../../../java/util/Iterator.js'
-import Object from '../../../../java/lang/Object.js'
 import ServerEvent from './ServerEvent.js'
-import Spliterator from '../../../../java/util/Spliterator.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface ServerListPingEvent extends ServerEvent, Iterable {
-	forEach(arg0: Consumer): void;
+export default interface ServerListPingEvent extends ServerEvent {
+	forEach(arg0: any): void;
 	getAddress(): any;
 	getEventName(): string;
 	getHandlers(): HandlerList;
@@ -19,11 +12,11 @@ export default interface ServerListPingEvent extends ServerEvent, Iterable {
 	getMotd(): string;
 	getNumPlayers(): number;
 	isAsynchronous(): boolean;
-	iterator(): Iterator;
+	iterator(): any;
 	setMaxPlayers(maxPlayers: number): void;
 	setMotd(motd: string): void;
 	setServerIcon(icon: CachedServerIcon): void;
-	spliterator(): Spliterator;
+	spliterator(): any;
 }
 
 export default class ServerListPingEvent {

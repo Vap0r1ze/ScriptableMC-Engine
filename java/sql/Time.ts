@@ -1,15 +1,11 @@
 declare var Java: any;
-import Class from '../../java/lang/Class.js'
-import Date from '../../java/util/Date.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface Time extends Date {
-	after(arg0: Date): boolean;
-	before(arg0: Date): boolean;
-	clone(): Object;
-	compareTo(arg0: Date): number;
-	compareTo(arg0: Object): number;
+export default interface Time {
+	after(arg0: any): boolean;
+	before(arg0: any): boolean;
+	clone(): any;
+	compareTo(arg0: any): number;
+	compareTo(arg0: any): number;
 	getDate(): number;
 	getDay(): number;
 	getHours(): number;
@@ -51,7 +47,7 @@ export default class Time {
 		return Time.$javaClass.UTC(...args);
 	}
 
-	public static from(arg0: any): Date;
+	public static from(arg0: any): any;
 	public static from(...args: any[]): any {
 		return Time.$javaClass.from(...args);
 	}

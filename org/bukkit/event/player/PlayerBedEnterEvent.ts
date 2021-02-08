@@ -1,14 +1,11 @@
 declare var Java: any;
 import Block from '../../../../org/bukkit/block/Block.js'
 import Cancellable from '../../../../org/bukkit/event/Cancellable.js'
-import Class from '../../../../java/lang/Class.js'
 import Event$Result from '../../../../org/bukkit/event/Event$Result.js'
 import HandlerList from '../../../../org/bukkit/event/HandlerList.js'
-import Object from '../../../../java/lang/Object.js'
 import Player from '../../../../org/bukkit/entity/Player.js'
 import PlayerBedEnterEvent$BedEnterResult from './PlayerBedEnterEvent$BedEnterResult.js'
 import PlayerEvent from './PlayerEvent.js'
-import String from '../../../../java/lang/String.js'
 
 export default interface PlayerBedEnterEvent extends PlayerEvent, Cancellable {
 	getBed(): Block;

@@ -1,10 +1,7 @@
 declare var Java: any;
-import AutoCloseable from '../../java/lang/AutoCloseable.js'
 import DataOutput from './DataOutput.js'
-import Object from '../../java/lang/Object.js'
-import String from '../../java/lang/String.js'
 
-export default interface ObjectOutput extends DataOutput, AutoCloseable {
+export default interface ObjectOutput extends DataOutput {
 	close(): void;
 	flush(): void;
 	write(arg0: Array<number>): void;
@@ -19,7 +16,7 @@ export default interface ObjectOutput extends DataOutput, AutoCloseable {
 	writeFloat(arg0: number): void;
 	writeInt(arg0: number): void;
 	writeLong(arg0: number): void;
-	writeObject(arg0: Object): void;
+	writeObject(arg0: any): void;
 	writeShort(arg0: number): void;
 	writeUTF(arg0: string): void;
 }

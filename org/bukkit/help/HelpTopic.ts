@@ -1,10 +1,7 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import CommandSender from '../../../org/bukkit/command/CommandSender.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface HelpTopic extends Object {
+export default interface HelpTopic {
 	amendCanSee(amendedPermission: string): void;
 	amendTopic(amendedShortText: string, amendedFullText: string): void;
 	canSee(arg0: CommandSender): boolean;

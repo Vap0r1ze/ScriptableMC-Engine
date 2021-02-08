@@ -1,23 +1,17 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import InputStream from '../../../java/io/InputStream.js'
-import List from '../../../java/util/List.js'
-import Map from '../../../java/util/Map.js'
-import Object from '../../../java/lang/Object.js'
 import Permission from '../../../org/bukkit/permissions/Permission.js'
 import PermissionDefault from '../../../org/bukkit/permissions/PermissionDefault.js'
 import PluginLoadOrder from './PluginLoadOrder.js'
 import Reader from '../../../java/io/Reader.js'
-import Set from '../../../java/util/Set.js'
-import String from '../../../java/lang/String.js'
 import Writer from '../../../java/io/Writer.js'
 
-export default interface PluginDescriptionFile extends Object {
+export default interface PluginDescriptionFile {
 	getAPIVersion(): string;
 	getAuthors(): Array<string>;
-	getAwareness(): Set;
+	getAwareness(): any;
 	getClassLoaderOf(): string;
-	getCommands(): Map;
+	getCommands(): any;
 	getContributors(): Array<string>;
 	getDepend(): Array<string>;
 	getDescription(): string;

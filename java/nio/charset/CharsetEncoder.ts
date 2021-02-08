@@ -1,18 +1,14 @@
 declare var Java: any;
 import ByteBuffer from '../../../java/nio/ByteBuffer.js'
 import CharBuffer from '../../../java/nio/CharBuffer.js'
-import CharSequence from '../../../java/lang/CharSequence.js'
 import Charset from './Charset.js'
-import Class from '../../../java/lang/Class.js'
 import CoderResult from './CoderResult.js'
 import CodingErrorAction from './CodingErrorAction.js'
-import Object from '../../../java/lang/Object.js'
-import String from '../../../java/lang/String.js'
 
-export default interface CharsetEncoder extends Object {
+export default interface CharsetEncoder {
 	averageBytesPerChar(): number;
 	canEncode(arg0: string): boolean;
-	canEncode(arg0: CharSequence): boolean;
+	canEncode(arg0: any): boolean;
 	charset(): Charset;
 	encode(arg0: CharBuffer): ByteBuffer;
 	encode(arg0: CharBuffer, arg1: ByteBuffer, arg2: boolean): CoderResult;

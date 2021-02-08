@@ -5,21 +5,18 @@ import Directional from '../../../../../org/bukkit/block/data/Directional.js'
 import FaceAttachable from '../../../../../org/bukkit/block/data/FaceAttachable.js'
 import FaceAttachable$AttachedFace from '../../../../../org/bukkit/block/data/FaceAttachable$AttachedFace.js'
 import Material from '../../../../../org/bukkit/Material.js'
-import Object from '../../../../../java/lang/Object.js'
 import Powerable from '../../../../../org/bukkit/block/data/Powerable.js'
-import Set from '../../../../../java/util/Set.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
-import String from '../../../../../java/lang/String.js'
 import Switch$Face from './Switch$Face.js'
 
 export default interface Switch extends Directional, FaceAttachable, Powerable {
 	clone(): BlockData;
-	clone(): Object;
+	clone(): any;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
 	getAttachedFace(): FaceAttachable$AttachedFace;
 	getFace(): Switch$Face;
-	getFaces(): Set;
+	getFaces(): any;
 	getFacing(): BlockFace;
 	getMaterial(): Material;
 	getSoundGroup(): SoundGroup;

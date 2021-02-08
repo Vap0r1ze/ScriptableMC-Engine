@@ -4,19 +4,16 @@ import BlockData from '../../../../../org/bukkit/block/data/BlockData.js'
 import BlockFace from '../../../../../org/bukkit/block/BlockFace.js'
 import Material from '../../../../../org/bukkit/Material.js'
 import MultipleFacing from '../../../../../org/bukkit/block/data/MultipleFacing.js'
-import Object from '../../../../../java/lang/Object.js'
-import Set from '../../../../../java/util/Set.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
-import String from '../../../../../java/lang/String.js'
 
 export default interface Fire extends Ageable, MultipleFacing {
 	clone(): BlockData;
-	clone(): Object;
+	clone(): any;
 	getAge(): number;
-	getAllowedFaces(): Set;
+	getAllowedFaces(): any;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
-	getFaces(): Set;
+	getFaces(): any;
 	getMaterial(): Material;
 	getMaximumAge(): number;
 	getSoundGroup(): SoundGroup;

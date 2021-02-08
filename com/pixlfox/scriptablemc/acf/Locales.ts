@@ -1,28 +1,22 @@
 declare var Java: any;
-import Class from '../../../../java/lang/Class.js'
-import ClassLoader from '../../../../java/lang/ClassLoader.js'
 import CommandIssuer from './CommandIssuer.js'
 import CommandManager from './CommandManager.js'
-import Locale from '../../../../java/util/Locale.js'
-import Map from '../../../../java/util/Map.js'
-import Object from '../../../../java/lang/Object.js'
-import String from '../../../../java/lang/String.js'
 
-export default interface Locales extends Object {
-	addBundleClassLoader(classLoader: ClassLoader): boolean;
-	addMessage(locale: Locale, key: any, message: string): string;
-	addMessageBundle(bundleName: string, locale: Locale): boolean;
-	addMessageBundle(classLoader: ClassLoader, bundleName: string, locale: Locale): boolean;
+export default interface Locales {
+	addBundleClassLoader(classLoader: any): boolean;
+	addMessage(locale: any, key: any, message: string): string;
+	addMessageBundle(bundleName: string, locale: any): boolean;
+	addMessageBundle(classLoader: any, bundleName: string, locale: any): boolean;
 	addMessageBundles(bundleNames: Array<string>): void;
-	addMessageStrings(locale: Locale, messages: Map): void;
-	addMessages(locale: Locale, messages: Map): void;
-	getDefaultLocale(): Locale;
+	addMessageStrings(locale: any, messages: any): void;
+	addMessages(locale: any, messages: any): void;
+	getDefaultLocale(): any;
 	getMessage(issuer: CommandIssuer, key: any): string;
 	getOptionalMessage(issuer: CommandIssuer, key: any): string;
 	loadLanguages(): void;
 	loadMissingBundles(): void;
 	replaceI18NStrings(message: string): string;
-	setDefaultLocale(locale: Locale): Locale;
+	setDefaultLocale(locale: any): any;
 }
 
 export default class Locales {
@@ -38,139 +32,139 @@ export default class Locales {
 		return new Locales.$javaClass(...args);
 	}
 
-	public static get AFRIKAANS(): Locale {
+	public static get AFRIKAANS(): any {
 		return Locales.$javaClass.AFRIKAANS;
 	}
 
-	public static get ARABIC(): Locale {
+	public static get ARABIC(): any {
 		return Locales.$javaClass.ARABIC;
 	}
 
-	public static get BULGARIAN(): Locale {
+	public static get BULGARIAN(): any {
 		return Locales.$javaClass.BULGARIAN;
 	}
 
-	public static get CHINESE(): Locale {
+	public static get CHINESE(): any {
 		return Locales.$javaClass.CHINESE;
 	}
 
-	public static get CZECH(): Locale {
+	public static get CZECH(): any {
 		return Locales.$javaClass.CZECH;
 	}
 
-	public static get DANISH(): Locale {
+	public static get DANISH(): any {
 		return Locales.$javaClass.DANISH;
 	}
 
-	public static get DUTCH(): Locale {
+	public static get DUTCH(): any {
 		return Locales.$javaClass.DUTCH;
 	}
 
-	public static get ENGLISH(): Locale {
+	public static get ENGLISH(): any {
 		return Locales.$javaClass.ENGLISH;
 	}
 
-	public static get FINNISH(): Locale {
+	public static get FINNISH(): any {
 		return Locales.$javaClass.FINNISH;
 	}
 
-	public static get FRENCH(): Locale {
+	public static get FRENCH(): any {
 		return Locales.$javaClass.FRENCH;
 	}
 
-	public static get GERMAN(): Locale {
+	public static get GERMAN(): any {
 		return Locales.$javaClass.GERMAN;
 	}
 
-	public static get GREEK(): Locale {
+	public static get GREEK(): any {
 		return Locales.$javaClass.GREEK;
 	}
 
-	public static get HEBREW(): Locale {
+	public static get HEBREW(): any {
 		return Locales.$javaClass.HEBREW;
 	}
 
-	public static get HINDI(): Locale {
+	public static get HINDI(): any {
 		return Locales.$javaClass.HINDI;
 	}
 
-	public static get HUNGARIAN(): Locale {
+	public static get HUNGARIAN(): any {
 		return Locales.$javaClass.HUNGARIAN;
 	}
 
-	public static get ITALIAN(): Locale {
+	public static get ITALIAN(): any {
 		return Locales.$javaClass.ITALIAN;
 	}
 
-	public static get JAPANESE(): Locale {
+	public static get JAPANESE(): any {
 		return Locales.$javaClass.JAPANESE;
 	}
 
-	public static get KOREAN(): Locale {
+	public static get KOREAN(): any {
 		return Locales.$javaClass.KOREAN;
 	}
 
-	public static get LATIN(): Locale {
+	public static get LATIN(): any {
 		return Locales.$javaClass.LATIN;
 	}
 
-	public static get NORWEGIAN_BOKMAAL(): Locale {
+	public static get NORWEGIAN_BOKMAAL(): any {
 		return Locales.$javaClass.NORWEGIAN_BOKMAAL;
 	}
 
-	public static get NORWEGIAN_NYNORSK(): Locale {
+	public static get NORWEGIAN_NYNORSK(): any {
 		return Locales.$javaClass.NORWEGIAN_NYNORSK;
 	}
 
-	public static get POLISH(): Locale {
+	public static get POLISH(): any {
 		return Locales.$javaClass.POLISH;
 	}
 
-	public static get PORTUGUESE(): Locale {
+	public static get PORTUGUESE(): any {
 		return Locales.$javaClass.PORTUGUESE;
 	}
 
-	public static get ROMANIAN(): Locale {
+	public static get ROMANIAN(): any {
 		return Locales.$javaClass.ROMANIAN;
 	}
 
-	public static get RUSSIAN(): Locale {
+	public static get RUSSIAN(): any {
 		return Locales.$javaClass.RUSSIAN;
 	}
 
-	public static get SIMPLIFIED_CHINESE(): Locale {
+	public static get SIMPLIFIED_CHINESE(): any {
 		return Locales.$javaClass.SIMPLIFIED_CHINESE;
 	}
 
-	public static get SPANISH(): Locale {
+	public static get SPANISH(): any {
 		return Locales.$javaClass.SPANISH;
 	}
 
-	public static get SWEDISH(): Locale {
+	public static get SWEDISH(): any {
 		return Locales.$javaClass.SWEDISH;
 	}
 
-	public static get THAI(): Locale {
+	public static get THAI(): any {
 		return Locales.$javaClass.THAI;
 	}
 
-	public static get TRADITIONAL_CHINESE(): Locale {
+	public static get TRADITIONAL_CHINESE(): any {
 		return Locales.$javaClass.TRADITIONAL_CHINESE;
 	}
 
-	public static get TURKISH(): Locale {
+	public static get TURKISH(): any {
 		return Locales.$javaClass.TURKISH;
 	}
 
-	public static get UKRANIAN(): Locale {
+	public static get UKRANIAN(): any {
 		return Locales.$javaClass.UKRANIAN;
 	}
 
-	public static get VIETNAMESE(): Locale {
+	public static get VIETNAMESE(): any {
 		return Locales.$javaClass.VIETNAMESE;
 	}
 
-	public static get WELSH(): Locale {
+	public static get WELSH(): any {
 		return Locales.$javaClass.WELSH;
 	}
 

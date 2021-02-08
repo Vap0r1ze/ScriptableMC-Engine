@@ -1,11 +1,8 @@
 declare var Java: any;
-import Class from '../../../java/lang/Class.js'
 import ConversationContext from './ConversationContext.js'
-import Object from '../../../java/lang/Object.js'
 import Prompt from './Prompt.js'
-import String from '../../../java/lang/String.js'
 
-export default interface StringPrompt extends Object, Prompt {
+export default interface StringPrompt extends Prompt {
 	acceptInput(arg0: ConversationContext, arg1: string): Prompt;
 	blocksForInput(context: ConversationContext): boolean;
 	getPromptText(arg0: ConversationContext): string;

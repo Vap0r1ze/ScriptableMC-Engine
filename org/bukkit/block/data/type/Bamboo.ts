@@ -3,14 +3,12 @@ import Ageable from '../../../../../org/bukkit/block/data/Ageable.js'
 import Bamboo$Leaves from './Bamboo$Leaves.js'
 import BlockData from '../../../../../org/bukkit/block/data/BlockData.js'
 import Material from '../../../../../org/bukkit/Material.js'
-import Object from '../../../../../java/lang/Object.js'
 import Sapling from './Sapling.js'
 import SoundGroup from '../../../../../org/bukkit/SoundGroup.js'
-import String from '../../../../../java/lang/String.js'
 
 export default interface Bamboo extends Ageable, Sapling {
 	clone(): BlockData;
-	clone(): Object;
+	clone(): any;
 	getAge(): number;
 	getAsString(): string;
 	getAsString(arg0: boolean): string;
