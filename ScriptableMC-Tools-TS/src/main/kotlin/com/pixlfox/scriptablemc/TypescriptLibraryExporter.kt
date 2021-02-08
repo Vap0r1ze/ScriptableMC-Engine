@@ -23,8 +23,6 @@ class TypescriptLibraryExporter(args: Array<String> = arrayOf()) {
         "com.smc",
         "fr.minuskube.inv",
         "com.google",
-        "java.lang",
-        "java.util",
         "java.sql",
         "java.io",
         "java.nio",
